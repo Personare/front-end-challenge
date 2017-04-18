@@ -6,6 +6,8 @@
 
 A nossa Product Owner pensou em um produto fantástico para ser desenvolvido, e um dos desafios é criação de um jogo de Tarot.
 
+<br>
+
 **Então, essa é a sua missão!**
 
 Criar um jogo de Tarot, permitindo o sorteio de uma carta.
