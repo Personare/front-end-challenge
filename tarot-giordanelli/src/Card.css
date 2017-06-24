@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.ReactFlipCard,
+.ReactFlipCard__Front,
+.ReactFlipCard__Back {
+    width: 150px;
+    height: 356px;
+    background-color: #ebe7e8;
+    cursor: pointer;
+}
+.ReactFlipCard img{
+    max-width: 100%;
+    display: block;
+}
+.ReactFlipCard h3{
+    text-align: center;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 20px;
+}
+.ReactFlipCard__Back button{
+    display: block;
+    width: 100%;
+    line-height: 20px;
+} 
