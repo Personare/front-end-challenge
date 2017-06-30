@@ -29,3 +29,8 @@ npm start - Para inicar a aplicação
 ```
 
 6) Acesse http://localhost:3000 e veja a aplicação rodando. :)
+
+**OBS: Para gerar uma versão de produção basta digitar o comando**
+```
+npm run build
+```
