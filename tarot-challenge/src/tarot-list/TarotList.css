@@ -25,4 +25,5 @@
     background: url(/img/bg-header.jpg) no-repeat center top;
     background-size: 100% auto;
     padding-top: 15px;
+    box-shadow: -1px -3px 12px 2px #c1c1c1;
 }

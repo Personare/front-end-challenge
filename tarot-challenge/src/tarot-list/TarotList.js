@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
 import Cards        from './tarot.json'
 import Shuffle      from 'react-shuffle'; 
-import { Modal }   from 'react-bootstrap';
+import { Modal, Button }   from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './TarotList.css';
 
 
 class TarotList extends Component {
-    state = { cards: [] }
+    state = { 
+        cards: [],
+        showModal: false,
+        selectedCard: {
+            name: null, 
+            image: null,
+            description: null
+        }
+    }
 
     constructor(props) {
         super(props);
         this.getCards       = this.getCards.bind(this);
-        this.shuffleCards   = this.shuffleCards.bind(this);
-        this.turnCards      = this.turnCards.bind(this); 
+        this.turnCards      = this.turnCards.bind(this);
+        this.chooseCard     = this.chooseCard.bind(this); 
     }
 
     componentDidMount() {
@@ -22,25 +30,29 @@ class TarotList extends Component {
     }
 
     getCards() {
+        var selectedCard = {image: "xxx", name: "Card selecionado"};
+        Cards.selectedCard = selectedCard;
     	this.setState(Cards); 
-    }
-
-    shuffleCards() { 
-       var state    = this.state; 
-       state.cards  = this.shuffle(state.cards); 
-       
-       this.setState(state); 
     }
 
     turnCards() { 
         Cards.turned    = true;
-        Cards.cards     = this.shuffle(Cards.cards);  
+        Cards.cards     = this.shuffle(Cards.cards);
+
+        if (this.state.showModal)
+            Cards.showModal = false;
         
         this.setState(Cards); 
     }
 
     chooseCard(card, index) {
-        console.log(card); 
+        var state = this.state; 
+        var selected = state.cards[index]; 
+
+        selected.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus nibh sed dolor porta, eu maximus lectus feugiat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec nec tristique turpis. Phasellus malesuada mollis suscipit. Curabitur massa lorem, aliquet eget blandit vitae, cursus nec sapien. Suspendisse condimentum efficitur dolor at ultrices. Suspendisse sollicitudin felis sit amet risus dapibus ultricies. Integer odio nisl, feugiat eget diam sit amet, mollis tempus turpis. Cras sit amet interdum lectus. Proin vestibulum porta condimentum. Curabitur aliquet venenatis pulvinar. Nulla facilisi. Nunc scelerisque tellus sit amet augue volutpat, et interdum mi molestie. Morbi aliquet turpis sed velit bibendum elementum."
+        state.selectedCard = selected; 
+        state.showModal = true; 
+        this.setState(state); 
     }
 
     shuffle(array) {
@@ -62,7 +74,7 @@ class TarotList extends Component {
     render() {
         
         var cardTurned = "img/card-turned.jpg"; 
-
+        
         return (
         	<div>
                 {this.state.turned ? (
@@ -71,7 +83,8 @@ class TarotList extends Component {
                     </div>
                 ) : (
                     <div className="col-md-12 ">
-                        <button className="btn btn-lg btn-default" onClick={this.turnCards}>Iniciar Jogo <span role="img" aria-label="Atom">⚛️</span></button>
+                        <button className="btn btn-lg btn-default" onClick={this.turnCards}>Iniciar Jogo 
+                        <span role="img" aria-label="Atom">⚛️</span></button>
                     </div>
                 )}
                 <Shuffle duration={500}>
@@ -79,7 +92,8 @@ class TarotList extends Component {
                     this.state.cards.map((card, index) => (
                         <div className="col-md-2" key={index} data-toggle="modal" data-target="#cardModal">
                             <div className="card">
-                                <img className='card-img-top' src={cardTurned} onClick={() => this.chooseCard(card, index)} alt=""/>
+                                <img className='card-img-top' src={cardTurned} 
+                                onClick={() => this.chooseCard(card, index)} alt=""/>
                             </div>
                         </div>
                     ))
@@ -95,22 +109,27 @@ class TarotList extends Component {
                 
                 </Shuffle>
 
-                <Modal show={this.state.showModal} onHide={this.close}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Carta -> xxxx</Modal.Title>
+                <Modal show={this.state.showModal}>
+                    <Modal.Header>
+                        <Modal.Title><span role="img" aria-label="Atom">⚛️</span> {this.state.selectedCard.name}</Modal.Title>
                     </Modal.Header>
                     
                     <Modal.Body>
-                        <div className="col-md-4">
-                            <img className='card-img-top' src={this.state.imagesUrl + card.selectedCard.image} alt={card.selectedCard.name} />
-                        </div>
-                        <div className="col-md-8">
-                            <h4>Descrição da carta xxxx</h4>
+                        <div className="row">
+                            <div className="col-md-4">
+                                <img className='card-img-top' src={this.state.imagesUrl + this.state.selectedCard.image} 
+                                alt={this.state.selectedCard.name} />
+                            </div>
+                            <div className="col-md-8">
+                                <h4>{this.state.selectedCard.description}</h4>
+                            </div>
                         </div>
                     </Modal.Body>
                     
                     <Modal.Footer>
-                        <Button onClick={this.close}>Close</Button>
+                        <div className="col-md-12">
+                            <Button onClick={this.turnCards}>Embaralhar novamente</Button>
+                        </div>
                     </Modal.Footer>
                 </Modal>
         	</div>
