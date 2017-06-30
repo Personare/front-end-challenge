@@ -26,13 +26,25 @@ class TarotList extends Component {
     }
 
     componentDidMount() {
-        this.getCards();
+        var cards, 
+        self = this,
+        request = new XMLHttpRequest();
+        
+        request.onload = function (e) {
+            if (request.readyState === 4) {
+                if (request.status === 200) {
+                    self.getCards(JSON.parse(request.responseText));
+                }
+            }
+        };
+        request.open("GET", '/tarot.json', true);
+        request.send(null);
     }
 
-    getCards() {
-        var selectedCard = {image: "xxx", name: "Card selecionado"};
-        Cards.selectedCard = selectedCard;
-    	this.setState(Cards); 
+    getCards(cards) {
+        var selectedCard = { image: null, name: null };
+        cards.selectedCard = selectedCard;
+    	this.setState(cards); 
     }
 
     turnCards() { 
@@ -71,6 +83,10 @@ class TarotList extends Component {
         return array;
     }
 
+    goBack() {
+        window.location.reload();
+    }
+
     render() {
         
         var cardTurned = "img/card-turned.jpg"; 
@@ -79,7 +95,10 @@ class TarotList extends Component {
         	<div>
                 {this.state.turned ? (
                     <div className="col-md-12 ">
-                        <button className="btn btn-lg btn-default disabled">As cartas foram embaralhadas, selecione uma.</button>
+                        <button className="btn btn-lg btn-default disabled">
+                        As cartas foram embaralhadas, selecione uma.</button>
+                        <button className="btn btn-sm btn-default pull-right" onClick={this.goBack}>
+                        <span role="img" aria-label="Voltar">↩</span></button>
                     </div>
                 ) : (
                     <div className="col-md-12 ">
