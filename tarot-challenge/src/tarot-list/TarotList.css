@@ -1,1 +1,27 @@
-CardList.css
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+	font-family: 'Open Sans',sans-serif;
+}
+
+.regular-italic {
+	font-weight: 400;
+    font-style: italic;
+}
+
+.card {
+	margin-top: 15%; 
+}
+
+.card img {
+	display: block; 
+	margin: 0 auto; 
+}
+
+#navigation_header {
+    width: 100%;
+    min-height: 95px;
+    background: url(/img/bg-header.jpg) no-repeat center top;
+    background-size: 100% auto;
+    padding-top: 15px;
+}
