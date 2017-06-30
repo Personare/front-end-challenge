@@ -11,6 +11,7 @@
 
 .card {
 	margin-top: 15%; 
+    cursor: pointer;
 }
 
 .card img {
