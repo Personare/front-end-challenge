@@ -10,8 +10,16 @@ class App extends Component {
 
   giraImagem(index){
     var stateCopy = Object.assign({}, this.state);
-    stateCopy.cartas[index].estado = (this.state.cartas[index].estado==1) ? 0 : 1;
-    this.setState({state: stateCopy});
+    var testa=0;
+    stateCopy.cartas.map( (cartas) => { 
+      if(cartas.estado==0){ testa++ }
+     });
+    if(testa==0){
+      stateCopy.cartas[index].estado = (this.state.cartas[index].estado==1) ? 0 : 1;
+      this.setState({state: stateCopy});  
+    } else{
+      alert("É preciso iniciar o jogo para escolher uma carta.");
+    }
   }
 
   iniciarJogo(){
