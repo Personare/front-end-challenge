@@ -24,6 +24,7 @@ class App extends Component {
               this.state.cartas.map(function(carta, i){ 
                 carta.image = 'https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/' + carta.image
                 return(
+                  <li>
                     <div className="card" key={i}>
                       <div className="face side1">
                         <img src="http://www.adrianparr.com/images/card_back.png" />
@@ -32,6 +33,7 @@ class App extends Component {
                           <img src={carta.image} />
                       </div>  
                     </div>    
+                  </li>
                   );
               })
             }
