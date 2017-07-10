@@ -37,6 +37,10 @@ ul li{ list-style: none; display: inline-block }
     transition: transform 1.0s cubic-bezier(0,.75,.25,1);
 }
 
+.abre-carta{
+  transform: rotateY(0deg);
+}
+
 
 .card img{
   width: 100%;
