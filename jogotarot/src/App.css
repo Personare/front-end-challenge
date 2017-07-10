@@ -38,11 +38,11 @@ ul li{ list-style: none; display: inline-block }
 }
 
 .abre-carta{
-  transform: rotateY(0deg);
+  transform: rotateY(0deg) !important;
 }
 
 
-.card img{
+.card .face img{
   width: 100%;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;

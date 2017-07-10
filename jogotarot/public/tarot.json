@@ -4,392 +4,392 @@
     {
       "name": "O MAGO",
       "image": "arcano1.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "A SACERDOTISA",
       "image": "arcano2.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "A IMPERATRIZ",
       "image": "arcano3.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "O IMPERADOR",
       "image": "arcano4.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "O PAPA",
       "image": "arcano5.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "OS ENAMORADOS",
       "image": "arcano6.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "O CARRO",
       "image": "arcano7.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "A JUSTIÇA",
       "image": "arcano8.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "O EREMITA",
       "image": "arcano9.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "A RODA DA FORTUNA",
       "image": "arcano10.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "A FORÇA",
       "image": "arcano11.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "O HOMEM PENDURADO",
       "image": "arcano12.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "A MORTE",
       "image": "arcano13.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "A TEMPERANÇA",
       "image": "arcano14.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "O DIABO",
       "image": "arcano15.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "A TORRE",
       "image": "arcano16.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "A ESTRELA",
       "image": "arcano17.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "A LUA",
       "image": "arcano18.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "O SOL",
       "image": "arcano19.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "O JULGAMENTO",
       "image": "arcano20.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "O MUNDO",
       "image": "arcano21.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "O LOUCO",
       "image": "arcano22.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "ÀS DE COPAS",
       "image": "arcano23.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "2 DE COPAS",
       "image": "arcano24.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "3 DE COPAS",
       "image": "arcano25.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "4 DE COPAS",
       "image": "arcano26.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "5 DE COPAS",
       "image": "arcano27.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "6 DE COPAS",
       "image": "arcano28.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "7 DE COPAS",
       "image": "arcano29.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "8 DE COPAS",
       "image": "arcano30.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "9 DE COPAS",
       "image": "arcano31.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "10 DE COPAS",
       "image": "arcano32.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "PRINCESA DE COPAS",
       "image": "arcano33.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "CAVALEIRO DE COPAS",
       "image": "arcano34.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "RAINHA DE COPAS",
       "image": "arcano35.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "REI DE COPAS",
       "image": "arcano36.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "ÀS DE ESPADAS",
       "image": "arcano37.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "2 DE ESPADAS ,",
       "image": "arcano38.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "3 DE ESPADAS",
       "image": "arcano39.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "4 DE ESPADAS",
       "image": "arcano40.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "5 DE ESPADAS",
       "image": "arcano41.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "6 DE ESPADAS",
       "image": "arcano42.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "7 DE ESPADAS",
       "image": "arcano43.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "8 DE ESPADAS",
       "image": "arcano44.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "9 DE ESPADAS",
       "image": "arcano45.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "10 DE ESPADAS",
       "image": "arcano46.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "PRINCESA DE ESPADAS",
       "image": "arcano47.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "CAVALEIRO DE ESPADAS",
       "image": "arcano48.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "RAINHA DE ESPADAS",
       "image": "arcano49.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "REI DE ESPADAS",
       "image": "arcano50.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "ÀS DE PAUS",
       "image": "arcano51.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "2 DE PAUS",
       "image": "arcano52.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "3 DE PAUS",
       "image": "arcano53.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "4 DE PAUS",
       "image": "arcano54.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "5 DE PAUS",
       "image": "arcano55.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "6 DE PAUS",
       "image": "arcano56.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "7 DE PAUS",
       "image": "arcano57.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "8 DE PAUS",
       "image": "arcano58.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "9 DE PAUS",
       "image": "arcano59.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "10 DE PAUS",
       "image": "arcano60.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "PRINCESA DE PAUS",
       "image": "arcano61.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "CAVALEIRO DE PAUS",
       "image": "arcano62.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "RAINHA DE PAUS",
       "image": "arcano63.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "REI DE PAUS",
       "image": "arcano64.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "ÀS DE OUROS",
       "image": "arcano65.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "2 DE OUROS",
       "image": "arcano66.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "3 DE OUROS",
       "image": "arcano67.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "4 DE OUROS",
       "image": "arcano68.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "5 DE OUROS",
       "image": "arcano69.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "6 DE OUROS",
       "image": "arcano70.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "7 DE OUROS",
       "image": "arcano71.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "8 DE OUROS",
       "image": "arcano72.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "9 DE OUROS",
       "image": "arcano73.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "10 DE OUROS",
       "image": "arcano74.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "PRINCESA DE OUROS",
       "image": "arcano75.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "CAVALEIRO DE OUROS",
       "image": "arcano76.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "RAINHA DE OUROS",
       "image": "arcano77.jpg",
-      "state": false
+      "estado": 1
     },
     {
       "name": "REI DE OUROS",
       "image": "arcano78.jpg",
-      "state": false
+      "estado": 1
     }
   ]
 }
