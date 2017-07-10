@@ -1,24 +1,67 @@
-.App {
-  text-align: center;
+body {
+    background-color: #3D3D3D;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#wrapper {
+    -webkit-perspective: 700px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective: 700px;
+    -moz-perspective-origin: 50% 50%;
+    -o-perspective: 700px;
+    -o-perspective-origin: 50% 50%;
+    -ms-perspective: 700px;
+    -ms-perspective-origin: 50% 50%;
+    perspective: 700px;
+    perspective-origin: 50% 50%;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+ul li{ list-style: none; display: inline-block }
+
+.card {
+    position: relative;
+    margin: 10px 10px;
+    width: 90px;
+    height: 200px;
+    cursor: hand;
+    cursor: pointer;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transition: -webkit-transform 1.0s cubic-bezier(0,.75,.25,1);
+    -moz-transition: -moz-transform 1.0s cubic-bezier(0,.75,.25,1);
+    -o-transition: -o-transform 1.0s cubic-bezier(0,.75,.25,1);
+    -ms-transition: -ms-transform 1.0s cubic-bezier(0,.75,.25,1);
+    transition: transform 1.0s cubic-bezier(0,.75,.25,1);
 }
 
-.App-intro {
-  font-size: large;
+
+.card img{
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.face {
+    position: absolute;
+    width: 90px;
+    height: 200px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.side2 {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background: #ffffff;
 }
