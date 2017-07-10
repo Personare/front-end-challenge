@@ -15,7 +15,15 @@ body {
     perspective-origin: 50% 50%;
 }
 
-ul li{ list-style: none; display: inline-block }
+ul{
+  padding-top: 50px;
+}
+
+ul li{ 
+  list-style: none; 
+  display: 
+  inline-block 
+}
 
 .card {
     position: relative;
@@ -38,9 +46,46 @@ ul li{ list-style: none; display: inline-block }
 }
 
 .abre-carta{
+  -webkit-transform: rotateY(0deg) !important;
+  -moz-transform: rotateY(0deg) !important;
+  -o-transform: rotateY(0deg) !important;
+  -ms-transform: rotateY(0deg) !important; 
   transform: rotateY(0deg) !important;
 }
 
+.inicio-btn{
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  height: 50px;
+  background: rgba(15,15,15,1);
+  color: rgba(255,255,255,1);
+  -webkit-border-bottom-right-radius: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -moz-border-radius-bottomleft: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  z-index: 999;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.side2 span{
+  font-size: 10px;
+  text-align: center;
+  display: block;
+}
+
+.side2{
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
 
 .card .face img{
   width: 100%;
@@ -48,6 +93,10 @@ ul li{ list-style: none; display: inline-block }
   -moz-border-radius: 10px;
   border-radius: 10px;
   height: 100%;
+}
+
+.card .side2 img{
+  height: 77%;
 }
 
 .face {
