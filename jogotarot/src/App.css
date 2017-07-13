@@ -1,0 +1,120 @@
+body {
+    background-color: #3D3D3D;
+}
+
+#wrapper {
+    -webkit-perspective: 700px;
+    -webkit-perspective-origin: 50% 50%;
+    -moz-perspective: 700px;
+    -moz-perspective-origin: 50% 50%;
+    -o-perspective: 700px;
+    -o-perspective-origin: 50% 50%;
+    -ms-perspective: 700px;
+    -ms-perspective-origin: 50% 50%;
+    perspective: 700px;
+    perspective-origin: 50% 50%;
+}
+
+ul{
+  padding-top: 50px;
+}
+
+ul li{ 
+  list-style: none; 
+  display: 
+  inline-block 
+}
+
+.card {
+    position: relative;
+    margin: 10px 10px;
+    width: 90px;
+    height: 200px;
+    cursor: hand;
+    cursor: pointer;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transition: -webkit-transform 1.0s cubic-bezier(0,.75,.25,1);
+    -moz-transition: -moz-transform 1.0s cubic-bezier(0,.75,.25,1);
+    -o-transition: -o-transform 1.0s cubic-bezier(0,.75,.25,1);
+    -ms-transition: -ms-transform 1.0s cubic-bezier(0,.75,.25,1);
+    transition: transform 1.0s cubic-bezier(0,.75,.25,1);
+}
+
+.abre-carta{
+  -webkit-transform: rotateY(0deg) !important;
+  -moz-transform: rotateY(0deg) !important;
+  -o-transform: rotateY(0deg) !important;
+  -ms-transform: rotateY(0deg) !important; 
+  transform: rotateY(0deg) !important;
+}
+
+.inicio-btn{
+  position: fixed;
+  top: 0px;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  height: 50px;
+  background: rgba(15,15,15,1);
+  color: rgba(255,255,255,1);
+  -webkit-border-bottom-right-radius: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -moz-border-radius-bottomleft: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: none;
+  z-index: 999;
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.side2 span{
+  font-size: 10px;
+  text-align: center;
+  display: block;
+}
+
+.side2{
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.card .face img{
+  width: 100%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.card .side2 img{
+  height: 77%;
+}
+
+.face {
+    position: absolute;
+    width: 90px;
+    height: 200px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.side2 {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background: #ffffff;
+}
