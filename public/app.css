@@ -1,0 +1,19 @@
+#titulo{
+	text-align: center;
+	padding-top: 1px;
+	padding-bottom: 10px;
+}
+
+.content {
+	margin-left: 10%;
+}
+
+.carta {
+	display: inline-block;
+	margin-bottom: 1em;
+}
+
+.carta img{
+	width: 50%;
+}
+
