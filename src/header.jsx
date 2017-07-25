@@ -5,14 +5,12 @@ export default class Header extends Component {
 
       jogo() {
         var texto = $(".iniciar").text();
-        if (texto == "Inicio"){
+        if (texto == "Iniciar"){
           $(".content-cartas").css("display", "none");
           $(".content-jogo").css("display", "inline-block");
           $(".iniciar").text("Voltar");
         } else {
-          $(".content-cartas").css("display", "inline-block");
-          $(".content-jogo").css("display", "none");
-          $(".iniciar").text("Inicio");
+          location.reload();
         }
       }
 
