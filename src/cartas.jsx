@@ -1,5 +1,4 @@
 import axios from 'axios';
-import $ from 'jquery';
 import React, { Component }from 'react';
 
 export default class Cartas extends Component {
