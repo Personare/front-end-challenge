@@ -4,6 +4,15 @@
 	padding-bottom: 10px;
 }
 
+#titulo h3 {
+	display: inline-block;
+}
+
+.iniciar {
+    float: right;
+    margin-top: 13px;
+}
+
 .content {
 	margin-left: 10%;
 }
@@ -17,3 +26,55 @@
 	width: 50%;
 }
 
+.content-jogo{
+	display: none;
+}
+
+.conteudo{
+	display: none;
+    position: fixed;
+    width: 88%;
+    height: 100%;
+    margin-top: -117px;
+}
+
+.pop-up{
+	background-color: black;
+    width: 88%;
+    height: 85%;
+    position: fixed;
+    margin-top: 5em;
+    opacity: 0.7;
+}
+
+.fechar{
+    color: white;
+    font-size: 15px;
+    border: 1px solid;
+    float: right;
+    width: 29px;
+    margin-right: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.descricao{
+	color: white;
+    width: 40%;
+    float: right;
+    margin-top: 5em;
+    text-align: justify;
+}
+
+.descricao h4{
+	text-align: center;
+    padding-bottom: 1em;
+}
+
+.amostra{
+    display: inline-block;
+    margin-top: 8em;
+    margin-left: 12em;
+}

@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { Router, Route, IndexRoute, Link, hashHistory, HashRouter } from 'react-router'
 import Header from './header.jsx'
-import Cartas from './app.jsx'
-
+import Cartas from './cartas.jsx'
+import Jogo from './jogo.jsx'
 
 ReactDom.render(
 	<div className="container">
 		<Header />,
-    	<Cartas />
+    	<Cartas />,
+    	<Jogo />
     </div>,
 	document.getElementById('taro')
 )
