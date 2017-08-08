@@ -13,7 +13,11 @@ describe('Reducer :: game', () => {
             order: [],
             selected: false,
         };
+    });
+
+    it('DEFAULT: Ininia com o scopo default para store de game', () => {
         state = game(undefined, {});
+        expect(state).to.eql(initial);
     });
 
     it('LOAD : Pega dados do json passando para normalized state', () => {
@@ -41,26 +45,27 @@ describe('Reducer :: game', () => {
         expect(state.cards).to.eql({
             1: {
                 name: mockJson.cards[0].name,
-                image: `${mockJson.imagesUrl}${mockJson.cards[0].name}`,
+                image: `${mockJson.imagesUrl}${mockJson.cards[0].image}`,
                 imageBackCard: mockJson.imageBackCard,
             },
             2: {
                 name: mockJson.cards[1].name,
-                image: `${mockJson.imagesUrl}${mockJson.cards[1].name}`,
+                image: `${mockJson.imagesUrl}${mockJson.cards[1].image}`,
                 imageBackCard: mockJson.imageBackCard,
             },
         });
     });
 
     it('START : Muda "play" para true e selected para false', () => {
-        state = game(state, { type: actions.PLAY });
+        state = game(state, { type: actions.START });
         expect(state.play).to.be.true;
         expect(state.selected).to.be.false;
     });
 
     it('STOP : Muda "play" e selected para false', () => {
-        state = game(state, { type: actions.PLAY });
-        expect(state.play).to.be.true;
+        state = game(state, { type: actions.STOP });
+        expect(state.play).to.be.false;
+        expect(state.selected).to.be.false;
     });
 
     it('SHUFFLE : Embaralha a lista "order"', () => {
