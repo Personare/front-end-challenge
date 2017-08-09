@@ -26,4 +26,12 @@ describe('Actions :: game', () => {
         const expectedAction = { type: actions.SHUFFLE };
         expect(actions.shuffle()).to.eql(expectedAction);
     });
+
+    it('Deve criar a action para selecionar a carta', () => {
+        const expectedAction = {
+            type: actions.SELECT,
+            payload: { id: 1 },
+        };
+        expect(actions.setCard(1)).to.eql(expectedAction);
+    })
 });

@@ -1,4 +1,4 @@
-import { LOAD, START, STOP, SHUFFLE } from 'actions/game';
+import { LOAD, START, STOP, SHUFFLE, SELECT } from 'actions/game';
 import shuffle from 'lodash/shuffle';
 
 const INITIAL_STATE = {
@@ -37,6 +37,9 @@ export default (state = INITIAL_STATE, action) => {
             const order = shuffle(state.order);
             return { ...state, order };
         }
+
+        case SELECT:
+            return { ...state, selected: action.payload.id };
 
         default:
             return state;

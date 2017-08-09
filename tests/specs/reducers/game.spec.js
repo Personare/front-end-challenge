@@ -74,4 +74,12 @@ describe('Reducer :: game', () => {
         state = game(state, { type: actions.SHUFFLE });
         expect(state.order).to.be.not.eql(initialOrder);
     });
+
+    it('SELECT : Marca como "selected" a carta escolhida', () => {
+        state = game(state, {
+            type: actions.SELECT,
+            payload: { id: 1 },
+        });
+        expect(state.selected).to.equal(1);
+    });
 });
