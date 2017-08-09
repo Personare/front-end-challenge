@@ -6,5 +6,39 @@
 // @import './components/*'
 // @import './trumps/*'
 
+$w = 100px
+$h = 190px
+
 body
-    background-color #eee
+    display: flex
+
+// .cards-list
+//     display flex
+//     flex-wrap wrap
+
+.card
+    width: $w
+    height: $h
+    position: relative
+    margin: 5px
+    cursor: pointer
+    -webkit-font-smoothing: antialiased
+    perspective: 800px
+
+    &-faces
+        transform-style: preserve-3d
+
+.front, .back
+    position: absolute
+    width: $w
+    height: $h
+    overflow: hidden
+    border-radius: 5px
+    backface-visibility: hidden;
+
+    > img
+        width: $w
+        height: $h
+
+.back
+    transform: rotateY(-180deg)

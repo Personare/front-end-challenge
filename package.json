@@ -81,6 +81,7 @@
   },
   "author": "Guilherme Louro",
   "dependencies": {
+    "gsap": "^1.20.2",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.17.4",
     "react": "^15.5.4",

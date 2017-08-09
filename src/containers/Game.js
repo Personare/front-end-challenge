@@ -14,6 +14,7 @@ class Game extends React.Component {
             <Stage
                 order={this.props.order}
                 cards={this.props.cards}
+                play={this.props.play}
             />
         );
     }
@@ -22,11 +23,14 @@ class Game extends React.Component {
 Game.propTypes = {
     order: PropTypes.array,
     cards: PropTypes.object,
+    play: PropTypes.bool,
+    loadData: PropTypes.func,
 };
 
 const mapStateToProps = ({ game }) => ({
     order: game.order,
     cards: game.cards,
+    play: game.play,
 });
 
 export default connect(mapStateToProps, { loadData })(Game);
