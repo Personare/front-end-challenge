@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router';
-import { HelloWord } from 'views/HelloWord';
+import Game from 'containers/Game';
 
 export default (
     <Route>
-        <Route path="/" component={HelloWord} />
+        <Route path="/" component={Game} />
     </Route>
 );
