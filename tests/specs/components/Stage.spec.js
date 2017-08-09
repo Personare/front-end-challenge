@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import { Stage } from 'components/Stage';
-import { Menu } from 'components/Menu';
+import { Menu } from 'containers/Menu';
 import { Card } from 'components/Card';
 
 describe('Stage - <Stage />', () => {
