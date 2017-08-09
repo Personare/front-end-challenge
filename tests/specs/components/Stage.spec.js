@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import { Stage } from 'components/Stage';
-import { Menu } from 'containers/Menu';
 import { Card } from 'components/Card';
+import Menu from 'containers/Menu';
 
 describe('Stage - <Stage />', () => {
     let wrapper;

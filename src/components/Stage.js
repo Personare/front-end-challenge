@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Menu } from 'containers/Menu';
+import Menu from 'containers/Menu';
 import { Card } from 'components/Card';
 import TweenLite from 'gsap';
 
@@ -7,7 +7,7 @@ export class Stage extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         if (nextProps.play !== this.props.play) {
-            TweenLite.staggerTo('.card-faces', 1, { rotationY: nextProps.play ? -180 : 0 }, 0.1);
+            TweenLite.staggerTo('.card-faces', 1, { rotationY: nextProps.play ? -180 : 0 }, 0.01);
         }
     }
 
@@ -37,4 +37,5 @@ Stage.propTypes = {
         frontImg: PropTypes.string,
         backImg: PropTypes.string,
     }),
+    play: PropTypes.bool,
 };
