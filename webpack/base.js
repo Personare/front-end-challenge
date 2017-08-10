@@ -40,7 +40,7 @@ const config = {
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [{
-                        loader: 'css-loader',
+                        loader: 'css-loader?url=false',
                     },
                     {
                         loader: 'postcss-loader',
