@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import { expect } from 'chai';
 import { Stage } from 'components/Stage';
 import { Card } from 'components/Card';
-import Menu from 'containers/Menu';
 
 describe('Stage - <Stage />', () => {
     let wrapper;
@@ -43,10 +42,5 @@ describe('Stage - <Stage />', () => {
                 expect(wrapper.find(Card).at(i).props().backImg).to.equal(cards[i + 1].imageBackCard);
             }
         });
-    });
-
-
-    it('Deve existir o componente Menu', () => {
-        expect(wrapper.find(Menu)).to.have.length(1);
     });
 });

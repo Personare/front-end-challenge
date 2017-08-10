@@ -14,7 +14,6 @@ export class Stage extends React.Component {
     render() {
         return (
             <div className="stage">
-                <Menu />
                 <div className="cards-list">
                     {this.props.order.map(id =>
                         <Card
@@ -22,6 +21,8 @@ export class Stage extends React.Component {
                             name={this.props.cards[id].name}
                             frontImg={this.props.cards[id].image}
                             backImg={this.props.cards[id].imageBackCard}
+                            onClick={() => this.props.setCard(id)}
+                            selected={this.props.selected === id}
                         />
                     )}
                 </div>
