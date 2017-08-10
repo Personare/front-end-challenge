@@ -12,7 +12,8 @@
     "lint": "./node_modules/.bin/eslint src",
     "lint:fix": "npm run lint -- --fix",
     "ci": "npm test && npm run lint",
-    "prepush": "npm run ci"
+    "prepush": "npm run ci",
+    "deploy": "npm run build && NODE_DEBUG=gh-pages ./node_modules/.bin/gh-pages -d dist"
   },
   "nyc": {
     "lines": 90,
@@ -53,6 +54,7 @@
     "eslint-plugin-react": "^5.2.2",
     "extract-text-webpack-plugin": "^3.0.0",
     "fetch-mock": "^5.10.0",
+    "gh-pages": "^1.0.0",
     "html-webpack-plugin": "^2.28.0",
     "husky": "^0.13.3",
     "jsdom": "^9.11.0",
