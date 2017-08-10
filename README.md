@@ -1,4 +1,8 @@
-<!-- ## Jogo de Tarot utilizando React + Redux -->
+[![Build Status](https://travis-ci.org/guilouro/front-end-challenge.svg?branch=master)](https://travis-ci.org/guilouro/front-end-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/guilouro/front-end-challenge/badge.svg?branch=guilherme-louro)](https://coveralls.io/github/guilouro/front-end-challenge?branch=guilherme-louro)
+
+
+## Jogo de Tarot utilizando React + Redux
 
 Link para acessar o projeto em produção [https://guilouro.github.io/front-end-challenge/](https://guilouro.github.io/front-end-challenge/)
 

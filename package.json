@@ -44,6 +44,7 @@
     "chai-enzyme": "^0.8.0",
     "classnames": "^2.2.5",
     "copy-webpack-plugin": "^4.0.1",
+    "coveralls": "^2.13.1",
     "css-loader": "^0.28.1",
     "enzyme": "^2.8.2",
     "es6-promise": "^4.1.0",
