@@ -5,9 +5,9 @@ import { start, stop, shuffle } from 'actions/game';
 const Menu = (props) => (
     <section className="menu">
         {!props.play ?
-            <a className="start" onClick={props.start}>start</a>
+            <a className="start" onClick={props.onStart}>start</a>
             :
-            <a className="stop" onClick={props.stop}>stop</a>
+            <a className="stop" onClick={props.onStop}>stop</a>
         }
     </section>
 );

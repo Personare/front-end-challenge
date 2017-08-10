@@ -1,14 +1,17 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { loadData, setCard } from 'actions/game';
+import { loadData, setCard, start, stop, shuffle } from 'actions/game';
 import { Stage } from 'components/Stage';
 import Menu from 'containers/Menu';
 import data from 'services/tarot.json';
+import TweenLite from 'gsap';
 
 class Game extends React.Component {
     constructor(props) {
         super(props);
         this.setCard = this.setCard.bind(this);
+        this.start = this.start.bind(this);
+        this.stop = this.stop.bind(this);
     }
 
     componentDidMount() {
@@ -20,21 +23,25 @@ class Game extends React.Component {
     }
 
     start() {
-        // start
-        // anime
-        // shuffle
+        this.props.start();
+        TweenLite.staggerTo('.card-faces', 1, { rotationY: -180 }, 0.01, () => {
+            this.props.shuffle();
+        });
     }
 
     stop() {
-        // stop
-        // anime
+        this.props.stop();
+        TweenLite.staggerTo('.card-faces', 1, { rotationY: 0 }, 0.01);
     }
 
 
     render() {
         return (
             <article className="game">
-                <Menu />
+                <Menu
+                    onStart={this.start}
+                    onStop={this.stop}
+                />
                 <Stage
                     order={this.props.order}
                     cards={this.props.cards}
@@ -49,7 +56,6 @@ class Game extends React.Component {
 }
 
 // TODO: criar o component separado
-import TweenLite from 'gsap';
 
 class ItemSelected extends React.Component {
     constructor(props) {
@@ -119,4 +125,4 @@ const mapStateToProps = ({ game }) => ({
     selected: game.selected,
 });
 
-export default connect(mapStateToProps, { loadData, setCard })(Game);
+export default connect(mapStateToProps, { loadData, setCard, start, stop, shuffle })(Game);
