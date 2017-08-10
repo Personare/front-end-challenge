@@ -1,0 +1,32 @@
+.cards-list
+    display flex
+    flex-wrap wrap
+    width: 1200px
+    margin: 0 auto
+
+.card
+    width: $w
+    height: $h
+    position: relative
+    margin: 5px
+    cursor: pointer
+    -webkit-font-smoothing: antialiased
+    perspective: 800px
+
+    &-faces
+        transform-style: preserve-3d
+
+.front, .back
+    position: absolute
+    width: $w
+    height: $h
+    overflow: hidden
+    border-radius: 5px
+    backface-visibility: hidden
+
+    > img
+        width: $w
+        height: $h
+
+.back
+    transform: rotateY(-180deg)
