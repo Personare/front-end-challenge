@@ -10,9 +10,10 @@ $w = calc(100px*0.8)
 $h = calc(190px*0.8)
 
 body
+    margin 0
     font-family: 'Open Sans Condensed', sans-serif
     // TODO: baixar a imagem
-    background-image: url('http://www.tarotarcana.info/wp-content/uploads/2014/10/background-image-pyschic-website.jpg')
+    background-image: url('/images/background.jpg')
     background-size: cover
 
 .cards-list
@@ -71,7 +72,9 @@ body
             position: absolute
             cursor pointer
             top: 20px
-            right: 20px
+            right: 40px
+            font-size: 30px
+            color: #777
 
         > .description
             padding 0 20px
@@ -79,4 +82,15 @@ body
         .title
             margin: 0
             font-size 30px
+
+.menu
+    padding: 5px
+    text-align: center
+    background-color: rgba(0,0,0, 0.3)
+    color: #fff
+    font-size: 25px
+    margin-bottom: 8px
+
+    .start, .stop
+        cursor pointer
 

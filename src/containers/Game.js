@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { loadData, setCard, start, stop, shuffle } from 'actions/game';
 import { Stage } from 'components/Stage';
-import Menu from 'containers/Menu';
+import { Menu } from 'components/Menu';
 import data from 'services/tarot.json';
 import TweenLite from 'gsap';
 
@@ -54,8 +54,6 @@ class Game extends React.Component {
         );
     }
 }
-
-// TODO: criar o component separado
 
 class ItemSelected extends React.Component {
     constructor(props) {
