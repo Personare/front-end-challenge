@@ -9,10 +9,17 @@
 $w = calc(100px*0.8)
 $h = calc(190px*0.8)
 
+body
+    font-family: 'Open Sans Condensed', sans-serif
+    // TODO: baixar a imagem
+    background-image: url('http://www.tarotarcana.info/wp-content/uploads/2014/10/background-image-pyschic-website.jpg')
+    background-size: cover
+
 .cards-list
     display flex
     flex-wrap wrap
-    width: 1200px;
+    width: 1200px
+    margin: 0 auto
 
 .card
     width: $w
@@ -32,7 +39,7 @@ $h = calc(190px*0.8)
     height: $h
     overflow: hidden
     border-radius: 5px
-    backface-visibility: hidden;
+    backface-visibility: hidden
 
     > img
         width: $w
@@ -40,3 +47,36 @@ $h = calc(190px*0.8)
 
 .back
     transform: rotateY(-180deg)
+
+.selected-box
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 999
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    visibility: hidden
+    background: rgba(255,255,255, 0.9)
+
+
+
+    > .content
+        display: flex
+        width: 500px
+
+        > .close
+            position: absolute
+            cursor pointer
+            top: 20px
+            right: 20px
+
+        > .description
+            padding 0 20px
+
+        .title
+            margin: 0
+            font-size 30px
+

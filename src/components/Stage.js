@@ -5,6 +5,7 @@ import TweenLite from 'gsap';
 
 export class Stage extends React.Component {
 
+    // TODO: talvez tirar daqui
     componentWillReceiveProps(nextProps) {
         if (nextProps.play !== this.props.play) {
             TweenLite.staggerTo('.card-faces', 1, { rotationY: nextProps.play ? -180 : 0 }, 0.01);
@@ -22,7 +23,7 @@ export class Stage extends React.Component {
                             frontImg={this.props.cards[id].image}
                             backImg={this.props.cards[id].imageBackCard}
                             onClick={() => this.props.setCard(id)}
-                            selected={this.props.selected === id}
+                            selected={this.props.play && this.props.selected === id}
                         />
                     )}
                 </div>
