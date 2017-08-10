@@ -1,50 +1,69 @@
-# front-end-challenge
+<!-- ## Jogo de Tarot utilizando React + Redux -->
 
-> Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)
+Link para acessar o projeto em produção [https://guilouro.github.io/front-end-challenge/](https://guilouro.github.io/front-end-challenge/)
 
-## Introdução
+## Como executar
 
-A nossa Product Owner pensou em um produto fantástico para ser desenvolvido, e um dos desafios é criação de um jogo de Tarot.
+Faça o clone:
+```
+$ git clone https://github.com/guilouro/front-end-challenge.git
+```
 
-<br>
+Entre na pasta
+```
+$ cd front-end-challenge
+```
 
-**Então, essa é a sua missão!**
+Instale:
+```
+$ make
+```
+ou
 
-Criar um jogo de Tarot, permitindo o sorteio de uma carta.
+```
+$ npm i
+```
 
-E as especificações são:
-
-- Tela de apresentação exibindo todas as cartas com seu conteúdo visível, e com um botão para iniciar o jogo.
-- Ao clicar no botão, as cartas deverão ser viradas - escondendo o conteúdo - e embaralhadas.
-- Permitir que o usuário selecione apenas uma carta, clicando na mesma.
-- Apresentar a carta selecionada, o nome da carta e uma descrição. (a descrição pode ser um lorem ipsum)
-
-OBS: As imagens e nomes das cartas estão listadas no arquivo [`tarot.json`](tarot.json), esse arquivo deve ser consumido via _http request_. A propriedade `image` de cada carta deve ser concatenada com a propriedade `imagesUrl`, para obter o endereço final da imagem. Utilize o valor da propriedade `imageBackCard` para obter a imagem do fundo da carta.
-
-
-## Instruções
-
-1. Efetue o **fork** deste repositório e crie um branch com o seu nome. (ex: caue-alves).
-2. Após finalizar o desafio, crie um **Pull Request**.
-3. Aguarde algum contribuidor realizar o code review.
+**Obs**: O comando `make` vai instalar o nvm, definir a versão do node e instalar as dependências do projeto.
 
 
-## Pré-requisitos
+## Comandos
 
-- Aplicação feita em React
-- Possuir testes
-- Gerar versão de produção
-- Criar micro commits ou commits por features
-	- Detalhar nos comentários dos commits as decisões tomadas.
+* **npm start**: Levanta um servidor rodando o projeto em [http://localhost:8000](http://localhost:8000).
+* **npm test**: Roda os tests.
+* **npm run test:tdd**: Roda os tests e fica escutando por mudança nos arquivos.
+* **npm run test:coverage**: Roda os tests e verifica a cobertura.
+* **npm run lint**: Procura por erros de lint.
+* **npm run lint:fix**: Corrige alguns erros de lint automaticamente.
+* **npm run ci**: Roda os tests e o lint.
+* **npm build**: Faz o build do projeto para a pasta `dist`.
 
+## Stack
 
-## Diferenciais
+- [React](https://facebook.github.io/react/)
+- [React Router](https://github.com/ReactTraining/react-router)
+- [Redux](http://redux.js.org/docs/introduction/)
+- [Babel 6](https://babeljs.io/) - Javascript Compiler.
+- [Webpack](https://webpack.github.io/) - Javascript module bundler.
+- [Webpack Dashboard](https://github.com/FormidableLabs/webpack-dashboard)
+- [Eslint](http://eslint.org/) - The pluggable linting utility for JavaScript and JSX.
+- [Husky](https://github.com/typicode/husky) - Git hooks made easy.
+- [Mocha](https://mochajs.org/) - JavaScript test framework.
+- [Chai](http://chaijs.com/) - BDD / TDD assertion library.
+- [Sinon](http://sinonjs.org/) - Standalone test spies, stubs and mocks for JavaScript.
+- [Nyc](https://github.com/istanbuljs/nyc) - Istanbul command line interface.
+- [Enzyme](http://airbnb.io/enzyme/) - JavaScript Testing utility for React.
+- [JSDOM](https://github.com/tmpvar/jsdom) - A JavaScript implementation of the WHATWG DOM and HTML standards.
+- [Stylus](http://stylus-lang.com/) - Preprocessor CSS
+- [PostCSS](http://postcss.org/) - A tool for transforming CSS with JavaScript
+- [GreenSock](https://greensock.com/gsap) - The standard for HTML5 and javascript animation
 
-- Boa documentação
-- Testes de componentes isolados
+### Melhorias
 
-## Dúvidas
+- Criação de um redux middleware para controlar e experar o loading de todas as imagens externas gerando um load global.
 
-Se surgir alguma dúvida, consulte as [perguntas feitas anteriormente](https://github.com/Personare/front-end-challenge/labels/question).
+- Criarção de uma página `About` para explicar como funciona e o que é o jogo.
 
-Caso não encontre a sua resposta, sinta-se à vontade para [abrir uma issue](https://github.com/Personare/front-end-challenge/issues/new) =]
+- Trocar `Mocha` por `Jest` e adicionar Snapshot Testing
+
+- Deixar o layout mais bonito
