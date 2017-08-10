@@ -1,0 +1,33 @@
+.selected-box
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 999
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    visibility: hidden
+    background: rgba(255,255,255, 0.9)
+
+
+
+    > .content
+        display: flex
+        width: 500px
+
+        > .close
+            position: absolute
+            cursor pointer
+            top: 20px
+            right: 40px
+            font-size: 30px
+            color: #777
+
+        > .description
+            padding 0 20px
+
+        .title
+            margin: 0
+            font-size 30px
