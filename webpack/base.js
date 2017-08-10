@@ -18,7 +18,7 @@ const config = {
         path: path.join(__dirname, '../', 'dist'),
         filename: 'js/[name]_[hash:8].js',
         chunkFilename: 'js/[name]_[hash:8].js',
-        publicPath: '/',
+        publicPath: '',
     },
 
     resolve: {
@@ -60,12 +60,12 @@ const config = {
 
             {
                 test: /\.(eot|woff|ttf)$/,
-                loader: 'file-loader?name=/css/fonts/[name].[ext]',
+                loader: 'file-loader?name=css/fonts/[name].[ext]',
             },
 
             {
                 test: /\.(jpg|svg)$/,
-                loader: 'file-loader?name=/images/[name].[ext]',
+                loader: 'file-loader?name=images/[name].[ext]',
             },
 
             {
