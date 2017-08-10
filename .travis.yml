@@ -1,11 +1,18 @@
 language: node_js
-
 node_js:
-    - 7
-
+- 7
 cache:
   directories:
-    - node_modules
-
+  - node_modules
+script:
+- npm run lint
+- npm run build
 after_script:
-    - NODE_ENV=test ./node_modules/.bin/nyc npm test && ./node_modules/.bin/nyc report --reporter=text-lcov | coveralls
+- NODE_ENV=test ./node_modules/.bin/nyc npm test && ./node_modules/.bin/nyc report
+  --reporter=text-lcov | coveralls
+- bash ./deploy.sh
+env:
+  global:
+  - GH_USER: guilouro
+  - GH_REPO: front-end-challenge
+  - secure: JANODih7RweFg8PGX4Jy2PFnVVW60VHpC3tSXqHSRvzZwZPEy9sMmURhuHylGdsjOUcSFWJaOsZJsAESqPQqB/bnuLO6Zrrticg+Bqf7SPpY/hVS6JyQEpKbR3n5OC6+M4AGUjR/fAVfcRLW0NrSWgj650K6AhQtB4ETr2g1b83NjW3VeR1z/G4E7FwilRBsFUaZ0thAh+QK2iH/QC0hDgDYGp107Qa9gA7ewR33bnQBOOU5jejMsJI0vtqykKspj+NxsKZV8dzMaW33FArZevR+5wDbKkJYVWMX6MTnNbSLDIHGNtex0uC4CPYP2qBxWc0YsuyM/G4aCHD/KyMEa9xMaBcMqaaaQEDtQHUteDkiDwVB5zDHrH4ag6RghhRVD4N8YWLsZNCY97ozNWD5uJ3p51U1IGs3Y/73LK53+mcxMDJd1q8AG/eByZKxu6dzdf8dX/LsiSt0l0RnjOjSLHjY0WEpdvuy+hEUejmTsc81VyyO6m9D1S88/nD4D84gNOzYFEEFBLYYpGfnRgXqGFOA+1x4BCAEbPc1Y9p/Ct4QVX+PQ2nOJ8Rxmx2QWXZO8vBRcBh5wbI+JFzy6sVlOW82bxK+0iHHhqp/2zAsWKkruyk/arL8wBQufex+OXfWLuRSZcMwhAYcFJizW95gNrUwrW8T86fkMnvZaEZWH4g=

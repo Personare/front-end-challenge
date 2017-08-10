@@ -11,7 +11,6 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case LOAD: {
-            // TODO: refatorar
             const cards = {};
             const order = [];
             action.payload.cards.forEach((item, key) => {
@@ -20,7 +19,6 @@ export default (state = INITIAL_STATE, action) => {
                     image: `${action.payload.imagesUrl}${item.image}`,
                     imageBackCard: action.payload.imageBackCard,
                 };
-
                 order.push(key + 1);
             });
 

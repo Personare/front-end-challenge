@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/guilouro/front-end-challenge.svg?branch=master)](https://travis-ci.org/guilouro/front-end-challenge)
+[![Build Status](https://travis-ci.org/guilouro/front-end-challenge.svg?branch=guilherme-louro)](https://travis-ci.org/guilouro/front-end-challenge)
 [![Coverage Status](https://coveralls.io/repos/github/guilouro/front-end-challenge/badge.svg?branch=guilherme-louro)](https://coveralls.io/github/guilouro/front-end-challenge?branch=guilherme-louro)
 
 
