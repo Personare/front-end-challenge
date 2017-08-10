@@ -1,7 +1,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
+import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
 import { Card } from 'components/Card';
+import TweenLite from 'gsap';
+
+chai.use(sinonChai);
 
 describe('Card - <Card />', () => {
     let wrapper;
@@ -32,5 +37,13 @@ describe('Card - <Card />', () => {
         const frontImg = 'http://lorem.com.br/ipsum.jpg';
         wrapper.setProps({ frontImg });
         expect(wrapper.find('.front img').props().src).to.equal(frontImg);
+    });
+
+    it('Deve fazer a animação quando a props selected for alterada', () => {
+        const tween = sinon.stub(TweenLite, 'to');
+        wrapper.setProps({ selected: true });
+        wrapper.setProps({ selected: false });
+        tween.restore();
+        expect(tween).to.be.calledTwice;
     });
 });

@@ -15,12 +15,13 @@
     "prepush": "npm run ci"
   },
   "nyc": {
-    "lines": 70,
+    "lines": 90,
     "check-coverage": true,
     "exclude": [
       "node_modules",
       "tests",
       "dist",
+      "webpack",
       "**/**/index.js"
     ]
   },
@@ -56,6 +57,7 @@
     "husky": "^0.13.3",
     "jsdom": "^9.11.0",
     "mocha": "^2.4.5",
+    "nyc": "^11.1.0",
     "postcss-discard-duplicates": "^2.1.0",
     "postcss-discard-unused": "^2.2.3",
     "postcss-loader": "^0.9.1",

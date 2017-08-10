@@ -11,7 +11,7 @@ export const Menu = (props) => (
 );
 
 Menu.propTypes = {
-    start: PropTypes.func,
-    stop: PropTypes.func,
+    onStart: PropTypes.func,
+    onStop: PropTypes.func,
     play: PropTypes.bool,
 };

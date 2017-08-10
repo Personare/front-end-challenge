@@ -20,11 +20,15 @@ export const Stage = (props) => (
 
 Stage.propTypes = {
     order: PropTypes.array.isRequired,
+    play: PropTypes.bool,
+    setCard: PropTypes.func,
     cards: PropTypes.shape({
         name: PropTypes.string,
         frontImg: PropTypes.string,
         backImg: PropTypes.string,
     }),
-    play: PropTypes.bool,
-    setCard: PropTypes.func,
+    selected: PropTypes.oneOfType([
+        PropTypes.bool,
+        PropTypes.number,
+    ]),
 };
