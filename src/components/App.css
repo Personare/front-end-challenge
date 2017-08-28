@@ -1,0 +1,22 @@
+/*csslint universal-selector:false, box-sizing:false, ids:false */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica, Arial, Sans-Serif, sans-serif;
+  background: lavenderblush;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+* { box-sizing: border-box; }
+
+#root {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+}

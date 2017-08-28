@@ -1,0 +1,30 @@
+{
+  "name": "personare-tarot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "flow": "flow"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
+    "react-router": "^4.1.2",
+    "react-router-dom": "^4.1.2",
+    "react-scripts": "1.0.10",
+    "react-test-renderer": "^15.6.1",
+    "redux": "^3.7.2",
+    "redux-form": "^7.0.3",
+    "redux-saga": "^0.15.6",
+    "styled-components": "^2.1.1"
+  },
+  "devDependencies": {
+    "enzyme": "^2.9.1",
+    "flow-bin": "^0.53.1",
+    "jest-enzyme": "^3.8.0"
+  }
+}
