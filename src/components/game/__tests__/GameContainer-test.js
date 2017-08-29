@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import GameContainer, { ControlButton } from '../GameContainer'
+import { GameContainer, ControlButton } from '../GameContainer'
 
 it('renders without crashing', () => {
   shallow(<GameContainer />)

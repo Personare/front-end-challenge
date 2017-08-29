@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import v from  '../kit/variables'
+import { connect } from 'react-redux'
 
 const Button = styled.button`
   border: 1px solid ${v.primaryColor}
@@ -16,8 +17,8 @@ export const ControlButton = ({ gameState = INITIAL_GAME_STATE }) => {
   }
 }
 
-const GameContainer = () => (
+export const GameContainer = () => (
   <ControlButton />
 )
 
-export default GameContainer
+export default connect()(GameContainer)
