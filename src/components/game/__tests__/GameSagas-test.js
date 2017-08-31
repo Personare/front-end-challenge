@@ -1,28 +1,13 @@
 import { put, call, takeLatest } from 'redux-saga/effects'
 import nock from 'nock'
-import GameSagas, { getTarot } from '../GameSagas'
+import GameSagas, { getTarot, transformSourceTarotToCardTypeList } from '../GameSagas'
 import * as actions from '../GameActions'
+import cards, { sourceJson } from '../__fixtures__/cards'
 import {
   apiBase,
   apiTarotEndpoint,
   listTarot
 } from '../../../api/api'
-
-// Mock
-const mockedTarotResponse = {
-  "imagesUrl": "https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/",
-  "imageBackCard": "https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png",
-  "cards": [
-    {
-      "name": "O MAGO",
-      "image": "arcano1.jpg"
-    },
-    {
-      "name": "A SACERDOTISA",
-      "image": "arcano2.jpg"
-    }
-  ]
-}
 
 // Scenarios
 describe('GameSagas', () => {
@@ -30,8 +15,8 @@ describe('GameSagas', () => {
     it('dispatches SUCCESS with the response', () => {
       const gen = getTarot(listTarot, { payload: {} })
       expect(gen.next().value).toEqual(call(listTarot))
-      expect(gen.next(mockedTarotResponse).value).toEqual(
-        put({ type: actions.TAROT.SUCCESS, tarot: mockedTarotResponse })
+      expect(gen.next(sourceJson).value).toEqual(
+        put({ type: actions.TAROT.SUCCESS, tarot: cards })
       )
     })
 

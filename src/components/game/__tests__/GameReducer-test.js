@@ -1,14 +1,15 @@
-import reducer from '../GameReducer'
+import reducer, {
+  transformSourceTarotToCardTypeList,
+  initialState
+} from '../GameReducer'
 import * as actions from '../GameActions'
+import cards from '../__fixtures__/cards'
 
-const tarot = [{
-  name: 'O MAGO',
-  imageUrl: 'https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/arcano1.jpg'
-}]
+const tarot = cards[0]
 
 describe('Game Reducer', () => {
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual({})
+    expect(reducer(undefined, {})).toEqual(initialState)
   })
 
   it('assign cards on succeded request', () => {
