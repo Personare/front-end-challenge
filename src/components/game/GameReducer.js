@@ -11,6 +11,7 @@ type StateType = {
 
 type ActionType = {
   type: string,
+  gameState?: GameStateType,
   tarot?: CardListType,
 }
 
@@ -21,6 +22,8 @@ export const initialState = {
 // Handles game related actions
 export default function (state : StateType = initialState, action : ActionType) {
   switch (action.type) {
+    case actions.GAME.CHANGE_STATE:
+      return ({ ...state, gameState: action.gameState })
     case actions.TAROT.SUCCESS:
       return ({ ...state, tarot: action.tarot })
     default:

@@ -25,31 +25,23 @@ const mixFrontBack = css`
   left: 0;
 `
 
-const FlipperFront = styled.div`
+export const FlipperFront = styled.div`
   ${mixCardSize}
   ${mixFrontBack}
   z-index: 2;
 	/* for firefox 31 */
-	transform: rotateY(0deg);
+	transform: ${p => p.flip? 'rotateY(180deg)' : 'rotateY(0deg)'};
 `
 
-const FlipperBack = styled.div`
+export const FlipperBack = styled.div`
   ${mixCardSize}
   ${mixFrontBack}
-  transform: rotateY(-180deg);
+  transform: ${p => p.flip? 'transform: rotateY(0deg);' : 'rotateY(-180deg)'};;
 `
 
 const FlipContainer = styled.div`
   flex: 1;
   perspective: 1000px;
-
-  &:hover ${FlipperFront} {
-    transform: rotateY(180deg);
-  }
-
-  &:hover ${FlipperBack} {
-    transform: rotateY(0deg);
-  }
 
   &:hover {
     border: ${p => p.selectable ? '1px solid red' : 'none'};
@@ -60,13 +52,17 @@ export const CardImage = styled.img`
   ${mixCardSize}
 `
 
-const Card = ({ imageUrl, backImageUrl } : CardType) => (
+type Props = CardType & {
+  flip: boolean,
+}
+
+const Card = ({ imageUrl, backImageUrl, flip } : Props) => (
   <FlipContainer>
     <Flipper>
-      <FlipperFront>
+      <FlipperFront flip={flip}>
         <CardImage src={imageUrl} />
       </FlipperFront>
-      <FlipperBack>
+      <FlipperBack flip={flip}>
         <CardImage src={backImageUrl} />
       </FlipperBack>
     </Flipper>

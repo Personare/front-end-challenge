@@ -3,9 +3,7 @@ import reducer, {
   initialState
 } from '../GameReducer'
 import * as actions from '../GameActions'
-import cards from '../__fixtures__/cards'
-
-const tarot = cards[0]
+import tarot from '../__fixtures__/cards'
 
 describe('Game Reducer', () => {
   it('should return the initial state', () => {
@@ -13,10 +11,19 @@ describe('Game Reducer', () => {
   })
 
   it('assign cards on succeded request', () => {
-    const expectedState = { tarot }
-    expect(reducer({}, {
+    const expectedState = { ...initialState, tarot }
+    expect(reducer(initialState, {
       type: actions.TAROT.SUCCESS,
       tarot
+    })).toEqual(expectedState)
+  })
+
+  it('change gameState', () => {
+    const myCustomGameState = 'CUSTOM_GAME_STATE'
+    const expectedState = { gameState: myCustomGameState }
+    expect(reducer(undefined, {
+      type: actions.GAME.CHANGE_STATE,
+      gameState: myCustomGameState
     })).toEqual(expectedState)
   })
 })

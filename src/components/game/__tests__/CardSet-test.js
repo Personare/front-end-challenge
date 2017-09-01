@@ -17,8 +17,17 @@ describe('CardSet', () => {
 
   it('list all cards', () => {
     cards.forEach(card => {
-      const node = <Card {...card} />
+      const node = <Card {...card} flip={false} />
       expect(target).toContainReact(node)
+    })
+  })
+
+  it('flip cards on flip mode', () => {
+    target.setProps({ flip: true })
+    cards.forEach(card => {
+      const node = target.find(card) // find by props
+      expect(node.length).toBe(1)
+      expect(node).toHaveProp('flip', true)
     })
   })
 })

@@ -11,12 +11,13 @@ const CardSetContainer = styled.div`
 `
 type CardSetPropsType = {
   cards: CardListType,
+  flip: boolean,
 }
 
-const CardSet = ({ cards = [] } : CardSetPropsType) => (
+const CardSet = ({ cards = [], flip = false } : CardSetPropsType) => (
   <CardSetContainer>
     {cards.map((card, index) =>
-      <Card key={index} {...card} />
+      <Card key={index} {...card} flip={flip} />
     )}
   </CardSetContainer>
 )
