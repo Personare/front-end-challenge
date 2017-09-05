@@ -9,7 +9,12 @@ import CardSet from './CardSet'
 import { gameStartAction, tarotRequestAction } from './GameActions'
 import { GAME_STATE } from './constants'
 
-import type { GameStateType, CardListType} from './Game.types'
+import type {
+  GameStateType,
+  CardListType,
+  CardType,
+  EventType,
+} from './Game.types'
 
 const Button = styled.button`
   border: 1px solid ${v.primaryColor}
@@ -43,6 +48,7 @@ export const ControlButton = ({
 type GameProps = {
   gameState: GameStateType,
   handleStartClick: () => void,
+  handleCardSelect: () => void,
   cards?: CardListType,
 }
 
@@ -52,9 +58,16 @@ const cardSetShouldFlip = (gameState : GameStateType) => [
   GAME_STATE.started,
 ].indexOf(gameState) !== -1
 
+const cardSetShouldShuffle = (gameState : GameStateType) =>
+  GAME_STATE.sorting === gameState
+
+const cardSetShouldSelectOne = (gameState : GameStateType) =>
+  GAME_STATE.started === gameState
+
 export const Game = ({
   gameState = GAME_STATE.initial,
   handleStartClick,
+  handleCardSelect,
   cards
 } : GameProps) => (
   <ContentContainer>
@@ -62,7 +75,13 @@ export const Game = ({
       gameState={gameState}
       handleStartClick={handleStartClick}
     />
-    <CardSet cards={cards} flip={cardSetShouldFlip(gameState)} />
+    <CardSet
+      cards={cards}
+      flip={cardSetShouldFlip(gameState)}
+      shuffle={cardSetShouldShuffle(gameState)}
+      selectable={cardSetShouldSelectOne(gameState)}
+      onSelect={handleCardSelect}
+    />
   </ContentContainer>
 )
 
@@ -88,16 +107,22 @@ export class GameContainer extends Component<Props, State> {
     return this.props.gameStartAction()
   }
 
+  handleCardSelect = (e: EventType, card: CardType) => {
+    console.log(card)
+  }
+
   render = () => (
     <Game
       gameState={this.props.gameState}
       handleStartClick={this.handleStartClick}
+      handleCardSelect={this.handleCardSelect}
       cards={this.props.tarot}
     />
   )
 
 }
 
+// redux integration
 const mapsToProps = ({ game: { tarot, gameState } }) => ({ tarot, gameState })
 
 export default connect(mapsToProps, {

@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow, mount, render } from 'enzyme'
 import { GameContainer, Game, ControlButton, l18n } from '../GameContainer'
 import CardSet from '../CardSet'
+import Card from '../Card'
 import cards from '../__fixtures__/cards'
 import { GAME_STATE } from '../constants'
 
@@ -27,13 +28,16 @@ describe('GameContainer', () => {
 describe('Game', () => {
   let target
   let handleStartClick
-  beforeAll(() => {
+  let handleCardSelect
+  beforeEach(() => {
     handleStartClick = jest.fn()
+    handleCardSelect = jest.fn()
     target = shallow(
       <Game
         cards={cards}
         gameState={GAME_STATE.initial}
         handleStartClick={handleStartClick}
+        handleCardSelect={handleCardSelect}
       />
     )
   })
@@ -49,7 +53,15 @@ describe('Game', () => {
   })
 
   it('have card set', () => {
-    const cardSet = <CardSet cards={cards} flip={false} />
+    const cardSet = (
+      <CardSet
+        cards={cards}
+        flip={false}
+        shuffle={false}
+        selectable={false}
+        onSelect={handleCardSelect}
+      />
+    )
     expect(target).toContainReact(cardSet)
   })
 
@@ -60,18 +72,34 @@ describe('Game', () => {
     expect(cardSet).toHaveProp('flip', true)
   })
 
+  it('shuffle CardSet on game sorting', () => {
+    target.setProps({ gameState: GAME_STATE.sorting })
+    const cardSet = target.find({ cards })
+    expect(cardSet.length).toBe(1)
+    expect(cardSet).toHaveProp('shuffle', true)
+  })
+
+  it('make CardSet selectable on game started', () => {
+    target.setProps({ gameState: GAME_STATE.started })
+    const cardSet = target.find({ cards })
+    expect(cardSet).toHaveProp('selectable', true)
+  })
+
 })
 
 describe('Game<mount>', () => {
   let target
   let handleStartClick
-  beforeAll(() => {
+  let handleCardSelect
+  beforeEach(() => {
     handleStartClick = jest.fn()
+    handleCardSelect = jest.fn()
     target = mount(
       <Game
-        tarot={cards}
+        cards={cards}
         gameState={GAME_STATE.initial}
         handleStartClick={handleStartClick}
+        handleCardSelect={handleCardSelect}
       />
     )
   })
@@ -83,6 +111,20 @@ describe('Game<mount>', () => {
     btFound.simulate('click')
     btFound.simulate('click')
     expect(handleStartClick.mock.calls.length).toBe(3)
+  })
+
+  it('call handleCardSelect after card click', () => {
+    target.setProps({ gameState: GAME_STATE.started })
+    const cardFound = target.find(Card).at(0)
+    cardFound.simulate('click')
+    expect(handleCardSelect.mock.calls.length).toBe(1)
+  })
+
+  it('avoid call handleCardSelect after not selectable card click', () => {
+    target.setProps({ gameState: GAME_STATE.initial })
+    const cardFound = target.find(Card).at(0)
+    cardFound.simulate('click')
+    expect(handleCardSelect.mock.calls.length).toBe(0)
   })
 })
 

@@ -21,3 +21,10 @@ export type SourceJsonType = {
 
 
 export type GameStateType = $Keys<typeof GAME_STATE>
+
+export type EventType = {
+  preventDefault: () => void,
+  target: Object,
+}
+
+export type OnSelectCBType = (e: EventType, card: CardType) => void

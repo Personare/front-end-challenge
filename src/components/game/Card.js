@@ -1,8 +1,8 @@
 // @flow
 
-import React from 'react'
+import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
-import type CardType from './Game.types'
+import type { CardType, EventType, OnSelectCBType } from './Game.types'
 
 const mixCardSize = css`
   width: 38px;
@@ -39,9 +39,12 @@ export const FlipperBack = styled.div`
   transform: ${p => p.flip? 'transform: rotateY(0deg);' : 'rotateY(-180deg)'};;
 `
 
-const FlipContainer = styled.div`
+export const FlipContainer = styled.div`
   flex: 1;
   perspective: 1000px;
+  transition: 1s;
+  margin-left: ${p => p.shuffle? '-180px' : '1px' };
+  margin-top: ${p => p.shuffle? '-85px' : '1px' };
 
   &:hover {
     border: ${p => p.selectable ? '1px solid red' : 'none'};
@@ -54,19 +57,57 @@ export const CardImage = styled.img`
 
 type Props = CardType & {
   flip: boolean,
+  shuffle: boolean,
+  selectable: boolean,
+  onSelect: OnSelectCBType
 }
 
-const Card = ({ imageUrl, backImageUrl, flip } : Props) => (
-  <FlipContainer>
-    <Flipper>
-      <FlipperFront flip={flip}>
-        <CardImage src={imageUrl} />
-      </FlipperFront>
-      <FlipperBack flip={flip}>
-        <CardImage src={backImageUrl} />
-      </FlipperBack>
-    </Flipper>
-  </FlipContainer>
-)
+type State = {
+  selected: boolean,
+}
+
+
+class Card  extends Component<Props, State> {
+
+  state = {
+    selected: false
+  }
+
+  handleFilpContainerClick = (e : EventType) => {
+    e.preventDefault()
+    const selected = this.props.selectable && !this.state.selected
+    this.setState({ selected })
+    return selected && this.props.onSelect(e, this.props)
+  }
+
+  render() {
+
+    const {
+      imageUrl,
+      backImageUrl,
+      shuffle,
+      selectable,
+    } = this.props
+
+    const fliped = !this.state.selected && this.props.flip
+
+    return (
+      <FlipContainer
+        shuffle={shuffle}
+        selectable={selectable}
+        onClick={this.handleFilpContainerClick}
+      >
+        <Flipper>
+          <FlipperFront flip={fliped}>
+            <CardImage src={imageUrl} />
+          </FlipperFront>
+          <FlipperBack flip={fliped}>
+            <CardImage src={backImageUrl} />
+          </FlipperBack>
+        </Flipper>
+      </FlipContainer>
+    )
+  }
+}
 
 export default Card
