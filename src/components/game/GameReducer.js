@@ -25,6 +25,7 @@ export default function (state : StateType = initialState, action : ActionType) 
     case actions.GAME.CHANGE_STATE:
       return ({ ...state, gameState: action.gameState })
     case actions.TAROT.SUCCESS:
+    case actions.TAROT.UPDATE:
       return ({ ...state, tarot: action.tarot })
     default:
       return state

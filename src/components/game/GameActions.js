@@ -3,6 +3,7 @@ import { GAME_STATE } from './constants'
 
 // TAROT sec
 export const TAROT = createRequestTypes('TAROT')
+TAROT.UPDATE = 'TAROT_UPDATE'
 
 export const tarotRequestAction = () => ({
   type: TAROT.REQUEST

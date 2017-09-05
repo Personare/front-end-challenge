@@ -1,7 +1,7 @@
 // @flow
 
 import { delay } from 'redux-saga'
-import { put, all, call, takeLatest } from 'redux-saga/effects'
+import { put, all, call, takeLatest, select } from 'redux-saga/effects'
 import { GAME, TAROT } from './GameActions'
 import { listTarot } from '../../api/api'
 import {
@@ -9,10 +9,14 @@ import {
   initialAnimationDuration,
   sortingAnimationDuration,
 } from './constants'
+import { shuffle } from '../../fn'
+
 
 import type { CardListType, SourceJsonType } from './Game.types'
 type ApiFunc = () => void
 type CommonSagaReturnType = Generator<any, any, void>
+
+const selectTarot = (state) => state.game.tarot
 
 export const transformSourceTarotToCardTypeList = ({
   imagesUrl,
@@ -39,8 +43,12 @@ export function* gameStart() : CommonSagaReturnType {
     yield call(delay, initialAnimationDuration)
     yield put({ type: GAME.CHANGE_STATE, gameState: GAME_STATE.sorting })
     yield call(delay, sortingAnimationDuration)
+    const currentTarot = yield select(selectTarot)
+    const tarot = shuffle([...(currentTarot || [])])
+    yield put({ type: TAROT.UPDATE, tarot })
     yield put({ type: GAME.CHANGE_STATE, gameState: GAME_STATE.started })
   } catch (error) {
+    console.log(error)
     yield put({ type: GAME.CHANGE_STATE, gameState: GAME_STATE.initial, error })
   }
 }

@@ -1,16 +1,12 @@
-import { put, call, takeLatest } from 'redux-saga/effects'
+import { put, call } from 'redux-saga/effects'
 import { delay } from 'redux-saga'
-import nock from 'nock'
-import GameSagas, {
+import {
   getTarot,
-  transformSourceTarotToCardTypeList,
   gameStart
 } from '../GameSagas'
 import * as actions from '../GameActions'
 import cards, { sourceJson } from '../__fixtures__/cards'
 import {
-  apiBase,
-  apiTarotEndpoint,
   listTarot
 } from '../../../api/api'
 import * as consts from '../constants'
@@ -58,6 +54,9 @@ describe('GameSagas', () => {
       )
 
       expect(gen.next().value).toEqual(call(delay, consts.sortingAnimationDuration))
+
+      expect(gen.next().value.SELECT).toBeDefined()
+      expect(gen.next(cards).value.PUT.action.type).toBe(actions.TAROT.UPDATE)
 
       expect(gen.next().value).toEqual(
         put({

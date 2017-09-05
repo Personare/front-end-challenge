@@ -18,6 +18,14 @@ describe('Game Reducer', () => {
     })).toEqual(expectedState)
   })
 
+  it('assign cards on update message', () => {
+    const expectedState = { ...initialState, tarot }
+    expect(reducer(initialState, {
+      type: actions.TAROT.UPDATE,
+      tarot
+    })).toEqual(expectedState)
+  })
+
   it('change gameState', () => {
     const myCustomGameState = 'CUSTOM_GAME_STATE'
     const expectedState = { gameState: myCustomGameState }
