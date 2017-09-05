@@ -10,13 +10,17 @@ import {
   sortingAnimationDuration,
 } from './constants'
 import { shuffle } from '../../fn'
-
+import { loremipsum } from './utils'
 
 import type { CardListType, SourceJsonType } from './Game.types'
 type ApiFunc = () => void
 type CommonSagaReturnType = Generator<any, any, void>
 
 const selectTarot = (state) => state.game.tarot
+const fillTarotContent = (cards) => cards.map((card) => ({
+  ...card,
+  content: loremipsum()
+}))
 
 export const transformSourceTarotToCardTypeList = ({
   imagesUrl,
@@ -31,7 +35,7 @@ export const transformSourceTarotToCardTypeList = ({
 export function* getTarot(api : ApiFunc) : CommonSagaReturnType {
   try {
     const tarot = transformSourceTarotToCardTypeList(yield call(api))
-    yield put({ type: TAROT.SUCCESS, tarot })
+    yield put({ type: TAROT.SUCCESS, tarot: fillTarotContent(tarot) })
   } catch (error) {
     yield put({ type: TAROT.FAILURE, error })
   }
@@ -48,7 +52,6 @@ export function* gameStart() : CommonSagaReturnType {
     yield put({ type: TAROT.UPDATE, tarot })
     yield put({ type: GAME.CHANGE_STATE, gameState: GAME_STATE.started })
   } catch (error) {
-    console.log(error)
     yield put({ type: GAME.CHANGE_STATE, gameState: GAME_STATE.initial, error })
   }
 }

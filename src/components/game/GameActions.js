@@ -19,3 +19,11 @@ export const gameStartAction = () => ({
   type: GAME.START,
   gameState: GAME_STATE.starting,
 })
+
+// Card sec
+export const CARD_SELECTED = 'CARD_SELECTED'
+
+export const selectCardAction = (card) => ({
+  type: CARD_SELECTED,
+  card,
+})

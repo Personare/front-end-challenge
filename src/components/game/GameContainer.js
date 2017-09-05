@@ -6,7 +6,12 @@ import v from  '../kit/variables'
 import { ContentContainer } from '../kit/Layout'
 import { connect } from 'react-redux'
 import CardSet from './CardSet'
-import { gameStartAction, tarotRequestAction } from './GameActions'
+import ModalCard from './ModalCard'
+import {
+  gameStartAction,
+  tarotRequestAction,
+  selectCardAction,
+} from './GameActions'
 import { GAME_STATE } from './constants'
 
 import type {
@@ -50,6 +55,7 @@ type GameProps = {
   handleStartClick: () => void,
   handleCardSelect: () => void,
   cards?: CardListType,
+  selectedCard?: CardType,
 }
 
 const cardSetShouldFlip = (gameState : GameStateType) => [
@@ -68,7 +74,8 @@ export const Game = ({
   gameState = GAME_STATE.initial,
   handleStartClick,
   handleCardSelect,
-  cards
+  cards,
+  selectedCard,
 } : GameProps) => (
   <ContentContainer>
     <ControlButton
@@ -82,6 +89,7 @@ export const Game = ({
       selectable={cardSetShouldSelectOne(gameState)}
       onSelect={handleCardSelect}
     />
+    { selectedCard? <ModalCard card={selectedCard} /> : null }
   </ContentContainer>
 )
 
@@ -89,8 +97,10 @@ export const Game = ({
 type Props = {
   tarot: CardListType,
   gameState: GameStateType,
+  selectedCard?: CardType,
   tarotRequestAction: () => void,
   gameStartAction: () => void,
+  selectCardAction: (card: CardType) => void,
 }
 
 type State = {}
@@ -108,7 +118,7 @@ export class GameContainer extends Component<Props, State> {
   }
 
   handleCardSelect = (e: EventType, card: CardType) => {
-    console.log(card)
+    return this.props.selectCardAction(card)
   }
 
   render = () => (
@@ -117,15 +127,19 @@ export class GameContainer extends Component<Props, State> {
       handleStartClick={this.handleStartClick}
       handleCardSelect={this.handleCardSelect}
       cards={this.props.tarot}
+      selectedCard={this.props.selectedCard}
     />
   )
 
 }
 
 // redux integration
-const mapsToProps = ({ game: { tarot, gameState } }) => ({ tarot, gameState })
+const mapsToProps = ({
+  game: { tarot, gameState, selectedCard }
+}) => ({ tarot, gameState, selectedCard })
 
 export default connect(mapsToProps, {
   tarotRequestAction,
   gameStartAction,
+  selectCardAction,
 })(GameContainer)

@@ -1,18 +1,20 @@
 // @flow
 
 import * as actions from './GameActions'
-import type { GameStateType, CardListType } from './Game.types'
+import type { GameStateType, CardListType, CardType } from './Game.types'
 import { GAME_STATE } from './constants'
 
 type StateType = {
   gameState: GameStateType,
   tarot?: CardListType,
+  selectedCard?: CardType,
 }
 
 type ActionType = {
   type: string,
   gameState?: GameStateType,
   tarot?: CardListType,
+  card?: CardType,
 }
 
 export const initialState = {
@@ -27,6 +29,8 @@ export default function (state : StateType = initialState, action : ActionType) 
     case actions.TAROT.SUCCESS:
     case actions.TAROT.UPDATE:
       return ({ ...state, tarot: action.tarot })
+    case actions.CARD_SELECTED:
+      return ({ ...state, selectedCard: action.card })
     default:
       return state
   }

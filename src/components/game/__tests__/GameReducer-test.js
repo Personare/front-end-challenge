@@ -1,5 +1,4 @@
 import reducer, {
-  transformSourceTarotToCardTypeList,
   initialState
 } from '../GameReducer'
 import * as actions from '../GameActions'
@@ -32,6 +31,15 @@ describe('Game Reducer', () => {
     expect(reducer(undefined, {
       type: actions.GAME.CHANGE_STATE,
       gameState: myCustomGameState
+    })).toEqual(expectedState)
+  })
+
+  it('set selected card', () => {
+    const card = tarot[0]
+    const expectedState = { ...initialState, selectedCard: card }
+    expect(reducer(initialState, {
+      type: actions.CARD_SELECTED,
+      card
     })).toEqual(expectedState)
   })
 })

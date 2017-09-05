@@ -4,6 +4,7 @@ export type CardType = {
   name: string,
   imageUrl: string,
   backImageUrl: string,
+  content: string,
 }
 
 export type CardListType = Array<CardType>

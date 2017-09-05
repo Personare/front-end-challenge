@@ -30,6 +30,7 @@ export const ContentContainer = styled.section`
   flex: 1;
   width:100%;
   max-width:800px;
+  position: relative;
 `
 
 export const AppFooter = styled.footer`

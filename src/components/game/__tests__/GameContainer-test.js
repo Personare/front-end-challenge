@@ -85,6 +85,13 @@ describe('Game', () => {
     expect(cardSet).toHaveProp('selectable', true)
   })
 
+  it('shows selectedCard if is defined', () => {
+    const card = { ...cards[0], name: 'NEWCARD_TEST1' }
+    target.setProps({ selectedCard: card })
+    const cardSet = target.find({ card })
+    expect(cardSet.length).toBe(1)
+  })
+
 })
 
 describe('Game<mount>', () => {

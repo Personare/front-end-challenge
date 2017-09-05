@@ -1,5 +1,6 @@
 import * as actions from '../GameActions'
 import { GAME_STATE } from '../constants'
+import cards from '../__fixtures__/cards'
 
 describe('Game Actions Types', () => {
   it('tarot request actions types', () => {
@@ -23,6 +24,14 @@ describe('Game Actions Types', () => {
     expect(actions.gameStartAction()).toEqual({
       type: actions.GAME.START,
       gameState: GAME_STATE.starting
+    })
+  })
+
+  it('selectCard action', () => {
+    const card = cards[0]
+    expect(actions.selectCardAction(card)).toEqual({
+      type: actions.CARD_SELECTED,
+      card,
     })
   })
 })
