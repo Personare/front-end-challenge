@@ -22,13 +22,23 @@ import type {
 } from './Game.types'
 
 const Button = styled.button`
-  border: 1px solid ${v.primaryColor}
+  border: 1px solid ${v.primaryColor};
+  border-radius: 5px;
+  padding: 5px;
+`
+const ControlsContainer = styled.div`
+  border-radius: 15%;
+  border-radius: 15px;
+  padding: 10px;
+  backgournd-color: ${v.primaryColor};
+  border: 2px solid ${v.primaryColor};
 `
 
 export const l18n = {
   start: 'Iniciar',
-  restart: 'Re-Iniciar',
+  busy: '...',
   sorting: 'Embaralhando',
+  started: 'Escolha uma carta',
 }
 
 export const ControlButton = ({
@@ -38,9 +48,10 @@ export const ControlButton = ({
 } : GameStateType) => {
   switch(gameState) {
     case GAME_STATE.starting:
-    case GAME_STATE.started:
     case GAME_STATE.showSelected:
-      return (<Button onClick={handleRestartClick}>{l18n.restart}</Button>)
+      return (<div>{l18n.busy}</div>)
+    case GAME_STATE.started:
+      return (<div>{l18n.started}</div>)
     case GAME_STATE.sorting:
       return (<div>{l18n.sorting}</div>)
     case GAME_STATE.initial:
@@ -78,10 +89,12 @@ export const Game = ({
   selectedCard,
 } : GameProps) => (
   <ContentContainer>
-    <ControlButton
-      gameState={gameState}
-      handleStartClick={handleStartClick}
-    />
+    <ControlsContainer>
+      <ControlButton
+        gameState={gameState}
+        handleStartClick={handleStartClick}
+      />
+    </ControlsContainer>
     <CardSet
       cards={cards}
       flip={cardSetShouldFlip(gameState)}

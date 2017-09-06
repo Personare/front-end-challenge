@@ -140,12 +140,12 @@ describe('GameContainer > ControlButton', () => {
     expect(mount(<ControlButton />)).toHaveText(l18n.start)
   })
 
-  it('have restart button text', () => {
+  it('have busy text', () => {
     expect(mount(
       <ControlButton
         gameState={GAME_STATE.starting}
       />
-    )).toHaveText(l18n.restart)
+    )).toHaveText(l18n.busy)
   })
 
   it('have sorting text', () => {

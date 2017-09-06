@@ -13,7 +13,7 @@ export const RootContent = styled.div`
 `
 
 export const AppHeader = styled.section`
-  flex: 0 0 120px;
+  flex: 0 0 80px;
   display: flex;
   flex-flow: column no-wrap;
   padding: 20px;
@@ -22,8 +22,8 @@ export const AppHeader = styled.section`
   text-align: center;
   width:100%;
   max-width:800px;
-  ${media.desktop`padding: 0 20px;`}
-  ${media.tablet`padding: 0 5px;`}
+  ${media.desktop`padding: 0 8px;`}
+  ${media.tablet`padding: 0 2px;`}
 `
 
 export const ContentContainer = styled.section`

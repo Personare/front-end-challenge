@@ -16,7 +16,7 @@ it('renders without errors', () => {
 
 describe('Card', () => {
   let target
-  beforeAll(() => {
+  beforeEach(() => {
     target = shallow(<Card {...card} />)
   })
 
