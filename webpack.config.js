@@ -47,7 +47,7 @@ module.exports = {
                             options: {
                                 use: [
                                     rupture(),
-                                    poststylus(['autoprefixer']),
+                                    poststylus(['autoprefixer', 'lost'])
                                 ]
                             },
                         },

@@ -1,0 +1,48 @@
+.Card
+    display inline-block
+    lost-column 1/8 8 20px
+    margin-bottom 20px
+    position relative
+    perspective 800px
+    cursor pointer
+
+    &.disable
+        pointer-events none
+        opacity 0.8
+
+.Card__wrapper
+    height 0
+    width 100%
+    display block
+    padding-bottom 190%
+    position relative
+    transform-style preserve-3d
+    transition 0.5s
+
+    .Card.flipped &
+        transform rotateY(180deg);
+
+.Card__side
+    display block
+    position absolute
+    width 100%
+    height 100%
+    top 0
+    left 0
+    background #ffffff
+    text-align center
+    border-radius 10px
+    backface-visibility hidden
+
+    &.is-front
+        padding 10px
+        z-index 1
+
+    &.is-back
+        transform rotateY(-180deg)
+
+
+.Card__image
+    display block
+    height 100%
+    width auto

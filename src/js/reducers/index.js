@@ -20,7 +20,9 @@ function tarot(state = null, action) {
     switch (action.type){
         case RECEIVE_DATA:
             return Object.assign({}, state, {
-                data: action.data
+                imagesUrl: action.data.imagesUrl,
+                imageBackCard: action.data.imageBackCard,
+                cards: action.data.cards,
             });
 
         default:
