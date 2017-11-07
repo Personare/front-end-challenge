@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import {
     FETCHING_DATA,
-    RECEIVE_DATA
+    RECEIVE_DATA,
+    CHANGE_GRID_COL
 } from '../actions/actionsTypes';
 
 function appState(state = null, action) {
@@ -9,6 +10,11 @@ function appState(state = null, action) {
         case FETCHING_DATA:
             return Object.assign({}, state, {
                 isLoading: action.isLoading
+            });
+
+        case CHANGE_GRID_COL:
+            return Object.assign({}, state, {
+                gridCols: action.gridCols
             });
 
         default:
@@ -32,5 +38,5 @@ function tarot(state = null, action) {
 
 export default combineReducers({
     appState,
-    tarot,
+    tarot
 });

@@ -2,13 +2,19 @@
     display inline-block
     lost-column 1/8 8 20px
     margin-bottom 20px
-    position relative
+    position absolute
     perspective 800px
     cursor pointer
 
     &.disable
         pointer-events none
         opacity 0.8
+
+    +below(breakpoints.tablet)
+        lost-column 1/4 4 20px
+
+    +below(breakpoints.phone)
+        lost-column 1/2 2 20px
 
 .Card__wrapper
     height 0

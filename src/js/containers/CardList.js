@@ -12,20 +12,37 @@ class CardList extends Component {
             return (<span>loading...</span>);
         }
 
+        let breakLine = 0;
+        let row = 0;
+
         const { imageBackCard, imagesUrl, cards } = this.props.tarot;
+        const totalCards = cards.length;
+
         const cardsItems = cards.map((card, index) => {
+
+            if ( index % this.props.gridCols === 0 && index > 0 ) {
+                breakLine += this.props.gridCols;
+                row = row + 1;
+            }
+
+            const cardX = index - breakLine;
+            const cardY = row;
+
             return (
                 <Card
                     key={index}
                     name={card.name}
                     imageBackCard={imageBackCard}
                     imagesUrl={imagesUrl + card.image}
+                    cardIndex={index}
+                    cardX={cardX}
+                    cardY={cardY}
                 />
             );
         });
 
         return (
-            <div className='CardList'>
+            <div className='CardList' ref='cardList' style={{height: (totalCards * 9) + 'px'}}>
                 {cardsItems}
             </div>
         );
@@ -33,7 +50,6 @@ class CardList extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log( state );
     return {
         tarot: state.tarot
     };

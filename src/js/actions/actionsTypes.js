@@ -1,2 +1,3 @@
 export const FETCHING_DATA = 'FETCHING_DATA';
 export const RECEIVE_DATA = 'RECEIVE_DATA';
+export const CHANGE_GRID_COL = 'CHANGE_GRID_COL';

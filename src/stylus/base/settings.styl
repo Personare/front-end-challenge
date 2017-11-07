@@ -4,3 +4,18 @@ breakpoints = {
   phone: 480px,
   smallPhone: 320px
 }
+
+
+// css breakpoint
+body:before
+    content 'desktop'
+    display none
+
+    +below(breakpoints.tablet)
+        content 'tablet'
+
+    +below(breakpoints.phone)
+        content 'phone'
+
+    +below(breakpoints.smallPhone)
+        content 'smallPhone'

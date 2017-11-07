@@ -1,6 +1,7 @@
 import {
     FETCHING_DATA,
-    RECEIVE_DATA
+    RECEIVE_DATA,
+    CHANGE_GRID_COL
 } from './actionsTypes';
 import axios from 'axios';
 
@@ -17,8 +18,7 @@ export const fetchingData = (isLoading) => ({
 });
 
 export function getAllCards() {
-    return function(dispatch) {
-
+    return (dispatch) => {
         dispatch(fetchingData(true));
 
         return axios.get(DATA_URL)
@@ -28,3 +28,8 @@ export function getAllCards() {
             });
     }
 }
+
+export const changeGridCols = (totalCols) => ({
+    type: CHANGE_GRID_COL,
+    gridCols: totalCols
+})
