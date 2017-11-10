@@ -7,7 +7,6 @@ class Tip extends Component {
 
     componentDidMount() {
         setTimeout(() => {
-            loga('rodou');
             this.props.changeTipState('show');
         }, 1000);
     }
@@ -26,4 +25,3 @@ class Tip extends Component {
 };
 
 export default Tip;
-

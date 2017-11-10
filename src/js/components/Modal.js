@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CardPicture from './CardPicture';
 
 class Modal extends Component {
     constructor(props) {
@@ -14,9 +15,8 @@ class Modal extends Component {
 
                 {card && (
                     <div className='Modal__wrapper'>
-                        <div className='CardPicture'>
-                            <img className='CardPicture__image' src={card.imgUrl} />
-                        </div>
+
+                        <CardPicture imgUrl={card.imgUrl} />
 
                         <div className='Modal__content'>
                             <h1 className='primary-title'>{card.name}</h1>

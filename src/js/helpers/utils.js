@@ -5,6 +5,25 @@ export const getBreakpoint = () => {
     return breakpoint;
 };
 
+export const computeTotalCols = (currentGridCollumn) => {
+    let currentBreakpoint = getBreakpoint();
+    let totalCols;
+
+    if (currentBreakpoint === 'tablet') {
+        totalCols = 6;
+    } else if (currentBreakpoint === 'phone') {
+        totalCols = 3;
+    } else if (currentBreakpoint === 'smallPhone') {
+        totalCols = 2;
+    }
+
+    if (totalCols === currentGridCollumn) {
+        return false;
+    }
+
+    return totalCols;
+};
+
 export const manipulateData = (data) => {
     let cards = data.cards.map((card, index)=> {
         card.flipped = false;
@@ -12,6 +31,7 @@ export const manipulateData = (data) => {
         return card;
     });
 
+    // returning new object
     return {
         ...data,
         cards: cards
@@ -46,17 +66,13 @@ export const waitAnimation = (id) => {
                 element.removeEventListener("transitionend", animationFinished);
                 return resolve();
             }, false);
-        }, 200)
+        }, 200);
     });
-}
+};
 
 export const fireEvent = (type) => {
-    console.log("fire event!");
-
     const evt = window.document.createEvent('UIEvents');
+
     evt.initUIEvent(type, true, false, window, 0);
     window.dispatchEvent(evt);
 };
-
-
-window.fireEvent = fireEvent;

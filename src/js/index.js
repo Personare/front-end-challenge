@@ -5,13 +5,15 @@ import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import reducer from './reducers';
-import { getAllCards } from './actions';
+import { getAllCards } from './actions/api';
 import App from './containers/App';
 
 require('../stylus/app.styl');
 
+const notProducion = process.env.NODE_ENV !== 'production' ? true : false;
+
 const middleware = [ thunk ];
-if (process.env.NODE_ENV !== 'production') {
+if (notProducion) {
     middleware.push(createLogger());
 }
 
@@ -22,13 +24,6 @@ const store = createStore(
 );
 
 store.dispatch(getAllCards());
-
-// util remove it latter
-window.loga = (value) => {
-    console.log("====================");
-    console.log(value);
-    console.log("====================");
-}
 
 render(
     <Provider store={store}>

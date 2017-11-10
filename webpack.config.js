@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -13,6 +14,7 @@ const paths = {
 
 // Webpack configuration
 module.exports = {
+    devtool: 'eval',
     entry: path.join(paths.JS, 'index.js'),
     output: {
         path: paths.DIST,

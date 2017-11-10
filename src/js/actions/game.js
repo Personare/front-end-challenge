@@ -2,11 +2,9 @@ import { shuffleCardsPositions, waitAnimation, fireEvent } from '../helpers/util
 import { changeTipState } from './tip';
 import { selectCard, openModal, closeModal } from './modal'
 import {
+    CHANGE_CARDS,
     FLIP_CARD,
     FLIP_ALL_CARDS,
-    CHANGE_STEP,
-    CHANGE_CARDS,
-
     TOGGLE_DISABLE,
     INIT_GAME,
     CHANGE_GAME_START,
@@ -103,6 +101,7 @@ export function initGame() {
                 })
                 .then(() => {
                     let cards = getState().data.cards;
+
                     dispatch(shuffleCards(cards));
                     dispatch(changeAnimationMode('backPosition'));
                     return waitAnimation();

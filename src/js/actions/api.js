@@ -1,10 +1,9 @@
+import axios from 'axios';
+import { manipulateData } from '../helpers/utils';
 import {
     FETCHING_PENDING,
     FETCHING_DONE
 } from './actionsTypes';
-
-import axios from 'axios';
-import { manipulateData } from '../helpers/utils';
 
 const DATA_URL = 'https://raw.githubusercontent.com/Personare/front-end-challenge/master/tarot.json';
 
@@ -24,15 +23,14 @@ export function getAllCards() {
 export function fetchingData() {
     return {
         type: FETCHING_PENDING
-    }
-};
+    };
+}
 
 export function fetchingDone(cards) {
-    console.log("feching finished");
     return {
         type: FETCHING_DONE,
         cards
-    }
+    };
 }
 
 

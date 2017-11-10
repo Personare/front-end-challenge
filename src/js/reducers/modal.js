@@ -5,7 +5,6 @@ import {
 } from '../actions/actionsTypes';
 
 export function modal(state = { selectedCard: null, modalState: 'hide' }, action) {
-    console.log('ACTION: ', action.cardId)
     switch (action.type) {
         case SELECT_CARD:
             return {

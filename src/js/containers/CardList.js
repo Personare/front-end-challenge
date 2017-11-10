@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeGridCols, flipCardThenOpenModal } from '../actions/game';
-import { getBreakpoint } from '../helpers/utils';
+import { computeTotalCols } from '../helpers/utils';
 import Card from '../components/Card';
+import Loading from '../components/Loading';
 
 class CardList extends Component {
     constructor(props) {
@@ -23,28 +24,16 @@ class CardList extends Component {
     }
 
     setGridColumn() {
-        var currentBreakpoint = getBreakpoint();
-        let totalCols = 6; // desktop default
+        let totalCols = computeTotalCols(this.props.gridCollumn);
 
-        if (currentBreakpoint === 'tablet') {
-            totalCols = 6;
-        } else if (currentBreakpoint === 'phone') {
-            totalCols = 3;
-        } else if (currentBreakpoint === 'smallPhone') {
-            totalCols = 2;
-        }
-
-        if (totalCols === this.props.gridCollumn) {
-            return false;
-        }
+        if(!totalCols) return false;
 
         this.props.setGridCols(totalCols);
     }
 
-
     render() {
         if(this.props.isLoading) {
-            return (<span>loading...</span>);
+            return <Loading text='Loading...' />;
         }
 
         const { imageBackCard, imagesUrl, cards } = this.props.data;

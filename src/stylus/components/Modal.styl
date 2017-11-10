@@ -41,7 +41,15 @@
     text-align center
     flex-wrap wrap
 
+    +below(breakpoints.phone)
+        flex-direction column
+
 .Modal__content
     display inline-block
     flex 1
+    padding-left 20px
+
+    +below(breakpoints.phone)
+        width 100%
+        padding-left 0
 
