@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { changeGridCols } from '../actions/game';
+import { changeGridCols, flipCardThenOpenModal } from '../actions/game';
 import { getBreakpoint } from '../helpers/utils';
 import Card from '../components/Card';
 
@@ -43,11 +43,11 @@ class CardList extends Component {
 
 
     render() {
-        if(!this.props.game) {
+        if(this.props.isLoading) {
             return (<span>loading...</span>);
         }
 
-        const { imageBackCard, imagesUrl, cards } = this.props.game;
+        const { imageBackCard, imagesUrl, cards } = this.props.data;
 
         const { animationMode, gridCollumn } = this.props;
         const totalCards = cards.length;
@@ -88,9 +88,8 @@ class CardList extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        game: state.game,
-        step: state.appState.step,
-
+        data: state.data,
+        isLoading: state.gameState.isLoading,
         animationMode: state.gameState.animationMode,
         gridCollumn: state.gameState.gridCollumn
     };

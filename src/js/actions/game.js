@@ -1,5 +1,6 @@
 import { shuffleCardsPositions, waitAnimation, fireEvent } from '../helpers/utils';
 import { changeTipState } from './tip';
+import { selectCard, openModal, closeModal } from './modal'
 import {
     FLIP_CARD,
     FLIP_ALL_CARDS,
@@ -13,12 +14,10 @@ import {
     CHANGE_ANIMATION_MODE
 } from './actionsTypes';
 
-export function openModal(id) {
-    console.log('abriu');
-};
-
 export function shuffleCards(cards) {
-    const shuffledcards = shuffleCardsPositions(cards);
+    let newCards = [ ...cards ];
+
+    const shuffledcards = shuffleCardsPositions(newCards);
 
     return {
         type: CHANGE_CARDS,
@@ -26,41 +25,36 @@ export function shuffleCards(cards) {
     }
 }
 
-export function flipCard(id) {
+export function flipCard(cardId) {
     return {
         type: FLIP_CARD,
-        cardId: id
+        cardId
     }
 }
 
-export function flipCardThenOpenModal(id) {
+export function flipCardThenOpenModal(cardId) {
     return (dispatch, getState) => {
-        if (!getState().game.cards[id].flipped) {
+        if (!getState().data.cards[cardId].flipped) {
             return false;
         }
 
-        dispatch(flipCard(id));
+        dispatch(toggleDisable(true));
+        dispatch(flipCard(cardId));
+        dispatch(selectCard(cardId));
 
-        return waitAnimation(id).then((id) => {
-            openModal();
+        return waitAnimation().then(() => {
+            dispatch(openModal());
+            dispatch(toggleDisable(false));
         });
     }
 }
 
-export function flipAllCards(side, getState) {
-    let cards = getState().game.cards;
+export function flipAllCards(side) {
     let isFlipped = side === 'back' ? true : false;
-
-    let newCards = cards.map(card => {
-        card.flipped = isFlipped;
-        return card;
-    });
-
-    console.log(isFlipped);
 
     return {
         type: FLIP_ALL_CARDS,
-        newCards
+        isFlipped
     }
 }
 
@@ -96,9 +90,9 @@ export function initGame() {
     return (dispatch, getState) => {
         dispatch(changeGameStarted(true));
         dispatch(toggleDisable(true));
-
         dispatch(changeAnimationMode('flippling'));
-        dispatch(flipAllCards('back', getState));
+
+        dispatch(flipAllCards('back'));
 
         dispatch(changeTipState('hide'));
 
@@ -108,7 +102,7 @@ export function initGame() {
                     return waitAnimation();
                 })
                 .then(() => {
-                    let cards = getState().game.cards;
+                    let cards = getState().data.cards;
                     dispatch(shuffleCards(cards));
                     dispatch(changeAnimationMode('backPosition'));
                     return waitAnimation();
@@ -128,6 +122,7 @@ export function restartGame() {
         dispatch(toggleDisable(true));
         dispatch(changeGameStarted(false));
         dispatch(flipAllCards('face', getState));
+        dispatch(closeModal());
 
         return waitAnimation()
                 .then(() => {

@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { initGame, restartGame } from '../actions/game';
+import { closeModal } from '../actions/modal';
+import { selectCardById } from '../reducers/modal';
 import { changeTipState } from '../actions/tip';
 import CardList from './CardList';
 import MagicBtn from '../components/MagicBtn';
 import Tip from '../components/Tip';
+import Modal from '../components/Modal';
 
 class App extends Component {
     constructor(props) {
@@ -12,13 +15,18 @@ class App extends Component {
     }
 
     render() {
-        const { initGame, restartGame, animationMode, isDisable, gameStarted, tipState, changeTipState} = this.props;
-        let elementClass = `${(animationMode !== '' ? 'is-animation' : '')} ${(isDisable ? 'is-disable' : '')}`;
+        const {
+            initGame, restartGame, animationMode, isDisable, gameStarted,
+            tipState, changeTipState, modalState, selectedCard, closeModal
+        } = this.props;
+
+        let mainClass = `${(animationMode !== '' ? 'is-animation' : '')} ${(isDisable ? 'is-disable' : '')}`;
+        let contentClass = modalState === 'show' ? 'is-disable' : '';
 
         return (
-            <div className={'l-main ' + elementClass}>
-                <div className='l-container h-all-center'>
-                    <div className='l-content'>
+            <div className={'l-main ' + mainClass}>
+                <div className='l-container'>
+                    <div className={'l-content ' + contentClass }>
                         <CardList />
                     </div>
                 </div>
@@ -32,19 +40,21 @@ class App extends Component {
                         <MagicBtn text='Iniciar' gameInit={initGame} />
                     )}
                 </footer>
+
+                <Modal card={selectedCard} modalState={modalState} onClick={closeModal}/>
             </div>
         );
     }
 }
 
 const mapStateToProps = (state) => {
-    let isDisable = state.appState.step.length > 0 ? 'is-disable' : '';
-
     return {
         isDisable: state.gameState.isDisable,
         animationMode: state.gameState.animationMode,
         gameStarted: state.gameState.gameStarted,
-        tipState: state.tipState
+        tipState: state.tipState,
+        selectedCard: selectCardById(state),
+        modalState: state.modal.modalState
     };
 };
 
@@ -58,6 +68,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         restartGame: () => {
             dispatch(restartGame());
+        },
+        closeModal: () => {
+            dispatch(closeModal());
         }
     };
 }

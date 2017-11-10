@@ -60,7 +60,7 @@ class Card extends Component {
     }
 
     render() {
-        const { flipped, cardIndex, imagesUrl, imageBackCard, flipCardThenOpenModal } = this.props;
+        const { flipped, cardIndex, imagesUrl, imageBackCard, onClick } = this.props;
 
         let classValue = flipped ? 'flipped' : '';
 
@@ -68,7 +68,7 @@ class Card extends Component {
             <div
                 className={'Card ' + classValue}
                 ref={cardIndex}
-                onClick={() => { flipCardThenOpenModal(cardIndex); }}
+                onClick={() => {this.props.onClick(cardIndex);}}
             >
                 <div className='Card__wrapper'>
                     <div className='Card__side is-front'>

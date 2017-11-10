@@ -1,53 +1,12 @@
 import { combineReducers } from 'redux';
-
 import {
-    RECEIVE_DATA,
-    FLIP_CARD,
-    FLIP_ALL_CARDS,
-    CHANGE_CARDS,
-
+    FETCHING_PENDING,
+    FETCHING_DONE,
     TOGGLE_DISABLE,
     CHANGE_ANIMATION_MODE,
     CHANGE_GRID_COL,
     CHANGE_GAME_START
 } from '../actions/actionsTypes';
-
-export function game(state = null, action) {
-    switch (action.type){
-        case RECEIVE_DATA:
-            return Object.assign({}, state, {
-                imagesUrl: action.data.imagesUrl,
-                imageBackCard: action.data.imageBackCard,
-                cards: action.data.cards,
-            });
-
-        case FLIP_CARD:
-            return {
-                ...state,
-                cards: state.cards.map( (card, index) => {
-                    return index === action.cardId ?
-                    { ...card, flipped: false }:
-                    card
-                })
-            };
-
-        case FLIP_ALL_CARDS:
-            let newState = Object.assign({}, state, {
-                cards: action.newCards
-            });
-            return newState;
-
-        case CHANGE_CARDS:
-            return {
-                ...state,
-                cards: action.cards
-            };
-
-        default:
-            return state
-    }
-}
-
 
 const initialGameState = {
     isLoading: true,
@@ -59,6 +18,18 @@ const initialGameState = {
 
 export function gameState(state = initialGameState, action) {
     switch (action.type) {
+        case FETCHING_PENDING:
+            return {
+                ...state,
+                isLoading: true
+            };
+
+        case FETCHING_DONE:
+            return {
+                ...state,
+                isLoading: false
+            };
+
         case TOGGLE_DISABLE:
             return {
                 ...state,

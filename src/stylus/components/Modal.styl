@@ -1,0 +1,47 @@
+.Modal
+    display block
+    position fixed
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    background #ffffff
+    width 80%
+    border-radius 10px
+    padding 20px
+    min-height 60vh
+    z-index 2
+    transition transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+
+    &.is-hide
+        // opacity 1
+        transform translate(-50%, 50%)
+
+.Modal__close
+    display block
+    position absolute
+    cursor pointer
+    top -40px
+    right 0
+    width 30px
+    height 30px
+    background #f3f3f3
+    text-align center
+    line-height 30px
+    color #2d2d2d
+    border-radius 10px
+    font-family 'Roboto', sans-serif
+    font-size 2em
+    font-weight 700
+
+    &:hover
+        background #fff
+
+.Modal__wrapper
+    display flex
+    text-align center
+    flex-wrap wrap
+
+.Modal__content
+    display inline-block
+    flex 1
+

@@ -12,12 +12,16 @@ export const manipulateData = (data) => {
         return card;
     });
 
-    return cards;
+    return {
+        ...data,
+        cards: cards
+    };
 };
 
 export const shuffleCardsPositions = (cards) => {
-    console.log(cards);
-    let currentIndex = cards.length;
+    let cardsArray = [ ...cards ];
+
+    let currentIndex = cardsArray.length;
     let temporaryValue;
     let randomIndex;
 
@@ -25,15 +29,15 @@ export const shuffleCardsPositions = (cards) => {
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex -= 1;
 
-        temporaryValue = cards[currentIndex].position;
-        cards[currentIndex].position = cards[randomIndex].position;
-        cards[randomIndex].position = temporaryValue;
+        temporaryValue = cardsArray[currentIndex].position;
+        cardsArray[currentIndex].position = cardsArray[randomIndex].position;
+        cardsArray[randomIndex].position = temporaryValue;
     }
 
-    return cards
+    return cardsArray;
 };
 
-export function waitAnimation(id) {
+export const waitAnimation = (id) => {
     let element = document.querySelector('.CardList');
 
     return new Promise((resolve, reject) => {
