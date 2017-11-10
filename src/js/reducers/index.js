@@ -1,34 +1,30 @@
 import { combineReducers } from 'redux';
+import { game, gameState } from './game';
+import { tipState } from './tip';
 import {
     FETCHING_DATA,
-    RECEIVE_DATA,
-    CHANGE_GRID_COL
+    CHANGE_GRID_COL,
+    CHANGE_STEP
 } from '../actions/actionsTypes';
 
-function appState(state = null, action) {
+const initialState = {
+    isLoading: false,
+    gridCols: 6,
+    step: []
+}
+
+function appState(state = initialState, action) {
     switch (action.type){
         case FETCHING_DATA:
             return Object.assign({}, state, {
                 isLoading: action.isLoading
             });
 
-        case CHANGE_GRID_COL:
-            return Object.assign({}, state, {
-                gridCols: action.gridCols
-            });
+        case CHANGE_STEP:
+            let stepValue = action.step === 'clean' ? [] : [...state.step, action.step];
 
-        default:
-            return state
-    }
-}
-
-function tarot(state = null, action) {
-    switch (action.type){
-        case RECEIVE_DATA:
             return Object.assign({}, state, {
-                imagesUrl: action.data.imagesUrl,
-                imageBackCard: action.data.imageBackCard,
-                cards: action.data.cards,
+                step: stepValue
             });
 
         default:
@@ -38,5 +34,7 @@ function tarot(state = null, action) {
 
 export default combineReducers({
     appState,
-    tarot
+    gameState,
+    tipState,
+    game
 });

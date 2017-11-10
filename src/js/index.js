@@ -17,10 +17,18 @@ if (process.env.NODE_ENV !== 'production') {
 
 const store = createStore(
     reducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(...middleware)
 );
 
 store.dispatch(getAllCards());
+
+// util remove it latter
+window.loga = (value) => {
+    console.log("====================");
+    console.log(value);
+    console.log("====================");
+}
 
 render(
     <Provider store={store}>

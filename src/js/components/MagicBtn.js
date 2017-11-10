@@ -7,7 +7,7 @@ class MagicBtn extends Component {
 
     render() {
         return (
-            <button className='MagicBtn is-pink'>
+            <button className='MagicBtn is-pink' onClick={this.props.gameInit}>
                 <svg>
                     <defs>
                         <linearGradient id="border-purple" x1="0" y1="0" x2="0" y2="1" spreadMethod="pad">

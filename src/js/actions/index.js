@@ -1,9 +1,10 @@
 import {
     FETCHING_DATA,
-    RECEIVE_DATA,
-    CHANGE_GRID_COL
+    RECEIVE_DATA
 } from './actionsTypes';
+
 import axios from 'axios';
+import { manipulateData } from '../helpers/utils';
 
 const DATA_URL = 'https://raw.githubusercontent.com/Personare/front-end-challenge/master/tarot.json';
 
@@ -23,13 +24,11 @@ export function getAllCards() {
 
         return axios.get(DATA_URL)
             .then(response => {
+                manipulateData(response.data)
                 dispatch(receiveCards(response.data));
                 dispatch(fetchingData(false));
             });
     }
 }
 
-export const changeGridCols = (totalCols) => ({
-    type: CHANGE_GRID_COL,
-    gridCols: totalCols
-})
+
