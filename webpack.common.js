@@ -1,7 +1,7 @@
 const webpack = require('webpack');
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const path = require('path');
 const poststylus = require('poststylus');
 const rupture = require('rupture');
 
@@ -13,20 +13,17 @@ const paths = {
 };
 
 // Webpack configuration
-module.exports = {
+const config = {
     entry: path.join(paths.JS, 'index.js'),
     output: {
         path: paths.DIST,
         filename: 'bundle.js'
     },
-
     plugins: [
-        new ExtractTextPlugin("styles.css"),
         new HtmlWebpackPlugin({
             template: path.join(paths.SRC, 'index.html'),
-        }),
+        })
     ],
-
     module: {
         rules: [
             {
@@ -64,3 +61,8 @@ module.exports = {
         extensions: ['.js'],
     },
 };
+
+module.exports = {
+    paths,
+    config
+}
