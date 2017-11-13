@@ -14,7 +14,6 @@ const paths = {
 
 // Webpack configuration
 module.exports = {
-    devtool: 'eval',
     entry: path.join(paths.JS, 'index.js'),
     output: {
         path: paths.DIST,
@@ -29,7 +28,8 @@ module.exports = {
     ],
 
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: [
@@ -57,10 +57,6 @@ module.exports = {
                 })
             }
         ],
-    },
-
-    devServer: {
-        historyApiFallback: true
     },
 
     // Enable importing JS files without specifying their's extenstion

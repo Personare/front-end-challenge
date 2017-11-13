@@ -4,8 +4,8 @@
   "description": "A tarot game with react",
   "main": "src/js/index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "webpack -p",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack -p --config webpack.prod.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -46,7 +46,8 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.9.3",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "axios": "^0.17.0",

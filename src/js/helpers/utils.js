@@ -81,6 +81,4 @@ export const fireEvent = (type) => {
 
     evt.initUIEvent(type, true, false, window, 0);
     window.dispatchEvent(evt);
-
-    console.log('foi');
 };

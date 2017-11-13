@@ -57,7 +57,6 @@ class Card extends Component {
             let parentHeight = ( (cardHeight + marginValue) * (totalCards / gridCollumn) );
 
             card.parentNode.style.height = `${parentHeight}px`;
-            console.log("MUDOUUU");
         }
 
     }

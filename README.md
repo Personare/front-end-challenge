@@ -9,7 +9,14 @@ Desafio realizado em [React](https://reactjs.org/) para a [@Personare](http://ww
 2. Build:
   `npm run build`
 3. Run:
-  `npm run dev`
+  `npm run start`
+
+**For development just run:** `npm run start`
+
+## Tests
+
+* run tests: `npm run test`
+* run tests with watch: `npm run test:watch`
 
 ## Prerequisites
 
@@ -19,7 +26,10 @@ Desafio realizado em [React](https://reactjs.org/) para a [@Personare](http://ww
 
 * [React](https://reactjs.org/)
 * [Redux](https://redux.js.org/)
+* [Jest](https://facebook.github.io/jest/)
+* [Enzyme](http://airbnb.io/enzyme/)
 * [webpack](https://webpack.js.org/)
+* [Stylus](http://stylus-lang.com/)
 
 ## Authors
 
