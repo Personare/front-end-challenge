@@ -1,0 +1,20 @@
+// responsive breakpoints
+breakpoints = {
+  tablet: 1024px,
+  phone: 480px,
+  smallPhone: 320px
+}
+
+// css breakpoints to use in javascript
+body:before
+    content 'desktop'
+    display none
+
+    +below(breakpoints.tablet)
+        content 'tablet'
+
+    +below(breakpoints.phone)
+        content 'phone'
+
+    +below(breakpoints.smallPhone)
+        content 'smallPhone'

@@ -1,0 +1,55 @@
+.Modal
+    display block
+    position fixed
+    top 50%
+    left 50%
+    transform translate(-50%, -50%)
+    background #ffffff
+    width calc(100% - 40px)
+    max-width calc(1200px - 40px)
+    border-radius 10px
+    padding 20px
+    min-height 60vh
+    z-index 2
+    transition transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+
+    &.is-hide
+        transform translate(-50%, 50%)
+
+.Modal__close
+    display block
+    position absolute
+    cursor pointer
+    top -40px
+    right 0
+    width 30px
+    height 30px
+    background #f3f3f3
+    text-align center
+    line-height 30px
+    color #2d2d2d
+    border-radius 10px
+    font-family 'Roboto', sans-serif
+    font-size 2em
+    font-weight 700
+
+    &:hover
+        background #fff
+
+.Modal__wrapper
+    display flex
+    text-align center
+    flex-wrap wrap
+
+    +below(breakpoints.phone)
+        flex-direction column
+
+.Modal__content
+    display inline-block
+    flex 1
+    padding-left 20px
+
+    +below(breakpoints.phone)
+        width 100%
+        padding-left 0
+

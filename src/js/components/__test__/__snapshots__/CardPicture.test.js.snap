@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardPicture should render correctly 1`] = `
+<div
+  className="CardPicture"
+>
+  <img
+    className="CardPicture__image"
+    src="http://via.placeholder.com/162×341"
+  />
+</div>
+`;
