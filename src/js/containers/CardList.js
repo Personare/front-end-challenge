@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { changeGridCols, flipCardThenOpenModal } from '../actions/game';
-import { computeTotalCols } from '../helpers/utils';
+import { computeTotalCols, fireEvent } from '../helpers/utils';
 import Card from '../components/Card';
 import Loading from '../components/Loading';
 
@@ -68,7 +68,7 @@ class CardList extends Component {
         });
 
         return (
-            <div className='CardList'>
+            <div className='CardList' style={{ height: '5000px' }}>
                 {cardsItems}
             </div>
         );
@@ -95,4 +95,5 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
+export const Unwrapped = CardList;
 export default connect(mapStateToProps, mapDispatchToProps)(CardList);

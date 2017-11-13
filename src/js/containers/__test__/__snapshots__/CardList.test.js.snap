@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardList component renders correctly 1`] = `
+<div
+  className="CardList"
+  style={
+    Object {
+      "height": "5000px",
+    }
+  }
+>
+  <Card
+    cardIndex={0}
+    cardX={0}
+    cardY={0}
+    flipped={false}
+    gridCollumn={6}
+    imageBackCard="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png"
+    imagesUrl="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/arcano1.jpg"
+    key="0"
+    name="O MAGO"
+    shuffling={false}
+    totalCards={3}
+  />
+  <Card
+    cardIndex={1}
+    cardX={1}
+    cardY={0}
+    flipped={false}
+    gridCollumn={6}
+    imageBackCard="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png"
+    imagesUrl="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/arcano2.jpg"
+    key="1"
+    name="A SACERDOTISA"
+    shuffling={false}
+    totalCards={3}
+  />
+  <Card
+    cardIndex={2}
+    cardX={2}
+    cardY={0}
+    flipped={false}
+    gridCollumn={6}
+    imageBackCard="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png"
+    imagesUrl="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/arcano3.jpg"
+    key="2"
+    name="A IMPERATRIZ"
+    shuffling={false}
+    totalCards={3}
+  />
+</div>
+`;

@@ -25,21 +25,27 @@ export const computeTotalCols = (currentGridCollumn) => {
 };
 
 export const manipulateData = (data) => {
-    let cards = data.cards.map((card, index)=> {
-        card.flipped = false;
-        card.position = index;
-        return card;
+    // new Cards array
+    const newCards = data.cards.map((card, index)=> {
+        return {
+            ...card,
+            flipped: false,
+            position: index
+        };
     });
 
-    // returning new object
+    // returning new object for immutability
     return {
         ...data,
-        cards: cards
+        cards: [
+            ...newCards,
+        ]
     };
 };
 
 export const shuffleCardsPositions = (cards) => {
-    let cardsArray = [ ...cards ];
+    // create a new array for immutability
+    let cardsArray = [...cards];
 
     let currentIndex = cardsArray.length;
     let temporaryValue;
@@ -75,4 +81,6 @@ export const fireEvent = (type) => {
 
     evt.initUIEvent(type, true, false, window, 0);
     window.dispatchEvent(evt);
+
+    console.log('foi');
 };

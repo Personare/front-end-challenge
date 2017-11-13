@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MagicBtn should render correctly width 1`] = `
+<button
+  className="MagicBtn is-pink"
+>
+  <svg>
+    <defs>
+      <linearGradient
+        id="border-purple"
+        spreadMethod="pad"
+        x1="0"
+        x2="0"
+        y1="0"
+        y2="1"
+      >
+        <stop
+          offset="0%"
+          stopColor="#fce9ff"
+        />
+        <stop
+          offset="100%"
+          stopColor="#7d629f"
+        />
+      </linearGradient>
+      <linearGradient
+        id="light"
+        spreadMethod="pad"
+        x1="0.000"
+        x2="0.968"
+        y1="0.000"
+        y2="1.030"
+      >
+        <stop
+          offset="90%"
+          stopColor="#fbeef5"
+          stopOpacity="0"
+        />
+        <stop
+          offset="100%"
+          stopColor="#fbeef5"
+          stopOpacity="1"
+        />
+      </linearGradient>
+      <filter
+        height="180%"
+        id="glow-purple"
+        width="180%"
+        x="-40%"
+        y="-40%"
+      >
+        <feColorMatrix
+          type="matrix"
+          values="0.91 0 0 0   0
+ 0 0.44 0 0   0
+ 0 0 1 0   0
+ 0 0 0 1 0"
+        />
+        <feGaussianBlur
+          result="coloredBlur"
+          stdDeviation="3"
+        />
+        <feMerge>
+          <feMergeNode
+            in="coloredBlur"
+          />
+          <feMergeNode
+            in="coloredBlur"
+          />
+          <feMergeNode
+            in="SourceGraphic"
+          />
+        </feMerge>
+      </filter>
+    </defs>
+    <g
+      filter="url(#glow-purple)"
+    >
+      <rect
+        className="border"
+        fill="transparent"
+        height="100%"
+        rx="10"
+        ry="10"
+        stroke="url(#border-purple)"
+        strokeWidth="1"
+        width="100%"
+      />
+      <rect
+        className="light"
+        fill="transparent"
+        height="100%"
+        opacity="0.6"
+        rx="10"
+        ry="10"
+        stroke="url(#light)"
+        strokeWidth="2"
+        width="100%"
+      />
+    </g>
+  </svg>
+  iniciar
+</button>
+`;

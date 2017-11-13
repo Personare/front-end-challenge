@@ -40,9 +40,11 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(changeTipState(tipState));
         },
         initGame: () => {
+            scrollTop();
             dispatch(initGame());
         },
         restartGame: () => {
+            scrollTop();
             dispatch(restartGame());
         }
     };

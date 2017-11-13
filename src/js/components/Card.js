@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { fireEvent } from '../helpers/utils';
 import { debounce } from 'underscore';
 
 class Card extends Component {
@@ -56,7 +57,9 @@ class Card extends Component {
             let parentHeight = ( (cardHeight + marginValue) * (totalCards / gridCollumn) );
 
             card.parentNode.style.height = `${parentHeight}px`;
+            console.log("MUDOUUU");
         }
+
     }
 
     render() {
@@ -68,7 +71,7 @@ class Card extends Component {
             <div
                 className={'Card ' + classValue}
                 ref={cardIndex}
-                onClick={() => {this.props.onClick(cardIndex);}}
+                onClick={() => { this.props.onClick(cardIndex) }}
             >
                 <div className='Card__wrapper'>
                     <div className='Card__side is-front'>
