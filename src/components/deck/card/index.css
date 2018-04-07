@@ -4,6 +4,8 @@
     height: 130px;
     margin-top: -78px;
     margin-left: -48px;
+    background-repeat: no-repeat;
+    background-size: 100%;
     display: inline-block;
     -webkit-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
@@ -22,4 +24,9 @@
     -ms-transform: rotate(7deg) translateX(0) scale(1);
     transform: rotate(7deg) translateX(0) scale(1);
     top: -20px;
+}
+
+.card:active {
+  transform: rotateY(-180deg);
+  transition: transform 2s;
 }
