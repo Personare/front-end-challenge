@@ -5,7 +5,6 @@ import './index.css';
 
 
 class Deck extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -14,16 +13,14 @@ class Deck extends React.Component {
   }
 
   componentDidMount() {
-    getCardInfos().then(infos => {
+    getCardInfos().then((infos) => {
       const { imageBackCard } = infos;
-      this.setState(
-        prevState => ({
-          cards: infos.cards.map((card, index) => {
-            const cardProps = { ...card, imageBackCard, image: `${infos.imagesUrl}${card.image}` };
-            return <Card {...cardProps} key={index} />;
-          })
+      this.setState({
+        cards: infos.cards.map((card, index) => {
+          const cardProps = { ...card, imageBackCard, image: `${infos.imagesUrl}${card.image}` };
+          return <Card {...cardProps} key={Symbol(index)} />;
         })
-      );
+      });
     });
   }
 
@@ -34,7 +31,6 @@ class Deck extends React.Component {
       </div>
     );
   }
-
 }
 
 export default Deck;

@@ -5,4 +5,6 @@ const ButtonStart = () => (
   <button className="button-start">
   Play
   </button>
-)
+);
+
+export default ButtonStart;

@@ -4,11 +4,9 @@ const getCardInfos = async () => {
   try {
     const response = await fetch(URL_JSON);
     return response.json();
-  } catch(error) {
+  } catch (error) {
     throw error;
   }
-}
+};
 
-export {
-  getCardInfos
-}
+export { getCardInfos };
