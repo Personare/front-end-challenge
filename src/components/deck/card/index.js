@@ -11,26 +11,31 @@ class Card extends React.Component {
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.getNewImageSrc = this.getNewImageSrc.bind(this);
+  }
+
+  getNewImageSrc({ imageSrc }) {
+    const { imageBackCard, image } = this.props;
+    return imageSrc === imageBackCard ? image : imageBackCard;
   }
 
   handleClick() {
-    this.setState((prevState, props) => (
-      { imageSrc: (prevState.imageSrc === props.imageBackCard && props.image || props.imageBackCard) }
-    ));
+    this.setState(prevState => (
+      { imageSrc: this.getNewImageSrc(prevState) }));
   }
 
   render() {
-    const {name, image, imageBackCard} = this.props;
+    const { name } = this.props;
     return (
-      <a className="card" name={name} onClick={this.handleClick} style={{backgroundImage: `url(${this.state.imageSrc})`}}/>
-    )
+      <a className="card" name={name} onClick={this.handleClick} style={{ backgroundImage: `url(${this.state.imageSrc})` }} />
+    );
   }
 }
 
 Card.propTypes = {
-  imageBackCard: PropTypes.string,
-  image: PropTypes.string,
-  name: PropTypes.string
-}
+  imageBackCard: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
+};
 
 export default Card;
