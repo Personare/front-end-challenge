@@ -1,28 +1,11 @@
-const URL_JSON = './assets/tarot.json';
-
-const getDataValueParsed = (data = {}) => (
-  data.value ? JSON.parse(String.fromCharCode.apply(null, data.value)) : {}
-)
-
-const readJSON = response => {
-  const reader = response.body.getReader();
-  return reader.read()
-    .then(getDataValueParsed)
-    .catch(error => { throw error })
-}
+export const URL_JSON = 'https://raw.githubusercontent.com/Personare/front-end-challenge/master/tarot.json';
 
 const getCardInfos = async () => {
   try {
-    const response = await fetch(URL_JSON, {
-      method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-    return readJSON(response)
+    const response = await fetch(URL_JSON);
+    return response.json();
   } catch(error) {
-    throw error
+    throw error;
   }
 }
 
