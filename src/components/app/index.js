@@ -32,10 +32,10 @@ class App extends React.Component {
         {
           this.state.cardSelected &&
           <Modal title={this.state.cardSelected.name}>
-            <div>
+            <div className="modal-content-child">
               <CardImage {...this.state.cardSelected} />
             </div>
-            <div>
+            <div className="modal-content-child">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Ullam sint voluptas,
               dignissimos beatae distinctio sed doloribus dolore
