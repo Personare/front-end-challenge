@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import './index.css';
 import CardFlip from './flip';
+import CardImage from './image';
+import { Consumer, GAME_STATUS } from '../../game-context';
 
 class Card extends React.Component {
   constructor(props) {
@@ -10,12 +12,6 @@ class Card extends React.Component {
 
     this.state = {
       flip: props.flip
-    };
-
-    this.flip = () => {
-      this.setState((prevState) => ({
-        flip: !prevState.flip
-      }))
     };
   }
 
@@ -28,9 +24,22 @@ class Card extends React.Component {
       image: this.props.imageBackCard
     };
     return (
-      <div className="card" onClick={this.flip} name={name}>
-        <CardFlip backImage={backImage} frontImage={frontImage} flipped={this.state.flip} />
-      </div>
+      <Consumer>
+        {
+          ({ status, selectCard }) => (
+            <div className="card" onClick={() => selectCard(this.props)} name={name}>
+              {
+                backImage && frontImage &&
+                <CardFlip backImage={backImage} frontImage={frontImage} flipped={status === GAME_STATUS.started} />
+              }
+              {
+                !backImage &&
+                <CardImage image={this.props.image} />
+              }
+            </div>
+          )
+        }
+      </Consumer>
     );
   }
 }
