@@ -2,6 +2,10 @@ module.exports = {
   "extends": "airbnb",
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "jsx-a11y/anchor-is-valid": ["warn", {
+      "aspects": ["noHref", "invalidHref", "preferButton"]
+    }],
+    "jsx-a11y/anchor-has-content": ["warn"],
     "comma-dangle": [
       "warn",
       "always-multiline"
