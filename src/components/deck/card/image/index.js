@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './index.css';
+
 
 const CardImage = ({ image, modClass = 'mod-front' }) => (
   <figure className={`card-image ${modClass}`}>

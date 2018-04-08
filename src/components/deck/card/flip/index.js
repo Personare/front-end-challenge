@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CardImage from '../image';
+import './index.css';
 
 const CardFlip = ({ frontImage, backImage, flipped = false }) => {
   return <div className={`card-flip ${flipped ? 'mod-flipped' : ''}`}>
