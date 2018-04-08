@@ -3,7 +3,7 @@ import './index.css';
 
 const ButtonStart = () => (
   <button className="button-start">
-  Play
+  Play Tarot
   </button>
 );
 
