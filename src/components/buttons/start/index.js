@@ -1,10 +1,19 @@
 import React from 'react';
 import './index.css';
+import { Consumer, GAME_STATUS } from '../../game-context';
 
 const ButtonStart = () => (
-  <button className="button-start">
-  Play Tarot
-  </button>
+  <Consumer>
+    {
+      ({ status, startGame }) => (
+        status === GAME_STATUS.off && (
+          <button className="button-start" onClick={startGame}>
+            Play Tarot
+          </button>
+        )
+      )
+    }
+  </Consumer>
 );
 
 export default ButtonStart;
