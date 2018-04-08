@@ -17,15 +17,15 @@ export function startGame() {
 }
 
 export function resetGame() {
-  this.setState({
-    status: GAME_STATUS.off
-  });
+  this.setState(DEFAULT_VALUE);
 }
 
 export function selectCard({name, image}) {
-  this.setState({
-    cardSelected: {name, image}
-  });
+  if(this.state.status === GAME_STATUS.started) {
+    this.setState({
+      cardSelected: {name, image}
+    });
+  }
 }
 
 export const { Provider, Consumer } = React.createContext(DEFAULT_VALUE);
