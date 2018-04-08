@@ -18,7 +18,7 @@ class Deck extends React.Component {
       this.setState({
         cards: infos.cards.map((card, index) => {
           const cardProps = { ...card, imageBackCard, image: `${infos.imagesUrl}${card.image}` };
-          return <Card {...cardProps} key={Symbol(index)} />;
+          return <Card {...cardProps} key={Symbol(index).toString()} />;
         })
       });
     });
