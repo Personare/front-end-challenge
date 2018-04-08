@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 
 import CardImage from '../image';
 
-const CardFlip = ({ frontCard, backCard, flipped = false }) => (
+const CardFlip = ({ frontImage, backImage, flipped = false }) => (
   <div className={`'card-flip ${flipped ? 'mod-flipped' : ''}'`}>
-    {frontCard && <CardImage {...frontCard} modClass={'mod-front'} />}
-    {backCard && <CardImage {...backCard} modClass={'mod-back'}/>}
+    {frontImage && <CardImage {...frontImage} modClass={'mod-front'} />}
+    {backImage && <CardImage {...backImage} modClass={'mod-back'}/>}
   </div>
 );
 
 CardFlip.propTypes = {
-  frontCard: PropTypes.objectOf(CardImage),
-  backCard: PropTypes.objectOf(CardImage),
+  frontImage: PropTypes.objectOf(CardImage),
+  backImage: PropTypes.objectOf(CardImage),
   flipped: PropTypes.bool
 };
 
