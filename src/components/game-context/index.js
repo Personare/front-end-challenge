@@ -22,4 +22,10 @@ export function resetGame() {
   });
 }
 
+export function selectCard({name, image}) {
+  this.setState({
+    cardSelected: {name, image}
+  });
+}
+
 export const { Provider, Consumer } = React.createContext(DEFAULT_VALUE);
