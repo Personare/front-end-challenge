@@ -7,12 +7,12 @@ class Card extends React.Component {
     super(props);
 
     this.state = {
-      flip: ''
+      flip: false
     };
 
     this.flip = () => {
       this.setState((prevState) => ({
-        flip: !prevState.flip ? 'mod-flipped' : ''
+        flip: !prevState.flip
       }))
     };
   }
@@ -20,12 +20,12 @@ class Card extends React.Component {
   render() {
     const { name } = this.props;
     return (
-      <div className="card" onClick={this.flip}>
+      <div className="card" onClick={this.flip} name={name}>
         <div className={`card-flip ${this.state.flip}`}>
-          <figure className="card-image mod-front" name={name}>
+          <figure className="card-image mod-front">
             <img src={this.props.image} />
           </figure>
-          <figure className="card-image mod-back" name={name}>
+          <figure className="card-image mod-back">
             <img  src={this.props.imageBackCard} />
           </figure>
         </div>
