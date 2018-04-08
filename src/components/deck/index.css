@@ -3,3 +3,7 @@
   display: block;
   width: 44vw;
 }
+
+.deck.is-shuffling > .card {
+  margin-left: -70.1px;
+}
