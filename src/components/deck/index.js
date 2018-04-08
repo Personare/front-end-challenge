@@ -34,7 +34,7 @@ class Deck extends React.Component {
   render() {
     return (
       <div className="deck">
-        {this.state.cards.map(card => card)}
+        {this.state.cards}
       </div>
     );
   }
