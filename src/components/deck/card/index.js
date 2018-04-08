@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './index.css';
+import CardFlip from './flip';
 
 class Card extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      flip: false
+      flip: props.flip
     };
 
     this.flip = () => {
@@ -19,16 +21,15 @@ class Card extends React.Component {
 
   render() {
     const { name } = this.props;
+    const frontImage = {
+      image: this.props.image
+    };
+    const backImage = {
+      image: this.props.imageBackCard
+    };
     return (
       <div className="card" onClick={this.flip} name={name}>
-        <div className={`card-flip ${this.state.flip}`}>
-          <figure className="card-image mod-front">
-            <img src={this.props.image} />
-          </figure>
-          <figure className="card-image mod-back">
-            <img  src={this.props.imageBackCard} />
-          </figure>
-        </div>
+        <CardFlip backImage={backImage} frontImage={frontImage} />
       </div>
     );
   }
