@@ -7,27 +7,29 @@ class Card extends React.Component {
     super(props);
 
     this.state = {
-      imageSrc: props.imageBackCard
+      flip: ''
     };
 
-    this.handleClick = this.handleClick.bind(this);
-    this.getNewImageSrc = this.getNewImageSrc.bind(this);
-  }
-
-  getNewImageSrc({ imageSrc }) {
-    const { imageBackCard, image } = this.props;
-    return imageSrc === imageBackCard ? image : imageBackCard;
-  }
-
-  handleClick() {
-    this.setState(prevState => (
-      { imageSrc: this.getNewImageSrc(prevState) }));
+    this.flip = () => {
+      this.setState((prevState) => ({
+        flip: !prevState.flip ? 'mod-flipped' : ''
+      }))
+    };
   }
 
   render() {
     const { name } = this.props;
     return (
-      <a className="card" name={name} onClick={this.handleClick} style={{ backgroundImage: `url(${this.state.imageSrc})` }} />
+      <div className="card" onClick={this.flip}>
+        <div className={`card-flip ${this.state.flip}`}>
+          <figure className="card-image mod-front" name={name}>
+            <img src={this.props.image} />
+          </figure>
+          <figure className="card-image mod-back" name={name}>
+            <img  src={this.props.imageBackCard} />
+          </figure>
+        </div>
+      </div>
     );
   }
 }

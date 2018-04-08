@@ -4,9 +4,9 @@
     height: 130px;
     margin-top: -78px;
     margin-left: -48px;
-    background-repeat: no-repeat;
-    background-size: 100%;
     display: inline-block;
+    position: relative;
+    -webkit-perspective: 1000px;
     -webkit-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
@@ -26,7 +26,31 @@
     top: -20px;
 }
 
-.card:active {
-  transform: rotateY(-180deg);
-  transition: transform 2s;
+.card-flip {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transition: -webkit-transform .5s;
+    transform-style: preserve-3d;
+}
+
+.card-flip.mod-flipped {
+    transform: rotateY(180deg);
+}
+
+.card-image {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+}
+
+.card-image.mod-back {
+    transform: rotateY(180deg)
+}
+
+.card-image > img {
+  width: 100%;
+  height: 100%;
 }
