@@ -1,9 +1,12 @@
 import React from 'react';
 
+import ButtonReset from '../../buttons/reset';
+import './index.css';
+
 
 const ModalFooter = () => (
-  <footer>
-    <button>Restart</button>
+  <footer className="modal-footer">
+    <ButtonReset />
   </footer>
 );
 
