@@ -24,6 +24,13 @@ class Deck extends React.Component {
     });
   }
 
+  shuffleCards(cards = []) {
+    return cards
+      .map(card => [Math.random(), card])
+      .sort((card, nextCard) => card[0] - nextCard[0])
+      .map(card => card[1]);
+  }
+
   render() {
     return (
       <div className="deck">
