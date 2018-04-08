@@ -1,0 +1,17 @@
+.card-image {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 70px;
+  max-height: 130px;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-image.mod-back {
+  transform: rotateY(180deg)
+}
+
+.card-image > img {
+  width: 100%;
+  height: 100%;
+}
