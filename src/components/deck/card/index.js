@@ -29,7 +29,7 @@ class Card extends React.Component {
     };
     return (
       <div className="card" onClick={this.flip} name={name}>
-        <CardFlip backImage={backImage} frontImage={frontImage} />
+        <CardFlip backImage={backImage} frontImage={frontImage} flipped={this.state.flip}/>
       </div>
     );
   }
