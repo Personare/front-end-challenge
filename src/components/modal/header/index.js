@@ -1,5 +1,6 @@
 import React from 'react';
 import Title from '../../title';
+import './index.css';
 
 
 const ModalHeader = ({title}) => (
