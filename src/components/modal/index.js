@@ -2,6 +2,7 @@ import React from 'react';
 import ModalHeader from './header';
 import ModalContent from './content';
 import ModalFooter from './footer';
+import './index.css';
 
 
 const Modal = (props) => (
