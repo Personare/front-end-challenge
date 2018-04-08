@@ -1,0 +1,17 @@
+.modal-content {
+  height: 70%;
+}
+
+.modal-content-child {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+.modal-content-child > .card-image {
+  width: 200px;
+  height: 100%;
+  max-width: inherit;
+  max-height: inherit;
+  margin: auto;
+}
