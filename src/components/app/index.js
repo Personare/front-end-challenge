@@ -3,7 +3,7 @@ import React from 'react';
 import './index.css';
 import ButtonStart from '../buttons/start';
 import Deck from '../deck';
-import { Provider, DEFAULT_VALUE, startGame, resetGame } from '../game-context';
+import { Provider, DEFAULT_VALUE, startGame, resetGame, selectCard } from '../game-context';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +13,7 @@ class App extends React.Component {
       ...DEFAULT_VALUE,
       startGame: startGame.bind(this),
       resetGame: resetGame.bind(this),
+      selectCard: selectCard.bind(this)
     };
   }
 
@@ -20,7 +21,7 @@ class App extends React.Component {
     return (
       <Provider value={this.state}>
         <div className="app">
-          <Deck />
+          <Deck status={this.state.status}/>
           <ButtonStart />
         </div>
       </Provider>
