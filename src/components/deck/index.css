@@ -1,5 +1,5 @@
 .deck {
+  margin: 20vh auto 5vh auto;
+  display: block;
   width: 44vw;
-  max-width: 580px;
-  margin: 25vh auto;
 }
