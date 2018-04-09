@@ -6,6 +6,8 @@ import Deck from '../deck';
 import Modal from '../modal';
 import { Provider, DEFAULT_VALUE, startGame, resetGame, selectCard, setInitialCards, isShuffling, GAME_STATUS } from '../game-context';
 import CardImage from '../deck/card/image';
+import Title from '../title';
+import ModalHeader from '../modal/header';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +28,7 @@ class App extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevStates) {
-    if(this.state.status === GAME_STATUS.off && prevStates.status !== this.state.status) {
+    if (this.state.status === GAME_STATUS.off && prevStates.status !== this.state.status) {
       this.setInitialCards();
     }
   }
@@ -34,13 +36,14 @@ class App extends React.Component {
   render() {
     return (
       <Provider value={this.state}>
-        {
-          !this.state.cardSelected &&
-          <div className="app">
-            <Deck />
-            <ButtonStart />
-          </div>
-        }
+        <div className="app">
+          <Deck />
+          {
+            this.state.status === GAME_STATUS.started &&
+            <Title title="Pick up a card" />
+          }
+          <ButtonStart />
+        </div>
         {
           this.state.cardSelected &&
           <Modal title={this.state.cardSelected.name}>
@@ -48,6 +51,7 @@ class App extends React.Component {
               <CardImage {...this.state.cardSelected} />
             </div>
             <div className="modal-content-child">
+              <ModalHeader title={this.state.cardSelected.name} />
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Ullam sint voluptas,
               dignissimos beatae distinctio sed doloribus dolore
