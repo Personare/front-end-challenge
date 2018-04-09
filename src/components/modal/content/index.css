@@ -1,10 +1,11 @@
 .modal-content {
-  height: 70%;
+  height: 85%;
 }
 
 .modal-content-child {
   display: inline-block;
-  width: 50%;
+  width: 40%;
+  margin: 2.5%;
   vertical-align: top;
 }
 
