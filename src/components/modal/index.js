@@ -7,7 +7,6 @@ import './index.css';
 
 const Modal = (props) => (
   <dialog className="modal" open>
-    <ModalHeader title={props.title} />
     <ModalContent>
       {props.children}
     </ModalContent>
