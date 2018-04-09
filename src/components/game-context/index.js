@@ -75,7 +75,7 @@ export function isShuffling() {
         isShuffling: false
       }
     });
-  }, 2000);
+  }, 1000);
 }
 
 export const { Provider, Consumer } = React.createContext(DEFAULT_VALUE);
