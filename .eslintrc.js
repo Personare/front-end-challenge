@@ -5,6 +5,12 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": ["warn", {
       "aspects": ["noHref", "invalidHref", "preferButton"]
     }],
+    "jsx-a11y/click-events-have-key-events": [
+      'warn'
+    ],
+    'jsx-a11y/no-static-element-interactions': [
+      'warn'
+    ],
     "jsx-a11y/anchor-has-content": ["warn"],
     "comma-dangle": [
       "warn",
