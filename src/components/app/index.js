@@ -4,7 +4,9 @@ import './index.css';
 import ButtonStart from '../buttons/start';
 import Deck from '../deck';
 import Modal from '../modal';
-import { Provider, DEFAULT_VALUE, startGame, resetGame, selectCard, setInitialCards, isShuffling, GAME_STATUS } from '../game-context';
+import { startGame, resetGame } from '../game-context/actions/game';
+import { setInitialCards, isShuffling, selectCard } from '../game-context/actions/cards';
+import { Provider, DEFAULT_VALUE, GAME_STATUS } from '../game-context';
 import CardImage from '../deck/card/image';
 import Title from '../title';
 import ModalHeader from '../modal/header';
@@ -12,8 +14,12 @@ import ModalHeader from '../modal/header';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       ...DEFAULT_VALUE,
+    };
+
+    this.actions = {
       startGame: startGame.bind(this),
       resetGame: resetGame.bind(this),
       selectCard: selectCard.bind(this),
@@ -35,7 +41,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Provider value={this.state}>
+      <Provider value={{ ...this.state, ...this.actions }}>
         <div className="app">
           <Deck />
           {
