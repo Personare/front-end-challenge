@@ -39,7 +39,7 @@
     └─── game-context (manipulate state and provide actions)
     │   │
     │   └─── actions
-    │   │
+    │
     └─── modal (used to show selected card information)
     │   │
     │   └─── content
@@ -47,7 +47,7 @@
     │   └─── footer
     │   │
     │   └─── header
-    │   │
+    │
     └─── title
 ```
 
