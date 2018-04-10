@@ -1,7 +1,7 @@
 import { GAME_STATUS } from '..';
 import { getCardInfos } from '../../../api/cards';
 
-const getParsedCards = ({ cards, imagesUrl, imageBackCard }) => (
+export const getParsedCards = ({ cards = [], imagesUrl, imageBackCard }) => (
   cards.map(card => (
     {
       ...card,
