@@ -4,21 +4,23 @@ import PropTypes from 'prop-types';
 import CardImage from '../image';
 import './index.css';
 
-const CardFlip = ({ frontImage, backImage, flipped = false }) => {
-  return <div className={`card-flip ${flipped ? 'mod-flipped' : ''}`}>
-    <CardImage {...frontImage} modClass="mod-front" />
-    <CardImage {...backImage} modClass="mod-back" />
+const CardFlip = ({ name = 'card', flipped = false, ...props }) => (
+  <div className={`card-flip ${flipped ? 'mod-flipped' : ''}`}>
+    <CardImage {...props.frontImage} modClass="mod-front" name={name} />
+    <CardImage {...props.backImage} modClass="mod-back" name={name} />
   </div>
-};
+);
 
 CardFlip.defaultProps = {
-  flipped: false
+  name: 'card',
+  flipped: false,
 };
 
 CardFlip.propTypes = {
+  name: PropTypes.string,
   frontImage: PropTypes.objectOf(CardImage).isRequired,
   backImage: PropTypes.objectOf(CardImage).isRequired,
-  flipped: PropTypes.bool
+  flipped: PropTypes.bool,
 };
 
 export default CardFlip;

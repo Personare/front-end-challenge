@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Consumer } from "../../game-context";
+import { Consumer } from '../../game-context';
 import './index.css';
 
-const ButtonReset = (props) => (
+const ButtonReset = () => (
   <Consumer>
     {
       ({ resetGame }) => (

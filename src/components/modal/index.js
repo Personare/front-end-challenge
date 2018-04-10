@@ -1,11 +1,12 @@
 import React from 'react';
-import ModalHeader from './header';
+import PropTypes from 'prop-types';
+
 import ModalContent from './content';
 import ModalFooter from './footer';
 import './index.css';
 
 
-const Modal = (props) => (
+const Modal = props => (
   <dialog className="modal" open>
     <ModalContent>
       {props.children}
@@ -13,5 +14,9 @@ const Modal = (props) => (
     <ModalFooter />
   </dialog>
 );
+
+Modal.prototype.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default Modal;
