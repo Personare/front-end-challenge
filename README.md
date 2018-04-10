@@ -55,11 +55,10 @@
 ## Little Description
 This app has been created with [create-react-app](https://github.com/facebookincubator/create-react-app).
 
-I decided to use the [react context](https://reactjs.org/docs/context.html). Because I wanted to test it a lot.\
-I knew what I could do with redux.
+I knew that the best choice to control the state changes is the redux (I keep my opinion on this). Despite this, I wanted to use the [react context](https://reactjs.org/docs/context.html), basically because its something new for me and I didn't know what could happen if I make the app state changes with that.
 
-Feedback on this decision:\
-It's great for simple things, but for more specific things the redux is better
+Feedback about this choice:\
+It's great for simple things, but for more specific things the redux is better.
 
 
 ## Contributors
