@@ -22,33 +22,33 @@
 └─── components
     │
     └─── app (main component)
-        │
-        └─── buttons
-        │   │
-        │   └─── reset
-        │   │
-        │   └─── start
-        │
-        └─── deck
-        │   └─── card
-        │   │
-        │   └─── flip (container that can flip the card)
-        │   │
-        │   └─── image (card image)
-        │
-        └─── game-context (manipulate state and provide actions)
-        │   │
-        │   └─── actions
-        │   │
-        └─── modal (used to show selected card information)
-        │   │
-        │   └─── content
-        │   │
-        │   └─── footer
-        │   │
-        │   └─── header
-        │   │
-        └─── title
+    │
+    └─── buttons
+    │   │
+    │   └─── reset
+    │   │
+    │   └─── start
+    │
+    └─── deck
+    │   └─── card
+    │   │
+    │   └─── flip (container that can flip the card)
+    │   │
+    │   └─── image (card image)
+    │
+    └─── game-context (manipulate state and provide actions)
+    │   │
+    │   └─── actions
+    │   │
+    └─── modal (used to show selected card information)
+    │   │
+    │   └─── content
+    │   │
+    │   └─── footer
+    │   │
+    │   └─── header
+    │   │
+    └─── title
 ```
 
 
