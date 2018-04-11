@@ -1,50 +1,67 @@
-# front-end-challenge
+# Tarot
 
-> Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)
+## Little Description
+This app has been created with [create-react-app](https://github.com/facebookincubator/create-react-app).
 
-## Introdução
+I knew that the best choice to control the state changes is the redux (I keep my opinion on this). Despite this, I wanted to use the [react context](https://reactjs.org/docs/context.html), basically because its something new for me and I didn't know what could happen if I make the app state changes with that.
 
-A nossa Product Owner pensou em um produto fantástico para ser desenvolvido, e um dos desafios é criação de um jogo de Tarot.
-
-<br>
-
-**Então, essa é a sua missão!**
-
-Criar um jogo de Tarot, permitindo o sorteio de uma carta.
-
-E as especificações são:
-
-- Tela de apresentação exibindo todas as cartas com seu conteúdo visível, e com um botão para iniciar o jogo.
-- Ao clicar no botão, as cartas deverão ser viradas - escondendo o conteúdo - e embaralhadas.
-- Permitir que o usuário selecione apenas uma carta, clicando na mesma.
-- Apresentar a carta selecionada, o nome da carta e uma descrição. (a descrição pode ser um lorem ipsum)
-
-OBS: As imagens e nomes das cartas estão listadas no arquivo [`tarot.json`](tarot.json), esse arquivo deve ser consumido via _http request_. A propriedade `image` de cada carta deve ser concatenada com a propriedade `imagesUrl`, para obter o endereço final da imagem. Utilize o valor da propriedade `imageBackCard` para obter a imagem do fundo da carta.
+Feedback about this choice:\
+It's great for simple things, but for more specific things the redux is better.
 
 
-## Instruções
+I've never used jest before. But I wanted to test it, instead of using mocha, chai and sinon. I tried to use enzyme, but I still have to study it. So since I did not have more time available to do the project, I decided to upload it.
 
-1. Efetue o **fork** deste repositório e crie um branch com o seu nome. (ex: caue-alves).
-2. Após finalizar o desafio, crie um **Pull Request**.
-3. Aguarde algum contribuidor realizar o code review.
+## Install dependencies
+`$ yarn install`
+
+## scripts
+* run watch and develop mode\
+  `$ yarn start`
+* run production mode\
+  `$ yarn run build`
+* run lint\
+  `$ yarn run lint`
+* fix lint\
+  `$ yarn run lint-fix`
 
 
-## Pré-requisitos
+## Main Structure
+```
+│─── api (services)
+│   └─── cards
+│
+└─── components
+    │
+    └─── app (main component)
+    │
+    └─── buttons
+    │   │
+    │   └─── reset
+    │   │
+    │   └─── start
+    │
+    └─── deck
+    │   └─── card
+    │   │
+    │   └─── flip (container that can flip the card)
+    │   │
+    │   └─── image (card image)
+    │
+    └─── game-context (manipulate state and provide actions)
+    │   │
+    │   └─── actions
+    │
+    └─── modal (used to show selected card information)
+    │   │
+    │   └─── content
+    │   │
+    │   └─── footer
+    │   │
+    │   └─── header
+    │
+    └─── title
+```
 
-- Aplicação feita em React
-- Possuir testes
-- Gerar versão de produção
-- Criar micro commits ou commits por features
-	- Detalhar nos comentários dos commits as decisões tomadas.
 
-
-## Diferenciais
-
-- Boa documentação
-- Testes de componentes isolados
-
-## Dúvidas
-
-Se surgir alguma dúvida, consulte as [perguntas feitas anteriormente](https://github.com/Personare/front-end-challenge/labels/question).
-
-Caso não encontre a sua resposta, sinta-se à vontade para [abrir uma issue](https://github.com/Personare/front-end-challenge/issues/new) =]
+## Contributors
+[Matheus Valeriano](https://github.com/mathvaleriano)

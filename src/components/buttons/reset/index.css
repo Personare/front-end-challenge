@@ -1,0 +1,13 @@
+.button-reset {
+    width: 6em;
+    height: 2.5em;
+    border: none;
+    background: transparent;
+    font-size: 1.6em;
+    color: #7aa8c3;
+    border-radius: 10px;
+}
+
+.button-reset:hover {
+    color: #518ab1;
+}

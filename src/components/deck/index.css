@@ -1,0 +1,10 @@
+.deck {
+  margin: 33vh auto 5vh 30%;
+  display: block;
+  width: 44vw;
+  height: 33vh;
+}
+
+.deck.is-shuffling > .card {
+  margin-left: -70.1px;
+}

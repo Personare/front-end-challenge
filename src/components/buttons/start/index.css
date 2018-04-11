@@ -1,0 +1,11 @@
+.button-start {
+    border: 0;
+    width: 6em;
+    height: 2.5em;
+    display: inline-block;
+    font-size: 1.6em;
+    color: #fff;
+    background-color: #7aa8c3;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, .9);
+}
