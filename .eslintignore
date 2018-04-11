@@ -1,1 +1,3 @@
 src/registerServiceWorker.js
+src/helpers/mocks/index.js
+*.test.js
