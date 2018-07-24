@@ -5,7 +5,7 @@ import Card from './card'
 
 class Deck extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             cards: [],
