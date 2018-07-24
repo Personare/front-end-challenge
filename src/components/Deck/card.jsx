@@ -7,9 +7,11 @@ class Card extends Component {
 
     render() {
         return(
-            <div className="card">
-                <img src={this.props.imgCard} alt={this.props.imgCardName} className="card-front"/>
-                <img src={this.props.imgCardBack} alt="background card" className="card-back"/>
+            <div className="card-wrap">
+                <div className="card">
+                    <img src={this.props.imgCard} alt={this.props.imgCardName} className="card-front"/>
+                    <img src={this.props.imgCardBack} alt="background card" className="card-back"/>
+                </div>
             </div>
         )
     }

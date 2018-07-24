@@ -1,9 +1,6 @@
-body {
-    background: red;
-}
-
 //Config
 @import 'config/reset';
 
 //Card
-@import 'card/index'
+@import 'card/index';
+@import 'card/card-list';

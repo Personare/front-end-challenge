@@ -29,7 +29,7 @@ class Deck extends Component {
 
     render() {
         return(
-            <div>
+            <div className="card-list">
                 {this.state.cards.map((card, index) =>
                     <Card
                         key={index}
