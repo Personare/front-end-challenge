@@ -1,6 +1,3 @@
-body {
-  background: red; }
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,6 +20,10 @@ time, mark, audio, video {
 
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+body {
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden; }
 
 article,
 aside,
@@ -94,4 +95,115 @@ strong {
 i,
 em {
   font-style: italic; }
+
+.card,
+.card-front,
+.card-back {
+  transform-style: preserve-3d; }
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
+  height: 309px;
+  position: relative;
+  cursor: pointer;
+  transition: transform .6s;
+  width: 162px; }
+  .card img {
+    display: block;
+    height: inherit;
+    width: auto; }
+  .back-card .card {
+    transform: rotateY(180deg); }
+    .back-card .card .card-front {
+      opacity: 0; }
+  .open-card .card {
+    transform: rotate(0); }
+    .open-card .card .card-front {
+      opacity: 1; }
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  position: absolute; }
+
+.card-front {
+  padding: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity .1s;
+  z-index: 2; }
+
+.card-back {
+  transform: rotateY(180deg); }
+
+.card-wrap {
+  perspective: 1000px;
+  position: relative; }
+  .card-wrap.open-card {
+    z-index: 2; }
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  justify-content: center; }
+  .card-list .card {
+    margin: 5px; }
+
+.card-description {
+  background: #4d538c;
+  border-radius: 8px;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 14px;
+  left: 50%;
+  line-height: 1.2;
+  min-width: 300px;
+  opacity: 0;
+  padding: 30px;
+  position: absolute;
+  transform: translate(-50%, 0);
+  transition: .3s .3s;
+  text-align: center;
+  top: 100%;
+  visibility: hidden;
+  z-index: 3; }
+  .card-description::before {
+    content: "";
+    bottom: 100%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #4d538c transparent;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%); }
+  .card-description .card-title {
+    margin-bottom: 5px; }
+  .open-card .card-description {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 10px); }
+
+.card-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px; }
+
+.button-container {
+  padding: 40px 20px 20px;
+  text-align: center; }
+
+.button-cta {
+  background: #cc3283;
+  border: none;
+  border-bottom: 2px solid #943768;
+  border-radius: 6px;
+  color: #fff;
+  font: 16px 'Arial';
+  font-weight: bold;
+  padding: 10px 30px;
+  transition: background .3s; }
+  .button-cta:hover {
+    background: #b82d76; }
 
