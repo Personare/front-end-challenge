@@ -1,0 +1,8 @@
+.card-wrap {
+    perspective: 1000px;
+    position: relative;
+
+    &.open-card {
+        z-index: 2;
+    }
+}

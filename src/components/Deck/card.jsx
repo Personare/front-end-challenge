@@ -15,6 +15,16 @@ class Card extends Component {
                 <div className="card">
                     <img src={this.props.imgCard} alt={this.props.imgCardName} className="card-front"/>
                     <img src={this.props.imgCardBack} alt="background card" className="card-back"/>
+
+                    <div className="card-description">
+                        <h2 className="card-title">
+                            title
+                        </h2>
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, modi?
+                        </p>
+                    </div>
                 </div>
             </div>
         )

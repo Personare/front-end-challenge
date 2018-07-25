@@ -23,6 +23,11 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
 article,
 aside,
 details,

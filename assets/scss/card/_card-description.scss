@@ -1,0 +1,40 @@
+.card-description {
+    background: #4d538c;
+    border-radius: 8px;
+    box-shadow: 0 0 7px 0 rgba(#000, .1);
+    color: #fff;
+    font-size: 14px;
+    left: 50%;
+    line-height: 1.2;
+    min-width: 300px;
+    opacity: 0;
+    padding: 30px;
+    position: absolute;
+    transform: translate(-50%, 0);
+    transition: .3s .3s;
+    text-align: center;
+    top: 100%;
+    visibility: hidden;
+    z-index: 3;
+
+    &::before {
+        content: "";
+        bottom: 100%;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent #4d538c transparent;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+    }
+
+    .card-title {
+        margin-bottom: 5px;
+    }
+
+    .open-card & {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 10px);
+    }
+}
