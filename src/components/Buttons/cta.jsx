@@ -8,7 +8,7 @@ class Cta extends Component {
     render() {
         return(
             <div className="button-container">
-                <button className="button-cta">{this.props.title}</button>
+                <button className="button-cta" onClick={e => this.props.click()}>{this.props.title}</button>
             </div>
         )
     }

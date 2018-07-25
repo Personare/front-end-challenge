@@ -19,7 +19,7 @@
         width: auto;
     }
 
-    &:hover {
+    .back-card & {
         transform: rotateY(180deg);
     }
 }

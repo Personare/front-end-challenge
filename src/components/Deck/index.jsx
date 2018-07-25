@@ -29,7 +29,7 @@ class Deck extends Component {
 
     render() {
         return(
-            <div className="card-list">
+            <div className={`${this.props.classStart} card-list`}>
                 {this.state.cards.map((card, index) =>
                     <Card
                         key={index}
