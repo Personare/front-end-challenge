@@ -26,6 +26,14 @@
             opacity: 0;
         }
     }
+
+    .open-card & {
+        transform: rotate(0);
+
+        .card-front {
+            opacity: 1;
+        }
+    }
 }
 
 .card-front,

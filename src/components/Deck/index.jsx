@@ -29,9 +29,11 @@ class Deck extends Component {
                 const cards = res.data.cards
                 const imagesUrl = res.data.imagesUrl
 
-                this.setState({ cards })
-                this.setState({ imagesUrl })
-                this.setState({ imageBackCard })
+                this.setState({
+                    cards,
+                    imagesUrl,
+                    imageBackCard
+                })
             })
     }
 
@@ -43,9 +45,13 @@ class Deck extends Component {
                 {this.state.cards.map((card, index) =>
                     <Card
                         key={index}
+                        cardId={index}
                         imgCard={this.state.imagesUrl + card.image}
                         imgCardName={card.name}
-                        imgCardBack={this.state.imageBackCard} />
+                        imgCardBack={this.state.imageBackCard}
+                        handleCard={this.props.handleCard}
+                        cardOpen={this.props.cardOpen}
+                        classOpen={this.props.classOpen} />
                 )}
             </div>
         )
