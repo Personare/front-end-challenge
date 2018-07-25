@@ -18,7 +18,7 @@ class Card extends Component {
 
                     <div className="card-description">
                         <h2 className="card-title">
-                            title
+                            {this.props.imgCardName}
                         </h2>
 
                         <p>
