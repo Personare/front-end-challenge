@@ -21,6 +21,10 @@
 
     .back-card & {
         transform: rotateY(180deg);
+
+        .card-front {
+            opacity: 0;
+        }
     }
 }
 
@@ -34,6 +38,7 @@
     padding: 10px;
     left: 50%;
     transform: translateX(-50%);
+    transition: opacity .1s;
     z-index: 2;
 }
 

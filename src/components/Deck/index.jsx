@@ -14,6 +14,14 @@ class Deck extends Component {
         }
     }
 
+    game( e ) {
+        if( e ) {
+            var objCards = this.state.cards
+            objCards.sort(function(a, b){return 0.5 - Math.random()});
+            return
+        }
+    }
+
     componentDidMount() {
         axios.get(`./../tarot.json`)
             .then((res) => {
@@ -30,6 +38,8 @@ class Deck extends Component {
     render() {
         return(
             <div className={`${this.props.classStart} card-list`}>
+                {this.game( this.props.initialGame )}
+
                 {this.state.cards.map((card, index) =>
                     <Card
                         key={index}

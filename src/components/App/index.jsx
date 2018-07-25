@@ -4,7 +4,8 @@ import Deck from '../Deck'
 import Cta from '../Buttons/cta'
 
 const initialState = {
-    classBackCard: ''
+    classBackCard: '',
+    game: false
 }
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
 
     startGame() {
         this.setState({ classBackCard: 'back-card' })
+        this.setState({ game: true })
     }
 
     clearGame() {
@@ -30,7 +32,7 @@ class App extends Component {
         return(
             <div className="wrap">
                 <Cta title="Começar jogo" click={this.startGame} />
-                <Deck classStart={this.state.classBackCard} />
+                <Deck initialGame={this.state.game} classStart={this.state.classBackCard} />
             </div>
         )
     }
