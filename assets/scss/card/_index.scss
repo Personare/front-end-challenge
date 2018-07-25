@@ -1,0 +1,55 @@
+.card,
+.card-front,
+.card-back {
+    transform-style: preserve-3d;
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 0 7px 0 rgba(#000, .1);
+    height: 309px;
+    position: relative;
+    cursor: pointer;
+    transition: transform .6s;
+    width: 162px;
+
+    img {
+        display: block;
+        height: inherit;
+        width: auto;
+    }
+
+    .back-card & {
+        transform: rotateY(180deg);
+
+        .card-front {
+            opacity: 0;
+        }
+    }
+
+    .open-card & {
+        transform: rotate(0);
+
+        .card-front {
+            opacity: 1;
+        }
+    }
+}
+
+.card-front,
+.card-back {
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.card-front {
+    padding: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity .1s;
+    z-index: 2;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
