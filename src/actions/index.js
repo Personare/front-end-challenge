@@ -5,13 +5,13 @@ export const loadCards = (data) => ({
   payload: data,
 });
 
-export const setCard = (id) => ({
+export const selectCard = (id) => ({
   type: SELECT_CARD,
   payload: { id },
 });
 
-export const start = () => ({ type: START_GAME });
+export const startGame = () => ({ type: START_GAME });
 
-export const stop = () => ({ type: STOP_GAME });
+export const stopGame = () => ({ type: STOP_GAME });
 
-export const shuffle = () => ({ type: SHUFFLE_GAME });
+export const shuffleGame = () => ({ type: SHUFFLE_GAME });
