@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './Navbar.sass';
+
 const navbar = (props) => (
-  <nav>
+  <nav className="Navbar">
     <ul>
       <li>
         <Link to="/">Game</Link>
       </li>
       <li>
-        <Link to="/">Game</Link>
+        <Link to="/cartas">Cartas</Link>
       </li>
     </ul>
   </nav>
