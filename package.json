@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Diego T. Fialho",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.1.2",
