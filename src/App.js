@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import Layout from './containers/Layout/Layout';
+import Game from './containers/Game/Game';
 
 class App extends Component {
   render() {
-    const text = 'React Redux Boilerplate';
-
     return (
-      <div>
-        {text}
-      </div>
+      <BrowserRouter>
+        <Layout>
+          <Route exact path="/" component={Game} />
+        </Layout>
+      </BrowserRouter>
     );
   }
 }

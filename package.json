@@ -21,8 +21,10 @@
     "css-loader": "^1.0.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
+    "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
+    "lodash": "^4.17.11",
     "node-sass": "^4.9.3",
     "react-test-renderer": "^16.5.2",
     "rimraf": "^2.6.2",
@@ -36,6 +38,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0"
   }
