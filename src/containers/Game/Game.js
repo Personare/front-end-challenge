@@ -5,6 +5,7 @@ import * as actions from '../../actions';
 
 import data from '../../assets/tarot.json';
 import Card from '../../components/Card/Card';
+import GameMenu from '../../components/GameMenu/GameMenu';
 import './Game.sass';
 
 class Game extends Component {
@@ -32,6 +33,10 @@ class Game extends Component {
   render() {
     return (
       <Fragment>
+        <GameMenu
+          play={this.props.game.play}
+          start={() => this.startGame()}
+          stop={() => this.stopGame()} />
         <section className="Game">
           {
             this.props.game.order.map(id => <Card 
