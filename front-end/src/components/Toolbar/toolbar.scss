@@ -1,0 +1,24 @@
+@import "../../styles/mixins.scss";
+
+.toolbar {
+    font-family: "Philosopher", sans-serif;
+    padding: 30px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+
+    &__box {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #30394d;
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 16pt;
+        @include box-shadow(2);
+    }
+
+    &__winner {
+        color: #f44336;
+        font-size: 32pt;
+        padding-left: 60px;
+    }
+}

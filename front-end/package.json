@@ -12,6 +12,7 @@
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.3",
     "react-select": "^2.1.0",
+    "react-spinners": "^0.4.5",
     "uuid": "^3.3.2"
   },
   "scripts": {

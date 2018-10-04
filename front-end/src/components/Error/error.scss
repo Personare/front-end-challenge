@@ -1,0 +1,34 @@
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: "Philosopher", sans-serif;
+
+    &__content {
+        text-align: center;
+    }
+
+    &__title {
+        margin: 0 0 60px 0;
+        font-size: 72pt;
+        color: #30394d;
+        font-weight: normal;
+    }
+
+    &__message {
+        font-size: 56pt;
+        color: #30394d;
+    }
+
+    &__button {
+        font-family: "Philosopher", sans-serif;
+        padding: 16px 20px;
+        border: none;
+        border-radius: 8px;
+        background: #30394d;
+        color: #2fafe4;
+        font-size: 18pt;
+        cursor: pointer;
+    }
+}

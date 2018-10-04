@@ -1,0 +1,60 @@
+@import "../../styles/mixins.scss";
+
+.card {
+  font-family: "Philosopher", sans-serif;
+  width: 162px;
+  height: 309px;
+  margin: 12px;
+  perspective: 1000px;
+  cursor: pointer;
+
+  &.hover &__flipper {
+    transform: rotateY(180deg);
+  }
+
+  &__flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
+  &__page {
+    width: 162px;
+    height: 309px;
+    border-radius: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include box-shadow(2);
+
+    &--front {
+      background-color: #ccc;
+      z-index: 2;
+      transform: rotateY(0deg);
+
+      &:hover {
+        @include box-shadow(4);
+      }
+    }
+
+    &--back {
+      background-color: tomato;
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: flex-end;
+    }
+  }
+
+  &__name {
+    flex: 1;
+    padding: 8px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 14pt;
+    color: #fff;
+  }
+}
