@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import Layout from './containers/Layout/Layout';
 import Game from './containers/Game/Game';
+import CardList from './containers/CardList/CardList';
 
 class App extends Component {
   render() {
@@ -10,6 +11,7 @@ class App extends Component {
       <BrowserRouter>
         <Layout>
           <Route exact path="/" component={Game} />
+          <Route exact path="/cartas" component={CardList} />
         </Layout>
       </BrowserRouter>
     );
