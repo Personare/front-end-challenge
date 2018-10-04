@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import { Game, Menu } from "../components";
 import TarotService from "../services/TarotService";
+import ListBuilder from "../builders/ListBuilder";
 import gameStatus from "../constants/gameStatus";
 
 class App extends Component {
@@ -42,6 +43,23 @@ class App extends Component {
             });
     }
 
+    handleGameStart = () => {
+        this.setState(prevState => ({
+            status: gameStatus.PLAYING,
+            game: {
+                attempts: prevState.attempts,
+                cards: new ListBuilder(prevState.cards)
+                    .shuffle()
+                    .limit(prevState.limit)
+                    .generateItemId()
+                    .duplicate()
+                    .generateItemKey("card")
+                    .shuffle()
+                    .build()
+            }
+        }));
+    };
+
     render() {
         const { status, limit, attempts } = this.state;
 
@@ -49,7 +67,7 @@ class App extends Component {
             <Game>
                 {status === gameStatus.BEGIN && (
                     <Menu
-                        onStart={() => {}}
+                        onStart={this.handleGameStart}
                         onChange={() => {}}
                         limit={limit}
                         attempts={attempts}
