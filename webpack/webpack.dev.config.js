@@ -25,7 +25,11 @@ module.exports = {
       {
         test: /\.(jpe?g|ttf|eot|svg|png|woff(2)?)(\?[a-z0-9=&.]*)?$/,
         use: {
-          loader: 'file-loader'
+          loader: 'file-loader',
+          options: {
+            outputPath: 'assets/',
+            publicPath: 'assets/'
+          }
         }
       },
       {

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --config ./webpack/webpack.dev.config.js",
+    "dev": "rimraf dist && webpack --config ./webpack/webpack.dev.config.js",
     "build": "rimraf dist && webpack --progress --colors --config ./webpack/webpack.prod.config.js",
     "start": "webpack-dev-server --progress --colors --config ./webpack/webpack.dev.config.js",
     "test": "jest"

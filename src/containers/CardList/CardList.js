@@ -10,7 +10,6 @@ class CardList extends Component {
   componentWillMount() {
     this.props.stopGame();
     this.props.loadCards(data);
-    setTimeout(() => console.log(this.props), 1000);
   }
 
   render() {
@@ -18,6 +17,7 @@ class CardList extends Component {
       <section className="CardList">
         {
           this.props.order.map(id => <FullCard
+            key={id}
             name={this.props.cards[id].name}
             image={this.props.cards[id].image} />
           )
