@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import { Game, Menu } from "../components";
+import TarotService from "../services/TarotService";
 import gameStatus from "../constants/gameStatus";
 
 class App extends Component {
@@ -20,6 +21,26 @@ class App extends Component {
             cards: []
         }
     };
+
+    componentDidMount() {
+        new TarotService()
+            .getCards()
+            .then(res => {
+                const { imagesUrl, imageBackCard, cards } = res.data;
+                this.setState({
+                    isLoading: false,
+                    imagesUrl,
+                    imageBackCard,
+                    cards
+                });
+            })
+            .catch(() => {
+                this.setState({
+                    isLoading: false,
+                    hasError: true
+                });
+            });
+    }
 
     render() {
         const { status, limit, attempts } = this.state;
