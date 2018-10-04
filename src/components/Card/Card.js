@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import TweenMax from 'gsap';
 
+import './Card.sass';
+
 class Card extends Component {
   constructor(props) {
     super(props);
@@ -9,7 +11,7 @@ class Card extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.selected !== this.props.selected) {
-      TweenMax.to(this.refs.cardContent.current, 1, { rotationY: !nextProps.selected ? -180 : 0 });
+      TweenMax.to(this.cardContentRef.current, 1, { rotationY: !nextProps.selected ? -180 : 0 });
     }
   }
 
@@ -17,11 +19,11 @@ class Card extends Component {
     return (
       <article className="CardContainer" onClick={this.props.click}>
         <div className="CardContent" ref={this.cardContentRef}>
-          <div className="front">
-            <img src={this.props.frontImg} alt={this.props.name} />
+          <div className="CardImage">
+            <img src={this.props.card} alt={this.props.name} />
           </div>
-          <div className="back">
-            <img src={this.props.backImg} alt={this.props.name} />
+          <div className="BackImage">
+            <img src={this.props.imageBack} alt={this.props.name} />
           </div>
         </div>
       </article>

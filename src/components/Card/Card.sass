@@ -1,0 +1,21 @@
+.CardContainer
+  position: relative
+  height: 210px
+  cursor: pointer
+  margin: 10px;
+  .CardContent
+    transform-style: preserve-3d
+
+  .CardImage, .BackImage
+    position: absolute
+    width: 100px
+    height: 210px
+    overflow: hidden
+    border-radius: 5px
+    backface-visibility: hidden
+    > img
+      width: 100px
+      height: 210px
+
+  .BackImage
+    transform: rotateY(-180deg)

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import TweenMax from 'gsap';
 import * as actions from '../../actions';
@@ -31,17 +31,19 @@ class Game extends Component {
 
   render() {
     return (
-      <section className="Game">
-        {
-          this.props.game.order.map(id => <Card 
-            key={id}
-            frontImg={this.props.game.cards[id].image}
-            backImg={this.props.game.cards[id].imageBackCard}
-            click={() => this.selectCard(id)}
-            selected={this.props.game.selected}
-          />)
-        }
-      </section>
+      <Fragment>
+        <section className="Game">
+          {
+            this.props.game.order.map(id => <Card 
+              key={id}
+              card={this.props.game.cards[id].image}
+              imageBack={this.props.game.cards[id].imageBackCard}
+              click={() => this.selectCard(id)}
+              selected={this.props.game.play && this.props.game.selected === id}
+            />)
+          }
+        </section>
+      </Fragment>
     );
   }
 }

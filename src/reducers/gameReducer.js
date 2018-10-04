@@ -1,5 +1,5 @@
 import { LOAD_CARDS, SELECT_CARD, START_GAME, STOP_GAME, SHUFFLE_GAME } from '../actions/types';
-import shuffle from 'lodash/shuffle';
+import { shuffle } from 'lodash';
 
 const INITIAL_STATE = {
   play: false,
