@@ -1,0 +1,23 @@
+{
+    "name": "tarot-api",
+    "description": "Tarot API",
+    "version": "0.1.0",
+    "scripts": {
+        "start": "node src/app.js",
+        "test": "NODE_ENV=test mocha test/**/*.test.js --exit"
+    },
+    "author": "Bruno Nardini",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.4",
+        "express": "^4.16.3",
+        "swagger-jsdoc": "^3.2.3",
+        "swagger-ui-express": "^4.0.1"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^5.2.0",
+        "prettier": "1.14.3",
+        "supertest": "^3.3.0"
+    }
+}
