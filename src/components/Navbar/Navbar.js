@@ -1,17 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import NavigationItem from './NavigationItem/NavigationItem';
 import './Navbar.sass';
 
 const navbar = (props) => (
   <nav className="Navbar">
     <ul>
-      <li>
-        <Link to="/">Game</Link>
-      </li>
-      <li>
-        <Link to="/cartas">Cartas</Link>
-      </li>
+      <NavigationItem to="/" label="Game" />
+      <NavigationItem to="/cartas" label="Cartas" />
     </ul>
   </nav>
 );
