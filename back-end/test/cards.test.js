@@ -4,13 +4,15 @@ const app = require("../src/app");
 
 const expect = chai.expect;
 
-describe("/health-check", () => {
+describe("/cards", () => {
     it("test success", done => {
         request(app)
-            .get("/health-check")
+            .get("/cards")
             .end((err, res) => {
                 expect(res.statusCode).to.equal(200);
-                expect(res.body).to.deep.equal({ status: "UP" });
+                expect(res.body).to.have.property("imagesUrl");
+                expect(res.body).to.have.property("imageBackCard");
+                expect(res.body).to.have.property("cards");
                 done(err);
             });
     });

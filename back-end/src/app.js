@@ -4,6 +4,7 @@ const cors = require("cors");
 const swaggerJSDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
 const healthController = require("./controllers/health");
+const cardsController = require("./controllers/cards");
 
 const PORT = process.env.MOCK_SERVER_PORT || 5000;
 const BASE_URL = `http://localhost:${PORT}`;
@@ -26,6 +27,7 @@ const options = {
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerJSDoc(options)));
 
 app.use(healthController);
+app.use(cardsController);
 
 app.listen(PORT, () => {
     if (process.env.NODE_ENV !== "test") {
