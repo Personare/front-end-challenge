@@ -5,3 +5,17 @@
     margin-bottom: 20px
     padding: 20px
     border-radius: 5px
+    @media (max-width: 425px)
+      width: auto
+      flex-flow: column
+      .CardImage
+        padding-top: 20px
+        height: 250px
+        flex-basis: 100%
+        img
+          height: 100%
+          margin: 0 auto
+        
+      .CardDescription
+        h1
+          text-align: center
