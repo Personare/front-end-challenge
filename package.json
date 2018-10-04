@@ -36,6 +36,7 @@
     "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
+    "gsap": "^2.0.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
