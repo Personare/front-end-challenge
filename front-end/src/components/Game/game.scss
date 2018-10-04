@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Philosopher");
+
+.game {
+  &__background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background-image: url("../../images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    position: relative;
+  }
+}

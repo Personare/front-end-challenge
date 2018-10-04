@@ -1,0 +1,36 @@
+{
+  "name": "tarot-memory-card",
+  "description": "Tarot Memory Card",
+  "author": "Bruno Nardini",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chai": "^4.2.0",
+    "classnames": "^2.2.6",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.3",
+    "react-select": "^2.1.0",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "prettier": "1.14.3"
+  }
+}

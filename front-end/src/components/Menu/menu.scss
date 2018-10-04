@@ -1,0 +1,46 @@
+.menu {
+  font-family: "Philosopher", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    width: 100%;
+    max-width: 768px;
+  }
+
+  &__button {
+    width: 100%;
+    font-family: "Philosopher", sans-serif;
+    padding: 26px 40px;
+    border: none;
+    border-radius: 8px;
+    background: #30394d;
+    background: linear-gradient(to bottom, #30394d, #2274a0);
+    color: #2fafe4;
+    font-size: 28pt;
+    cursor: pointer;
+  }
+
+  &__row {
+    display: flex;
+    margin-bottom: 40px;
+  }
+
+  &__input {
+    flex: 1;
+    padding-right: 12px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    label {
+      display: block;
+      color: #212121;
+      font-size: 16pt;
+      margin-bottom: 6px;
+    }
+  }
+}
