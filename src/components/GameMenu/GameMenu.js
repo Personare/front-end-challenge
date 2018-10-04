@@ -7,8 +7,8 @@ const gameMenu = (props) => (
   <nav className="GameMenu">
     {
       props.play ?
-        <Button click={props.stop}>Mostrar Cartas</Button> :
-        <Button click={props.start}>Iniciar Jogo</Button>
+        <Button click={props.stop} btnType="Btn-default">Mostrar Cartas</Button> :
+        <Button click={props.start} btnType="Btn-default">Iniciar Jogo</Button>
     }
   </nav>
 );

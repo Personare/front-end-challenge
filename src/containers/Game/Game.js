@@ -6,12 +6,12 @@ import * as actions from '../../actions';
 import data from '../../assets/tarot.json';
 import Card from '../../components/Card/Card';
 import GameMenu from '../../components/GameMenu/GameMenu';
+import SelectedCard from '../SelectedCard/SelectedCard';
 import './Game.sass';
 
 class Game extends Component {
   componentDidMount() {
     this.props.loadCards(data);
-    setTimeout(() => console.log(this.props), 1000)
   }
 
   selectCard = (id) => {
@@ -48,6 +48,7 @@ class Game extends Component {
             />)
           }
         </section>
+        <SelectedCard />
       </Fragment>
     );
   }
