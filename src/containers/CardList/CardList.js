@@ -6,7 +6,7 @@ import data from '../../assets/tarot.json';
 import FullCard from '../../components/FullCard/FullCard';
 import './CardList.sass';
 
-class CardList extends Component {
+export class CardList extends Component {
   componentWillMount() {
     this.props.stopGame();
     this.props.loadCards(data);

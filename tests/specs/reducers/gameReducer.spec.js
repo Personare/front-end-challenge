@@ -33,12 +33,12 @@ describe('reducers -> gameReducer', () => {
           name: 'A SACERDOTISA',
           image: 'arcano2.jpg',
         },
-      ],
+      ]
     };
 
     state = gameReducer(undefined, {
       type: types.LOAD_CARDS,
-      payload: json,
+      payload: json
     });
 
     expect(state.order).toEqual([1, 2]);
@@ -46,12 +46,12 @@ describe('reducers -> gameReducer', () => {
       1: {
         name: json.cards[0].name,
         image: `${json.imagesUrl}${json.cards[0].image}`,
-        imageBackCard: json.imageBackCard,
+        imageBackCard: json.imageBackCard
       },
       2: {
         name: json.cards[1].name,
         image: `${json.imagesUrl}${json.cards[1].image}`,
-        imageBackCard: json.imageBackCard,
+        imageBackCard: json.imageBackCard
       },
     });
   });
@@ -81,7 +81,7 @@ describe('reducers -> gameReducer', () => {
   it('deve selecionar a carta escolhida corretamente', () => {
     state = gameReducer(state, {
       type: types.SELECT_CARD,
-      payload: { id: 1 },
+      payload: { id: 1 }
     });
 
     expect(state.selected).toEqual(1);
