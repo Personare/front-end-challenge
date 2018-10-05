@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { loadCards, stopGame } from '../../actions';
 import data from '../../assets/tarot.json';
 
@@ -28,6 +29,13 @@ export class CardList extends Component {
     );
   }
 }
+
+CardList.propTypes = {
+  stopGame: PropTypes.func,
+  loadCards: PropTypes.func,
+  order: PropTypes.array,
+  cards: PropTypes.object,
+};
 
 const mapStateToProps = ({ game }) => ({
   cards: game.cards,

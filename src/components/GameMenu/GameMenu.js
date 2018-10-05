@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Button from '../Button/Button';
 import './GameMenu.styl';
@@ -12,5 +13,11 @@ const gameMenu = props => (
     }
   </nav>
 );
+
+gameMenu.propTypes = {
+  play: PropTypes.bool,
+  stop: PropTypes.func,
+  start: PropTypes.func,
+};
 
 export default gameMenu;

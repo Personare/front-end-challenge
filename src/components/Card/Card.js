@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import TweenMax from 'gsap';
 
 import './Card.styl';
@@ -30,5 +31,16 @@ export class Card extends Component {
     );
   }
 }
+
+Card.propTypes = {
+  selected: PropTypes.oneOfType([
+    PropTypes.bool,
+    PropTypes.number,
+  ]),
+  click: PropTypes.func,
+  card: PropTypes.string,
+  name: PropTypes.string,
+  imageBack: PropTypes.string,
+};
 
 export default Card;

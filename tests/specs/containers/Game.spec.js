@@ -9,19 +9,19 @@ import * as actions from '../../../src/actions';
 describe('containers -> Game', () => {
   it('deve renderizar corretamente', () => {
     const game = {
-      cards: [
-        {
+      cards: {
+        0: {
           name: 'O MAGO',
           image: 'arcano1.jpg',
         },
-        {
+        1: {
           name: 'A SACERDOTISA',
           image: 'arcano2.jpg',
         }
-      ],
+      },
       order: [ 0, 1],
       play: false,
-      selected: false
+      selected: false,
     };
 
     const wrapper = shallow(<Game

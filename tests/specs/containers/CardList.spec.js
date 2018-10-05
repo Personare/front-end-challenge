@@ -6,16 +6,16 @@ import { stopGame, loadCards } from '../../../src/actions';
 
 describe('containers -> CardList', () => {
   it('deve renderizar corretamente', () => {
-    const cards = [
-      {
+    const cards = {
+      0: {
         name: 'O MAGO',
         image: 'arcano1.jpg',
       },
-      {
+      1: {
         name: 'A SACERDOTISA',
         image: 'arcano2.jpg',
       },
-    ];
+    };
     const order = [ 0, 1];
     const wrapper = shallow(<CardList
       stopGame={stopGame}

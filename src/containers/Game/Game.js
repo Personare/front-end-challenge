@@ -64,6 +64,15 @@ Game.propTypes = {
   startGame: PropTypes.func,
   shuffleGame: PropTypes.func,
   stopGame: PropTypes.func,
+  game: PropTypes.shape({
+    play: PropTypes.bool,
+    cards: PropTypes.object,
+    order: PropTypes.array,
+    selected: PropTypes.oneOfType([
+      PropTypes.bool,
+      PropTypes.number,
+    ]),
+  }),
 };
 
 const mapStateToProps = ({ game }) => ({ game });
