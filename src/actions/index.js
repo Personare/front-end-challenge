@@ -1,11 +1,13 @@
-import { LOAD_CARDS, SELECT_CARD, START_GAME, STOP_GAME, SHUFFLE_GAME } from './types';
+import {
+  LOAD_CARDS, SELECT_CARD, START_GAME, STOP_GAME, SHUFFLE_GAME,
+} from './types';
 
-export const loadCards = (data) => ({
+export const loadCards = data => ({
   type: LOAD_CARDS,
   payload: data,
 });
 
-export const selectCard = (id) => ({
+export const selectCard = id => ({
   type: SELECT_CARD,
   payload: { id },
 });

@@ -11,8 +11,8 @@ import reducers from './reducers';
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
-  <Provider store={store}><App /></Provider>,
-  document.querySelector('#app')
+  <Provider store={store}><App /></Provider>, // eslint-disable-line
+  document.querySelector('#app') // eslint-disable-line
 );
 
 if (module.hot) {

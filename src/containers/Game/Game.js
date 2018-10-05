@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import TweenMax from 'gsap';
 import * as actions from '../../actions';
 
@@ -36,16 +37,19 @@ export class Game extends Component {
         <GameMenu
           play={this.props.game.play}
           start={() => this.startGame()}
-          stop={() => this.stopGame()} />
+          stop={() => this.stopGame()}
+        />
         <section className="Game">
           {
-            this.props.game.order.map(id => <Card 
-              key={id}
-              card={this.props.game.cards[id].image}
-              imageBack={this.props.game.cards[id].imageBackCard}
-              click={() => this.selectCard(id)}
-              selected={this.props.game.play && this.props.game.selected === id}
-            />)
+            this.props.game.order.map(id => (
+              <Card
+                key={id}
+                card={this.props.game.cards[id].image}
+                imageBack={this.props.game.cards[id].imageBackCard}
+                click={() => this.selectCard(id)}
+                selected={this.props.game.play && this.props.game.selected === id}
+              />
+            ))
           }
         </section>
         <SelectedCard />
@@ -54,8 +58,14 @@ export class Game extends Component {
   }
 }
 
-const mapStateToProps = ({ game }) => {
-  return { game };
-}
+Game.propTypes = {
+  loadCards: PropTypes.func,
+  selectCard: PropTypes.func,
+  startGame: PropTypes.func,
+  shuffleGame: PropTypes.func,
+  stopGame: PropTypes.func,
+};
+
+const mapStateToProps = ({ game }) => ({ game });
 
 export default connect(mapStateToProps, actions)(Game);

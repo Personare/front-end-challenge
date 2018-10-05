@@ -16,22 +16,22 @@ export class CardList extends Component {
     return (
       <section className="CardList">
         {
-          this.props.order.map(id => <FullCard
-            key={id}
-            name={this.props.cards[id].name}
-            image={this.props.cards[id].image} />
-          )
+          this.props.order.map(id => (
+            <FullCard
+              key={id}
+              name={this.props.cards[id].name}
+              image={this.props.cards[id].image}
+            />
+          ))
         }
       </section>
     );
   }
 }
 
-const mapStateToProps = ({ game }) => {
-  return {
-    cards: game.cards,
-    order: game.order
-  };
-}
+const mapStateToProps = ({ game }) => ({
+  cards: game.cards,
+  order: game.order,
+});
 
 export default connect(mapStateToProps, { loadCards, stopGame })(CardList);

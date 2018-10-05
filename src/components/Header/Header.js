@@ -3,7 +3,7 @@ import React from 'react';
 import './Header.styl';
 import Navbar from '../Navbar/Navbar';
 
-const header = (props) => (
+const header = () => (
   <header>
     <Navbar />
   </header>

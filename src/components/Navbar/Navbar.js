@@ -3,7 +3,7 @@ import React from 'react';
 import NavigationItem from './NavigationItem/NavigationItem';
 import './Navbar.styl';
 
-const navbar = (props) => (
+const navbar = () => (
   <nav className="Navbar">
     <ul>
       <NavigationItem to="/" label="Game" />
