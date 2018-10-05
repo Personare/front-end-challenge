@@ -27,7 +27,7 @@
             "!**/*index.js"
         ],
         "setupFiles": [
-            "setupTests.js"
+            "./setupTest.js"
         ]
     },
     "repository": {

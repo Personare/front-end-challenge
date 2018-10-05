@@ -2,36 +2,13 @@
 
 exports[`Card component should render correctly 1`] = `
 <div
-  className="sc-bdVaJa iJVzIA"
+  className="sc-bdVaJa fKVFkD"
   onClick={[Function]}
 >
   <img
-    className="sc-bwzfXH gNEotk"
-    src="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/arcano.jpjarcano1.jpg"
-  />
-</div>
-`;
-
-exports[`Card component should show the front of a card 1`] = `
-<div
-  className="sc-bdVaJa iJVzIA"
-  onClick={[Function]}
->
-  <img
-    className="sc-bwzfXH gNEotk"
-    src="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/arcano.jpjarcano1.jpg"
-  />
-</div>
-`;
-
-exports[`Card component should show the front of the card 1`] = `
-<div
-  className="sc-bdVaJa iJVzIA"
-  onClick={[Function]}
->
-  <img
-    className="sc-bwzfXH gNEotk"
-    src="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/arcano.jpjarcano1.jpg"
+    className="sc-bwzfXH hHTXYr"
+    src="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/
+        images/content/pt-br/product/tarot/marselha/162x341/arcano1.jpg"
   />
 </div>
 `;

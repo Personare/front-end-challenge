@@ -6,11 +6,12 @@ exports[`Home should render correctly 1`] = `
 >
   <button
     onClick={[Function]}
+    type="button"
   >
     Iniciar jogo
   </button>
   <div
-    className="sc-bxivhb dehkWE"
+    className="sc-bxivhb eRtDDx"
   />
 </div>
 `;
