@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { string, func, bool } from 'prop-types'
 
 const Card = ({
     name,
@@ -37,4 +38,14 @@ const ImgWrapper = styled.img.attrs({
     height: 200px;
     background: transparent url('./assets/loading.gif') center no-repeat;
 `
+
+Card.propTypes = {
+    name: string.isRequired,
+    image: string.isRequired,
+    imagesUrl: string.isRequired,
+    imageBackCard: string.isRequired,
+    hasStart: bool.isRequired,
+    onClick: func.isRequired,
+    flipCard: bool.isRequired
+}
 export default Card
