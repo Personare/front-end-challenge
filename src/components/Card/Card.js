@@ -3,7 +3,7 @@ import TweenMax from 'gsap';
 
 import './Card.sass';
 
-class Card extends Component {
+export class Card extends Component {
   constructor(props) {
     super(props);
     this.cardContentRef = React.createRef();

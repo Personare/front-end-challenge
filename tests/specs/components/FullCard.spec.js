@@ -15,8 +15,8 @@ describe('components -> FullCard', () => {
     });
 
     expect(wrapper.find('article')).toHaveLength(1);
-    expect(wrapper.find('img').filterWhere(img => img.src === card.image)).toBeTruthy();
-    expect(wrapper.find('img').filterWhere(img => img.alt === card.name)).toBeTruthy();
+    expect(wrapper.find('img').props().src).toEqual(card.image);
+    expect(wrapper.find('img').props().alt).toEqual(card.name);
     expect(wrapper.find('h1')).toHaveLength(1);
     expect(wrapper.find('h1').text()).toEqual(card.name);
     expect(wrapper.find('p')).toHaveLength(2);
