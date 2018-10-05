@@ -33,9 +33,9 @@ module.exports = {
         }
       },
       {
-        test: /\.sass$/,
-        use: [ 'style-loader', 'css-loader', 'sass-loader?sourceMap=true' ]
-      },
+        test: /\.styl$/,
+        loader: 'style-loader!css-loader!stylus-loader'
+      }
     ]
   },
 

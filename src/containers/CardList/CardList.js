@@ -4,7 +4,7 @@ import { loadCards, stopGame } from '../../actions';
 import data from '../../assets/tarot.json';
 
 import FullCard from '../../components/FullCard/FullCard';
-import './CardList.sass';
+import './CardList.styl';
 
 export class CardList extends Component {
   componentWillMount() {

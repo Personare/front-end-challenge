@@ -7,7 +7,7 @@ import data from '../../assets/tarot.json';
 import Card from '../../components/Card/Card';
 import GameMenu from '../../components/GameMenu/GameMenu';
 import SelectedCard from '../SelectedCard/SelectedCard';
-import './Game.sass';
+import './Game.styl';
 
 export class Game extends Component {
   componentDidMount() {

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Button from '../Button/Button';
-import './GameMenu.sass';
+import './GameMenu.styl';
 
 const gameMenu = (props) => (
   <nav className="GameMenu">

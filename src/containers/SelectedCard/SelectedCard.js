@@ -4,7 +4,7 @@ import { selectCard } from '../../actions';
 import TweenMax from 'gsap';
 
 import FullCard from '../../components/FullCard/FullCard';
-import './SelectedCard.sass';
+import './SelectedCard.styl';
 
 
 export class SelectedCard extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Header.sass';
+import './Header.styl';
 import Navbar from '../Navbar/Navbar';
 
 const header = (props) => (

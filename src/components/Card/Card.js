@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TweenMax from 'gsap';
 
-import './Card.sass';
+import './Card.styl';
 
 export class Card extends Component {
   constructor(props) {

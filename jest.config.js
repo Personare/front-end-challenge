@@ -6,6 +6,6 @@ module.exports = {
     './webpack/'
   ],
   moduleNameMapper: {
-    "^.+\\.(css|less|sass)$": "identity-obj-proxy"
+    "^.+\\.(css|styl)$": "identity-obj-proxy"
   }
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './FullCard.sass';
+import './FullCard.styl';
 
 const fullCard = (props) => (
   <article className="FullCard">

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import NavigationItem from './NavigationItem/NavigationItem';
-import './Navbar.sass';
+import './Navbar.styl';
 
 const navbar = (props) => (
   <nav className="Navbar">
