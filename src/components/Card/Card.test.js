@@ -1,10 +1,11 @@
 import React from 'react'
-import Home from './Home'
+import Card from './Card'
 import renderer from 'react-test-renderer'
 
-describe('Home', () => {
+describe('Card component', () => {
+    const props = {}
     it('should render correctly', () => {
-        const tree = renderer.create(<Home />).toJSON()
+        const tree = renderer.create(<Card />).toJSON()
         expect(tree).toMatchSnapshot()
     })
 })

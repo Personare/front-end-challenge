@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card component should render correctly 1`] = `
+<div
+  className="sc-bdVaJa iJVzIA"
+>
+  <img
+    className="sc-bwzfXH gNEotk"
+    src="undefinedundefined"
+  />
+</div>
+`;

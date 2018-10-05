@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render correctly 1`] = `
+<div
+  className="sc-htpNat KtFsv"
+>
+  <button
+    onClick={[Function]}
+  >
+    Iniciar jogo
+  </button>
+  <div
+    className="sc-bxivhb dehkWE"
+  />
+</div>
+`;

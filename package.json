@@ -5,9 +5,26 @@
     "main": "index.js",
     "scripts": {
         "build": "webpack --mode production",
-        "start": "webpack-dev-server --open --mode development ./src",
-        "test": "jest ./src",
-        "test:coverage": "jest --coverage "
+        "start": "webpack-dev-server --open --mode development ./src r",
+        "test": "jest ./src --runInBand  --no-cache",
+        "test:coverage": "jest --coverage",
+        "test:watch": "npm run test -- --watch"
+    },
+    "jest": {
+        "verbose": true,
+        "coverageThreshold": {
+            "global": {
+                "branches": 80,
+                "functions": 80,
+                "lines": 80,
+                "statements": 80
+            }
+        },
+        "collectCoverageFrom": [
+            "**/src/**/*.{js,jsx}",
+            "!**/node_modules/**",
+            "!**/*index.js"
+        ]
     },
     "repository": {
         "type": "git",
@@ -43,20 +60,5 @@
         "jest": "^23.6.0",
         "react-test-renderer": "^16.5.2",
         "styled-components": "^3.4.9"
-    },
-    "jest": {
-        "coverageThreshold": {
-            "global": {
-                "branches": 80,
-                "functions": 80,
-                "lines": 80,
-                "statements": -10
-            }
-        },
-        "collectCoverageFrom": [
-            "**/src/**/*.{js,jsx}",
-            "!**/node_modules/**",
-            "!**/*index.js"
-        ]
     }
 }
