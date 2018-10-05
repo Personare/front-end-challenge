@@ -1,1 +1,3 @@
-export * from './cards'
+import getCards from './cards'
+
+export default getCards
