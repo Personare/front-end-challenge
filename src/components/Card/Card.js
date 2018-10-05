@@ -1,7 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Card = ({ name, image, imagesUrl, imageBackCard, hasStart, onClick }) => {
+const Card = ({
+    name,
+    image,
+    imagesUrl,
+    imageBackCard,
+    hasStart,
+    onClick,
+    flipCard
+}) => {
     return (
         <Wrapper onClick={onClick} image={image}>
             <ImgWrapper
@@ -9,6 +17,7 @@ const Card = ({ name, image, imagesUrl, imageBackCard, hasStart, onClick }) => {
                 imagesUrl={imagesUrl}
                 imageBackCard={imageBackCard}
                 hasStart={hasStart}
+                flipCard={flipCard}
             />
         </Wrapper>
     )
@@ -21,8 +30,8 @@ const Wrapper = styled.div`
 `
 
 const ImgWrapper = styled.img.attrs({
-    src: ({ image, imagesUrl, imageBackCard, hasStart }) =>
-        hasStart ? imageBackCard : `${imagesUrl}${image}`
+    src: ({ image, imagesUrl, imageBackCard, hasStart, flipCard }) =>
+        hasStart && !flipCard ? imageBackCard : `${imagesUrl}${image}`
 })`
     width: 100px;
     height: 200px;

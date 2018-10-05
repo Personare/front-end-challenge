@@ -11,7 +11,8 @@ export default class Home extends Component {
             cards: [],
             imagesUrl: '',
             imageBackCard: '',
-            hasStart: false
+            hasStart: false,
+            currentIndex: null
         }
 
         this.startGame = this.startGame.bind(this)
@@ -23,14 +24,21 @@ export default class Home extends Component {
         console.log('hasStart', this.state.hasStart)
     }
 
-    choosenCard() {
-        this.setState({ hasStart: false })
+    choosenCard(index) {
+        console.log('index choosenCard', index)
+        this.setState({ currentIndex: index })
     }
 
     renderCardList() {
-        const { cards, imagesUrl, imageBackCard, hasStart } = this.state
+        const {
+            cards,
+            imagesUrl,
+            imageBackCard,
+            currentIndex,
+            hasStart
+        } = this.state
 
-        return cards.map(({ name, image }) => (
+        return cards.map(({ name, image }, index) => (
             <Card
                 key={name}
                 name={name}
@@ -38,7 +46,8 @@ export default class Home extends Component {
                 imagesUrl={imagesUrl}
                 imageBackCard={imageBackCard}
                 hasStart={hasStart}
-                onClick={this.choosenCard}
+                flipCard={currentIndex === index}
+                onClick={() => this.choosenCard(index)}
             />
         ))
     }
