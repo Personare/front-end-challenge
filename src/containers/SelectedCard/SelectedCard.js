@@ -7,7 +7,7 @@ import FullCard from '../../components/FullCard/FullCard';
 import './SelectedCard.sass';
 
 
-class SelectedCard extends React.Component {
+export class SelectedCard extends React.Component {
   constructor(props) {
     super(props);
     this.selectedCardContainer = React.createRef();
