@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import { MemoryRouter } from 'react-router';
 import { mount } from 'enzyme';
 import NavigationItem from '../../../src/components/Navbar/NavigationItem/NavigationItem';
