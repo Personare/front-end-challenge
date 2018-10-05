@@ -20,12 +20,12 @@ export default class Home extends Component {
     }
 
     startGame() {
-        this.setState({ hasStart: true })
-        console.log('hasStart', this.state.hasStart)
+        const { cards } = this.state
+        const randomicCards = cards.sort(() => 0.5 - Math.random())
+        this.setState({ hasStart: true, cards: randomicCards })
     }
 
     choosenCard(index) {
-        console.log('index choosenCard', index)
         this.setState({ currentIndex: index })
     }
 
