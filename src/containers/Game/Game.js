@@ -9,7 +9,7 @@ import GameMenu from '../../components/GameMenu/GameMenu';
 import SelectedCard from '../SelectedCard/SelectedCard';
 import './Game.sass';
 
-class Game extends Component {
+export class Game extends Component {
   componentDidMount() {
     this.props.loadCards(data);
   }
