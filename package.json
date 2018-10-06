@@ -9,7 +9,8 @@
     "start": "webpack-dev-server --progress --colors --config ./webpack/webpack.dev.config.js",
     "test": "jest",
     "lint": "./node_modules/.bin/eslint src",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "coveralls": "npm run coverage && cat ./tests/coverage/lcov.info | coveralls"
   },
   "keywords": [],
   "author": "Diego T. Fialho",
