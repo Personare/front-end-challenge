@@ -10,7 +10,7 @@
     "test": "jest",
     "lint": "./node_modules/.bin/eslint src",
     "coverage": "jest --coverage",
-    "coveralls": "npm run coverage && cat ./tests/coverage/lcov.info | coveralls"
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
   "keywords": [],
   "author": "Diego T. Fialho",
