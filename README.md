@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/dtfialho/front-end-challenge.svg?branch=master)](https://travis-ci.org/dtfialho/front-end-challenge)
+[![Coverage Status](https://coveralls.io/repos/github/dtfialho/front-end-challenge/badge.svg?branch=master)](https://coveralls.io/github/dtfialho/front-end-challenge?branch=master)
+
 # front-end-challenge
 
 > Desafio para a vaga de desenvolvedor front-end na [@Personare](https://github.com/Personare)
