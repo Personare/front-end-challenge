@@ -8,7 +8,8 @@
     "build": "rimraf dist && webpack --progress --colors --config ./webpack/webpack.prod.config.js",
     "start": "webpack-dev-server --progress --colors --config ./webpack/webpack.dev.config.js",
     "test": "jest",
-    "lint": "./node_modules/.bin/eslint src"
+    "lint": "./node_modules/.bin/eslint src",
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "Diego T. Fialho",
@@ -22,6 +23,7 @@
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
+    "coveralls": "^3.0.2",
     "css-loader": "^1.0.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",

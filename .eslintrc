@@ -4,10 +4,6 @@
   "env": {
     "es6": true
   },
-  "ecmaFeatures": {
-    "modules": true,
-    "experimentalObjectRestSpread": true
-  },
   "settings": {
     "react": {
       "pragma": "React",
