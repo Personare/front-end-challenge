@@ -3,19 +3,24 @@
   "version": "1.0.0",
   "description": "Desafio frontend para a Personare",
   "scripts": {
-    "dev": "rimraf dist && webpack --config ./webpack/webpack.dev.config.js",
+    "start": "node index.js",
     "build": "rimraf dist && webpack --progress --colors --config ./webpack/webpack.prod.config.js",
-    "start": "webpack-dev-server --progress --colors --config ./webpack/webpack.dev.config.js",
+    "dev": "webpack-dev-server --progress --colors --config ./webpack/webpack.dev.config.js",
     "test": "jest",
     "lint": "./node_modules/.bin/eslint src",
     "coverage": "jest --coverage",
-    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i && npm run build"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/dtfialho/front-end-challenge.git"
   },
-  "keywords": ["challenge", "frontend", "personare"],
+  "keywords": [
+    "challenge",
+    "frontend",
+    "personare"
+  ],
   "author": "Diego T. Fialho",
   "license": "MIT",
   "devDependencies": {
@@ -36,6 +41,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "express": "^4.16.3",
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
