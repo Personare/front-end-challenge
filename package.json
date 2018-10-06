@@ -1,8 +1,7 @@
 {
   "name": "front-end-challenge",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Desafio frontend para a Personare",
   "scripts": {
     "dev": "rimraf dist && webpack --config ./webpack/webpack.dev.config.js",
     "build": "rimraf dist && webpack --progress --colors --config ./webpack/webpack.prod.config.js",
@@ -12,9 +11,13 @@
     "coverage": "jest --coverage",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dtfialho/front-end-challenge.git"
+  },
+  "keywords": ["challenge", "frontend", "personare"],
   "author": "Diego T. Fialho",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
