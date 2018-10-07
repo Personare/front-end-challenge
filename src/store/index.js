@@ -4,4 +4,7 @@ import Reducers from '../reducers';
 
 const middleware = [thunk];
 
-export const store = applyMiddleware(...middleware)(createStore)(Reducers);
+export const store = applyMiddleware(...middleware)(createStore)(
+    Reducers,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
