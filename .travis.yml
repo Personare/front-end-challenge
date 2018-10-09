@@ -16,7 +16,6 @@ install:
 
 script:
     - npm test
-    - npm test:e2e
 
 deploy:
     provider: pages
