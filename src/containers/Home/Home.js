@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { Card } from '../../components'
+import { Card, Modal } from '../../components'
 import getCards from '../../services'
+import { CARD_DESCRIPTION } from '../../utils/messages'
 
 export default class Home extends Component {
   constructor() {
@@ -12,11 +13,16 @@ export default class Home extends Component {
       imagesUrl: '',
       imageBackCard: '',
       hasStart: false,
-      currentIndex: null
+      showModalFlag: false,
+      currentCard: {
+        name: '',
+        image: ''
+      }
     }
 
     this.startGame = this.startGame.bind(this)
     this.choosenCard = this.choosenCard.bind(this)
+    this.closeModal = this.closeModal.bind(this)
   }
 
   componentDidMount() {
@@ -35,35 +41,66 @@ export default class Home extends Component {
     this.setState({ hasStart: true, cards: randomicCards })
   }
 
-  choosenCard(index) {
-    this.setState({ currentIndex: index })
+  choosenCard(name, image) {
+    const { hasStart } = this.state
+    if (hasStart) {
+      this.setState({
+        showModalFlag: true,
+        currentCard: {
+          name,
+          image
+        }
+      })
+    }
+  }
+
+  closeModal() {
+    this.setState({ showModalFlag: false })
   }
 
   renderCardList() {
     const {
-      cards, imagesUrl, imageBackCard, currentIndex, hasStart
+      cards, imagesUrl, imageBackCard, hasStart
     } = this.state
 
-    return cards.map(({ name, image }, index) => (
+    return cards.map(({ name, image }) => (
       <Card
         key={name}
-        name={name}
         image={image}
         imagesUrl={imagesUrl}
         imageBackCard={imageBackCard}
         hasStart={hasStart}
-        flipCard={currentIndex === index}
-        onClick={() => this.choosenCard(index)}
+        onClick={() => this.choosenCard(name, image)}
       />
     ))
   }
 
   render() {
+    const {
+      imagesUrl, imageBackCard, showModalFlag, currentCard
+    } = this.state
+    const { name, image } = currentCard
+
     return (
       <HomeContainer>
         <button type="button" onClick={this.startGame}>
           Iniciar jogo
         </button>
+        {showModalFlag && (
+          <Modal onClose={this.closeModal} title="Carta escolhida">
+            <Card
+              key={name}
+              description={CARD_DESCRIPTION}
+              name={name}
+              image={image}
+              imagesUrl={imagesUrl}
+              imageBackCard={imageBackCard}
+              width="200px"
+              height="400px"
+              cardBoard={false}
+            />
+          </Modal>
+        )}
         <CardsContainer>{this.renderCardList()}</CardsContainer>
       </HomeContainer>
     )
