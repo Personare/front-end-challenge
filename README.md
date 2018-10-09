@@ -27,6 +27,16 @@ yarn start
 yarn test
 ```
 
+## Rode testes E2E com o servidor levantado
+
+```sh
+yarn test:e2e
+```
+
 ## Author
 
 -   **Felipe César** - _Front-End Developer_ - [felipecesar.com.br](https://felipecesar.com.br)
+
+## Link para o projeto em produção
+
+-   [felipecesar.com.br/front-end-challenge/](https://felipecesar.com.br/front-end-challenge)
