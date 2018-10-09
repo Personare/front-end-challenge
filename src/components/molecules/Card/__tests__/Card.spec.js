@@ -36,4 +36,20 @@ describe('Card', () => {
 
         expect(wrapper.find('.Card').hasClass('--closed')).toBeTruthy();
     });
+
+    it('change value modalIsOpen when card is clicked', () => {
+        const wrapper = shallow(<Card name={card.name} front={card.image} back={imageBackCard} isClosed={true} />);
+
+        wrapper.find('.Card').simulate('click');
+
+        expect(wrapper.state().modalIsOpen).toBe(true);
+    });
+
+    it('should not change modalIsOpen when card is clicked if isClosed === false', () => {
+        const wrapper = shallow(<Card name={card.name} front={card.image} back={imageBackCard} isClosed={false} />);
+
+        wrapper.find('.Card').simulate('click');
+
+        expect(wrapper.state().modalIsOpen).toBe(false);
+    });
 });

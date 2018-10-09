@@ -24,14 +24,19 @@ class Card extends Component {
         return isClosed ? 'Card --closed' : 'Card';
     }
 
+    _openModal() {
+        const { isClosed } = this.props;
+
+        if (isClosed) {
+            this.setState({ modalIsOpen: !this.state.modalIsOpen });
+        }
+    }
+
     render() {
         const { name, front, back } = this.props;
 
         return (
-            <div
-                className={this._getClassName()}
-                onClick={() => this.setState({ modalIsOpen: !this.state.modalIsOpen })}
-            >
+            <div className={this._getClassName()} onClick={this._openModal.bind(this)}>
                 <div className="Card__side --front">
                     <img src={front} alt={name} />
                 </div>
