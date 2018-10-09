@@ -3,14 +3,24 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import './Modal.scss';
 
-const Modal = ({ isOpen, name, image }) => {
+const Modal = ({ isOpen, name, image, close }) => {
+    const setScrollLock = value => (document.querySelector('html').style.overflow = value);
+
     if (!isOpen) {
+        setScrollLock('');
         return null;
     }
 
+    setScrollLock('hidden');
+
     return ReactDOM.createPortal(
-        <div className="Modal">
-            <div className="modal-1" onClick={e => e.stopPropagation()}>
+        <div className="Modal" onClick={close}>
+            <div className="Modal__content" onClick={e => e.stopPropagation()}>
+                <button className="Modal__close" onClick={close}>
+                    <svg viewBox="0 0 40 40">
+                        <path d="M 10,10 L 30,30 M 30,10 L 10,30" />
+                    </svg>
+                </button>
                 <img src={image} alt={name} />
                 <h1>{name}</h1>
                 <p>
