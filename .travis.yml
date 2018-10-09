@@ -8,7 +8,7 @@ cache:
 
 branches:
     only:
-        - develop
+        - master
 
 install:
     - npm install
@@ -24,4 +24,4 @@ deploy:
     target-branch: gh-pages
     local-dir: build
     on:
-        branch: develop
+        branch: master
