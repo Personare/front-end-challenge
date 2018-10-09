@@ -30,4 +30,10 @@ describe('Card', () => {
 
         expect(img.props.src).toBe(imageBackCard);
     });
+
+    it('render card back when isClosed === true', () => {
+        const wrapper = shallow(<Card name={card.name} front={card.image} back={imageBackCard} isClosed={true} />);
+
+        expect(wrapper.find('.Card').hasClass('--closed')).toBeTruthy();
+    });
 });

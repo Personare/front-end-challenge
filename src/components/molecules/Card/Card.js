@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { string } from 'prop-types';
+import { string, bool } from 'prop-types';
 import './Card.scss';
 import Modal from '../Modal/Modal';
 
@@ -7,7 +7,8 @@ class Card extends Component {
     static propTypes = {
         name: string.isRequired,
         front: string.isRequired,
-        back: string.isRequired
+        back: string.isRequired,
+        isClosed: bool
     };
 
     constructor() {
@@ -17,11 +18,20 @@ class Card extends Component {
         };
     }
 
+    _getClassName() {
+        const { isClosed } = this.props;
+
+        return isClosed ? 'Card --closed' : 'Card';
+    }
+
     render() {
         const { name, front, back } = this.props;
 
         return (
-            <div className="Card" onClick={() => this.setState({ modalIsOpen: !this.state.modalIsOpen })}>
+            <div
+                className={this._getClassName()}
+                onClick={() => this.setState({ modalIsOpen: !this.state.modalIsOpen })}
+            >
                 <div className="Card__side --front">
                     <img src={front} alt={name} />
                 </div>
