@@ -1,0 +1,14 @@
+.Cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    list-style: none;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 1440px) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
