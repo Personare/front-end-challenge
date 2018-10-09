@@ -48,7 +48,7 @@ class Card extends Component {
                     name={name}
                     image={front}
                     isOpen={this.state.modalIsOpen}
-                    onClick={() => this.setState({ modalIsOpen: false })}
+                    close={() => this.setState({ modalIsOpen: false })}
                 />
             </div>
         );
