@@ -1,10 +1,12 @@
 import { tarotReducer } from '../tarotReducer';
 import { FETCH_TAROT_SUCCESS, SORT_CARDS } from '../../actions/actionTypes';
+import { types } from 'util';
 
 const initialState = {
     imagesUrl: '',
     imageBackCard: '',
-    cards: []
+    cards: [],
+    isClosed: false
 };
 
 describe('tarotReducer', () => {
@@ -17,7 +19,8 @@ describe('tarotReducer', () => {
         const data = {
             imagesUrl: 'http://root/',
             imageBackCard: 'back.jpg',
-            cards: [{}, {}, {}]
+            cards: [{}, {}, {}],
+            isClosed: false
         };
 
         const action = {
@@ -40,5 +43,15 @@ describe('tarotReducer', () => {
         const state = tarotReducer({ cards }, action);
 
         expect(state.cards).not.toBe(cards);
+    });
+
+    it('should change isClosed on state for true', () => {
+        const action = { type: types.CLOSE_CARDS };
+
+        const isClosed = true;
+
+        const state = tarotReducer({ isClosed }, action);
+
+        expect(state.isClosed).toBe(isClosed);
     });
 });
