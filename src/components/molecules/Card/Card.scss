@@ -19,35 +19,13 @@
             height: 100%;
         }
 
-        &.--front,
-        &.--back {
-            svg {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                width: 1em;
-                height: 1em;
-                font-size: 5.4rem;
-            }
-        }
-
         &.--front {
-            background-color: red;
-
-            svg {
-                fill: black;
-            }
+            background-color: #333;
         }
 
         &.--back {
-            background-color: blue;
+            cursor: pointer;
             transform: rotateY(180deg);
-
-            svg {
-                fill: red;
-            }
         }
     }
 
