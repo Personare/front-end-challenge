@@ -20,4 +20,13 @@ describe('Button', () => {
 
         expect(wrapper.text()).toBe(textContent);
     });
+
+    it('should not call the callback if isClosed from store is true', () => {
+        const callback = jest.fn();
+
+        const wrapper = shallow(<Button isClosed={true} onClick={callback} />);
+        wrapper.find('button').simulate('click');
+
+        expect(callback).not.toHaveBeenCalled();
+    });
 });
