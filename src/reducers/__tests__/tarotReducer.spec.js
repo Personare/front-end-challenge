@@ -1,6 +1,5 @@
 import { tarotReducer } from '../tarotReducer';
-import { FETCH_TAROT_SUCCESS, SORT_CARDS } from '../../actions/actionTypes';
-import { types } from 'util';
+import * as types from '../../actions/actionTypes';
 
 const initialState = {
     imagesUrl: '',
@@ -24,7 +23,7 @@ describe('tarotReducer', () => {
         };
 
         const action = {
-            type: FETCH_TAROT_SUCCESS,
+            type: types.FETCH_TAROT_SUCCESS,
             payload: data
         };
 
@@ -36,7 +35,7 @@ describe('tarotReducer', () => {
     });
 
     it('should sets state with shuffle cards', () => {
-        const action = { type: SORT_CARDS };
+        const action = { type: types.SORT_CARDS };
 
         const cards = [1, 2, 3, 4, 5];
 
