@@ -2,7 +2,7 @@
 
 exports[`Home should render correctly 1`] = `
 <div
-  className="sc-htpNat KtFsv"
+  className="sc-gZMcBi giNnHm"
 >
   <button
     onClick={[Function]}
@@ -11,7 +11,7 @@ exports[`Home should render correctly 1`] = `
     Iniciar jogo
   </button>
   <div
-    className="sc-bxivhb eRtDDx"
+    className="sc-gqjmRU esqlNV"
   />
 </div>
 `;

@@ -3,42 +3,79 @@ import styled from 'styled-components'
 import { string, func, bool } from 'prop-types'
 
 const Card = ({
-  name, image, imagesUrl, imageBackCard, hasStart, onClick, flipCard
+  name,
+  description,
+  image,
+  imagesUrl,
+  imageBackCard,
+  hasStart,
+  onClick,
+  width,
+  height,
+  cardBoard
 }) => (
-  <Wrapper onClick={onClick} image={image}>
+  <Wrapper onClick={onClick} image={image} cardBoard={cardBoard}>
+    {name && <CardName>{name}</CardName>}
     <ImgWrapper
       image={image}
       imagesUrl={imagesUrl}
       imageBackCard={imageBackCard}
       hasStart={hasStart}
-      flipCard={flipCard}
+      width={width}
+      height={height}
     />
+    {description && <CardDescription>{description}</CardDescription>}
   </Wrapper>
 )
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 10px;
-  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: ${({ cardBoard }) => (cardBoard ? '5px 5px 5px 0px rgba(0, 0, 0, 0.75)' : 'none')};
+`
+
+const CardName = styled.div`
+  margin-bottom: 20px;
+`
+const CardDescription = styled.div`
+  max-width: 300px;
+  text-align: justify;
+  margin-top: 20px;
 `
 
 const ImgWrapper = styled.img.attrs({
   src: ({
-    image, imagesUrl, imageBackCard, hasStart, flipCard
-  }) => (hasStart && !flipCard ? imageBackCard : `${imagesUrl}${image}`)
+    image, imagesUrl, imageBackCard, hasStart
+  }) => (hasStart ? imageBackCard : `${imagesUrl}${image}`)
 })`
-  width: 100px;
-  height: 200px;
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   background: transparent url('./assets/loading.gif') center no-repeat;
 `
 
 Card.propTypes = {
-  name: string.isRequired,
+  name: string,
+  description: string,
   image: string.isRequired,
   imagesUrl: string.isRequired,
   imageBackCard: string.isRequired,
-  hasStart: bool.isRequired,
-  onClick: func.isRequired,
-  flipCard: bool.isRequired
+  hasStart: bool,
+  onClick: func,
+  width: string,
+  height: string,
+  cardBoard: bool
 }
+
+Card.defaultProps = {
+  name: '',
+  description: '',
+  hasStart: false,
+  width: '100px',
+  height: '200px',
+  cardBoard: true,
+  onClick: Function
+}
+
 export default Card

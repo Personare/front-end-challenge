@@ -2,13 +2,21 @@
 
 exports[`Card component should render correctly 1`] = `
 <div
-  className="sc-bdVaJa fKVFkD"
+  className="sc-bdVaJa lhHYPK"
   onClick={[Function]}
 >
+  <div
+    className="sc-bwzfXH gHzNhV"
+  >
+    O MAGO
+  </div>
   <img
-    className="sc-bwzfXH hHTXYr"
+    className="sc-bxivhb eIjJhB"
+    height="200px"
     src="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/
         images/content/pt-br/product/tarot/marselha/162x341/arcano1.jpg"
+    width="100px"
   />
+  
 </div>
 `;
