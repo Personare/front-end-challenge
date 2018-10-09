@@ -24,3 +24,5 @@ $ npm i
 * **npm run coverage**: Roda os tests e verifica a cobertura.
 * **npm run lint**: Procura por erros de lint.
 * **npm build**: Faz o build do projeto para a pasta `dist`.
+
+Link para o projeto em produção [https://front-end-challenge-personare.herokuapp.com/](https://front-end-challenge-personare.herokuapp.com/)
