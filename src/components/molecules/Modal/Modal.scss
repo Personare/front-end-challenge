@@ -11,9 +11,45 @@
     justify-content: center;
     font-size: 4rem;
     color: #000;
+
+    &__content {
+        position: relative;
+        background: #fff;
+        padding: 3.6rem;
+        width: 100%;
+        max-width: 100rem;
+        height: 100%;
+        text-align: center;
+        overflow-y: scroll;
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.4rem;
+        }
+
+        p {
+            color: #333;
+            font-size: 1.8rem;
+        }
+
+        @media (min-width: 768px) {
+            height: auto;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        top: 1rem;
+        right: 1rem;
+        border: 0;
+        background: 0;
+        cursor: pointer;
+
+        svg {
+            stroke: #000;
+        }
+    }
 }
 
-.modal-1 {
-    background: #fff;
-    padding: 5rem;
-}
