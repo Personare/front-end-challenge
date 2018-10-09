@@ -15,7 +15,8 @@ install:
     - npm run build
 
 script:
-    - echo "Skipping tests"
+    - npm test
+    - npm test:e2e
 
 deploy:
     provider: pages
