@@ -5,8 +5,10 @@ import { request, received } from '../shared/utils/baseActions';
 export const fetchTarot = () => dispatch => {
     dispatch(request(types.FETCH_TAROT_REQUEST));
 
+    const url = process.env.NODE_ENV === 'production' ? '/front-end-challenge/' : '/';
+
     return axios
-        .get('/tarot.json')
+        .get(`${url}tarot.json`)
         .then(response => dispatch(received(types.FETCH_TAROT_SUCCESS, response.data)))
         .catch(err => {
             console.log('AXIOS ERROR:', err.response);
