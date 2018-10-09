@@ -3,6 +3,9 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
     list-style: none;
+    padding-bottom: 2.6rem;
+    opacity: 0;
+    animation: fade 2s cubic-bezier(0.42, 0, 0, 0.995) .5s forwards;
 
     @media (min-width: 768px) {
         grid-template-columns: repeat(4, 1fr);
