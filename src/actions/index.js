@@ -1,18 +1,22 @@
 import axios from 'axios';
-import { FETCH_TAROT_REQUEST, FETCH_TAROT_SUCCESS, SORT_CARDS } from './actionTypes';
+import * as types from './actionTypes';
 import { request, received } from '../shared/utils/baseActions';
 
 export const fetchTarot = () => dispatch => {
-    dispatch(request(FETCH_TAROT_REQUEST));
+    dispatch(request(types.FETCH_TAROT_REQUEST));
 
     return axios
         .get('/tarot.json')
-        .then(response => dispatch(received(FETCH_TAROT_SUCCESS, response.data)))
+        .then(response => dispatch(received(types.FETCH_TAROT_SUCCESS, response.data)))
         .catch(err => {
             console.log('AXIOS ERROR:', err.response);
         });
 };
 
+export const closeCards = () => ({
+    type: types.CLOSE_CARDS
+});
+
 export const sortCards = () => ({
-    type: SORT_CARDS
+    type: types.SORT_CARDS
 });
