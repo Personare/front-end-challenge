@@ -6,7 +6,8 @@ import Cards from './Cards';
 const mapStateToProps = store => ({
     imagesUrl: store.tarotReducer.imagesUrl,
     imageBackCard: store.tarotReducer.imageBackCard,
-    cards: store.tarotReducer.cards
+    cards: store.tarotReducer.cards,
+    isClosed: store.tarotReducer.isClosed
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({ fetchTarot }, dispatch);
