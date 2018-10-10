@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal component should render correctly with all props 1`] = `
+<div
+  className="sc-bdVaJa bSOnXE"
+>
+  <div
+    className="sc-bwzfXH dfcAsj"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-htpNat bdErUZ"
+    data-modal="modal-content"
+  >
+    <div
+      className="sc-bxivhb fIUqcx"
+      data-modal="modal-dialog"
+    >
+      <div
+        className="sc-EHOje ehFUPX"
+      >
+        
+        <img
+          className="sc-bZQynM ktMrNG"
+          data-modal="modal-close-icon"
+          onClick={[Function]}
+          src="./assets/close_icon.svg"
+        />
+      </div>
+      <div
+        className="sc-ifAKCX hZphQU"
+      >
+        <div>
+          Contents
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal component should render correctly without title prop 1`] = `
+<div
+  className="sc-bdVaJa bSOnXE"
+>
+  <div
+    className="sc-bwzfXH dfcAsj"
+    onClick={[Function]}
+  />
+  <div
+    className="sc-htpNat bdErUZ"
+    data-modal="modal-content"
+  >
+    <div
+      className="sc-bxivhb fIUqcx"
+      data-modal="modal-dialog"
+    >
+      <div
+        className="sc-EHOje ehFUPX"
+      >
+        
+        <img
+          className="sc-bZQynM ktMrNG"
+          data-modal="modal-close-icon"
+          onClick={[Function]}
+          src="./assets/close_icon.svg"
+        />
+      </div>
+      <div
+        className="sc-ifAKCX hZphQU"
+      >
+        <div>
+          Contents
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

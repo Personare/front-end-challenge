@@ -11,11 +11,11 @@ exports[`Card component should render correctly 1`] = `
     O MAGO
   </div>
   <img
-    className="sc-bxivhb eIjJhB"
-    height="200px"
+    className="sc-bxivhb bUpwWi"
+    height="341px"
     src="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/
         images/content/pt-br/product/tarot/marselha/162x341/arcano1.jpg"
-    width="100px"
+    width="162px"
   />
   
 </div>

@@ -30,7 +30,7 @@ describe('Card component', () => {
     expect(imgWrapper.prop('src')).toBe(imgSrc)
   })
 
-  it('should show the back of the card when game was started', () => {
+  it('should show the back of the card when game started', () => {
     const { imageBackCard } = props
 
     const tree = mount(<Card {...props} hasStart />)

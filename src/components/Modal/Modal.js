@@ -113,7 +113,8 @@ const ModalHeader = styled.div`
 `
 
 const CloseIcon = styled.img.attrs({
-  src: './assets/close_icon.svg'
+  src: './assets/close_icon.svg',
+  'data-modal': 'modal-close-icon'
 })`
   width: 30px;
   height: 30px;
