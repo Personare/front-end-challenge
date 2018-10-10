@@ -72,8 +72,8 @@ Card.defaultProps = {
   name: '',
   description: '',
   hasStart: false,
-  width: '100px',
-  height: '200px',
+  width: '162px',
+  height: '341px',
   cardBoard: true,
   onClick: Function
 }
