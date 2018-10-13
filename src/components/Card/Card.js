@@ -52,7 +52,7 @@ const ImgWrapper = styled.img.attrs({
 })`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
-  background: transparent url('./assets/loading.gif') center no-repeat;
+  background: transparent url('./assets/loading.svg') center no-repeat;
 `
 
 Card.propTypes = {
