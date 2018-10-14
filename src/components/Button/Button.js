@@ -23,7 +23,7 @@ const zoomInOut = keyframes`
 const CustomButton = styled.button`
     height: 100px;
     width: 100%;
-    background-color: #3498DB;
+    background-color: #3498db;
     max-width: 100px;
     border-radius: 100%;
     border: none;

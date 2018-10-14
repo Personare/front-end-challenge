@@ -1,8 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card component should render correctly 1`] = `
+exports[`Card component should render correctly with default props 1`] = `
 <div
   className="sc-bdVaJa lhHYPK"
+  onClick={[Function]}
+>
+  
+  <img
+    className="sc-bxivhb FIJEF"
+    height="341px"
+    src="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/
+        images/content/pt-br/product/tarot/marselha/162x341/arcano1.jpg"
+    width="162px"
+  />
+  
+</div>
+`;
+
+exports[`Card component should render correctly with default props 2`] = `
+<div
+  className="sc-bdVaJa iurWxm"
   onClick={[Function]}
 >
   <div
@@ -11,12 +28,16 @@ exports[`Card component should render correctly 1`] = `
     O MAGO
   </div>
   <img
-    className="sc-bxivhb bUpwWi"
+    className="sc-bxivhb FIJEF"
     height="341px"
     src="https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/
         images/content/pt-br/product/tarot/marselha/162x341/arcano1.jpg"
     width="162px"
   />
-  
+  <div
+    className="sc-htpNat jcrRMz"
+  >
+    Description
+  </div>
 </div>
 `;

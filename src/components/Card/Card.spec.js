@@ -5,7 +5,7 @@ import Card from './Card'
 
 describe('Card component', () => {
   const props = {
-    name: 'O MAGO',
+
     image: 'arcano1.jpg',
     imagesUrl: `https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/
         images/content/pt-br/product/tarot/marselha/162x341/`,
@@ -16,8 +16,20 @@ describe('Card component', () => {
     flipCard: false
   }
 
-  it('should render correctly', () => {
+  it('should render correctly with default props', () => {
     const tree = renderer.create(<Card {...props} />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render correctly with default props', () => {
+    const tree = renderer.create(
+      <Card
+        {...props}
+        description="Description"
+        name="O MAGO"
+        cardBoard={false}
+      />
+    ).toJSON()
     expect(tree).toMatchSnapshot()
   })
 

@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should call onClick function 1`] = `true`;
+
+exports[`Button should render correctly 1`] = `
+<button
+  className="sc-bdVaJa duNfdq"
+  onClick={[Function]}
+  type="button"
+>
+  Button text
+</button>
+`;
+
+exports[`Button should render correctly with default props 1`] = `
+<button
+  className="sc-bdVaJa duNfdq"
+  onClick={[Function]}
+  type="button"
+>
+  Button text
+</button>
+`;
