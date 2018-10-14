@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { Button, Card, Modal } from '../../components'
 import getCards from '../../services'
+import { randomicArray } from '../../utils/utils'
 import { CARD_DESCRIPTION } from '../../utils/messages'
 
 export default class Home extends Component {
@@ -38,7 +39,7 @@ export default class Home extends Component {
 
   startGame() {
     const { cards } = this.state
-    const randomicCards = cards.sort(() => 0.5 - Math.random())
+    const randomicCards = randomicArray(cards)
     this.setState({ hasStart: true, cards: randomicCards })
   }
 
@@ -94,7 +95,7 @@ export default class Home extends Component {
         {
             !hasStart && (
             <Button onClick={this.startGame}>
-                Iniciar jogo
+                Start
             </Button>
             )
         }
@@ -114,7 +115,7 @@ export default class Home extends Component {
                 cardBoard={false}
               />
               <Button onClick={this.restartGame}>
-                Jogar novamente
+                Play Again
               </Button>
             </Modal>
             )
