@@ -66,7 +66,6 @@ export default class Home extends Component {
     this.setState({ showModalFlag: false })
   }
 
-
   renderCardList() {
     const {
       cards, imagesUrl, imageBackCard, hasStart
@@ -92,34 +91,24 @@ export default class Home extends Component {
 
     return (
       <HomeContainer>
-        {
-            !hasStart && (
-            <Button onClick={this.startGame}>
-                Start
-            </Button>
-            )
-        }
+        {!hasStart && <Button onClick={this.startGame}>Start</Button>}
 
-        {
-            showModalFlag && (
-            <Modal onClose={this.closeModal} title="Carta escolhida">
-              <Card
-                key={name}
-                description={CARD_DESCRIPTION}
-                name={name}
-                image={image}
-                imagesUrl={imagesUrl}
-                imageBackCard={imageBackCard}
-                width="200px"
-                height="400px"
-                cardBoard={false}
-              />
-              <Button onClick={this.restartGame}>
-                Play Again
-              </Button>
-            </Modal>
-            )
-        }
+        {showModalFlag && (
+          <Modal onClose={this.closeModal} title="Carta escolhida">
+            <Card
+              key={name}
+              description={CARD_DESCRIPTION}
+              name={name}
+              image={image}
+              imagesUrl={imagesUrl}
+              imageBackCard={imageBackCard}
+              width="200px"
+              height="400px"
+              cardBoard={false}
+            />
+            <Button onClick={this.restartGame}>Play Again</Button>
+          </Modal>
+        )}
         <CardsContainer>{this.renderCardList()}</CardsContainer>
       </HomeContainer>
     )

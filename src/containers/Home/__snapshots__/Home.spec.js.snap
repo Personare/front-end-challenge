@@ -16,37 +16,3 @@ exports[`Home should render correctly 1`] = `
   />
 </div>
 `;
-
-exports[`Home should startGame 1`] = `
-<div
-  className="sc-gqjmRU hnZXkc"
->
-  <button
-    className="sc-bdVaJa duNfdq"
-    onClick={[Function]}
-    type="button"
-  >
-    Start
-  </button>
-  <div
-    className="sc-VigVT UDKFG"
-  />
-</div>
-`;
-
-exports[`Home should startgame 1`] = `
-<div
-  className="sc-gqjmRU hnZXkc"
->
-  <button
-    className="sc-bdVaJa duNfdq"
-    onClick={[Function]}
-    type="button"
-  >
-    Start
-  </button>
-  <div
-    className="sc-VigVT UDKFG"
-  />
-</div>
-`;
