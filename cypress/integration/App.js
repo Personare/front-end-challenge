@@ -1,4 +1,4 @@
-context('App', () => {
+describe('App', () => {
   beforeEach(() => {
     cy.visit('/')
   })
