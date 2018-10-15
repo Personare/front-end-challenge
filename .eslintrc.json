@@ -5,8 +5,10 @@
         "node": true,
         "es6": true,
         "mocha": true,
-        "jest": true
+        "jest": true,
+        "cypress/globals": true
     },
+    "plugins": ["cypress"],
     "rules": {
         "import/prefer-default-export": 0,
         "import/no-extraneous-dependencies": 0,
