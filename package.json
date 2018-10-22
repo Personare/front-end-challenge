@@ -1,0 +1,20 @@
+{
+  "name": "front-end-challenge",
+  "version": "1.0.0",
+  "description": "> Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eduardoborges/front-end-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduardoborges/front-end-challenge/issues"
+  },
+  "homepage": "https://github.com/eduardoborges/front-end-challenge#readme"
+}
