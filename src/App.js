@@ -1,7 +1,13 @@
 import React, { Component } from "react";
+
+// services
 import Tarot from "./services/tarot";
 
+// context
 import context from "./context";
+
+// components
+import Board from "./components/Board";
 
 const { Provider } = context;
 
@@ -17,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <Provider value={{ ...this }}>
-        <h1>App</h1>
+        <Board />
       </Provider>
     );
   }
