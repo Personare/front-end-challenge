@@ -1,7 +1,26 @@
 import React from "react";
+import styled from "styled-components";
+import context from "../context";
 
-const Board = ({ ...props }) => {
-  return <div id="board">{props.children}</div>;
+const { Consumer } = context;
+
+const Board = ({ className, children }) => {
+  return (
+    <Consumer>
+      {({ doSomething }) => (
+        <div id="board" className={className}>
+          {children}
+        </div>
+      )}
+    </Consumer>
+  );
 };
 
-export default Board;
+const StyledBoard = styled(Board)`
+  height: 100vh;
+  width: 100vw;
+  background: black;
+  position: relative;
+`;
+
+export default StyledBoard;
