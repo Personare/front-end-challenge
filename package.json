@@ -1,20 +1,35 @@
 {
-  "name": "front-end-challenge",
-  "version": "1.0.0",
-  "description": "> Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eduardoborges/front-end-challenge.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eduardoborges/front-end-challenge/issues"
-  },
-  "homepage": "https://github.com/eduardoborges/front-end-challenge#readme"
+    "name": "front-end-challenge",
+    "version": "1.0.0",
+    "description": "> Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)",
+    "main": "index.js",
+    "scripts": {
+        "dev": "parcel src/index.html",
+        "build": "cross-env NODE_ENV=production parcel build src/index.html"
+    },
+    "dependencies": {
+        "react": "^16.5.2",
+        "react-dom": "^16.5.2"
+    },
+    "devDependencies": {
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-0": "^6.24.1",
+        "cross-env": "^5.2.0",
+        "parcel-bundler": "^1.10.3",
+        "react-hot-loader": "^4.3.11"
+    },
+    "alias": {
+        "components": "./src/components"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eduardoborges/front-end-challenge.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/eduardoborges/front-end-challenge/issues"
+    },
+    "homepage": "https://github.com/eduardoborges/front-end-challenge#readme"
 }
