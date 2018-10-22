@@ -7,9 +7,9 @@ import tarot from "./services/tarot.json";
 import context from "./context";
 
 // components
-import Board from "components/Board";
-import Card from "components/Card";
-import Deck from "components/Deck";
+import Board from "./components/Board";
+import Card from "./components/Card";
+import Deck from "./components/Deck";
 
 const { Provider } = context;
 
