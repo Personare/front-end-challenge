@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 
 // services
-import Tarot from "./services/tarot";
+import tarot from "./services/tarot.json";
 
 // context
 import context from "./context";
 
 // components
-import Board from "./components/Board";
+import Board from "components/Board";
+import Card from "components/Card";
+import Deck from "components/Deck";
 
 const { Provider } = context;
 
@@ -23,7 +25,13 @@ class App extends Component {
   render() {
     return (
       <Provider value={{ ...this }}>
-        <Board />
+        <Board>
+          <Deck>
+            {tarot.cards.map((card, index) => (
+              <Card {...card} key={index} />
+            ))}
+          </Deck>
+        </Board>
       </Provider>
     );
   }
