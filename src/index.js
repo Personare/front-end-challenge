@@ -1,5 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
-import App from "./App";
+import HotExported from "./exportHot";
 
-render(<App />, document.getElementById("root"));
+render(<HotExported />, document.getElementById("root"));
