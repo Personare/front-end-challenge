@@ -31,8 +31,12 @@
     "type": "git",
     "url": "git+https://github.com/eduardoborges/front-end-challenge.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "personare",
+    "tests"
+  ],
+  "author": "Eduardo Borges",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/eduardoborges/front-end-challenge/issues"
