@@ -4,6 +4,9 @@ body, html
   padding: 0 !important
   margin: 0 !important
 
+$cardHeight: 309px * 0.75
+$cardWidth: 162px * 0.75
+
 
 #board
   background: #333
@@ -11,39 +14,109 @@ body, html
   width: 100vw
   position: relative
 
-
 .deck
   perspective: 1000px
-  width: 320px
-  height: 480px
+  width: 100vw
+  position: relative
+  height: 500px
+  width: 500px
+  position: absolute
+  top: calc(50% - 250px)
+  left: calc(50% - 250px)
+  transition: 1s
+  .card
+    position: absolute
+    left: 50px
+    transition: .3s
 
-.card,.deck
-  height: 309px
-  width: 162px
+
+  // showing all cards opened
+  &.is-overview
+    position: relative !important
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    height: 80vh !important
+    width: 80vw !important
+    top: auto
+    left: auto
+    .card
+      position: relative !important
+      width: $cardWidth * 0.5
+      height: $cardHeight * 0.5
+
+  // opened
+  &.is-open .card
+    transform: rotateY(180deg) !important
+
+  // sorting
+  @for $i from 1 through 100
+    &.is-sorting .card:nth-of-type(#{$i})
+      animation: sorting 1s 2 linear
+      animation-delay: $i * 0.01s
+      .card:hover
+      transform: translateY(-50px)
+
+  // spreaded
+  @for $i from 1 through 100
+    &.is-spreaded
+      left: 50px
+      .card:nth-of-type(#{$i})
+        left: ($cardWidth + 12px * $i)
+      .card:hover
+        transform: translateY(-50px)
+
+
+
+
+
+
+@keyframes sorting
+  0%,100%
+    transform: translateX(0)
+    transform-origin: 0%
+    z-index: 0
+  50%
+    transform: translateX(300px)
+    transform-origin: 0%
+    z-index: 77
+
+
+
 
 .card
-  transition: 0.6s
+  transition: 0.3s
   transform-style: preserve-3d
   position: relative
-
+  height: 309px
+  width: 162px
+  display: block
+  margin: 15px
+  border: 1px solid #CCC
+  border-radius: 10px
+  &.is-fliped
+    transform: rotateY(180deg) !important
+    z-index: 9999
+  &:hover
+    transform: scale(1.05)
+    cursor: pointer
   .front, .back
     backface-visibility: hidden
     position: absolute
     background-size: contain
     background-color: white
-    border-radius: 10px
+    border-radius: inherit
     top: 0
     left: 0
     height: 100%
     width: 100%
   .front
-    z-index: 2
-    transform: rotateY(0deg)
+    transform: rotateY(180deg)
     background-size: 80%
     background-position: center
     background-repeat: no-repeat
   .back
-    transform: rotateY(180deg)
+    z-index: 2
+    transform: rotateY(0deg)
 
-.card:hover, .card.is-fliped
-    transform: rotateY(180deg)
+
