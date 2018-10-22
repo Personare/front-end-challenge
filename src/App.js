@@ -27,6 +27,14 @@ class App extends Component {
     activeCard: false
   };
 
+  shuffleCards = () => {
+    const shuffled = this.state.cards
+      .map(a => ({ sort: Math.random(), value: a }))
+      .sort((a, b) => a.sort - b.sort)
+      .map(a => a.value);
+    this.setState({ cards: shuffled });
+  };
+
   render() {
     const { activeCard, cards } = this.state;
     return (
