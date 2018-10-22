@@ -2,3 +2,5 @@ node_modules
 .cache
 dist
 build
+.DS_store
+yarn-error.log
