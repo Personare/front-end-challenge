@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Tarot from "./services/tarot";
 
 import context from "./context";
@@ -6,10 +6,12 @@ import context from "./context";
 const { Provider } = context;
 
 class App extends Component {
-  state = {};
+  state = {
+    something: ""
+  };
 
   doSomething = () => {
-    console.log("something was doing");
+    this.setState({ something: "was doing" });
   };
 
   render() {
