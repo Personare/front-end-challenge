@@ -3,19 +3,10 @@ import React, { Component } from "react";
 // services
 import tarot from "./services/tarot.json";
 
-// context
-import context from "./context";
-
 // components
 import Board from "./components/Board";
 import Card from "./components/Card";
 import Deck from "./components/Deck";
-
-const { Provider } = context;
-
-const wait = fn => {
-  setTimeout(fn, 1500);
-};
 
 class App extends Component {
   state = {
@@ -35,6 +26,19 @@ class App extends Component {
     this.setState({ cards: shuffled });
   };
 
+  startGame = () => {
+    this.setState({
+      isOpen: false,
+      isOverview: false
+    });
+    this.shuffleCards();
+    setTimeout(() => {
+      this.setState({
+        isSpreaded: true
+      });
+    }, 2500);
+  };
+
   onClickCard = id => {
     this.setState({ activeCard: id });
   };
@@ -43,9 +47,15 @@ class App extends Component {
     const { activeCard, cards } = this.state;
     return (
       <Board>
+        <button onClick={this.startGame}>Iniciar o jogo</button>
         <Deck {...this.state}>
           {cards.map((card, index) => (
-            <Card {...card} key={index} isFliped={activeCard === index} />
+            <Card
+              {...card}
+              key={index}
+              isFliped={activeCard === index}
+              onClick={() => this.onClickCard(index)}
+            />
           ))}
         </Deck>
       </Board>
