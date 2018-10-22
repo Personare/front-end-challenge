@@ -4,23 +4,10 @@ import context from "../context";
 
 const { Consumer } = context;
 
-const Board = ({ className, children }) => {
+const Board = ({ children }) => {
   return (
-    <Consumer>
-      {({ doSomething }) => (
-        <div id="board" className={className}>
-          {children}
-        </div>
-      )}
-    </Consumer>
+    <Consumer>{({ doSomething }) => <div id="board">{children}</div>}</Consumer>
   );
 };
 
-const StyledBoard = styled(Board)`
-  height: 100vh;
-  width: 100vw;
-  background: black;
-  position: relative;
-`;
-
-export default StyledBoard;
+export default Board;
