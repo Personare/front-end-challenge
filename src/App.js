@@ -27,8 +27,8 @@ class App extends Component {
       <Provider value={{ ...this }}>
         <Board>
           <Deck>
-            {tarot.cards.map((card, index) => (
-              <Card {...card} key={index} />
+            {tarot.cards.slice(0, 1).map((card, index) => (
+              <Card isFliped {...card} key={index} />
             ))}
           </Deck>
         </Board>
