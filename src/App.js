@@ -35,6 +35,10 @@ class App extends Component {
     this.setState({ cards: shuffled });
   };
 
+  onClickCard = id => {
+    this.setState({ activeCard: id });
+  };
+
   render() {
     const { activeCard, cards } = this.state;
     return (
