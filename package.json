@@ -4,7 +4,7 @@
     "description": "> Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)",
     "main": "index.js",
     "scripts": {
-        "dev": "parcel src/index.html",
+        "start": "parcel src/index.html",
         "build": "cross-env NODE_ENV=production parcel build src/index.html"
     },
     "dependencies": {
@@ -12,6 +12,7 @@
         "react-dom": "^16.5.2"
     },
     "devDependencies": {
+        "babel-core": "^6.26.3",
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-0": "^6.24.1",
         "cross-env": "^5.2.0",
