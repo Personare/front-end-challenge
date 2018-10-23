@@ -6,12 +6,10 @@ describe("App", () => {
   const app = shallow(<App />);
   const instance = app.instance();
 
-  it("Renderizar o titulo", () => {
-    expect(app.find("h1").exists()).toBe(true);
-  });
-
-  it("Função: doSomething", () => {
-    instance.doSomething();
-    expect(instance.state.something).toBe("was doing");
+  it("Teste de embaralhamento de cartas", () => {
+    const oldList = instance.state.cards;
+    instance.shuffleCards();
+    expect(instance.state.cards).not.toEqual(oldList);
+    expect(instance.state.cards.lenght).toEqual(oldList.lenght);
   });
 });
