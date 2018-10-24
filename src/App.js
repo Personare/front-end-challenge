@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import posed, { PoseGroup } from "react-pose";
-import shuffle from "./shuffle";
 
 // services
 import tarot from "./services/tarot.json";
