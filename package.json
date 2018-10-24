@@ -11,7 +11,8 @@
   "dependencies": {
     "normalize.css": "^8.0.0",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-pose": "^3.3.7"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
