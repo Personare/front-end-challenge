@@ -12,4 +12,14 @@ describe("App", () => {
     expect(instance.state.cards).not.toEqual(oldList);
     expect(instance.state.cards.lenght).toEqual(oldList.lenght);
   });
+
+  it("Teste de iniciar jogo", async () => {
+    instance.startGame();
+
+    return new Promise((resolve, reject) => {
+      return setTimeout(() => {
+        await expect(instance.state.isSorting).toBeTruthy()
+      }, 4000);
+    });
+  });
 });

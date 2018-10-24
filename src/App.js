@@ -1,64 +1,75 @@
 import React, { Component } from "react";
+import posed, { PoseGroup } from "react-pose";
+import shuffle from "./shuffle";
 
 // services
 import tarot from "./services/tarot.json";
 
 // components
-import Board from "./components/Board";
 import Card from "./components/Card";
-import Deck from "./components/Deck";
+
+const Item = posed.div({
+  flip: {
+    transition: {
+      scale: {
+        type: "spring",
+        velocity: 4,
+        scale: 2
+      },
+      default: {
+        type: "spring"
+      }
+    }
+  }
+});
 
 class App extends Component {
   state = {
-    isSorting: false,
-    isSpreaded: false,
-    isOpen: true,
-    isOverview: true,
     cards: tarot.cards || [],
     activeCard: false
   };
 
-  shuffleCards = () => {
-    const shuffled = this.state.cards
+  shuffleCards = array => {
+    return array
       .map(a => ({ sort: Math.random(), value: a }))
       .sort((a, b) => a.sort - b.sort)
       .map(a => a.value);
-    this.setState({ cards: shuffled });
   };
 
   startGame = () => {
     this.setState({
-      isOpen: false,
-      isOverview: false
+      cards: this.shuffleCards(this.state.cards)
     });
-    this.shuffleCards();
-    setTimeout(() => {
-      this.setState({
-        isSpreaded: true
-      });
-    }, 2500);
   };
 
-  onClickCard = id => {
-    this.setState({ activeCard: id });
+  onClickCard = name => {
+    this.setState({ activeCard: name });
   };
 
   render() {
     const { activeCard, cards } = this.state;
     return (
-      <Board>
-        <button onClick={this.startGame}>Iniciar o jogo</button>
-        <Deck {...this.state}>
-          {cards.map((card, index) => (
-            <Card
-              {...card}
-              key={index}
-              isFliped={activeCard === index}
-              onClick={() => this.onClickCard(index)}
-            />
-          ))}
-        </Deck>
-      </Board>
+      <div id="board">
+        <div className="buttons">
+          <button onClick={this.startGame}>Iniciar o jogo</button>
+          <button onClick={this.resetGame}>Reiniciar jogo</button>
+        </div>
+
+        <div className="cards-grid">
+          <PoseGroup>
+            {cards.map(card => (
+              <Item key={card.name}>
+                <Card
+                  isFliped={activeCard === card.name}
+                  onClick={() => this.onClickCard(card.name)}
+                  key={card.image}
+                  {...card}
+                />
+              </Item>
+            ))}
+          </PoseGroup>
+        </div>
+      </div>
     );
   }
 }

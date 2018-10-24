@@ -15,6 +15,15 @@ const Card = ({ name = "Cartjênha", image = "", isFliped, ...rest }) => {
         className="back"
         style={{ backgroundImage: `url(${tarot.imageBackCard})` }}
       />
+      <div className="info">
+        <p>
+          <b>{name}</b> <br /> <br />
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis
+          quasi ducimus, rerum mollitia esse dolores quidem officia, rem fugiat,
+          suscipit ipsam omnis excepturi vero eum culpa fugit sapiente sequi
+          exercitationem.
+        </p>
+      </div>
     </div>
   );
 };
