@@ -51,12 +51,13 @@ body
   position: fixed
   top: 0
   left: 0
-  background: rgba(0,0,0,0.5)
+  background: rgba(0,0,0,0.7)
   height: 100%
   width: 100%
   z-index: 8
+
 .card
-  transition: 0.5s
+  transition: 0.4s
   transform-style: preserve-3d
   height: $cardHeight
   width: $cardWidth
@@ -68,6 +69,8 @@ body
     display: none
     transition: 0
   &.is-fliped
+    transform: rotateY(180deg) !important
+  &.is-selected
     transform: rotateY(180deg) scale(3) !important
     z-index: 9999
     position: fixed !important
@@ -110,6 +113,7 @@ body
     transform: rotateY(0deg)
   .info
     display: none
+    font-family: "Arial"
     p
       text-align: center
 
