@@ -4,95 +4,67 @@ body, html
   padding: 0 !important
   margin: 0 !important
 
-$cardHeight: 309px * 0.75
-$cardWidth: 162px * 0.75
+$cardHeight: 309px * 0.4
+$cardWidth: 162px * 0.4
 
 
-#board
+body
   background: #333
   height: 100vh
   width: 100vw
   position: relative
+  overflow-x: hidden
 
-.deck
-  perspective: 1000px
-  width: 100vw
-  position: relative
-  height: 500px
-  width: 500px
-  position: absolute
-  top: calc(50% - 250px)
+#board
+  width:100%
+  overflow: hidden
+
+.buttons
+  position: fixed
+  top: 5px
   left: calc(50% - 250px)
-  transition: 1s
-  .card
-    position: absolute
-    left: 50px
-    transition: .3s
+  width: 500px
+  text-align: center
+  z-index: 9
 
-  // showing all cards opened
-  &.is-overview
-    position: relative !important
-    display: flex
-    flex-wrap: wrap
-    justify-content: space-around
-    height: 80vh !important
-    width: 80vw !important
-    top: auto
-    left: auto
-    .card
-      position: relative !important
-      width: $cardWidth * 0.5
-      height: $cardHeight * 0.5
-
-  // opened
-  &.is-open .card
-    transform: rotateY(180deg) !important
-
-  // sorting
-  @for $i from 1 through 100
-    &.is-sorting .card:nth-of-type(#{$i})
-      animation: sorting 1s 2 linear
-      animation-delay: $i * 0.01s
-      .card:hover
-      transform: translateY(-50px)
-
-  // spreaded
-  @for $i from 1 through 100
-    &.is-spreaded
-      left: 50px
-      .card:nth-of-type(#{$i})
-        left: ($cardWidth + 12px * $i)
-      .card:hover
-        transform: translateY(-50px)
-
-
-
-@keyframes sorting
-  0%,100%
-    transform: translateX(0)
-    transform-origin: 0%
-    z-index: 0
-  50%
-    transform: translateX(300px)
-    transform-origin: 0%
-    z-index: 77
-
-
+.cards-grid
+  list-style: none
+  align-items: center
+  justify-content: center
+  flex-wrap: wrap
+  flex-direction: row
+  display: flex
+  max-width: 100%
+  margin: 50px 20px !important
+  padding: 0 !important
+  > div
+    display: block
+    border-radius: 2px
+    width: auto
+    height: auto
+    margin: 15px
+    width: $cardWidth
+    padding: 0 !important
 
 
 .card
   transition: 0.3s
   transform-style: preserve-3d
   position: relative
-  height: 309px
-  width: 162px
+  height: $cardHeight
+  width: $cardWidth
   display: block
-  margin: 15px
   border: 1px solid #CCC
   border-radius: 10px
   &.is-fliped
     transform: rotateY(180deg) !important
     z-index: 9999
+    .info
+      visibility: visible
+      opacity: 1
+      height: auto
+      transition: .3s
+      transition-delay: 1s
   &:hover
     transform: scale(1.05)
     cursor: pointer
@@ -114,5 +86,21 @@ $cardWidth: 162px * 0.75
   .back
     z-index: 2
     transform: rotateY(0deg)
+  .info
+    background: white
+    position: absolute
+    top: 110%
+    left: calc(50% - 165px)
+    width: 300px
+    opacity: 0
+    visibility: hidden
+    transition-delay: 3s
+    height: 0
+    transition: .3s
+    transform: rotateY(180deg)
+    padding: 30px
+    p
+      text-align: center
+
 
 
