@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import App from "../App";
+import Card from "../components/Card";
 
 describe("App", () => {
   const app = shallow(<App />);
@@ -27,5 +28,15 @@ describe("App", () => {
     instance.resetGame();
     expect(instance.state.gameIsStarted).toBeFalsy();
     expect(instance.state.activeCard).toBeFalsy();
+  });
+
+  it("Teste de seleção de carta", () => {
+    instance.startGame();
+    setTimeout(() => {
+      const someCard = app.find(Card).first();
+      const props = someCard.props();
+      someCard.simulate("click");
+      expect(app.instance().state.activeCard).toBe(props.name);
+    }, 1000);
   });
 });
