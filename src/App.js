@@ -25,7 +25,8 @@ const Item = posed.div({
 class App extends Component {
   state = {
     cards: tarot.cards || [],
-    activeCard: false
+    activeCard: false,
+    gameIsStarted: false
   };
 
   shuffleCards = array => {
@@ -36,13 +37,27 @@ class App extends Component {
   };
 
   startGame = () => {
+    this.setState({ gameIsStarted: true });
+    setTimeout(() => {
+      this.setState({
+        cards: this.shuffleCards(this.state.cards)
+      });
+    }, 1000);
+  };
+
+  resetGame = () => {
     this.setState({
-      cards: this.shuffleCards(this.state.cards)
+      activeCard: false,
+      gameIsStarted: false
     });
   };
 
   onClickCard = name => {
-    this.setState({ activeCard: name });
+    if (this.state.gameIsStarted) {
+      this.setState({ activeCard: name });
+    } else {
+      alert("Rapaz, primeiro vamos começar o jogo");
+    }
   };
 
   handleCloseCard = () => {
@@ -50,7 +65,7 @@ class App extends Component {
   };
 
   render() {
-    const { activeCard, cards } = this.state;
+    const { activeCard, cards, gameIsStarted } = this.state;
     return (
       <div id="board">
         <div
@@ -60,8 +75,12 @@ class App extends Component {
         />
 
         <div className="buttons">
-          <button onClick={this.startGame}>Iniciar o jogo</button>
-          <button onClick={this.resetGame}>Reiniciar jogo</button>
+          <button onClick={this.startGame} hidden={gameIsStarted}>
+            Iniciar o jogo
+          </button>
+          <button onClick={this.resetGame} hidden={!gameIsStarted}>
+            Reiniciar jogo
+          </button>
         </div>
 
         <div className="cards-grid">
@@ -69,7 +88,8 @@ class App extends Component {
             {cards.map(card => (
               <Item key={card.name}>
                 <Card
-                  isFliped={activeCard === card.name}
+                  isFliped={activeCard === card.name || !gameIsStarted}
+                  isSelected={activeCard === card.name}
                   onClick={() => this.onClickCard(card.name)}
                   key={card.image}
                   {...card}
