@@ -17,7 +17,7 @@ body
 
 #board
   width:100%
-  overflow: hidden
+  // overflow: hidden
 
 .buttons
   position: fixed
@@ -33,6 +33,7 @@ body
   justify-content: center
   flex-wrap: wrap
   flex-direction: row
+  position: relative
   display: flex
   max-width: 100%
   margin: 50px 20px !important
@@ -46,25 +47,45 @@ body
     width: $cardWidth
     padding: 0 !important
 
-
+.modal-background
+  position: fixed
+  top: 0
+  left: 0
+  background: rgba(0,0,0,0.5)
+  height: 100%
+  width: 100%
+  z-index: 8
 .card
-  transition: 0.3s
+  transition: 0.5s
   transform-style: preserve-3d
-  position: relative
   height: $cardHeight
   width: $cardWidth
   display: block
   border: 1px solid #CCC
-  border-radius: 10px
+  border-radius: 5px
+  &::after
+    opacity: 0
+    display: none
+    transition: 0
   &.is-fliped
-    transform: rotateY(180deg) !important
+    transform: rotateY(180deg) scale(3) !important
     z-index: 9999
+    position: fixed !important
+    top: calc(50% - (#{$cardHeight} / 2) )
+    left: calc(50% - (#{$cardWidth} / 2) )
     .info
+      display: block
+      position: absolute !important
+      top: 50%
+      left: -100%
+      width: 200px
       visibility: visible
+      height: 300px
+      color: white
+      z-index: 9999
       opacity: 1
-      height: auto
-      transition: .3s
-      transition-delay: 1s
+      font-size: 12px
+      transform: scale(.5) rotateY(180deg)
   &:hover
     transform: scale(1.05)
     cursor: pointer
@@ -78,6 +99,7 @@ body
     left: 0
     height: 100%
     width: 100%
+    z-index: 9
   .front
     transform: rotateY(180deg)
     background-size: 80%
@@ -87,18 +109,7 @@ body
     z-index: 2
     transform: rotateY(0deg)
   .info
-    background: white
-    position: absolute
-    top: 110%
-    left: calc(50% - 165px)
-    width: 300px
-    opacity: 0
-    visibility: hidden
-    transition-delay: 3s
-    height: 0
-    transition: .3s
-    transform: rotateY(180deg)
-    padding: 30px
+    display: none
     p
       text-align: center
 

@@ -13,8 +13,7 @@ const Item = posed.div({
     transition: {
       scale: {
         type: "spring",
-        velocity: 4,
-        scale: 2
+        velocity: 4
       },
       default: {
         type: "spring"
@@ -46,10 +45,20 @@ class App extends Component {
     this.setState({ activeCard: name });
   };
 
+  handleCloseCard = () => {
+    this.setState({ activeCard: false });
+  };
+
   render() {
     const { activeCard, cards } = this.state;
     return (
       <div id="board">
+        <div
+          className="modal-background"
+          hidden={!activeCard}
+          onClick={this.handleCloseCard}
+        />
+
         <div className="buttons">
           <button onClick={this.startGame}>Iniciar o jogo</button>
           <button onClick={this.resetGame}>Reiniciar jogo</button>
