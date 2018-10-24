@@ -1,10 +1,21 @@
 import React from "react";
 import tarot from "../services/tarot.json";
 
-const Card = ({ name = "Cartjênha", image = "", isFliped, ...rest }) => {
+const Card = ({
+  name = "Cartjênha",
+  image = "",
+  isFliped,
+  isSelected,
+  ...rest
+}) => {
   const imageUrl = tarot.imagesUrl + image;
   return (
-    <div className={`card ${isFliped ? "is-fliped" : ""}`} {...rest}>
+    <div
+      className={`card ${isFliped ? "is-fliped" : ""} ${
+        isSelected ? "is-selected" : ""
+      }`}
+      {...rest}
+    >
       <div
         className="front"
         style={{
