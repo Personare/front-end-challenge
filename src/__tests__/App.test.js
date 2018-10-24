@@ -39,4 +39,9 @@ describe("App", () => {
       expect(app.instance().state.activeCard).toBe(props.name);
     }, 1000);
   });
+
+  it("Teste de fechar carta", () => {
+    instance.handleCloseCard();
+    expect(app.instance().state.activeCard).toBeFalsy();
+  });
 });
