@@ -22,4 +22,10 @@ describe("App", () => {
     expect(shuffledCards).not.toEqual(array);
     expect(shuffledCards.lenght).toEqual(array.lenght);
   });
+
+  it("Teste de reiniciar jogo", () => {
+    instance.resetGame();
+    expect(instance.state.gameIsStarted).toBeFalsy();
+    expect(instance.state.activeCard).toBeFalsy();
+  });
 });
