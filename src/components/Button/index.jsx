@@ -3,24 +3,38 @@ import PropTypes from 'prop-types'
 
 import styles from './Button.module.css'
 
-const Button = ({ text, isShuffle, setShuffle }) => (
-  <button
-    className={styles.button}
-    onClick={() => setShuffle(true)}
-    disabled={isShuffle}
-  >
-    {text}
-  </button>
-)
+const Button = ({
+  setIsShuffle,
+  setShuffleCards,
+  cards,
+  isShuffle,
+  text,
+}) => {
+  const handleClick = () => {
+    setIsShuffle(true)
+    setShuffleCards(cards)
+  }
 
+  return (
+    <button
+      className={styles.button}
+      onClick={handleClick}
+      disabled={isShuffle}
+    >
+      {text}
+    </button>
+  )
+}
 Button.defaultProps = {
   text: 'Embaralhar cartas',
 }
 
 Button.propTypes = {
   text: PropTypes.string,
-  setShuffle: PropTypes.func.isRequired,
+  setIsShuffle: PropTypes.func.isRequired,
+  setShuffleCards: PropTypes.func.isRequired,
   isShuffle: PropTypes.bool.isRequired,
+  cards: PropTypes.array.isRequired,
 }
 
 export default Button

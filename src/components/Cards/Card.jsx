@@ -21,7 +21,7 @@ class Card extends Component {
   setValidCurrentCard() {
     const { currentCard, setCurrentCard, item } = this.props
 
-    if (!currentCard.id) {
+    if (!currentCard.index) {
       setCurrentCard(item)
       this.setState({ selected: true })
     }
@@ -37,7 +37,7 @@ class Card extends Component {
         className={classNames(styles.card, {
           [styles.backcard]: isShuffle,
           [styles.selected]: selected,
-          [styles.disabled]: !!currentCard.id,
+          [styles.disabled]: !!currentCard.index,
         })}
       >
         <CardImage
@@ -53,6 +53,7 @@ class Card extends Component {
 Card.propTypes = {
   isShuffle: PropTypes.bool.isRequired,
   setCurrentCard: PropTypes.func.isRequired,
+  currentCard: PropTypes.object.isRequired,
   item: PropTypes.shape({
     name: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,

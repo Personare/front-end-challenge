@@ -20,8 +20,8 @@ class Cards extends Component {
       return <ErrorMessage message={error.message} />
     }
 
-    return cards.map(card => (
-      <Card key={card.id} item={card} />
+    return cards.map((card, i) => (
+      <Card key={i.toString()} item={card} />
     ))
   }
 

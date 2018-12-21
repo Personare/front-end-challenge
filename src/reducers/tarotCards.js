@@ -1,4 +1,8 @@
-import { TAROT_CARDS_SUCCESS, TAROT_CARDS_FAIL } from '../action-types'
+import {
+  TAROT_CARDS_SUCCESS,
+  TAROT_CARDS_FAIL,
+  TAROT_CARDS_SHUFFLE,
+} from '../action-types'
 
 const initialState = {
   imagesUrl: '',
@@ -12,6 +16,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         ...action.payload,
+      }
+
+    case TAROT_CARDS_SHUFFLE:
+      return {
+        ...state,
+        cards: action.payload,
       }
 
     case TAROT_CARDS_FAIL:

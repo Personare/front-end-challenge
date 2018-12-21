@@ -1,14 +1,17 @@
 import { connect } from 'react-redux'
 
-import setShuffle from '../../actions/setShuffle'
+import setIsShuffle from '../../actions/setIsShuffle'
+import setShuffleCards from '../../actions/setShuffleCards'
 import Button from '../../components/Button'
 
 const mapStateToProps = state => ({
   isShuffle: state.isShuffle,
+  cards: state.tarotCards.cards,
 })
 
 const mapDispatchToProps = {
-  setShuffle,
+  setIsShuffle,
+  setShuffleCards,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Button)

@@ -1,11 +1,9 @@
-import uuidv4 from 'uuid/v4'
-
 export default ({ imagesUrl, imageBackCard, cards }) => {
-  const newCards = cards.map(card => ({
+  const newCards = cards.map((card, index) => ({
     ...card,
     imageBackCard,
     imageUrl: `${imagesUrl}${card.image}`,
-    id: uuidv4(),
+    index,
   }))
 
   return {
