@@ -1,3 +1,9 @@
 import { combineReducers } from 'redux'
 
-export default combineReducers({})
+import tarotCards from './tarotCards'
+import isLoading from './isLoading'
+
+export default combineReducers({
+  tarotCards,
+  isLoading,
+})
