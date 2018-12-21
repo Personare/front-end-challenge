@@ -1,0 +1,16 @@
+.card {
+  background-color: #f0f4db;
+  flex: 0 1 162px;
+  margin: 10px;
+  padding: 2px;
+}
+
+.image {
+  height: auto;
+  max-width: 100%;
+}
+
+.text {
+  padding: 5px 0;
+  text-align: center;
+}

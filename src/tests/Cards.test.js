@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import App from '../components/App'
+import Cards from '../components/Cards'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
@@ -15,6 +15,6 @@ it('renders without crashing', () => {
     },
   }
 
-  ReactDOM.render(<App {...props} />, div)
+  ReactDOM.render(<Cards {...props} />, div)
   ReactDOM.unmountComponentAtNode(div)
 })

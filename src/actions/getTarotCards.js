@@ -1,4 +1,5 @@
 import request from '../helpers/request'
+import parseTarotCards from '../helpers/parseTarotCards'
 import {
   TAROT_CARDS_SUCCESS,
   TAROT_CARDS_FAIL,
@@ -12,7 +13,7 @@ export default () => async dispatch => {
 
   dispatch({
     type: error ? TAROT_CARDS_FAIL : TAROT_CARDS_SUCCESS,
-    payload: error ? error : data,
+    payload: error ? error : parseTarotCards(data),
   })
 
   dispatch({

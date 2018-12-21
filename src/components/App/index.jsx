@@ -1,27 +1,14 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 
-class App extends Component {
-  componentDidMount() {
-    const { setIsLoading, getTarotCards } = this.props
+import styles from './App.module.css'
+import Header from '../layouts/Header'
+import Cards from '../../containers/Cards'
 
-    setIsLoading(true)
-    getTarotCards()
-  }
-
-  render() {
-    return (
-      <h1>
-        Hello App
-      </h1>
-    )
-  }
-}
-
-App.propTypes = {
-  isLoading: PropTypes.bool.isRequired,
-  setIsLoading: PropTypes.func.isRequired,
-  getTarotCards: PropTypes.func.isRequired,
-}
+const App = () => (
+  <div className={styles.app}>
+    <Header />
+    <Cards />
+  </div>
+)
 
 export default App

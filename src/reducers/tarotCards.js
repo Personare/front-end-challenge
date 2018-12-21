@@ -1,6 +1,12 @@
 import { TAROT_CARDS_SUCCESS, TAROT_CARDS_FAIL } from '../action-types'
 
-export default (state = {}, action) => {
+const initialState = {
+  imagesUrl: '',
+  imageBackCard: '',
+  cards: [],
+}
+
+export default (state = initialState, action) => {
   switch (action.type) {
     case TAROT_CARDS_SUCCESS:
       return {

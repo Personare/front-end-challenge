@@ -1,0 +1,21 @@
+.button {
+  background-color: #692446;
+  border-bottom: 3px solid #331a2a;
+  border-left: 0;
+  border-radius: 3px;
+  border-right: 0;
+  border-top: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 30px;
+  outline: none;
+  padding: 20px 40px;
+  text-transform: uppercase;
+}
+
+.button:active {
+  border: 0;
+  margin-top: 33px;
+}
