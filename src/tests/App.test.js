@@ -5,6 +5,16 @@ import App from '../components/App'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
-  ReactDOM.render(<App />, div)
+  const props = {
+    isLoading: true,
+    setIsLoading: (isLoading) => {
+      expect(isLoading).toBe(true)
+    },
+    getTarotCards: (param) => {
+      expect(param).toBe(undefined)
+    },
+  }
+
+  ReactDOM.render(<App {...props} />, div)
   ReactDOM.unmountComponentAtNode(div)
 })

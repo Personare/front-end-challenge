@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class App extends Component {
   componentDidMount() {
@@ -15,6 +16,12 @@ class App extends Component {
       </h1>
     )
   }
+}
+
+App.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  setIsLoading: PropTypes.func.isRequired,
+  getTarotCards: PropTypes.func.isRequired,
 }
 
 export default App
