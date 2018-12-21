@@ -28,7 +28,7 @@ class Card extends Component {
   }
 
   render() {
-    const { isShuffle, item } = this.props
+    const { isShuffle, item, currentCard } = this.props
     const { selected } = this.state
 
     return (
@@ -37,6 +37,7 @@ class Card extends Component {
         className={classNames(styles.card, {
           [styles.backcard]: isShuffle,
           [styles.selected]: selected,
+          [styles.disabled]: !!currentCard.id,
         })}
       >
         <CardImage

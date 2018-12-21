@@ -24,7 +24,18 @@
   transition: transform .6s;
 }
 
+.card:not(.backcard) .image,
+.selected .image {
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  padding: 8px;
+  width: 162px;
+}
+
 .image {
   height: 309px;
-  max-width: 100%;
+}
+
+.disabled {
+  pointer-events: none;
 }
