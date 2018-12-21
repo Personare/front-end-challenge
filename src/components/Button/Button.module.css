@@ -15,7 +15,14 @@
   text-transform: uppercase;
 }
 
-.button:active {
+.button:active,
+.button:disabled {
   border: 0;
   margin-top: 33px;
+}
+
+.button:disabled {
+  cursor: initial;
+  color: #333;
+  opacity: 0.5;
 }

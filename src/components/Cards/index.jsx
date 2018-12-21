@@ -13,14 +13,22 @@ class Cards extends Component {
     getTarotCards()
   }
 
+  renderCards() {
+    const { tarotCards: { cards } } = this.props
+
+    return cards.map(card => (
+      <Card key={card.id} item={card} />
+    ))
+  }
+
   render() {
-    const { isLoading, tarotCards: { cards } } = this.props
+    const { isLoading } = this.props
 
     return (
       <div className={styles.cards}>
         {isLoading
           ? <Spinner />
-          : cards.map(card => <Card key={card.key} item={card} />)}
+          : this.renderCards()}
       </div>
     )
   }

@@ -5,7 +5,7 @@ export default ({ imagesUrl, imageBackCard, cards }) => {
     ...card,
     imageBackCard,
     imageUrl: `${imagesUrl}${card.image}`,
-    key: uuidv4(),
+    id: uuidv4(),
   }))
 
   return {
