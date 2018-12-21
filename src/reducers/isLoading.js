@@ -1,11 +1,4 @@
 import { IS_LOADING } from '../action-types'
+import sharedStateAction from './sharedStateAction'
 
-export default (state = false, action) => {
-  switch (action.type) {
-    case IS_LOADING:
-      return action.payload
-
-    default:
-      return state
-  }
-}
+export default sharedStateAction(IS_LOADING, false)

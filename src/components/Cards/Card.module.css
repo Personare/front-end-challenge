@@ -5,6 +5,11 @@
   padding: 2px;
 }
 
+.backcard {
+  background-color: transparent;
+  padding: 0;
+}
+
 .image {
   height: auto;
   max-width: 100%;

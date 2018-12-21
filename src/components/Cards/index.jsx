@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import styles from './Cards.module.css'
 import Spinner from '../Spinner'
-import Card from './Card'
+import Card from '../../containers/Cards/Card'
 
 class Cards extends Component {
   componentDidMount() {
