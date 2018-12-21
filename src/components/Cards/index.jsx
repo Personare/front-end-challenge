@@ -4,17 +4,21 @@ import PropTypes from 'prop-types'
 import styles from './Cards.module.css'
 import Spinner from '../Spinner'
 import Card from '../../containers/Cards/Card'
+import ErrorMessage from './ErrorMessage'
 
 class Cards extends Component {
   componentDidMount() {
-    const { setIsLoading, getTarotCards } = this.props
+    const { getTarotCards } = this.props
 
-    setIsLoading(true)
     getTarotCards()
   }
 
   renderCards() {
-    const { tarotCards: { cards } } = this.props
+    const { tarotCards: { cards, error } } = this.props
+
+    if (error) {
+      return <ErrorMessage message={error.message} />
+    }
 
     return cards.map(card => (
       <Card key={card.id} item={card} />
@@ -36,7 +40,6 @@ class Cards extends Component {
 
 Cards.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  setIsLoading: PropTypes.func.isRequired,
   getTarotCards: PropTypes.func.isRequired,
 }
 

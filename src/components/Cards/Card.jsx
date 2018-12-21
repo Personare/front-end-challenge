@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import styles from './Card.module.css'
-import CardName from './CardName'
-import CardImage from '../../containers/Cards/CardImage'
+import CardImage from './CardImage'
 
 class Card extends Component {
+  state = {
+    selected: false,
+  }
+
   handleCardClick = () => {
     const { isShuffle } = this.props
 
@@ -20,21 +23,27 @@ class Card extends Component {
 
     if (!currentCard.id) {
       setCurrentCard(item)
+      this.setState({ selected: true })
     }
   }
 
   render() {
     const { isShuffle, item } = this.props
+    const { selected } = this.state
 
     return (
       <div
+        onClick={this.handleCardClick}
         className={classNames(styles.card, {
           [styles.backcard]: isShuffle,
+          [styles.selected]: selected,
         })}
-        onClick={this.handleCardClick}
       >
-        <CardImage isShuffle={isShuffle} item={item} />
-        <CardName isShuffle={isShuffle} text={item.name} />
+        <CardImage
+          isShuffle={isShuffle}
+          item={item}
+          selected={selected}
+        />
       </div>
     )
   }

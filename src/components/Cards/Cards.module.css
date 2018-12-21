@@ -2,8 +2,7 @@
   align-items: stretch;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 20px;
   margin: 0 auto;
-  max-width: 1200px;
 }

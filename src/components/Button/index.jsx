@@ -3,17 +3,15 @@ import PropTypes from 'prop-types'
 
 import styles from './Button.module.css'
 
-const Button = ({ text, isShuffle, setShuffle }) => {
-  return (
-    <button
-      className={styles.button}
-      onClick={() => setShuffle(true)}
-      disabled={isShuffle}
-    >
-      {text}
-    </button>
-  )
-}
+const Button = ({ text, isShuffle, setShuffle }) => (
+  <button
+    className={styles.button}
+    onClick={() => setShuffle(true)}
+    disabled={isShuffle}
+  >
+    {text}
+  </button>
+)
 
 Button.defaultProps = {
   text: 'Embaralhar cartas',

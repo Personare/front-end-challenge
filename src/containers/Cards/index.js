@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 
-import setIsLoading from '../../actions/setIsLoading'
 import getTarotCards from '../../actions/getTarotCards'
 import Cards from '../../components/Cards'
 
@@ -10,7 +9,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = {
-  setIsLoading,
   getTarotCards,
 }
 

@@ -1,8 +1,8 @@
 .card {
-  background-color: #f0f4db;
-  flex: 0 1 162px;
+  background-color: transparent;
+  flex: 0 0 130px;
   margin: 10px;
-  padding: 2px;
+  transition: transform .6s;
 }
 
 .backcard {
@@ -11,12 +11,20 @@
   padding: 0;
 }
 
-.image {
-  height: auto;
-  max-width: 100%;
+.backcard:not(.selected) {
+  transform: rotateY(180deg);
 }
 
-.text {
-  padding: 5px 0;
-  text-align: center;
+.card,
+.backcard {
+  transform-style: preserve-3d;
+}
+
+.card:not(.backcard) {
+  transition: transform .6s;
+}
+
+.image {
+  height: 309px;
+  max-width: 100%;
 }

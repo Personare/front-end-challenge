@@ -1,28 +1,26 @@
 .button {
-  background-color: #692446;
-  border-bottom: 3px solid #331a2a;
+  background-color: #cc3283;
+  border-bottom: 3px solid #af3475;
   border-left: 0;
   border-radius: 3px;
   border-right: 0;
   border-top: 0;
   color: #fff;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  margin-top: 30px;
   outline: none;
-  padding: 20px 40px;
-  text-transform: uppercase;
+  padding: 12px;
+  font-weight: bold;
 }
 
 .button:active,
 .button:disabled {
   border: 0;
-  margin-top: 33px;
 }
 
 .button:disabled {
   cursor: initial;
-  color: #333;
+  color: #ebebeb;
   opacity: 0.5;
 }
