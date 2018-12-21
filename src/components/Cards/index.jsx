@@ -41,6 +41,11 @@ class Cards extends Component {
 Cards.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   getTarotCards: PropTypes.func.isRequired,
+  tarotCards: PropTypes.shape({
+    imagesUrl: PropTypes.string.isRequired,
+    imageBackCard: PropTypes.string.isRequired,
+    cards: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }).isRequired,
 }
 
 export default Cards
