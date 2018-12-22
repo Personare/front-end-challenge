@@ -1,0 +1,44 @@
+@keyframes info {
+  from {
+    transform: rotateY(180deg);
+  }
+  to {
+    transform: rotateY(0deg);
+  }
+}
+
+.info {
+  animation-duration: 1s;
+  animation-name: info;
+  background: #af4175;
+  border-radius: 10px;
+  bottom: -112px;
+  color: #fff;
+  margin-top: 90px;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  width: 350px;
+  z-index: 2;
+}
+
+.info:after {
+  border-color: transparent transparent #af4175 transparent;
+  border-style: solid;
+  border-width: 12px;
+  bottom: 100%;
+  content: " ";
+  position: absolute;
+  transform: translate(-50%, 0);
+}
+
+.title {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.description {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}

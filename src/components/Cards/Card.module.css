@@ -1,3 +1,10 @@
+.content {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
 .card {
   background-color: transparent;
   flex: 0 0 130px;
