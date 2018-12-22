@@ -17,6 +17,7 @@
 .button:active,
 .button:disabled {
   border: 0;
+  margin-top: 3px;
 }
 
 .button:disabled {

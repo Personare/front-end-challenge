@@ -19,7 +19,7 @@
   position: absolute;
   text-align: center;
   width: 350px;
-  z-index: 2;
+  z-index: 12;
 }
 
 .info:after {

@@ -5,6 +5,10 @@
   position: relative;
 }
 
+.content .selected {
+  z-index: 12;
+}
+
 .card {
   background-color: transparent;
   flex: 0 0 130px;
@@ -28,6 +32,7 @@
 
 .card:not(.backcard) .image,
 .selected .image {
+  background-color: #fff;
   border-radius: 5px;
   border: 1px solid #ebebeb;
   padding: 8px;
