@@ -1,0 +1,27 @@
+.button {
+  background-color: #cc3283;
+  border-bottom: 3px solid #af3475;
+  border-left: 0;
+  border-radius: 3px;
+  border-right: 0;
+  border-top: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  padding: 12px;
+  font-weight: bold;
+}
+
+.button:active,
+.button:disabled {
+  border: 0;
+  margin-top: 3px;
+}
+
+.button:disabled {
+  cursor: initial;
+  color: #ebebeb;
+  opacity: 0.5;
+}
