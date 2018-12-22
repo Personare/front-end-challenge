@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import styles from './Button.module.css'
 
 const Button = ({
+  isLoading,
   setIsShuffle,
   setShuffleCards,
   cards,
@@ -19,7 +20,7 @@ const Button = ({
     <button
       className={styles.button}
       onClick={handleClick}
-      disabled={isShuffle}
+      disabled={isLoading || isShuffle || !cards.length}
     >
       {text}
     </button>
@@ -30,6 +31,7 @@ Button.defaultProps = {
 }
 
 Button.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
   text: PropTypes.string,
   setIsShuffle: PropTypes.func.isRequired,
   setShuffleCards: PropTypes.func.isRequired,

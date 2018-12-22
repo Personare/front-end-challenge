@@ -13,10 +13,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case TAROT_CARDS_SUCCESS:
-      return {
-        ...state,
-        ...action.payload,
-      }
+      return action.payload
 
     case TAROT_CARDS_SHUFFLE:
       return {
@@ -25,7 +22,10 @@ export default (state = initialState, action) => {
       }
 
     case TAROT_CARDS_FAIL:
-      return { error: action.payload }
+      return {
+        ...initialState,
+        error: action.payload,
+      }
 
     default:
       return state

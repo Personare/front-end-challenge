@@ -9,7 +9,7 @@ const ErrorMessage = ({ message }) => (
   </div>
 )
 
-ErrorMessage.PropTypes = {
+ErrorMessage.propTypes = {
   message: PropTypes.string.isRequired,
 }
 

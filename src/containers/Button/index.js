@@ -7,6 +7,7 @@ import Button from '../../components/Button'
 const mapStateToProps = state => ({
   isShuffle: state.isShuffle,
   cards: state.tarotCards.cards,
+  isLoading: state.isLoading,
 })
 
 const mapDispatchToProps = {

@@ -10,12 +10,12 @@
 .spinner:before {
   animation: spinner .5s linear infinite;
   background-color: transparent;
-  border-bottom-color: #6a595a;
+  border-bottom-color: #cc3283;
   border-left-color: #fff;
   border-radius: 50%;
   border-right-color: #fff;
   border-style: solid;
-  border-top-color: #6a595a;
+  border-top-color: #cc3283;
   border-width: 3px;
   content: '';
   display: flex;

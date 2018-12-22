@@ -9,7 +9,7 @@ import {
 const { REACT_APP_TAROT_CARDS_API: TAROT_CARDS_API } = process.env
 
 export default () => async dispatch => {
-  const { error, ...data } = await request.get(TAROT_CARDS_API)
+  const { error, ...data } = await request(TAROT_CARDS_API)
 
   dispatch({
     type: error ? TAROT_CARDS_FAIL : TAROT_CARDS_SUCCESS,
