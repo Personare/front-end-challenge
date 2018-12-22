@@ -22,3 +22,14 @@
   text-align: left;
   line-height: 130%;
 }
+
+@media (max-width: 769px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .title,
+  .description {
+    margin-bottom: 15px;
+  }
+}
