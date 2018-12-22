@@ -63,6 +63,7 @@ Card.propTypes = {
   item: PropTypes.shape({
     name: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
   }).isRequired,
 }
 
