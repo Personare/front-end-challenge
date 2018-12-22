@@ -2,7 +2,11 @@
   background-color: transparent;
   flex: 0 0 130px;
   margin: 10px;
-  transition: transform .6s;
+}
+
+.card,
+.card:not(.backcard) {
+  transition: transform 1s;
 }
 
 .backcard {
@@ -13,15 +17,6 @@
 
 .backcard:not(.selected) {
   transform: rotateY(180deg);
-}
-
-.card,
-.backcard {
-  transform-style: preserve-3d;
-}
-
-.card:not(.backcard) {
-  transition: transform .6s;
 }
 
 .card:not(.backcard) .image,

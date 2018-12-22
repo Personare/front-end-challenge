@@ -1,4 +1,1 @@
-export default cards => {
-  cards.sort(() => 0.5 - Math.random())
-  return cards
-}
+export default cards => cards.sort(() => 0.5 - Math.random())
