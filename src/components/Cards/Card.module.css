@@ -1,0 +1,48 @@
+.content {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.content .selected {
+  z-index: 12;
+}
+
+.card {
+  background-color: transparent;
+  flex: 0 0 130px;
+  margin: 10px;
+}
+
+.card,
+.card:not(.backcard) {
+  transition: transform 1s;
+}
+
+.backcard {
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+.backcard:not(.selected) {
+  transform: rotateY(180deg);
+}
+
+.card:not(.backcard) .image,
+.selected .image {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #ebebeb;
+  padding: 8px;
+  width: 162px;
+}
+
+.image {
+  height: 309px;
+}
+
+.disabled {
+  pointer-events: none;
+}
