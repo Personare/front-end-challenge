@@ -5,4 +5,5 @@
   justify-content: center;
   margin-top: 20px;
   margin: 0 auto;
+  user-select: none;
 }

@@ -6,44 +6,44 @@ import styles from './Card.module.css'
 import CardImage from './CardImage'
 
 class Card extends Component {
-  state = {
-    selected: false,
+  handleClick = () => {
+    const { setCurrentCard, item } = this.props
+
+    setCurrentCard(item)
   }
 
-  handleCardClick = () => {
-    const { isShuffle } = this.props
+  isSelected() {
+    const { currentCard, item } = this.props
 
-    if (isShuffle) {
-      this.setValidCurrentCard()
-    }
+    return currentCard.index === item.index
   }
 
-  setValidCurrentCard() {
-    const { currentCard, setCurrentCard, item } = this.props
-
-    if (!currentCard.index) {
-      setCurrentCard(item)
-      this.setState({ selected: true })
+  getAttrs() {
+    const { isShuffle, currentCard } = this.props
+    const attrs = {
+      className: classNames(styles.card, {
+        [styles.backcard]: isShuffle,
+        [styles.selected]: this.isSelected(),
+        [styles.disabled]: !!currentCard.index,
+      }),
     }
+
+    if (isShuffle && !currentCard.index) {
+      attrs.onClick = this.handleClick
+    }
+
+    return attrs
   }
 
   render() {
-    const { isShuffle, item, currentCard } = this.props
-    const { selected } = this.state
+    const { isShuffle, item } = this.props
 
     return (
-      <div
-        onClick={this.handleCardClick}
-        className={classNames(styles.card, {
-          [styles.backcard]: isShuffle,
-          [styles.selected]: selected,
-          [styles.disabled]: !!currentCard.index,
-        })}
-      >
+      <div {...this.getAttrs()}>
         <CardImage
           isShuffle={isShuffle}
           item={item}
-          selected={selected}
+          selected={this.isSelected()}
         />
       </div>
     )
