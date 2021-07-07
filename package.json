@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "axios": "^0.21.1",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.3.0"
+  }
+}
