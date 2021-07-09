@@ -21,12 +21,11 @@ export const Back = () => {
 
     }
 
- 
+
     const showBack = tarot && tarot.cards && tarot.cards.map((card) => {
         return <Cartas onClick={sorteio} key={card.name}>
             <p></p>
             <img src={URL_BACK} />
-            <p></p>
         </Cartas>
     })
 
@@ -37,8 +36,10 @@ export const Back = () => {
             {lado ?
                 <Cartas onClick={sorteio}>
                     <p>{name}</p>
-                    <img src={URL_BASE +image} />
-                    <p>bla bla bla</p>
+                    <img src={URL_BASE + image} />
+                    <p>Se a carta {name} apareceu
+                        <br />para você é por que....</p>
+
                 </Cartas> :
                 showBack}
         </Tabuleiro>

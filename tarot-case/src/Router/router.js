@@ -7,15 +7,19 @@ export const Router = () => {
     return (
         <BrowserRouter>
             <Switch>
+
                 <Route exact path="/">
                     <Home />
                 </Route>
+
                 <Route exact path="/table">
                     <Table />
                 </Route>
+
                 <Route>
                     <Error />
                 </Route>
+
             </Switch>
         </BrowserRouter>
     )

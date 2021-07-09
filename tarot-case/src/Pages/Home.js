@@ -1,18 +1,20 @@
-import { useContext, useHistory } from "react"
+
 import { Body } from "../Styled/styledPages"
-import { ContextoCartas } from "../Globais/GlobalContext"
 import { goToTable } from "../Router/cordination"
+import { useHistory} from "react-router-dom"
+import Button from '@material-ui/core/Button';
 
 const Home = () => {
-    const { getInfo } = useContext(ContextoCartas);
 
     const history = useHistory();
-
     goToTable(history)
 
     return (
         <Body>
-            <button onClick={goToTable}>START</button>
+
+            <Button onClick={goToTable}
+            variant="contained" color="primary">START</Button>
+
         </Body>
 
     )

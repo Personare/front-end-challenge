@@ -12,9 +12,9 @@ export const Front = ()=>{
 
     const showCards = tarot && tarot.cards && tarot.cards.map((card) => {
         return <Cartas key={card.name}>
-            <p>{card.name}</p>
+            <h3>{card.name}</h3>
             <img src={URL_BASE + card.image} />
-            <p>bla bla bla</p>
+           
         </Cartas>
     })
 
