@@ -16,6 +16,7 @@ grid-template-rows: 1fr 5fr 1fr;
 border-radius:20px;
 width:250px;
 height: 55vh;
+min-height: 500px;
 justify-items: center;
 &:hover{
     box-shadow: 0 0 10px #aaaaaa;
