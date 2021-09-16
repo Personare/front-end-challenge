@@ -20,11 +20,9 @@
 			<li>Conclusão:</li>
 			<img src="readmeImg/popup.png" width="600">
 			<p>
-				Após ocorrido todo esse processo o popup com a descrição e o nome da carta é mostrado na tela. Esse popup aparecerá independentemente de você ter encontrado ou não a carta aleatória. Pois esse popup se trata dos detalhes de cada uma das cartas viradas.
+				Após ocorrido todo esse processo o popup com a descrição e o nome da carta é mostrado na tela. Esse popup aparecerá independentemente de você ter encontrado ou não a carta aleatória. Pois se trata dos detalhes de cada uma das cartas viradas.
 			</p>
 		</ul>
 	</p>
-
-	</div>
 </body>
 </html>
