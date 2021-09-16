@@ -16,7 +16,8 @@ const Introduction = (props)=>{
   }, [])
 
   cards.sort(()=> Math.random() - 0.5)
-  
+  const random = Math.floor(Math.random() * cards.length)
+  const randomCard = cards[random]
 	
 	return<div className='card-container'>
       <div><button className='btn-paginaInicial'
@@ -24,7 +25,8 @@ const Introduction = (props)=>{
       {cards.map(card=>{
         return<Cards key={card.name}
                 name={card.name}
-                image={card.image}/>           
+                image={card.image}
+                randomCard={randomCard}/>           
       })}
       </div>
 }
