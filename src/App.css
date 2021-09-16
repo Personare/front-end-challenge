@@ -49,9 +49,8 @@ img{
 
 
 .load-container{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	margin-left: 45vw;
+	margin-top: 20vh;
 }
 .loading{
 	border: 3px solid;
