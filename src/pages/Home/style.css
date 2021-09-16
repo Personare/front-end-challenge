@@ -1,0 +1,25 @@
+.cardShowed{
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	text-align: center;
+}
+
+.btn{
+	text-align: center;
+	margin: 30px;
+}
+
+.btn-play{
+	width: 150px;
+	height: 35px;
+	font-size: 1.5rem;
+	background-color: blue;
+	border: none;
+	border-radius: 10px;
+	color: whitesmoke;
+	cursor: pointer;
+}
+
+.cards{
+	margin: 10px;
+}
