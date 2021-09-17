@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot 1`] = `
+<ReactCardFlip
+  cardStyles={
+    Object {
+      "back": Object {},
+      "front": Object {},
+    }
+  }
+  cardZIndex="auto"
+  containerStyle={Object {}}
+  flipDirection="horizontal"
+  flipSpeedBackToFront={0.6}
+  flipSpeedFrontToBack={0.6}
+  infinite={false}
+  isFlipped={true}
+>
+  <img
+    alt="Name Test"
+    onClick={[Function]}
+    src="https://images.com/Image Test"
+  />
+  <img
+    alt="Name Test"
+    onClick={[Function]}
+  />
+</ReactCardFlip>
+`;

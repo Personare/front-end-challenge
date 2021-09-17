@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardList should match snapshot 1`] = `
+<styled.div>
+  <Card
+    card={
+      Object {
+        "image": "Image Test #1",
+        "name": "Name Test #1",
+        "show": false,
+      }
+    }
+    key="Name Test #1"
+  />
+  <Card
+    card={
+      Object {
+        "image": "Image Test #2",
+        "name": "Name Test #2",
+        "show": false,
+      }
+    }
+    key="Name Test #2"
+  />
+  <Card
+    card={
+      Object {
+        "image": "Image Test #3",
+        "name": "Name Test #3",
+        "show": false,
+      }
+    }
+    key="Name Test #3"
+  />
+</styled.div>
+`;

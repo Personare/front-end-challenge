@@ -1,50 +1,30 @@
-# front-end-challenge
+# Front-End Challenge
 
-> Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)
-
-## Introdução
-
-A nossa Product Owner pensou em um produto fantástico para ser desenvolvido, e um dos desafios é criação de um jogo de Tarot.
-
-<br>
-
-**Então, essa é a sua missão!**
-
-Criar um jogo de Tarot, permitindo o sorteio de uma carta.
-
-E as especificações são:
-
-- Tela de apresentação exibindo todas as cartas com seu conteúdo visível, e com um botão para iniciar o jogo.
-- Ao clicar no botão, as cartas deverão ser viradas - escondendo o conteúdo - e embaralhadas.
-- Permitir que o usuário selecione apenas uma carta, clicando na mesma.
-- Apresentar a carta selecionada, o nome da carta e uma descrição. (a descrição pode ser um lorem ipsum)
-
-OBS: As imagens e nomes das cartas estão listadas no arquivo [`tarot.json`](tarot.json), esse arquivo deve ser consumido via _http request_. A propriedade `image` de cada carta deve ser concatenada com a propriedade `imagesUrl`, para obter o endereço final da imagem. Utilize o valor da propriedade `imageBackCard` para obter a imagem do fundo da carta.
-
-
-## Instruções
-
-1. Efetue o **fork** deste repositório e crie um branch com o seu nome. (ex: caue-alves).
-2. Após finalizar o desafio, crie um **Pull Request**.
-3. Aguarde algum contribuidor realizar o code review.
-
+[Link para visualizar a aplicação](personare-test-ingrid.surge.sh)
 
 ## Pré-requisitos
 
-- Aplicação feita em React
-- Possuir testes
-- Gerar versão de produção
-- Criar micro commits ou commits por features
-	- Detalhar nos comentários dos commits as decisões tomadas.
+- NodeJs
 
+## Como rodar o projeto
 
-## Diferenciais
+- Instale as dependências com `yarn` ou `npm install`
+- Rode a aplicação usando o comando `yarn start` ou `npm start`
 
-- Boa documentação
-- Testes de componentes isolados
+## Testes unitários
 
-## Dúvidas
+- Para rodar os testes, execute o comando `yarn test`
+- Para obter o relatório de cobertura de código, execute o comando `yarn test --coverage`
 
-Se surgir alguma dúvida, consulte as [perguntas feitas anteriormente](https://github.com/Personare/front-end-challenge/labels/question).
+## Teste e2e
 
-Caso não encontre a sua resposta, sinta-se à vontade para [abrir uma issue](https://github.com/Personare/front-end-challenge/issues/new) =]
+- Rode o projeto e execute o comando `yarn e2e`
+
+## Ferramentas e bibliotecas utilizadas
+
+- [ReactJS](https://pt-br.reactjs.org/docs/getting-started.html)
+- [TypeScript](https://www.typescriptlang.org/docs/)
+- [Axios](https://axios-http.com/docs/intro)
+- [Styled Components](https://styled-components.com/docs)
+- [Enzyme](https://enzymejs.github.io/enzyme/)
+- [Cypress](https://docs.cypress.io/guides/overview/why-cypress)
