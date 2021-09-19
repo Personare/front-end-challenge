@@ -1,0 +1,318 @@
+{
+  "imagesUrl": "https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/",
+  "imageBackCard": "https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png",
+  "cards": [
+    {
+      "name": "O MAGO",
+      "image": "arcano1.jpg"
+    },
+    {
+      "name": "A SACERDOTISA",
+      "image": "arcano2.jpg"
+    },
+    {
+      "name": "A IMPERATRIZ",
+      "image": "arcano3.jpg"
+    },
+    {
+      "name": "O IMPERADOR",
+      "image": "arcano4.jpg"
+    },
+    {
+      "name": "O PAPA",
+      "image": "arcano5.jpg"
+    },
+    {
+      "name": "OS ENAMORADOS",
+      "image": "arcano6.jpg"
+    },
+    {
+      "name": "O CARRO",
+      "image": "arcano7.jpg"
+    },
+    {
+      "name": "A JUSTIÇA",
+      "image": "arcano8.jpg"
+    },
+    {
+      "name": "O EREMITA",
+      "image": "arcano9.jpg"
+    },
+    {
+      "name": "A RODA DA FORTUNA",
+      "image": "arcano10.jpg"
+    },
+    {
+      "name": "A FORÇA",
+      "image": "arcano11.jpg"
+    },
+    {
+      "name": "O HOMEM PENDURADO",
+      "image": "arcano12.jpg"
+    },
+    {
+      "name": "A MORTE",
+      "image": "arcano13.jpg"
+    },
+    {
+      "name": "A TEMPERANÇA",
+      "image": "arcano14.jpg"
+    },
+    {
+      "name": "O DIABO",
+      "image": "arcano15.jpg"
+    },
+    {
+      "name": "A TORRE",
+      "image": "arcano16.jpg"
+    },
+    {
+      "name": "A ESTRELA",
+      "image": "arcano17.jpg"
+    },
+    {
+      "name": "A LUA",
+      "image": "arcano18.jpg"
+    },
+    {
+      "name": "O SOL",
+      "image": "arcano19.jpg"
+    },
+    {
+      "name": "O JULGAMENTO",
+      "image": "arcano20.jpg"
+    },
+    {
+      "name": "O MUNDO",
+      "image": "arcano21.jpg"
+    },
+    {
+      "name": "O LOUCO",
+      "image": "arcano22.jpg"
+    },
+    {
+      "name": "ÀS DE COPAS",
+      "image": "arcano23.jpg"
+    },
+    {
+      "name": "2 DE COPAS",
+      "image": "arcano24.jpg"
+    },
+    {
+      "name": "3 DE COPAS",
+      "image": "arcano25.jpg"
+    },
+    {
+      "name": "4 DE COPAS",
+      "image": "arcano26.jpg"
+    },
+    {
+      "name": "5 DE COPAS",
+      "image": "arcano27.jpg"
+    },
+    {
+      "name": "6 DE COPAS",
+      "image": "arcano28.jpg"
+    },
+    {
+      "name": "7 DE COPAS",
+      "image": "arcano29.jpg"
+    },
+    {
+      "name": "8 DE COPAS",
+      "image": "arcano30.jpg"
+    },
+    {
+      "name": "9 DE COPAS",
+      "image": "arcano31.jpg"
+    },
+    {
+      "name": "10 DE COPAS",
+      "image": "arcano32.jpg"
+    },
+    {
+      "name": "PRINCESA DE COPAS",
+      "image": "arcano33.jpg"
+    },
+    {
+      "name": "CAVALEIRO DE COPAS",
+      "image": "arcano34.jpg"
+    },
+    {
+      "name": "RAINHA DE COPAS",
+      "image": "arcano35.jpg"
+    },
+    {
+      "name": "REI DE COPAS",
+      "image": "arcano36.jpg"
+    },
+    {
+      "name": "ÀS DE ESPADAS",
+      "image": "arcano37.jpg"
+    },
+    {
+      "name": "2 DE ESPADAS ,",
+      "image": "arcano38.jpg"
+    },
+    {
+      "name": "3 DE ESPADAS",
+      "image": "arcano39.jpg"
+    },
+    {
+      "name": "4 DE ESPADAS",
+      "image": "arcano40.jpg"
+    },
+    {
+      "name": "5 DE ESPADAS",
+      "image": "arcano41.jpg"
+    },
+    {
+      "name": "6 DE ESPADAS",
+      "image": "arcano42.jpg"
+    },
+    {
+      "name": "7 DE ESPADAS",
+      "image": "arcano43.jpg"
+    },
+    {
+      "name": "8 DE ESPADAS",
+      "image": "arcano44.jpg"
+    },
+    {
+      "name": "9 DE ESPADAS",
+      "image": "arcano45.jpg"
+    },
+    {
+      "name": "10 DE ESPADAS",
+      "image": "arcano46.jpg"
+    },
+    {
+      "name": "PRINCESA DE ESPADAS",
+      "image": "arcano47.jpg"
+    },
+    {
+      "name": "CAVALEIRO DE ESPADAS",
+      "image": "arcano48.jpg"
+    },
+    {
+      "name": "RAINHA DE ESPADAS",
+      "image": "arcano49.jpg"
+    },
+    {
+      "name": "REI DE ESPADAS",
+      "image": "arcano50.jpg"
+    },
+    {
+      "name": "ÀS DE PAUS",
+      "image": "arcano51.jpg"
+    },
+    {
+      "name": "2 DE PAUS",
+      "image": "arcano52.jpg"
+    },
+    {
+      "name": "3 DE PAUS",
+      "image": "arcano53.jpg"
+    },
+    {
+      "name": "4 DE PAUS",
+      "image": "arcano54.jpg"
+    },
+    {
+      "name": "5 DE PAUS",
+      "image": "arcano55.jpg"
+    },
+    {
+      "name": "6 DE PAUS",
+      "image": "arcano56.jpg"
+    },
+    {
+      "name": "7 DE PAUS",
+      "image": "arcano57.jpg"
+    },
+    {
+      "name": "8 DE PAUS",
+      "image": "arcano58.jpg"
+    },
+    {
+      "name": "9 DE PAUS",
+      "image": "arcano59.jpg"
+    },
+    {
+      "name": "10 DE PAUS",
+      "image": "arcano60.jpg"
+    },
+    {
+      "name": "PRINCESA DE PAUS",
+      "image": "arcano61.jpg"
+    },
+    {
+      "name": "CAVALEIRO DE PAUS",
+      "image": "arcano62.jpg"
+    },
+    {
+      "name": "RAINHA DE PAUS",
+      "image": "arcano63.jpg"
+    },
+    {
+      "name": "REI DE PAUS",
+      "image": "arcano64.jpg"
+    },
+    {
+      "name": "ÀS DE OUROS",
+      "image": "arcano65.jpg"
+    },
+    {
+      "name": "2 DE OUROS",
+      "image": "arcano66.jpg"
+    },
+    {
+      "name": "3 DE OUROS",
+      "image": "arcano67.jpg"
+    },
+    {
+      "name": "4 DE OUROS",
+      "image": "arcano68.jpg"
+    },
+    {
+      "name": "5 DE OUROS",
+      "image": "arcano69.jpg"
+    },
+    {
+      "name": "6 DE OUROS",
+      "image": "arcano70.jpg"
+    },
+    {
+      "name": "7 DE OUROS",
+      "image": "arcano71.jpg"
+    },
+    {
+      "name": "8 DE OUROS",
+      "image": "arcano72.jpg"
+    },
+    {
+      "name": "9 DE OUROS",
+      "image": "arcano73.jpg"
+    },
+    {
+      "name": "10 DE OUROS",
+      "image": "arcano74.jpg"
+    },
+    {
+      "name": "PRINCESA DE OUROS",
+      "image": "arcano75.jpg"
+    },
+    {
+      "name": "CAVALEIRO DE OUROS",
+      "image": "arcano76.jpg"
+    },
+    {
+      "name": "RAINHA DE OUROS",
+      "image": "arcano77.jpg"
+    },
+    {
+      "name": "REI DE OUROS",
+      "image": "arcano78.jpg"
+    }
+  ]
+}
