@@ -1,4 +1,6 @@
-export const shuffleArray = (arr: any[]) => {
+import { ICard } from "../config/interfaces";
+
+export const shuffleArray = (arr: ICard[]) => {
   let currentIndex = arr.length,
     randomIndex;
 

@@ -1,14 +1,9 @@
-import { ICard } from "../../config/interfaces";
+import { IModal } from "../../config/interfaces";
 import Card from "../Card";
 import { Content, Text, Overlay, Name, CloseButton } from "./styles";
 
-interface IModal {
-  card: ICard;
-  onClose: () => void;
-}
-
 const Modal: React.FC<IModal> = ({ card, onClose }) => {
-  const handleContentClick = (e: any) => {
+  const handleContentClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 

@@ -1,11 +1,6 @@
-import { ICard } from "../../config/interfaces";
+import { ICard, ICardList } from "../../config/interfaces";
 import Card from "../Card";
 import { List } from "./styles";
-
-interface ICardList {
-  cards: ICard[];
-  onClick?: (name: string) => void;
-}
 
 const CardList: React.FC<ICardList> = ({ cards, onClick }) => {
   return (

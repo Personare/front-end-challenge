@@ -10,7 +10,7 @@ const Screen: React.FC = () => {
     state: { data, isPlaying, selectedCard, showModal, isShuffling },
     setters: { startGame, selectCard, setShowModal, closeModal },
     requests: { getData },
-  }: any = useContext(GlobalContext);
+  } = useContext(GlobalContext);
 
   useEffect(() => {
     getData();
