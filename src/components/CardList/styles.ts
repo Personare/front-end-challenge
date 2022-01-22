@@ -1,17 +1,24 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const List = styled.div`
-  align-items: center;
-  display: grid;
-  gap: 20px;
+export const List = styled.div<{ isPlaying: boolean }>`
+  display: flex;
   width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 20px 20px 50px;
 
-  flex-direction: column;
-  grid-template-columns: repeat(auto-fill, minmax(162px, 1fr));
+  ${({ isPlaying }) => css`
+    > div {
+      margin-left: -30px;
+      transition: 300ms ease transform, 300ms ease filter;
+      cursor: ${isPlaying ? "pointer" : "default"};
+      filter: ${isPlaying ? "saturate(50%)" : "auto"};
 
-  img {
-    display: block;
-    height: auto;
-    width: 100%;
-  }
+      &:hover {
+        transform: translateY(-30px) rotateZ(5deg);
+
+        filter: ${isPlaying ? "saturate(100%)" : "auto"};
+      }
+    }
+  `}
 `;

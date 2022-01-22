@@ -17,24 +17,28 @@ export const Overlay = styled.div`
 export const Content = styled.div`
   background-color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  padding: 40px;
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 20px;
-  width: 350px;
+  width: 400px;
+  padding: 20px;
+`;
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Name = styled.h3`
   font-size: 20px;
   line-height: 1;
+  margin-bottom: 20px;
 `;
 
 export const Text = styled.p`
   font-size: 14px;
   line-height: 1.25;
-  text-align: justify;
 `;
 
 export const CloseButton = styled.button`

@@ -12,6 +12,7 @@ const initialState = {
     selectedCard: undefined,
     showModal: false,
     isShuffling: false,
+    isStartGame: true,
   },
   setters: {
     startGame: () => {},
@@ -20,6 +21,7 @@ const initialState = {
     closeModal: () => {},
     shuffleCards: () => {},
     setIsShuffling: () => {},
+    setIsStartGame: () => {},
   },
   requests: {
     getData: async () => {},

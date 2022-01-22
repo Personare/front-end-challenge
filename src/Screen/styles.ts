@@ -8,24 +8,7 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
-export const PlayButton = styled.button`
-  padding: 15px 60px;
-  border-radius: 6px;
-  outline: none;
-  border: none;
-  background-color: #ef4e17;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 40px;
-
-  &:hover {
-    cursor: pointer;
-    background-color: rgba(239, 78, 23, 0.8);
-  }
-`;
-
 export const Message = styled.p`
-  padding: 15px 60px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-size: 20px;
 `;

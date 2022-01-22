@@ -3,7 +3,9 @@ import ReactCardFlip from "react-card-flip";
 import { ICardItem } from "../../config/interfaces";
 import GlobalContext from "../../global/GlobalContext";
 
-const Card: React.FC<ICardItem> = ({ card, onClick }) => {
+import { Container, Image } from "./styles";
+
+const Card: React.FC<ICardItem> = ({ card, onClick, isMinimal }) => {
   const { name, image, show } = card;
 
   const {
@@ -13,21 +15,23 @@ const Card: React.FC<ICardItem> = ({ card, onClick }) => {
   const isFlipped = !show;
 
   return (
-    <div data-cy="card" onClick={() => onClick && onClick(name)}>
+    <Container data-cy="card" onClick={() => onClick && onClick(name)}>
       <ReactCardFlip isFlipped={isFlipped} flipDirection="horizontal">
-        <img
+        <Image
+          isMinimal={isMinimal}
           alt={name}
           src={`${data.imagesUrl}${image}`}
           data-cy={!isFlipped && "card-up"}
         />
 
-        <img
+        <Image
+          isMinimal={isMinimal}
           alt={name}
           src={data.imageBackCard}
           data-cy={isFlipped && "card-down"}
         />
       </ReactCardFlip>
-    </div>
+    </Container>
   );
 };
 

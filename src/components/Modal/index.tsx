@@ -1,6 +1,6 @@
 import { IModal } from "../../config/interfaces";
 import Card from "../Card";
-import { Content, Text, Overlay, Name, CloseButton } from "./styles";
+import * as S from "./styles";
 
 const Modal: React.FC<IModal> = ({ card, onClose }) => {
   const handleContentClick = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -8,19 +8,21 @@ const Modal: React.FC<IModal> = ({ card, onClose }) => {
   };
 
   return (
-    <Overlay onClick={onClose} data-cy="modal-overlay">
-      <Content onClick={handleContentClick}>
-        <Name>{card.name}</Name>
+    <S.Overlay onClick={onClose} data-cy="modal-overlay">
+      <S.Content onClick={handleContentClick}>
         <Card card={card} />
-        <Text>
-          The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-          below for those interested. Sections 1.10.32 and 1.10.33 from "de
-          Finibus Bonorum et Malorum" by Cicero.
-        </Text>
+        <S.TextContainer>
+          <S.Name>{card.name}</S.Name>
+          <S.Text>
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+            below for those interested. Sections 1.10.32 and 1.10.33 from "de
+            Finibus Bonorum et Malorum" by Cicero.
+          </S.Text>
+        </S.TextContainer>
 
-        <CloseButton onClick={onClose}>&times;</CloseButton>
-      </Content>
-    </Overlay>
+        <S.CloseButton onClick={onClose}>&times;</S.CloseButton>
+      </S.Content>
+    </S.Overlay>
   );
 };
 export default Modal;

@@ -13,10 +13,12 @@ export interface IData {
 export interface ICardItem {
   card: ICard;
   onClick?: (name: string) => void;
+  isMinimal?: boolean;
 }
 
 export interface ICardList {
   cards: ICard[];
+  isPlaying: boolean;
   onClick?: (name: string) => void;
 }
 
@@ -32,6 +34,7 @@ export interface IGlobalContext {
     selectedCard: string | undefined;
     showModal: boolean;
     isShuffling: boolean;
+    isStartGame: boolean;
   };
   setters: {
     startGame: () => void;
@@ -40,6 +43,7 @@ export interface IGlobalContext {
     closeModal: () => void;
     shuffleCards: (cards: ICard[]) => void;
     setIsShuffling: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsStartGame: React.Dispatch<React.SetStateAction<boolean>>;
   };
   requests: {
     getData: () => Promise<void>;

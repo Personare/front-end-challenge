@@ -1,13 +1,22 @@
 import { useContext, useEffect } from "react";
 import CardList from "../components/CardList";
 import Modal from "../components/Modal";
+import StartGame from "../components/StartGame";
+import { PlayButton } from "../components/StartGame/styles";
 import { ICard } from "../config/interfaces";
 import GlobalContext from "../global/GlobalContext";
-import { Container, PlayButton, Message } from "./styles";
+import { Container, Message } from "./styles";
 
 const Screen: React.FC = () => {
   const {
-    state: { data, isPlaying, selectedCard, showModal, isShuffling },
+    state: {
+      data,
+      isPlaying,
+      selectedCard,
+      showModal,
+      isShuffling,
+      isStartGame,
+    },
     setters: { startGame, selectCard, setShowModal, closeModal },
     requests: { getData },
   } = useContext(GlobalContext);
@@ -45,10 +54,12 @@ const Screen: React.FC = () => {
       return <Message data-cy="choose-a-card-text">Escolha uma carta</Message>;
     }
 
-    return renderActionButton("Jogar");
+    return renderActionButton("Embaralhar cartas");
   };
 
   const handleCardClick = (name: string) => {
+    if (!isPlaying) return;
+
     if (!isShuffling && (!selectedCard || selectedCard === name)) {
       selectCard(name);
       setShowModal(true);
@@ -59,10 +70,16 @@ const Screen: React.FC = () => {
     (card: ICard) => card.name === selectedCard
   );
 
+  if (isStartGame) return <StartGame />;
+
   return (
     <Container>
       {renderHeader()}
-      <CardList cards={data?.cards} onClick={handleCardClick} />
+      <CardList
+        isPlaying={isPlaying}
+        cards={data?.cards}
+        onClick={handleCardClick}
+      />
       {!!currentCard && !!showModal && (
         <Modal card={currentCard} onClose={closeModal} />
       )}

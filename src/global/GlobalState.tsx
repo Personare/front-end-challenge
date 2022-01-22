@@ -11,6 +11,7 @@ const GlobalState: React.FC = ({ children }) => {
     imageBackCard: "",
   });
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isStartGame, setIsStartGame] = useState(true);
   const [selectedCard, setSelectedCard] = useState<string | undefined>();
   const [showModal, setShowModal] = useState(false);
   const [isShuffling, setIsShuffling] = useState(false);
@@ -72,11 +73,13 @@ const GlobalState: React.FC = ({ children }) => {
     selectedCard,
     showModal,
     isShuffling,
+    isStartGame,
   };
   const setters = {
     startGame,
     selectCard,
     setShowModal,
+    setIsStartGame,
     closeModal,
     shuffleCards,
     setIsShuffling,

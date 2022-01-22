@@ -7,11 +7,12 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;    
     padding: 0;
-  }
     
+  }
+  
   body {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 20px;
+    background-color: #c6c6c6;
+    font-family: Verdana, Helvetica, sans-serif;
   }
 `;
 
