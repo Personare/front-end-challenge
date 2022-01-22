@@ -27,6 +27,9 @@ export interface IModal {
   onClose: () => void;
 }
 
+export interface IStartGame {
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
 export interface IGlobalContext {
   state: {
     data: IData;

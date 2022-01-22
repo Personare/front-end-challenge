@@ -1,20 +1,12 @@
 import * as S from "./styles";
 
 import BackgroundImage from "../../assets/images/background-image.jpg";
-import { useContext } from "react";
-import GlobalContext from "../../global/GlobalContext";
 
-const StartGame: React.FC = () => {
-  const {
-    setters: { setIsStartGame },
-  } = useContext(GlobalContext);
+import { IStartGame } from "../../config/interfaces";
 
-  const handlePlayButtonClick = () => {
-    setIsStartGame(false);
-  };
-
+const StartGame: React.FC<IStartGame> = ({ onClick }) => {
   return (
-    <S.Container>
+    <S.Container data-cy="start">
       <S.ImageContainer>
         <S.Image src={BackgroundImage} />
       </S.ImageContainer>
@@ -25,11 +17,7 @@ const StartGame: React.FC = () => {
           Clique no botão abaixo para ver a previsão do dia
         </S.Subtitle>
 
-        <S.PlayButton
-          type="button"
-          onClick={handlePlayButtonClick}
-          data-cy="action-button"
-        >
+        <S.PlayButton type="button" onClick={onClick} data-cy="action-button">
           Iniciar
         </S.PlayButton>
       </S.ButtonContainer>

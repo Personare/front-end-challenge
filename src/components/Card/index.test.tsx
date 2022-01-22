@@ -2,6 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import Card from ".";
 import { ICard } from "../../config/interfaces";
+import { Container, Image } from "./styles";
 
 const CARD: ICard = {
   name: "Name Test",
@@ -27,11 +28,12 @@ describe("Card", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it("should call the function when clicking on the component", () => {
+  it("should call the function when clicking on the card", () => {
     const onClickMock = jest.fn();
 
     const wrapper = shallow(<Card card={CARD} onClick={onClickMock} />);
-    wrapper.find("img").first().simulate("click");
+
+    wrapper.find(Container).first().simulate("click");
 
     expect(onClickMock).toHaveBeenCalledWith(CARD.name);
   });

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CardList should match snapshot 1`] = `
-<styled.div>
+<styled.div
+  data-cy="card-list"
+>
   <Card
     card={
       Object {
@@ -10,6 +12,7 @@ exports[`CardList should match snapshot 1`] = `
         "show": false,
       }
     }
+    isMinimal={true}
     key="Name Test #1"
   />
   <Card
@@ -20,6 +23,7 @@ exports[`CardList should match snapshot 1`] = `
         "show": false,
       }
     }
+    isMinimal={true}
     key="Name Test #2"
   />
   <Card
@@ -30,6 +34,7 @@ exports[`CardList should match snapshot 1`] = `
         "show": false,
       }
     }
+    isMinimal={true}
     key="Name Test #3"
   />
 </styled.div>

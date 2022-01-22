@@ -17,7 +17,13 @@ const Screen: React.FC = () => {
       isShuffling,
       isStartGame,
     },
-    setters: { startGame, selectCard, setShowModal, closeModal },
+    setters: {
+      startGame,
+      setIsStartGame,
+      selectCard,
+      setShowModal,
+      closeModal,
+    },
     requests: { getData },
   } = useContext(GlobalContext);
 
@@ -29,6 +35,9 @@ const Screen: React.FC = () => {
     startGame();
   };
 
+  const handleChangeComponent = () => {
+    setIsStartGame(false);
+  };
   const renderActionButton = (label: string) => (
     <PlayButton
       type="button"
@@ -70,7 +79,7 @@ const Screen: React.FC = () => {
     (card: ICard) => card.name === selectedCard
   );
 
-  if (isStartGame) return <StartGame />;
+  if (isStartGame) return <StartGame onClick={handleChangeComponent} />;
 
   return (
     <Container>
