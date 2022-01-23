@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should match snapshot 1`] = `
+<styled.div
+  data-cy="modal-overlay"
+  onClick={[MockFunction]}
+>
+  <styled.div
+    onClick={[Function]}
+  >
+    <Card
+      card={
+        Object {
+          "image": "Image Test Modal",
+          "name": "Name Test Modal",
+          "show": false,
+        }
+      }
+    />
+    <styled.div>
+      <styled.h3>
+        Name Test Modal
+      </styled.h3>
+      <styled.p>
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero.
+      </styled.p>
+    </styled.div>
+    <styled.button
+      onClick={[MockFunction]}
+    >
+      ×
+    </styled.button>
+  </styled.div>
+</styled.div>
+`;

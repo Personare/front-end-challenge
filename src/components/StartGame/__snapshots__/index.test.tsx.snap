@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StartGame should match snapshot 1`] = `
+<styled.div
+  data-cy="start"
+>
+  <styled.div
+    src="background-image.jpg"
+  />
+  <styled.div>
+    <styled.h1>
+      Portal Tarot
+    </styled.h1>
+    <styled.p>
+      Clique no botão abaixo para ver a previsão do dia
+    </styled.p>
+    <styled.button
+      data-cy="action-button"
+      type="button"
+    >
+      Iniciar
+    </styled.button>
+  </styled.div>
+</styled.div>
+`;
