@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`StartGame should match snapshot 1`] = `
-<styled.div>
-  <styled.div>
-    <styled.img
-      src="background-image.jpg"
-    />
-  </styled.div>
+<styled.div
+  data-cy="start"
+>
+  <styled.div
+    src="background-image.jpg"
+  />
   <styled.div>
     <styled.h1>
       Portal Tarot

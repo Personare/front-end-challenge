@@ -28,3 +28,5 @@
 - [Styled Components](https://styled-components.com/docs)
 - [Enzyme](https://enzymejs.github.io/enzyme/)
 - [Cypress](https://docs.cypress.io/guides/overview/why-cypress)
+
+## Possíveis melhorias

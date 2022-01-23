@@ -2,22 +2,38 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: grid;
+  grid-template-areas: "image action";
   grid-template-columns: 50% minmax(auto, 50%);
+  grid-template-rows: 100vh;
+
+  @media (max-width: 768px) {
+    grid-template-areas: "action" "image";
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(50vh, 1fr) 1fr;
+  }
 `;
 
-export const ImageContainer = styled.div``;
+export const ImageContainer = styled.div<{ src: string }>`
+  background: ${({ src }) => `url(${src})`} no-repeat;
+  background-size: cover;
+  grid-area: image;
+`;
 
 export const Image = styled.img`
   max-width: 100%;
-  height: 100vh;
   display: block;
 `;
 
 export const ButtonContainer = styled.div`
+  grid-area: action;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    margin: 40px 0;
+  }
 `;
 
 export const Title = styled.h1``;

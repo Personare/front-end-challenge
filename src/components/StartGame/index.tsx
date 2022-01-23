@@ -7,9 +7,7 @@ import { IStartGame } from "../../config/interfaces";
 const StartGame: React.FC<IStartGame> = ({ onClick }) => {
   return (
     <S.Container data-cy="start">
-      <S.ImageContainer>
-        <S.Image src={BackgroundImage} />
-      </S.ImageContainer>
+      <S.ImageContainer src={BackgroundImage} />
 
       <S.ButtonContainer>
         <S.Title>Portal Tarot</S.Title>
