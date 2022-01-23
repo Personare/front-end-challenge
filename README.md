@@ -30,3 +30,5 @@
 - [Cypress](https://docs.cypress.io/guides/overview/why-cypress)
 
 ## Possíveis melhorias
+
+- Aprimorar as animações utilizando uma biblioteca que ofereça essas funcionalidades.
