@@ -4,7 +4,7 @@
   "description": "> Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx webpack serve --mode development"
   },
   "repository": {
     "type": "git",
