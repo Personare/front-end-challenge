@@ -6,18 +6,20 @@ import {
 } from 'react-router-dom';
 
 import Header from "./components/Header";
-import Home from "./components/Home";
 import Game from "./components/Game";
+import { GameProvider } from "./context/GameContext";
 
 export default function App() {
   return (
     <Router>
-      <Header />
-      <Routes>
-          <Route path="/" element={<Home />}/>
+      <GameProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Game />}/>
           <Route path="/game-on" element={<Game />}/>
           {/* <Route path="/end-game" element={<Result />}/> */}
         </Routes>
+      </GameProvider>
     </Router>
   );
 }

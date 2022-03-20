@@ -12,6 +12,7 @@ const CardsContainer = styled.div`
     height: 230px;
     width: 109.26px;
     margin: 15px 10px;
+    cursor: ${({ gameOn }) => gameOn ? "pointer": "default"};
   }
 `;
 
