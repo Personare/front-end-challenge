@@ -1,13 +1,5 @@
 import styled from "styled-components";
 
-const HomeContainer = styled.main`
-  margin: 35px auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 const CardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -18,11 +10,10 @@ const CardsContainer = styled.div`
 
   img {
     height: 230px;
+    width: 109.26px;
     margin: 15px 10px;
+    cursor: ${({ gameOn }) => gameOn ? "pointer": "default"};
   }
 `;
 
-export {
-  HomeContainer,
-  CardsContainer
-};
+export default CardsContainer;
