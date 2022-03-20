@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
-  width: 100vw;
+  width: 100%;
   height: 80px;
   padding: 30px;
   font-size: 2rem;
