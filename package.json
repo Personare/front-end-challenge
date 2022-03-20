@@ -4,7 +4,8 @@
   "description": "> Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)",
   "main": "index.js",
   "scripts": {
-    "dev": "npx webpack serve --mode development"
+    "dev": "npx webpack serve --mode development",
+    "build": "npx webpack --mode development"
   },
   "repository": {
     "type": "git",
