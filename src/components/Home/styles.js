@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const GameContainer = styled.main`
+const HomeContainer = styled.main`
   margin: 35px auto;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,6 @@ const CardsContainer = styled.div`
 `;
 
 export {
-  GameContainer,
+  HomeContainer,
   CardsContainer
 };
