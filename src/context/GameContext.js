@@ -5,10 +5,13 @@ export default GameContext;
 
 export function GameProvider({ children }) {
   const [gameOn, setGameOn] = useState(false);
+  const [selectedCardId, setSelectedCardId] = useState(null);
 
   const value = {
     gameOn,
-    setGameOn
+    setGameOn,
+    selectedCardId,
+    setSelectedCardId
   }
 
   return (

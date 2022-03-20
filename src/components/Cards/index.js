@@ -8,7 +8,7 @@ export default function Cards() {
   const cards = tarot.cards;
   const backCardUrl = tarot.imageBackCard;
   const cardUrl = tarot.imagesUrl;
-  const { gameOn, setGameOn } = useContext(GameContext);
+  const { gameOn, setGameOn ,setSelectedCardId } = useContext(GameContext);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -18,6 +18,7 @@ export default function Cards() {
 
   function handleClick(e) {
     e.preventDefault();
+    setSelectedCardId(Math.round(Math.random() * (cards.length - 1)));
     navigate("/end-game");
   }
 
