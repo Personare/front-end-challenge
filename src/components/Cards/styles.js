@@ -32,6 +32,10 @@ const FlipCard = styled.div`
   :hover > div {
     transform: rotateY(180deg);
   }
+
+  & > div {
+    transform: ${({ gameOn }) => gameOn ? "rotateY(180deg)": "none"};
+  }
 `;
 
 const FlipCardInner = styled.div`
