@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import CardsContainer from "./styles";
+import React, { useContext, useEffect } from "react";
+import { CardsContainer, FlipCard, FlipCardInner, CardFront, CardBack } from "./styles";
 import tarot from "../../../tarot.json";
 import { useLocation, useNavigate } from "react-router-dom";
 import GameContext from "../../context/GameContext";
@@ -11,6 +11,15 @@ export default function Cards() {
   const { gameOn, setGameOn ,setSelectedCardId } = useContext(GameContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("./tarot.json").then(function (response) {
+      console.log(response);
+    })
+    .then(function (data) {
+      console.log(data.json());
+    });
+  }, []);
 
   if(location.pathname !== "/") {
     setGameOn(true);
@@ -27,9 +36,22 @@ export default function Cards() {
       {
         cards.map((c, i) => {
           if(!gameOn) {
-            return <img key={i} src={cardUrl + c.image}/>;
+            return (
+              <FlipCard key={i}>
+                <FlipCardInner>
+                  <CardFront>
+                    <img src={cardUrl + c.image}/>
+                  </CardFront>
+                  <CardBack>
+                    <img src={backCardUrl}/>
+                  </CardBack>
+                </FlipCardInner>
+              </FlipCard>
+            );
           } else {
-            return <img key={i} src={backCardUrl} onClick={handleClick}/>;
+            return (
+              <img key={i} src={backCardUrl} onClick={handleClick}/>
+            );
           }
         })
       }
