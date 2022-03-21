@@ -1,12 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ResultContainer, CardContainer } from "./styles";
-import tarot from "../../../tarot.json";
 import GameContext from "../../context/GameContext";
 
 export default function Result() {
-  const { selectedCardId } = useContext(GameContext);
-  const cards = tarot.cards;
-  const cardUrl = tarot.imagesUrl;
+  const { selectedCardId, cards, cardUrl } = useContext(GameContext);
   const [cardId, setCardId] = useState(localStorage.getItem("CardId"));
 
   if (selectedCardId) {
