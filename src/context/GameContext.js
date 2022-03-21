@@ -6,12 +6,21 @@ export default GameContext;
 export function GameProvider({ children }) {
   const [gameOn, setGameOn] = useState(false);
   const [selectedCardId, setSelectedCardId] = useState(null);
+  const [cards, setCards] = useState([]);
+  const [cardUrl, setCardUrl] = useState("");
+  const [backCardUrl, setBackCardUrl] = useState("");
 
   const value = {
     gameOn,
     setGameOn,
     selectedCardId,
-    setSelectedCardId
+    setSelectedCardId,
+    cards,
+    setCards,
+    cardUrl,
+    setCardUrl,
+    backCardUrl,
+    setBackCardUrl
   }
 
   return (

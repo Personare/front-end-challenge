@@ -1,20 +1,36 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { CardsContainer, FlipCard, FlipCardInner, CardFront, CardBack } from "./styles";
-import tarot from "../../../tarot.json";
 import { useLocation, useNavigate } from "react-router-dom";
 import GameContext from "../../context/GameContext";
 
 export default function Cards() {
-  const cards = tarot.cards;
-  const backCardUrl = tarot.imageBackCard;
-  const cardUrl = tarot.imagesUrl;
-  const { gameOn, setGameOn ,setSelectedCardId } = useContext(GameContext);
+  const { 
+    gameOn, 
+    setGameOn, 
+    setSelectedCardId,
+    cards,
+    setCards,
+    cardUrl,
+    setCardUrl,
+    backCardUrl, 
+    setBackCardUrl 
+  } = useContext(GameContext);
   const location = useLocation();
   const navigate = useNavigate();
 
   if(location.pathname !== "/") {
     setGameOn(true);
   }
+
+  useEffect(() => {
+    fetch("./tarot.json").then(resp => {
+      return resp.json();
+    }).then(data => {
+      setCards(data.cards);
+      setCardUrl(data.imagesUrl);
+      setBackCardUrl(data.imageBackCard);
+    })
+  }, []);
 
   function handleClick(e) {
     e.preventDefault();
