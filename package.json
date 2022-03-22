@@ -24,6 +24,7 @@
     "@babel/preset-react": "^7.16.7",
     "axios": "^0.26.1",
     "babel-loader": "^8.2.3",
+    "cypress": "^9.5.2",
     "path": "^0.12.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
