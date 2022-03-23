@@ -17,7 +17,6 @@ export default function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Game />}/>
-          <Route path="/game-on" element={<Game />}/>
           <Route path="/end-game" element={<Result />}/>
         </Routes>
       </GameProvider>
