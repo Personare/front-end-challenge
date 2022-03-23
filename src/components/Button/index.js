@@ -4,7 +4,7 @@ import GameContext from "../../context/GameContext";
 import ButtonContainer from "./styles";
 
 export default function Button() {
-  const { setGameOn } = useContext(GameContext);
+  const { gameOn, setGameOn } = useContext(GameContext);
   const location = useLocation();
   let navigate = useNavigate();
 
@@ -12,7 +12,6 @@ export default function Button() {
     e.preventDefault();
     if(e.target.textContent === "Jogar") {
       setGameOn(true);
-      navigate("/game-on");
     } else {
       setGameOn(false);
       navigate("/");
@@ -22,10 +21,10 @@ export default function Button() {
   return (
     <ButtonContainer>
       <div onClick={e => handleClick(e)}>
-        { location.pathname === "/"
-          ? <p>Jogar</p>
-          : ( location.pathname === "/game-on"
-            ? <p>Voltar</p>
+        { gameOn
+          ? <p>Voltar</p>
+          : ( location.pathname === "/"
+            ? <p>Jogar</p>
             : <></>
           )
         }

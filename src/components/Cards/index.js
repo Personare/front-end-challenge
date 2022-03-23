@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { CardsContainer, FlipCard, FlipCardInner, CardFront, CardBack } from "./styles";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import GameContext from "../../context/GameContext";
 
 export default function Cards() {
@@ -15,14 +15,10 @@ export default function Cards() {
     backCardUrl, 
     setBackCardUrl 
   } = useContext(GameContext);
-  const location = useLocation();
   const navigate = useNavigate();
 
-  if(location.pathname !== "/") {
-    setGameOn(true);
-  }
-
   useEffect(() => {
+    setGameOn(false);
     fetch("./tarot.json").then(resp => {
       return resp.json();
     }).then(data => {
