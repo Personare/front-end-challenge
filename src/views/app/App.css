@@ -1,0 +1,95 @@
+.App {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
+  }
+  
+  header {
+    text-align: center;
+  }
+  
+  header > h1 {
+    font-size: 2.4rem;
+    padding: 1rem 0;
+  }
+  
+  header > p {
+    font-size: 1.1rem;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  main button {
+    background-color: rgb(2, 1, 1);;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 3rem;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    transition: 0.2s;
+    margin: 3rem 0;
+  }
+  
+  main button:hover {
+    filter: brightness(0.9);
+  }
+  
+  main ul {
+    justify-content: center;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.2rem;
+  }
+  
+  main ul li {
+    cursor: pointer;
+    background-color: brown;
+    box-shadow: -1px -1px 10px 3px black;
+    padding: 1rem;
+    width: 194px;
+    height: 377px;
+    position: relative;
+  }
+  
+  main ul img {
+    width: 162px;
+    height: 341px;
+    position: absolute;
+  }
+  
+  main ul img.card {
+    transform: rotateY(-90deg);
+    opacity: 0;
+    transition: all;
+    transition-duration: 0.5s;
+  }
+  
+  main ul li.active img.card {
+    transform: rotateY(0);
+    opacity: 1;
+    transition: all;
+    transition-duration: 0.5s;
+    transition-delay: 0.25s;
+  }
+  
+  main ul img.cardBackground {
+    transform: rotateY(0deg);
+    opacity: 1;
+    transition: all;
+    transition-duration: 0.5s;
+    transition-delay: 0.25s;
+  }
+  
+  main ul li.active img.cardBackground {
+    transform: rotateY(90deg);
+    opacity: 0;
+    transition: all;
+    transition-duration: 0.5s;
+  }
+  
