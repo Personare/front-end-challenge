@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { MouseEvent } from 'react';
 
 import * as S from './styles';
 
 type Props = {
   text: string;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
 const Button = ({ text, disabled, onClick }: Props) => {

@@ -15,7 +15,7 @@ export const CardFace = styled.div<CardFaceProps>`
 
 export const CardImage = styled.img`
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   width: 100%;
 `;

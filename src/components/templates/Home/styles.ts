@@ -30,6 +30,7 @@ export const Box = styled.div`
   background: ${colors.white};
   box-shadow: 2px 2px 8px ${colors.gray};
   display: flex;
+  flex-direction: column;
   justify-content: center;
   margin-top: 48px;
   padding: 24px 16px;
@@ -52,4 +53,8 @@ export const Text = styled.span`
   line-height: 130%;
   text-align: center;
   text-transform: uppercase;
+`;
+
+export const CardsWrapper = styled.div`
+  margin-top: 32px;
 `;

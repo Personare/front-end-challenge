@@ -2,8 +2,9 @@ import React from 'react';
 import type { NextPage, GetServerSideProps } from 'next';
 
 import HomeTemplate from 'components/templates/Home';
+import { CardsProps } from 'components/organisms/Cards';
 
-const Home: NextPage = props => {
+const Home: NextPage = (props: CardsProps) => {
   return <HomeTemplate {...props} />;
 };
 
