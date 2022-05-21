@@ -1,8 +1,8 @@
 import React from 'react';
 import type { NextPage } from 'next';
 
-const Home: NextPage = () => {
-  return <div>Hello World</div>;
-};
+import HomeTemplate from 'components/templates/Home';
+
+const Home: NextPage = () => <HomeTemplate />;
 
 export default Home;
