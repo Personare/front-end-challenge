@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Card from 'components/molecules/Card';
 import SelectedCard from 'components/molecules/SelectedCard';
+
+import shuffle from 'utils/shuffle';
 
 import * as S from './styles';
 
@@ -17,18 +19,23 @@ export type CardsProps = {
 };
 
 type Props = {
-  disabled?: boolean;
+  activated?: boolean;
   data: CardsProps;
 };
 
-const Cards = ({ disabled = false, data }: Props) => {
-  const { imagesUrl, imageBackCard, cards } = data;
+const Cards = ({ activated = false, data }: Props) => {
+  const { imagesUrl, imageBackCard, cards: cardsData } = data;
+  const [cards, setCards] = useState(cardsData);
   const [selectedCard, setSelectedCard] = useState(null);
+  const [disabled, setDisabled] = useState(true);
 
-  const getImagePath = (image: string) => `${imagesUrl}${image}`;
+  const shuffleCards = () => {
+    setCards(shuffle(cards));
+    setDisabled(false);
+  };
 
   const handleClick = (name: string, image: string) => {
-    if (disabled || selectedCard !== null) {
+    if (disabled) {
       return;
     }
 
@@ -39,7 +46,16 @@ const Cards = ({ disabled = false, data }: Props) => {
         backImage={{ src: imageBackCard, alt: 'Carta virada pra baixo' }}
       />
     );
+    setDisabled(true);
   };
+
+  useEffect(() => {
+    if (!activated) {
+      return;
+    }
+
+    setTimeout(shuffleCards, 1000);
+  }, [activated]);
 
   return (
     <S.Cards>
@@ -47,13 +63,14 @@ const Cards = ({ disabled = false, data }: Props) => {
         cards.map((card, index) => (
           <S.CardWrapper
             key={index + 1}
-            onClick={() => handleClick(card.name, getImagePath(card.image))}
+            onClick={() => handleClick(card.name, `${imagesUrl}${card.image}`)}
+            value={card.name}
           >
             <Card
-              face={disabled ? 'up' : 'down'}
+              face={!activated ? 'up' : 'down'}
               width="62px"
               height="130px"
-              frontImage={{ src: getImagePath(card.image), alt: card.name }}
+              frontImage={{ src: `${imagesUrl}${card.image}`, alt: card.name }}
               backImage={{ src: imageBackCard, alt: 'Carta virada pra baixo' }}
             />
           </S.CardWrapper>

@@ -6,10 +6,10 @@ import Cards, { CardsProps } from 'components/organisms/Cards';
 import * as S from './styles';
 
 const Home = (props: CardsProps) => {
-  const [disabled, setDisabled] = useState(true);
+  const [activated, setActivated] = useState(false);
 
   function handleClickButton(e: MouseEvent<HTMLButtonElement>) {
-    setDisabled(false);
+    setActivated(true);
     e.currentTarget.disabled = true;
   }
 
@@ -26,7 +26,7 @@ const Home = (props: CardsProps) => {
           <S.Text>Selecione uma carta do baralho abaixo</S.Text>
 
           <S.CardsWrapper>
-            <Cards disabled={disabled} data={{ ...props }} />
+            <Cards activated={activated} data={{ ...props }} />
           </S.CardsWrapper>
         </S.Box>
       </S.Main>
