@@ -1,11 +1,19 @@
 import React from 'react';
+import Head from 'next/head';
 import type { NextPage, GetServerSideProps } from 'next';
 
 import HomeTemplate from 'components/templates/Home';
 import { CardsProps } from 'components/organisms/Cards';
 
 const Home: NextPage = (props: CardsProps) => {
-  return <HomeTemplate {...props} />;
+  return (
+    <>
+      <Head>
+        <title>Tarot</title>
+      </Head>
+      <HomeTemplate {...props} />
+    </>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
