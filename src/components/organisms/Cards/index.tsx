@@ -30,6 +30,10 @@ const Cards = ({ activated = false, data }: Props) => {
   const [disabled, setDisabled] = useState(true);
 
   const shuffleCards = () => {
+    if (!activated) {
+      return;
+    }
+
     setCards(shuffle(cards));
     setDisabled(false);
   };
@@ -50,10 +54,6 @@ const Cards = ({ activated = false, data }: Props) => {
   };
 
   useEffect(() => {
-    if (!activated) {
-      return;
-    }
-
     setTimeout(shuffleCards, 1000);
   }, [activated]);
 
@@ -65,6 +65,7 @@ const Cards = ({ activated = false, data }: Props) => {
             key={index + 1}
             onClick={() => handleClick(card.name, `${imagesUrl}${card.image}`)}
             value={card.name}
+            disabled={disabled}
           >
             <Card
               face={!activated ? 'up' : 'down'}
