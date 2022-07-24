@@ -16,7 +16,7 @@ const Card = ( {flipped = false, image, handleClick, name, imagesUrl}: CardProps
   }
   return(
     <S.Card onClick={() => handleClickfn(name)}>           
-      <S.CardContent flipped={flipped}>
+      <S.CardContent flipped={!flipped}>
         <S.CardFaceBack />
         <S.CardFaceFront>
           <Image width={120} height={200} src={`${imagesUrl}${image}`} alt={name} />
