@@ -8,9 +8,10 @@ export const Button = styled.button<ButtonProps>`
   color: #FFF;
   cursor: pointer;
   font-size: 2rem;
-  padding: 16px;
-  width: 150px;
+  width: 95%;
   border: none;
+  padding: 1rem;
+  margin: auto 5%;
 
   &:active {
     background-color: rgb(161, 35, 101);
@@ -19,10 +20,9 @@ export const Button = styled.button<ButtonProps>`
   &:hover {
     background-color: rgb(161, 35, 101);
   }
-  ${media.greaterThan('large')`
-    grid-column-start: span 2;
-    justify-self: center;
-    width: 200px;
-    font-size: 1rem;`
+
+  ${media.greaterThan('medium')`
+    width: 300px;
+    font-size: 1.3rem;`
   }
 `
