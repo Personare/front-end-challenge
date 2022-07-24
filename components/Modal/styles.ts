@@ -10,33 +10,33 @@ const scaleIn = keyframes`
 `
 
 export const Modal = styled.div`
-background-color: rgba(255, 255, 255, 0.35);
-backdrop-filter: blur(5px);
-padding: 10px;
-border-radius: 7px;
-display: flex;
-flex-direction: column;
-align-items: center;
-position: relative;
--webkit-animation: ${scaleIn} 800ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
-animation: ${scaleIn} 800ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(5px);
+  padding: .7rem;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  -webkit-animation: ${scaleIn} 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  animation: ${scaleIn} 700ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
 `
 export const ModalBackDrop = styled.div`
-background-color: rgba($color: #000000c2, $alpha: 0.35);
-height: 100%;
-position: fixed;
-top: 0;
-left: 0;
-display: flex;
-justify-content: center;
-align-items: center; 
+  background-color: rgba($color: #000000c2, $alpha: 0.35);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 `
 export const ModalContainer = styled.div`
-width: 60%;
+  width: 60%;
 `
 
 export const ModalContent = styled.div`
-  border-radius: 7px;
+  border-radius: .5rem;
   padding: 0.2rem; 
   backdrop-filter: blur(100px);
 `
