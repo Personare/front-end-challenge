@@ -1,50 +1,43 @@
-# front-end-challenge
+# TypeScript Next.js example
 
-> Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)
+This is a really simple project that shows the usage of Next.js with TypeScript.
 
-## Introdução
+## Deploy your own
 
-A nossa Product Owner pensou em um produto fantástico para ser desenvolvido, e um dos desafios é criação de um jogo de Tarot.
+Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
 
-<br>
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
 
-**Então, essa é a sua missão!**
+## How to use it?
 
-Criar um jogo de Tarot, permitindo o sorteio de uma carta.
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
-E as especificações são:
+```bash
+npx create-next-app --example with-typescript with-typescript-app
+# or
+yarn create next-app --example with-typescript with-typescript-app
+# or
+pnpm create next-app --example with-typescript with-typescript-app
+```
 
-- Tela de apresentação exibindo todas as cartas com seu conteúdo visível, e com um botão para iniciar o jogo.
-- Ao clicar no botão, as cartas deverão ser viradas - escondendo o conteúdo - e embaralhadas.
-- Permitir que o usuário selecione apenas uma carta, clicando na mesma.
-- Apresentar a carta selecionada, o nome da carta e uma descrição. (a descrição pode ser um lorem ipsum)
+Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
 
-OBS: As imagens e nomes das cartas estão listadas no arquivo [`tarot.json`](tarot.json), esse arquivo deve ser consumido via _http request_. A propriedade `image` de cada carta deve ser concatenada com a propriedade `imagesUrl`, para obter o endereço final da imagem. Utilize o valor da propriedade `imageBackCard` para obter a imagem do fundo da carta.
+## Notes
 
+This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
 
-## Instruções
+```
+npm install --save-dev typescript
+```
 
-1. Efetue o **fork** deste repositório e crie um branch com o seu nome. (ex: caue-alves).
-2. Após finalizar o desafio, crie um **Pull Request**.
-3. Aguarde algum contribuidor realizar o code review.
+To enable TypeScript's features, we install the type declarations for React and Node.
 
+```
+npm install --save-dev @types/react @types/react-dom @types/node
+```
 
-## Pré-requisitos
+When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
 
-- Aplicação feita em React
-- Possuir testes
-- Gerar versão de produção
-- Criar micro commits ou commits por features
-	- Detalhar nos comentários dos commits as decisões tomadas.
+Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
 
-
-## Diferenciais
-
-- Boa documentação
-- Testes de componentes isolados
-
-## Dúvidas
-
-Se surgir alguma dúvida, consulte as [perguntas feitas anteriormente](https://github.com/Personare/front-end-challenge/labels/question).
-
-Caso não encontre a sua resposta, sinta-se à vontade para [abrir uma issue](https://github.com/Personare/front-end-challenge/issues/new) =]
+A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
