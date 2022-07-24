@@ -11,7 +11,7 @@ export type CardProps={
 const CardInterpretation = ({image, name, imagesUrl}: CardProps) =>(
   <S.CardList >
     <S.CardImage >
-      <Image width={120} height={200} src={`${imagesUrl}${image}`} alt={name} />
+      <Image width={170} height={340} src={`${imagesUrl}${image}`} alt={name} />
     </S.CardImage>
 
     <S.CardDescription >

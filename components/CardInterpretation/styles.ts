@@ -5,8 +5,8 @@ export const CardList = styled.article`
 `
 export const CardImage = styled.div`
   flex-basis: 20%;
-`
-export const CardDescription = styled.div`
+  `
+  export const CardDescription = styled.div`
   flex: 1;
   padding: 1.2rem;
 `
