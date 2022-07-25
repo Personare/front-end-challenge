@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Button Should match snapshot 1`] = `
+.c0 {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  background-color: rgb(205,0,107);
+  color: #FFF;
+  cursor: pointer;
+  font-size: 2rem;
+  width: 95%;
+  border: none;
+  padding: 1rem;
+  margin: auto 5%;
+}
+
+.c0:active {
+  background-color: rgb(161,35,101);
+}
+
+.c0:hover {
+  background-color: rgb(161,35,101);
+}
+
+@media (min-width:768px) {
+  .c0 {
+    width: 300px;
+    font-size: 1.3rem;
+  }
+}
+
+<div>
+  <button
+    class="c0"
+  >
+    Testing button
+  </button>
+</div>
+`;

@@ -15,7 +15,7 @@ const Modal = ({onBackdropClick, children}: ModalProps) =>(
         </S.Modal>
     </S.ModalContainer>
   </S.ModalBackDrop>
-    );
+);
 
 
 export default Modal

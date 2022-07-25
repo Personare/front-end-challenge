@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/CardInterpretation Should match snapshot 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.c1 {
+  -webkit-flex-basis: 20%;
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+}
+
+.c2 {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1.2rem;
+}
+
+.c3 {
+  color: #420026;
+}
+
+.c4 {
+  margin-bottom: .6rem;
+  line-height: 2rem;
+}
+
+@media (max-width:1170px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-height: 100vh;
+    overflow: auto;
+  }
+}
+
+@media (min-width:1170px) {
+  .c1 {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+  }
+}
+
+@media (max-width:1170px) {
+  .c3 {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width:1170px) {
+  .c3 {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin-bottom: .3rem;
+  }
+}
+
+<div>
+  <article
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <span
+        style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+      >
+        <span
+          style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27170%27%20height=%27340%27/%3e"
+            style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+          />
+        </span>
+        <img
+          alt="test"
+          data-nimg="intrinsic"
+          decoding="async"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+        />
+        <noscript />
+      </span>
+    </div>
+    <div
+      class="c2"
+    >
+      <h2
+        class="c3"
+      >
+        test
+      </h2>
+      <p
+        class="c4"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor id magna in bibendum. Morbi iaculis scelerisque ex ac euismod. Nullam eleifend vestibulum vestibulum. Etiam interdum orci in justo venenatis congue. Vestibulum sed mollis massa, et placerat purus. Vestibulum non pellentesque ante, a ullamcorper metus. Suspendisse maximus accumsan venenatis. Aenean suscipit, tortor eu rutrum tempor, purus erat iaculis mauris, sagittis molestie sem justo quis quam. Suspendisse potenti. Ut venenatis placerat diam, sit amet consequat justo tempus quis.
+      </p>
+    </div>
+  </article>
+</div>
+`;
