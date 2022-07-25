@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Card Should match snapshot 1`] = `
+.c2 {
+  background-color: rgba(255,255,255,0.35);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding: .7rem;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-radius: .5rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  -webkit-animation: gGreRZ 700ms cubic-bezier(0.250,0.460,0.450,0.940);
+  -webkit-animation: gGreRZ 700ms cubic-bezier(0.250,0.460,0.450,0.940);
+  animation: gGreRZ 700ms cubic-bezier(0.250,0.460,0.450,0.940);
+}
+
+.c0 {
+  background-color: rgba($color:#000000c2,$alpha:0.35);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c1 {
+  width: 60%;
+}
+
+.c3 {
+  border-radius: .5rem;
+  padding: 0.2rem;
+  -webkit-backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px);
+}
+
+@media (max-width:768px) {
+  .c1 {
+    max-height: 100%;
+    width: 90%;
+  }
+}
+
+<div>
+  <div
+    class="c0"
+  >
+    <div
+      class="c1"
+    >
+      <div
+        class="c2"
+      >
+        <div
+          class="c3"
+        >
+          <h1>
+            n1
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
