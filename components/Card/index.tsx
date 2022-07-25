@@ -2,11 +2,11 @@ import Image from 'next/image'
 import * as S from './styles'
 
 type CardProps = {
-  imagesUrl: string;
-  name: string;
-  flipped?: boolean;
-  image: string;
-  handleClick?:(name: string)=> void;
+  imagesUrl: string
+  name: string
+  flipped?: boolean
+  image: string
+  handleClick?:(name: string)=> void
 }
 const Card = ( {flipped = false, image, handleClick, name, imagesUrl}: CardProps) => {
   const handleClickfn = (name: string) =>{
@@ -25,4 +25,4 @@ const Card = ( {flipped = false, image, handleClick, name, imagesUrl}: CardProps
     </S.Card> 
   )
 }
-export default Card;
+export default Card

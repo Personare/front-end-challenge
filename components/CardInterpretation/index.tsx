@@ -3,9 +3,9 @@ import Image from 'next/image'
 import * as S from './styles'
 
 export type CardProps={
-    imagesUrl:string;
-    name: string;
-    image: string;
+    imagesUrl:string
+    name: string
+    image: string
 }
 
 const CardInterpretation = ({image, name, imagesUrl}: CardProps) =>(
@@ -35,4 +35,4 @@ const CardInterpretation = ({image, name, imagesUrl}: CardProps) =>(
   </S.CardList>
 )
 
-export default CardInterpretation;
+export default CardInterpretation

@@ -1,8 +1,8 @@
 import * as S from './styles'
 
 type ModalProps={
-    onBackdropClick: () => void;
-    children: React.ReactNode;
+    onBackdropClick: () => void
+    children: React.ReactNode
 }
 
 const Modal = ({onBackdropClick, children}: ModalProps) =>(  

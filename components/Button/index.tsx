@@ -1,4 +1,4 @@
-import React, {ButtonHTMLAttributes} from "react";
+import React, {ButtonHTMLAttributes} from "react"
 import * as S from './styles'
 
 export type ButtonProps = {
