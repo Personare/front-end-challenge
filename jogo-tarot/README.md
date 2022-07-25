@@ -1,8 +1,8 @@
 # Jogo de Tarot
 
-[![Preview Image](https://github.com/marcolucianodev/cartas-aleatorias/blob/master/public/screen-cartas-aleatorias1.png)](https://cartas-aleatorias.netlify.app/)
+[![Preview Image](https://github.com/marcolucianodev/front-end-challenge/blob/marco-luciano/jogo-tarot/public/screen-tarot1.png)](https://cartas-aleatorias.netlify.app/)
 
-[![Preview Image](https://github.com/marcolucianodev/cartas-aleatorias/blob/master/public/screen-cartas-aleatorias2.png)](https://cartas-aleatorias.netlify.app/)
+[![Preview Image](https://github.com/marcolucianodev/front-end-challenge/blob/marco-luciano/jogo-tarot/public/screen-tarot2.png)](https://cartas-aleatorias.netlify.app/)
 
 Projeto proposto em um teste, onde eu tive que desenvolver uma aplicação que consuma um arquivo json (tarot.json).
 
