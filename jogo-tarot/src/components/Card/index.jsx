@@ -1,37 +1,43 @@
-import { CardContent, InsideContainer } from "./style";
+import { 
+  CardContainer,
+  CardDescription, 
+  CardFace, 
+  CardInfo, 
+  CardName, 
+  Scene 
+} from "./style";
 import React, { useContext } from "react";
 import { CardContext } from "../../contexts/cardContext";
 import { Container } from "../Container/style";
 
 const Card = () => {
 
-  const {card, image_path, back_card} = useContext(CardContext)
+  const {card, image_path, back_card, flip} = useContext(CardContext)
 
   return (
-    <>
       <Container>
         {card.map((card) => {
           return (
-            <CardContent key={card.name}>
-              <InsideContainer>
-                <img src={`${image_path}${card.image}`} alt={card.name} />
-                <div className="card-info">
-                  <div className="card-name">
-                    {card.name}
-                  </div>
-                  <hr />
-                  <div className="card-description">
-                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
-                  </div>
-                </div>
-              </InsideContainer>
-            </CardContent>
+              <Scene>
+                <CardContainer className={`card ${flip ? "is-flipped":""}`}>
+                  <CardFace className="card__face--front">
+                    <img src={`${image_path}${card.image}`} alt={card.name} />
+                    <CardInfo>
+                      <CardName>{card.name}</CardName>
+                      <hr />
+                      <CardDescription>
+                        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+                      </CardDescription>
+                    </CardInfo>
+                  </CardFace>
+                  <CardFace className="card__face--back">
+                    <img src={`${back_card}`} alt={card.name} />
+                  </CardFace>
+                </CardContainer>
+              </Scene>
           )
         })}
       </Container>
-      <img src={back_card} alt="" />
-      <button>Iniciar o Jogo</button>
-    </>
   )
 }
 
