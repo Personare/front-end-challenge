@@ -17,6 +17,6 @@ $ npm install
 * **npm run dev**: Um servidor é iniciado na URL [http://localhost:3000](http://localhost:3000).
 * **npm test**: Roda os tests.
 * **npm run lint**: Procura por erros de lint.
-* **npm build**: Faz o build do projeto para a pasta `dist`.
+* **npm build**: Faz o build do projeto.
 
-Link para o projeto em produção [https://front-end-challenge-personare.herokuapp.com/](https://front-end-challenge-personare.herokuapp.com/)
+Link para o projeto em produção [https://front-end-challenge-chi.vercel.app](https://front-end-challenge-chi.vercel.app)
