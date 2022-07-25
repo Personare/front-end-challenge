@@ -14,7 +14,7 @@ const Header = () => {
         ? 'Clique em iniciar o jogo para virar as cartas' 
         : 'Passe o mouse para virar uma carta'}
       </h1>
-      {flip ? <Button onClick={handleFlipCard}>{flip ? 'Iniciar o Jogo' : ''}</Button> : ''}
+      {flip ? <Button onClick={handleFlipCard}>Iniciar o Jogo</Button> : ''}
     </Container>
   )
 }

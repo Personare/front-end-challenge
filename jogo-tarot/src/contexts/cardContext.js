@@ -29,7 +29,6 @@ const CardProvider = ({children}) => {
 
   const handleFlipCard = () => {
     setFlip(!flip)
-    console.log(!flip)
   }
 
   const image_path = path.imagesUrl;
