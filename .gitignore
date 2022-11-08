@@ -1,2 +1,12 @@
-.next
-node_modules
+# dependencies
+/node_modules
+
+# next.js
+/.next
+/out
+
+# production
+/build
+
+# cache
+/.swc
