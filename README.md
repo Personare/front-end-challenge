@@ -1,3 +1,13 @@
+# Anotações do Katreque
+Tecnologias Utilizadas:
+- Next.js
+- styled-components
+- Jest
+- Prettier
+- ESLint
+
+A versão em produção está disponível em: ?
+
 # front-end-challenge
 
 > Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)

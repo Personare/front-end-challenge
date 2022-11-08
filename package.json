@@ -1,0 +1,28 @@
+{
+  "name": "renan-katreque-verissimo",
+  "version": "1.0.0",
+  "description": "Processo Seletivo Personare",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Katreque/renan-katreque-verissimo.git"
+  },
+  "author": "Katreque",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Katreque/renan-katreque-verissimo/issues"
+  },
+  "homepage": "https://github.com/Katreque/renan-katreque-verissimo#readme",
+  "dependencies": {
+    "next": "^13.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
