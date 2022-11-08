@@ -2,7 +2,7 @@
 Tecnologias Utilizadas:
 - Next.js
 - styled-components
-- Jest
+- Jest e Testing Library
 - Prettier
 - ESLint
 
