@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const Button = styled.button`
-    color: #1C28FA;
+    color: #1c28fa;
     font-size: 1em;
     margin-top: 1em;
     padding: 1em;
-    border: 2px solid #1C28FA;
+    border: 2px solid #1c28fa;
     border-radius: 10px;
     display: inline-block;
 `;
@@ -16,7 +16,7 @@ function HomePage() {
             <div>Welcome to Next.js!</div>
             <Button href="#">Pog Botão</Button>
         </>
-    )
-};
+    );
+}
 
 export default HomePage;

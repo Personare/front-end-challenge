@@ -1,0 +1,12 @@
+{
+    "singleQuote": true,
+    "semi": true,
+    "overrides": [
+        {
+            "files": ".editorconfig",
+            "options": {
+                "editorconfig": true
+            }
+        }
+    ]
+}
