@@ -9,4 +9,11 @@ describe('Home', () => {
         const div = screen.getByText(/welcome to next\.js!/i);
         expect(div).toBeInTheDocument();
     });
+
+    it('Botão principal deve ser renderizada.', () => {
+        render(<HomePage />);
+
+        const btn = screen.getByRole('button');
+        expect(btn).toBeInTheDocument();
+    });
 });
