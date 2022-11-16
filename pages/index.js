@@ -2,16 +2,20 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import Spinner from '../components/spinner';
+import CardManager from '../components/cardManager';
 
 const Container = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
     font-family: 'Roboto', sans-serif;
+`;
+
+const SpinnerContainer = styled(Container)`
+    height: 95vh;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 95vh;
 
     &.spinner-enter {
         opacity: 0;
@@ -38,6 +42,7 @@ const Container = styled.div`
 function HomePage() {
     const [isLoading, setLoading] = useState(true);
     const [loadingProblem, setLoadingProblem] = useState(false);
+    const [cardsData, setCardsData] = useState(null);
 
     useEffect(() => {
         async function getCardsData() {
@@ -51,23 +56,24 @@ function HomePage() {
             }
 
             const data = await res.json();
+            setCardsData(data);
             setLoading(false);
         }
 
         getCardsData();
-    });
+    }, []);
 
     if (isLoading) {
         return (
-            <Container>
+            <SpinnerContainer>
                 <Spinner loadingProblem={loadingProblem} />
-            </Container>
+            </SpinnerContainer>
         );
     }
 
     return (
         <Container>
-            <div>Welcome to Next.js!</div>
+            <CardManager cardsData={cardsData}></CardManager>
         </Container>
     );
 }

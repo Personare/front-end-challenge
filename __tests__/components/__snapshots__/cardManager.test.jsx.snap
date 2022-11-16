@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardManager Component Snapshot do componente após o início do jogo. 1`] = `
+<DocumentFragment>
+  .c0 {
+  height: 100px;
+  margin: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+<div
+    class="c0"
+  >
+    <p
+      class="c1"
+    >
+      Selecione uma carta:
+    </p>
+  </div>
+  .c1 {
+  width: 150px;
+  height: 300px;
+}
+
+.c1:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-transition: scale 200ms;
+  transition: scale 200ms;
+}
+
+.c2 {
+  background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-animation: fCDSQb;
+  animation: fCDSQb;
+  -webkit-animation-delay: 0ms;
+  animation-delay: 0ms;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c4 {
+  background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-animation: fCDSQb;
+  animation: fCDSQb;
+  -webkit-animation-delay: 20ms;
+  animation-delay: 20ms;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c5 {
+  background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  -webkit-animation: fCDSQb;
+  animation: fCDSQb;
+  -webkit-animation-delay: 40ms;
+  animation-delay: 40ms;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.c3 {
+  cursor: pointer;
+  z-index: 2;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  -webkit-column-gap: 5px;
+  column-gap: 5px;
+  margin-bottom: 20px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2 c3"
+      data-testid="4-0"
+      mode="both"
+    />
+    <div
+      class="c1 c4 c3"
+      data-testid="4-1"
+      mode="both"
+    />
+    <div
+      class="c1 c5 c3"
+      data-testid="4-2"
+      mode="both"
+    />
+  </div>
+</DocumentFragment>
+`;
