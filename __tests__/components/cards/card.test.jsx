@@ -3,7 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 
-import Card from '../../components/card';
+import Card from '../../../components/cards/card';
 
 const linkOrderedFrontImage =
     'https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/arcano1.jpg';
@@ -29,7 +29,7 @@ describe('Card Component', () => {
                 randomFrontImage={linkRandomCardImage}
                 orderedFrontImage={linkOrderedFrontImage}
                 backImage={linkBackImage}
-                jogoIniciado={false}
+                gameStarted={false}
                 index="0"
             />
         );
@@ -60,7 +60,7 @@ describe('Card Component', () => {
                 randomFrontImage={linkRandomCardImage}
                 orderedFrontImage={linkOrderedFrontImage}
                 backImage={linkBackImage}
-                jogoIniciado={true}
+                gameStarted={true}
                 index="1"
             />
         );
@@ -108,7 +108,7 @@ describe('Card Component', () => {
                 randomFrontImage={linkRandomCardImage}
                 orderedFrontImage={linkOrderedFrontImage}
                 backImage={linkBackImage}
-                jogoIniciado={true}
+                gameStarted={true}
                 index="2"
             />
         );
@@ -142,7 +142,7 @@ describe('Card Component', () => {
                 randomFrontImage={linkRandomCardImage}
                 orderedFrontImage={linkOrderedFrontImage}
                 backImage={linkBackImage}
-                jogoIniciado={true}
+                gameStarted={true}
                 index="3"
             />
         );
@@ -179,7 +179,7 @@ describe('Card Component', () => {
                 randomFrontImage={linkRandomCardImage}
                 orderedFrontImage={linkOrderedFrontImage}
                 backImage={linkBackImage}
-                jogoIniciado={true}
+                gameStarted={true}
                 index="4"
             />
         );
@@ -224,5 +224,9 @@ describe('Card Component', () => {
             'animation-direction',
             'reverse'
         );
+
+        // Expanded Component
+        const cardPhase5Extended = screen.getByTestId('card-expanded');
+        expect(cardPhase5Extended).toBeInTheDocument();
     });
 });

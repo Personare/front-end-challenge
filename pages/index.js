@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Head from 'next/head';
 
+import GlobalStyle from '../components/globalStyle';
 import Spinner from '../components/spinner';
-import CardManager from '../components/cardManager';
+import CardManager from '../components/cards/cardManager';
 
 const Container = styled.div`
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
-    font-family: 'Roboto', sans-serif;
 `;
 
 const SpinnerContainer = styled(Container)`
-    height: 95vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     display: flex;
     flex-direction: column;
@@ -63,18 +67,22 @@ function HomePage() {
         getCardsData();
     }, []);
 
-    if (isLoading) {
-        return (
-            <SpinnerContainer>
-                <Spinner loadingProblem={loadingProblem} />
-            </SpinnerContainer>
-        );
-    }
-
     return (
-        <Container>
-            <CardManager cardsData={cardsData}></CardManager>
-        </Container>
+        <GlobalStyle>
+            <Head>
+                <title>Tarot Game by Katreque</title>
+            </Head>
+
+            {isLoading ? (
+                <SpinnerContainer>
+                    <Spinner loadingProblem={loadingProblem} />
+                </SpinnerContainer>
+            ) : (
+                <Container>
+                    <CardManager cardsData={cardsData}></CardManager>
+                </Container>
+            )}
+        </GlobalStyle>
     );
 }
 

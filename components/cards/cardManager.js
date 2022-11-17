@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import Card from '../components/card';
+import Card from './card';
+import { shuffleArrayElements } from '../utils';
 
 const ControlsContainer = styled.div`
     height: 100px;
@@ -37,27 +38,6 @@ const CardsContainer = styled.div`
 `;
 
 /*
-    Implementação O(n) do Fisher-Yates Shuffle sem bias.
-    https://bost.ocks.org/mike/shuffle
-*/
-export const shuffleCards = (array) => {
-    const cards = [...array];
-    let m = cards.length,
-        t,
-        i;
-
-    while (m) {
-        i = Math.floor(Math.random() * m--);
-
-        t = cards[m];
-        cards[m] = cards[i];
-        cards[i] = t;
-    }
-
-    return cards;
-};
-
-/*
     Assim que o componente recebe o array de cartas pela prop cardData, atualiza o estado cards com
     um array de objetos referente a cada carta. Esse array é utilizado para gerar os componentes de carta.
 
@@ -66,7 +46,7 @@ export const shuffleCards = (array) => {
     O aleatório indica qual será o valor que ela assumirá depois do jogo ter iniciado.
 */
 export default function CardManager(props) {
-    const [jogoIniciado, setJogoIniciado] = useState(false);
+    const [gameStarted, setGameStarted] = useState(false);
     const [cards, setCards] = useState([]);
 
     useEffect(() => {
@@ -95,7 +75,7 @@ export default function CardManager(props) {
             A prop randomName indica o nome da carta que foi recebida aleatóriamente.
         */
 
-        const cardsShuffled = shuffleCards(props.cardsData.cards);
+        const cardsShuffled = shuffleArrayElements(props.cardsData.cards);
         for (let i = 0; i < cardsShuffled.length; i++) {
             _cards[i].randomFrontImage =
                 props.cardsData.imagesUrl + cardsShuffled[i].image;
@@ -109,8 +89,8 @@ export default function CardManager(props) {
         <>
             <ControlsContainer>
                 <>
-                    {!jogoIniciado ? (
-                        <Button onClick={() => setJogoIniciado(true)}>
+                    {!gameStarted ? (
+                        <Button onClick={() => setGameStarted(true)}>
                             Iniciar o Jogo
                         </Button>
                     ) : (
@@ -126,7 +106,7 @@ export default function CardManager(props) {
                             randomFrontImage={card.randomFrontImage}
                             orderedFrontImage={card.orderedFrontImage}
                             backImage={card.backImage}
-                            jogoIniciado={jogoIniciado}
+                            gameStarted={gameStarted}
                             key={i}
                             index={i}
                         ></Card>

@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
+import CardExpanded from './cardExpanded';
+
 const fadeIn = keyframes`
     from {
         opacity: 0;
@@ -91,10 +93,10 @@ export default function Card(props) {
     const cardElement = useRef(null);
 
     useEffect(() => {
-        if (props.jogoIniciado) {
+        if (props.gameStarted) {
             setAnimationPhase(animationStates.PHASE_TWO);
         }
-    }, [props.jogoIniciado]);
+    }, [props.gameStarted]);
 
     // Calcula quantos pixeis o componente precisa transladar em cada eixo para chegar no centro da tela.
     const calcTranslateAxisToMiddleScreen = () => {
@@ -128,7 +130,7 @@ export default function Card(props) {
 
             /*
                 A fase 2 é animação flip, no qual a carta fica de costas.
-                É executada apenas quando a prop jogoIniciado é true.
+                É executada apenas quando a prop gameStarted é true.
                 O elemento possui um Ref, pois é necessário armazenar sua posição no DOM neste momento.
 
                 A partir desta fase, as outras fases são executadas ao final da animação, segundo a prop onAnimationEnd;
@@ -205,24 +207,30 @@ export default function Card(props) {
             */
             case animationStates.PHASE_FIVE: {
                 return (
-                    <BaseFlipCard
-                        ref={cardElement}
-                        data-testid={'5-' + props.index}
-                    >
-                        <FlipCardContainer
-                            image={props.backImage}
-                            animation={flip}
-                            mode="both"
-                            delay={0}
+                    <>
+                        <BaseFlipCard
+                            ref={cardElement}
+                            data-testid={'5-' + props.index}
+                        >
+                            <FlipCardContainer
+                                image={props.backImage}
+                                animation={flip}
+                                mode="both"
+                                delay={0}
+                            />
+                            <FlipCardContainer
+                                image={props.randomFrontImage}
+                                animation={flip}
+                                mode="both"
+                                direction="reverse"
+                                delay={0}
+                            />
+                        </BaseFlipCard>
+                        <CardExpanded
+                            cardName={props.randomName}
+                            cardImage={props.randomFrontImage}
                         />
-                        <FlipCardContainer
-                            image={props.randomFrontImage}
-                            animation={flip}
-                            mode="both"
-                            direction="reverse"
-                            delay={0}
-                        />
-                    </BaseFlipCard>
+                    </>
                 );
             }
         }

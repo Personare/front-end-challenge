@@ -3,8 +3,8 @@ import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 
-import CardManager from '../../components/cardManager';
-import tarotData from '../tarotMock.json';
+import CardManager from '../../../components/cards/cardManager';
+import tarotData from '../../tarotMock.json';
 
 describe('CardManager Component', () => {
     /*
@@ -99,31 +99,5 @@ describe('CardManager Component', () => {
                 screen.getByText('Selecione uma carta:')
             ).toBeInTheDocument();
         });
-    });
-
-    it('Snapshot do componente após o início do jogo.', async () => {
-        const { getByRole, getByTestId, asFragment } = render(
-            <CardManager cardsData={tarotData} />
-        );
-
-        // Ativando os eventos manualmente de cada fase.
-        const btnStartGame = getByRole('button', { name: 'Iniciar o Jogo' });
-        fireEvent.click(btnStartGame);
-
-        const phase2Card0 = getByTestId('2-0');
-        const phase2Card1 = getByTestId('2-1');
-        const phase2Card2 = getByTestId('2-2');
-        fireEvent.animationEnd(phase2Card0);
-        fireEvent.animationEnd(phase2Card1);
-        fireEvent.animationEnd(phase2Card2);
-
-        const phase3Card0 = getByTestId('3-0');
-        const phase3Card1 = getByTestId('3-1');
-        const phase3Card2 = getByTestId('3-2');
-        fireEvent.animationEnd(phase3Card0);
-        fireEvent.animationEnd(phase3Card1);
-        fireEvent.animationEnd(phase3Card2);
-
-        expect(asFragment()).toMatchSnapshot();
     });
 });
