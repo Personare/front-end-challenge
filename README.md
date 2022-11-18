@@ -8,7 +8,7 @@ Tecnologias Utilizadas:
 -   Prettier
 -   ESLint
 
-A versão em produção está disponível em: ?
+A versão em produção [está disponível](https://katreque-tarot-game.vercel.app).
 
 # front-end-challenge
 
