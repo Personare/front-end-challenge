@@ -1,14 +1,22 @@
 # Anotações do Katreque
 
+Projeto desenvolvido como avaliação de frontend para a Personare em 2022.
+
 Tecnologias Utilizadas:
 
 -   Next.js
 -   styled-components
 -   Jest e Testing Library
--   Prettier
--   ESLint
+-   Prettier e ESLint
 
-A versão em produção [está disponível](https://katreque-tarot-game.vercel.app).
+A versão em produção está disponível no [Vercel](https://katreque-tarot-game.vercel.app).
+
+**Caso queira rodar o ambiente em Dev**
+
+-   Crie um arquivo .env:
+    -   Adicione a seguinte linha: NEXT_PUBLIC_API=/api/cards
+
+### ReadMe Original Abaixo
 
 # front-end-challenge
 
