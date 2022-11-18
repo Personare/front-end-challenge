@@ -2,13 +2,33 @@
 
 exports[`HomePage Snapshot do componente após o carregamento da API e antes de iniciar o jogo. 1`] = `
 <DocumentFragment>
-  .c0 {
-  height: 100px;
-  margin: 10px;
+  .c1 {
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: bold;
+  padding: 1em 2em;
+  cursor: pointer;
+  border-radius: 50px;
+  color: #0d0d0d;
+  background-color: #f2ea7e;
+  border: 2px solid #f2ea7e;
+}
+
+.c1:hover {
+  border: 2px solid #d1c848 !important;
+}
+
+.c0 {
+  margin: 5em 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  color: #0d0d0d;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -19,20 +39,12 @@ exports[`HomePage Snapshot do componente após o carregamento da API e antes de 
   justify-content: center;
 }
 
-.c1 {
-  color: white;
-  background-color: darkcyan;
-  font-size: 1.5em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid green;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
 <div
     class="c0"
   >
+    <h1>
+      Katreque's Tarot Game
+    </h1>
     <button
       class="c1"
     >
@@ -172,12 +184,15 @@ exports[`HomePage Snapshot do componente caso a API retorne algum erro 1`] = `
 exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar uma carta. 1`] = `
 <DocumentFragment>
   .c0 {
-  height: 100px;
-  margin: 10px;
+  margin: 5em 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  color: #0d0d0d;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -190,7 +205,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
 
 .c1 {
   font-size: 1.5em;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 <div
@@ -199,10 +214,27 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
     <p
       class="c1"
     >
-      Selecione uma carta:
+      Selecione uma carta
     </p>
   </div>
-  .c7 {
+  .c13 {
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: bold;
+  padding: 1em 2em;
+  cursor: pointer;
+  border-radius: 50px;
+  color: white;
+  background-color: #0d0d0d;
+  border: 2px solid #0d0d0d;
+}
+
+.c13:hover {
+  border: 2px solid #6e6e6e !important;
+}
+
+.c7 {
   -webkit-animation: kcCFSJ;
   animation: kcCFSJ;
   -webkit-animation-duration: 1s;
@@ -216,14 +248,14 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   visibility: collapse;
 }
 
-.c13 {
+.c14 {
   z-index: 3;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(84,155,247,0.5);
+  background-color: rgba(33,58,74,0.75);
   -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
@@ -240,7 +272,8 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   max-width: 100%;
   max-height: 100%;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.1);
   -webkit-animation-delay: 0.75s;
   animation-delay: 0.75s;
 }
@@ -270,6 +303,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
 }
 
 .c11 {
+  color: #0d0d0d;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -291,7 +325,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
 }
 
 .c12 {
-  margin: 10px;
+  margin: 0.25em 0em;
 }
 
 .c1 {
@@ -326,7 +360,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   animation-fill-mode: both;
 }
 
-.c14 {
+.c15 {
   background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
   background-position: center;
   background-size: contain;
@@ -341,7 +375,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   animation-fill-mode: both;
 }
 
-.c16 {
+.c17 {
   background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
   background-position: center;
   background-size: contain;
@@ -407,7 +441,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   backface-visibility: hidden;
 }
 
-.c15 {
+.c16 {
   cursor: pointer;
   z-index: 2;
 }
@@ -474,14 +508,16 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
           <div
             class="c11"
           >
-            <h2>
+            <h2
+              class="c12"
+            >
               A IMPERATRIZ
             </h2>
             <p>
               Mussum Ipsum, cacilds vidis litro abertis. Viva Forevis aptent taciti sociosqu ad litora torquent. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per.
             </p>
             <button
-              class="c12"
+              class="c13"
             >
               Mais uma?
             </button>
@@ -489,16 +525,16 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
         </div>
       </div>
       <div
-        class="c7 c13"
+        class="c7 c14"
       />
     </div>
     <div
-      class="c1 c14 c15"
+      class="c1 c15 c16"
       data-testid="4-1"
       mode="both"
     />
     <div
-      class="c1 c16 c15"
+      class="c1 c17 c16"
       data-testid="4-2"
       mode="both"
     />
@@ -509,12 +545,15 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
 exports[`HomePage Snapshot do componente depois de iniciar o jogo. 1`] = `
 <DocumentFragment>
   .c0 {
-  height: 100px;
-  margin: 10px;
+  margin: 5em 0.5em;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  color: #0d0d0d;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -527,7 +566,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo. 1`] = `
 
 .c1 {
   font-size: 1.5em;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 <div
@@ -536,7 +575,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo. 1`] = `
     <p
       class="c1"
     >
-      Selecione uma carta:
+      Selecione uma carta
     </p>
   </div>
   .c1 {

@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 
 import { GlobalStyleContext } from '../globalStyle';
+import Button from '../button';
 
 const flip = keyframes`
     0% {
@@ -34,7 +35,7 @@ const ModalOverlay = styled(Animation)`
     width: 100%;
     height: 100%;
 
-    background-color: rgba(84, 155, 247, 0.5);
+    background-color: rgba(33, 58, 74, 0.75);
 
     animation-delay: 0.5s;
 `;
@@ -51,7 +52,8 @@ const Modal = styled(Animation)`
     max-height: 100%;
 
     background-color: white;
-    border-radius: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.1);
 
     animation-delay: 0.75s;
 `;
@@ -69,6 +71,7 @@ const ImageContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
+    color: #0d0d0d;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -78,8 +81,8 @@ const ContentContainer = styled.div`
     padding: 5px;
 `;
 
-const Button = styled.button`
-    margin: 10px;
+const Header = styled.h2`
+    margin: 0.25em 0em;
 `;
 
 // O componente cria um modal e seu overlay, exibindo as informações da carta.
@@ -113,14 +116,16 @@ export default function CardExpanded(props) {
                         />
                     </ImageContainer>
                     <ContentContainer>
-                        <h2>{props.cardName}</h2>
+                        <Header>{props.cardName}</Header>
                         <p>
                             Mussum Ipsum, cacilds vidis litro abertis. Viva
                             Forevis aptent taciti sociosqu ad litora torquent.
                             Admodum accumsan disputationi eu sit. Vide electram
                             sadipscing et per.
                         </p>
-                        <Button onClick={closeModal}>Mais uma?</Button>
+                        <Button black onClick={closeModal}>
+                            Mais uma?
+                        </Button>
                     </ContentContainer>
                 </InfoContainer>
             </Modal>

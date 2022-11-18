@@ -2,30 +2,21 @@ import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import Card from './card';
+import Button from '../button';
 import { shuffleArrayElements } from '../utils';
 
 const ControlsContainer = styled.div`
-    height: 100px;
-    margin: 10px;
+    margin: 5em 0.5em;
     display: flex;
+    color: #0d0d0d;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
 
 const Text = styled.p`
     font-size: 1.5em;
-    font-weight: 700;
-`;
-
-const Button = styled.button`
-    color: white;
-    background-color: darkcyan;
-    font-size: 1.5em;
-    margin: 1em;
-    padding: 0.25em 1em;
-    border: 2px solid green;
-    border-radius: 3px;
-    cursor: pointer;
+    font-weight: bold;
 `;
 
 const CardsContainer = styled.div`
@@ -88,15 +79,16 @@ export default function CardManager(props) {
     return (
         <>
             <ControlsContainer>
-                <>
-                    {!gameStarted ? (
+                {!gameStarted ? (
+                    <>
+                        <h1>Katreque&apos;s Tarot Game</h1>
                         <Button onClick={() => setGameStarted(true)}>
                             Iniciar o Jogo
                         </Button>
-                    ) : (
-                        <Text>Selecione uma carta:</Text>
-                    )}
-                </>
+                    </>
+                ) : (
+                    <Text>Selecione uma carta</Text>
+                )}
             </ControlsContainer>
             <CardsContainer>
                 {cards.map((card, i) => {

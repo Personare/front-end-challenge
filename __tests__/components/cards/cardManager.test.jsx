@@ -42,6 +42,9 @@ describe('CardManager Component', () => {
             );
 
             expect(
+                screen.getByText(`Katreque's Tarot Game`)
+            ).toBeInTheDocument();
+            expect(
                 screen.getByRole('button', { name: 'Iniciar o Jogo' })
             ).toBeInTheDocument();
         });
@@ -95,9 +98,7 @@ describe('CardManager Component', () => {
                 `url(${tarotData.imageBackCard})`
             );
 
-            expect(
-                screen.getByText('Selecione uma carta:')
-            ).toBeInTheDocument();
+            expect(screen.getByText('Selecione uma carta')).toBeInTheDocument();
         });
     });
 });
