@@ -23,7 +23,8 @@
     },
     "homepage": "https://github.com/Katreque/renan-katreque-verissimo#readme",
     "dependencies": {
-        "next": "^13.0.2",
+        "@next/font": "^13.0.3",
+        "next": "^13.0.3",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-spinners": "^0.13.6",

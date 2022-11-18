@@ -6,9 +6,7 @@ import GlobalStyle from '../components/globalStyle';
 import Spinner from '../components/spinner';
 import CardManager from '../components/cards/cardManager';
 
-const Container = styled.div`
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
-`;
+const Container = styled.div``;
 
 const SpinnerContainer = styled(Container)`
     position: fixed;
