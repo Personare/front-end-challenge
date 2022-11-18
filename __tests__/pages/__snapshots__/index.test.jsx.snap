@@ -30,7 +30,16 @@ exports[`HomePage Snapshot do componente após o carregamento da API e antes de 
   cursor: pointer;
 }
 
-.c2 {
+<div
+    class="c0"
+  >
+    <button
+      class="c1"
+    >
+      Iniciar o Jogo
+    </button>
+  </div>
+  .c0 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -49,21 +58,8 @@ exports[`HomePage Snapshot do componente após o carregamento da API e antes de 
 }
 
 <div
-    class=""
-  >
-    <div
-      class="c0"
-    >
-      <button
-        class="c1"
-      >
-        Iniciar o Jogo
-      </button>
-    </div>
-    <div
-      class="c2"
-    />
-  </div>
+    class="c0"
+  />
 </DocumentFragment>
 `;
 
@@ -81,27 +77,38 @@ exports[`HomePage Snapshot do componente caso a API retorne algum erro 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  text-align: center;
+  -webkit-animation-name: fCDSQb;
+  animation-name: fCDSQb;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .c2 {
-  font-size: 1.25em;
-  opacity: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
   margin-top: 50px;
+  font-size: 1.25em;
+  -webkit-animation-name: fCDSQb;
+  animation-name: fCDSQb;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 500ms;
+  animation-delay: 500ms;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
-.c2.loading-error-enter {
-  opacity: 0;
-}
-
-.c2.loading-error-enter-active {
-  opacity: 1;
-  -webkit-transition: opacity 500ms;
-  transition: opacity 500ms;
-}
-
-.c2.loading-error-enter-done {
-  opacity: 1;
+.c3 {
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .c0 {
@@ -128,56 +135,35 @@ exports[`HomePage Snapshot do componente caso a API retorne algum erro 1`] = `
   align-items: center;
 }
 
-.c0.spinner-enter {
-  opacity: 0;
-}
-
-.c0.spinner-exit {
-  opacity: 1;
-}
-
-.c0.spinner-enter-active {
-  opacity: 1;
-}
-
-.c0.spinner-exit-active {
-  opacity: 0;
-}
-
-.c0.spinner-enter-active,
-.c0 .spinner-exit-active {
-  -webkit-transition: opacity 1000ms;
-  transition: opacity 1000ms;
-}
-
 <div
-    class=" c0"
+    class="c0"
   >
     <div
       class="c1"
+      data-testid="spinner-3"
     >
       <span
-        data-testid="home-spinner"
-        style="width: 15px; height: 15px; border-radius: 100%; display: inline-block; position: relative; animation-fill-mode: both; animation: react-spinners-RotateLoader-rotate 2s 0s infinite cubic-bezier(0.7, -0.13, 0.22, 0.86); background-color: rgb(54, 215, 183);"
+        style="background-color: rgb(245, 33, 50); width: 20px; height: 20px; border-radius: 100%; display: inline-block; position: relative; animation-fill-mode: both; animation: react-spinners-RotateLoader-rotate 5s 0s infinite cubic-bezier(0.7, -0.13, 0.22, 0.86);"
       >
         <span
-          style="width: 15px; height: 15px; border-radius: 100%; opacity: 0.8; position: absolute; top: 0px; left: -28px; background-color: rgb(54, 215, 183);"
+          style="background-color: rgb(245, 33, 50); width: 20px; height: 20px; border-radius: 100%; opacity: 0.8; position: absolute; top: 0px; left: -28px;"
         />
         <span
-          style="width: 15px; height: 15px; border-radius: 100%; opacity: 0.8; position: absolute; top: 0px; left: 28px; background-color: rgb(54, 215, 183);"
+          style="background-color: rgb(245, 33, 50); width: 20px; height: 20px; border-radius: 100%; opacity: 0.8; position: absolute; top: 0px; left: 28px;"
         />
       </span>
-      <div
-        class="c2"
-        data-testid="spinner-error-text"
+    </div>
+    <div
+      class="c2"
+    >
+      <span
+        class="c3"
       >
-        <p>
-          Houston, we have a problem...
-        </p>
-        <small>
-          Recarregue a página e tente novamente.
-        </small>
-      </div>
+        Houston, we have a problem...
+      </span>
+      <small>
+        Recarregue a página e tente novamente.
+      </small>
     </div>
   </div>
 </DocumentFragment>
@@ -185,7 +171,38 @@ exports[`HomePage Snapshot do componente caso a API retorne algum erro 1`] = `
 
 exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar uma carta. 1`] = `
 <DocumentFragment>
-  .c9 {
+  .c0 {
+  height: 100px;
+  margin: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c1 {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+<div
+    class="c0"
+  >
+    <p
+      class="c1"
+    >
+      Selecione uma carta:
+    </p>
+  </div>
+  .c7 {
   -webkit-animation: kcCFSJ;
   animation: kcCFSJ;
   -webkit-animation-duration: 1s;
@@ -194,12 +211,12 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   animation-fill-mode: both;
 }
 
-.c9.close-modal {
+.c7.close-modal {
   opacity: 0;
   visibility: collapse;
 }
 
-.c15 {
+.c13 {
   z-index: 3;
   position: fixed;
   top: 0;
@@ -211,7 +228,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   animation-delay: 0.5s;
 }
 
-.c10 {
+.c8 {
   z-index: 4;
   position: fixed;
   top: 50%;
@@ -228,7 +245,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   animation-delay: 0.75s;
 }
 
-.c11 {
+.c9 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -236,7 +253,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   margin: 10px;
 }
 
-.c12 {
+.c10 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -252,7 +269,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   margin: 10px;
 }
 
-.c13 {
+.c11 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -273,16 +290,16 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   padding: 5px;
 }
 
-.c14 {
+.c12 {
   margin: 10px;
 }
 
-.c3 {
+.c1 {
   width: 150px;
   height: 300px;
 }
 
-.c3:hover {
+.c1:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
@@ -290,11 +307,11 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   transition: scale 200ms;
 }
 
-.c4 {
+.c2 {
   position: relative;
 }
 
-.c5 {
+.c3 {
   background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
   background-position: center;
   background-size: contain;
@@ -309,7 +326,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   animation-fill-mode: both;
 }
 
-.c16 {
+.c14 {
   background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
   background-position: center;
   background-size: contain;
@@ -324,7 +341,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   animation-fill-mode: both;
 }
 
-.c18 {
+.c16 {
   background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
   background-position: center;
   background-size: contain;
@@ -339,7 +356,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   animation-fill-mode: both;
 }
 
-.c7 {
+.c5 {
   background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/162x341/arcano3.jpg);
   background-position: center;
   background-size: contain;
@@ -354,7 +371,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   animation-fill-mode: both;
 }
 
-.c6 {
+.c4 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -371,7 +388,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   backface-visibility: hidden;
 }
 
-.c8 {
+.c6 {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -390,12 +407,108 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   backface-visibility: hidden;
 }
 
-.c17 {
+.c15 {
   cursor: pointer;
   z-index: 2;
 }
 
 .c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  row-gap: 20px;
+  -webkit-column-gap: 5px;
+  column-gap: 5px;
+  margin-bottom: 20px;
+}
+
+<div
+    class="c0"
+  >
+    <div
+      class="c1 c2"
+      data-testid="5-0"
+    >
+      <div
+        class="c1 c3 c4"
+        mode="both"
+      />
+      <div
+        class="c1 c5 c6"
+        direction="reverse"
+        mode="both"
+      />
+    </div>
+    <div
+      data-testid="card-expanded"
+    >
+      <div
+        class="c7 c8"
+      >
+        <div
+          class="c9"
+        >
+          <div
+            class="c10"
+          >
+            <img
+              alt="A IMPERATRIZ"
+              data-nimg="1"
+              decoding="async"
+              height="300"
+              loading="lazy"
+              src="/_next/image?url=https%3A%2F%2Fdkw5ssdvaqf8l.cloudfront.net%2Fstatic%2Fpsr%2Fbr%2Fframework%2Fyii%2Fimages%2Fcontent%2Fpt-br%2Fproduct%2Ftarot%2Fmarselha%2F162x341%2Farcano3.jpg&w=384&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Fdkw5ssdvaqf8l.cloudfront.net%2Fstatic%2Fpsr%2Fbr%2Fframework%2Fyii%2Fimages%2Fcontent%2Fpt-br%2Fproduct%2Ftarot%2Fmarselha%2F162x341%2Farcano3.jpg&w=256&q=75 1x, /_next/image?url=https%3A%2F%2Fdkw5ssdvaqf8l.cloudfront.net%2Fstatic%2Fpsr%2Fbr%2Fframework%2Fyii%2Fimages%2Fcontent%2Fpt-br%2Fproduct%2Ftarot%2Fmarselha%2F162x341%2Farcano3.jpg&w=384&q=75 2x"
+              style="color: transparent;"
+              width="150"
+            />
+          </div>
+          <div
+            class="c11"
+          >
+            <h2>
+              A IMPERATRIZ
+            </h2>
+            <p>
+              Mussum Ipsum, cacilds vidis litro abertis. Viva Forevis aptent taciti sociosqu ad litora torquent. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per.
+            </p>
+            <button
+              class="c12"
+            >
+              Mais uma?
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="c7 c13"
+      />
+    </div>
+    <div
+      class="c1 c14 c15"
+      data-testid="4-1"
+      mode="both"
+    />
+    <div
+      class="c1 c16 c15"
+      data-testid="4-2"
+      mode="both"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`HomePage Snapshot do componente depois de iniciar o jogo. 1`] = `
+<DocumentFragment>
+  .c0 {
   height: 100px;
   margin: 10px;
   display: -webkit-box;
@@ -417,121 +530,21 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo e selecionar u
   font-weight: 700;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-  -webkit-justify-content: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
-  row-gap: 20px;
-  -webkit-column-gap: 5px;
-  column-gap: 5px;
-  margin-bottom: 20px;
-}
-
 <div
-    class=""
+    class="c0"
   >
-    <div
-      class="c0"
+    <p
+      class="c1"
     >
-      <p
-        class="c1"
-      >
-        Selecione uma carta:
-      </p>
-    </div>
-    <div
-      class="c2"
-    >
-      <div
-        class="c3 c4"
-        data-testid="5-0"
-      >
-        <div
-          class="c3 c5 c6"
-          mode="both"
-        />
-        <div
-          class="c3 c7 c8"
-          direction="reverse"
-          mode="both"
-        />
-      </div>
-      <div
-        data-testid="card-expanded"
-      >
-        <div
-          class="c9 c10"
-        >
-          <div
-            class="c11"
-          >
-            <div
-              class="c12"
-            >
-              <img
-                alt="A IMPERATRIZ"
-                data-nimg="1"
-                decoding="async"
-                height="300"
-                loading="lazy"
-                src="/_next/image?url=https%3A%2F%2Fdkw5ssdvaqf8l.cloudfront.net%2Fstatic%2Fpsr%2Fbr%2Fframework%2Fyii%2Fimages%2Fcontent%2Fpt-br%2Fproduct%2Ftarot%2Fmarselha%2F162x341%2Farcano3.jpg&w=384&q=75"
-                srcset="/_next/image?url=https%3A%2F%2Fdkw5ssdvaqf8l.cloudfront.net%2Fstatic%2Fpsr%2Fbr%2Fframework%2Fyii%2Fimages%2Fcontent%2Fpt-br%2Fproduct%2Ftarot%2Fmarselha%2F162x341%2Farcano3.jpg&w=256&q=75 1x, /_next/image?url=https%3A%2F%2Fdkw5ssdvaqf8l.cloudfront.net%2Fstatic%2Fpsr%2Fbr%2Fframework%2Fyii%2Fimages%2Fcontent%2Fpt-br%2Fproduct%2Ftarot%2Fmarselha%2F162x341%2Farcano3.jpg&w=384&q=75 2x"
-                style="color: transparent;"
-                width="150"
-              />
-            </div>
-            <div
-              class="c13"
-            >
-              <h2>
-                A IMPERATRIZ
-              </h2>
-              <p>
-                Mussum Ipsum, cacilds vidis litro abertis. Viva Forevis aptent taciti sociosqu ad litora torquent. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per.
-              </p>
-              <button
-                class="c14"
-              >
-                Mais uma?
-              </button>
-            </div>
-          </div>
-        </div>
-        <div
-          class="c9 c15"
-        />
-      </div>
-      <div
-        class="c3 c16 c17"
-        data-testid="4-1"
-        mode="both"
-      />
-      <div
-        class="c3 c18 c17"
-        data-testid="4-2"
-        mode="both"
-      />
-    </div>
+      Selecione uma carta:
+    </p>
   </div>
-</DocumentFragment>
-`;
-
-exports[`HomePage Snapshot do componente depois de iniciar o jogo. 1`] = `
-<DocumentFragment>
-  .c3 {
+  .c1 {
   width: 150px;
   height: 300px;
 }
 
-.c3:hover {
+.c1:hover {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
@@ -539,7 +552,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo. 1`] = `
   transition: scale 200ms;
 }
 
-.c4 {
+.c2 {
   background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
   background-position: center;
   background-size: contain;
@@ -554,7 +567,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo. 1`] = `
   animation-fill-mode: both;
 }
 
-.c6 {
+.c4 {
   background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
   background-position: center;
   background-size: contain;
@@ -569,7 +582,7 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo. 1`] = `
   animation-fill-mode: both;
 }
 
-.c7 {
+.c5 {
   background-image: url(https://dkw5ssdvaqf8l.cloudfront.net/static/psr/br/framework/yii/images/content/pt-br/product/tarot/marselha/back-blue-card.png);
   background-position: center;
   background-size: contain;
@@ -584,34 +597,12 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo. 1`] = `
   animation-fill-mode: both;
 }
 
-.c5 {
+.c3 {
   cursor: pointer;
   z-index: 2;
 }
 
 .c0 {
-  height: 100px;
-  margin: 10px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
-
-.c1 {
-  font-size: 1.5em;
-  font-weight: 700;
-}
-
-.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -630,36 +621,23 @@ exports[`HomePage Snapshot do componente depois de iniciar o jogo. 1`] = `
 }
 
 <div
-    class=""
+    class="c0"
   >
     <div
-      class="c0"
-    >
-      <p
-        class="c1"
-      >
-        Selecione uma carta:
-      </p>
-    </div>
+      class="c1 c2 c3"
+      data-testid="4-0"
+      mode="both"
+    />
     <div
-      class="c2"
-    >
-      <div
-        class="c3 c4 c5"
-        data-testid="4-0"
-        mode="both"
-      />
-      <div
-        class="c3 c6 c5"
-        data-testid="4-1"
-        mode="both"
-      />
-      <div
-        class="c3 c7 c5"
-        data-testid="4-2"
-        mode="both"
-      />
-    </div>
+      class="c1 c4 c3"
+      data-testid="4-1"
+      mode="both"
+    />
+    <div
+      class="c1 c5 c3"
+      data-testid="4-2"
+      mode="both"
+    />
   </div>
 </DocumentFragment>
 `;
@@ -678,27 +656,12 @@ exports[`HomePage Snapshot do componente enquanto aguarda a resposta da API. 1`]
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  text-align: center;
-}
-
-.c2 {
-  font-size: 1.25em;
-  opacity: 0;
-  margin-top: 50px;
-}
-
-.c2.loading-error-enter {
-  opacity: 0;
-}
-
-.c2.loading-error-enter-active {
-  opacity: 1;
-  -webkit-transition: opacity 500ms;
-  transition: opacity 500ms;
-}
-
-.c2.loading-error-enter-done {
-  opacity: 1;
+  -webkit-animation-name: fCDSQb;
+  animation-name: fCDSQb;
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .c0 {
@@ -725,56 +688,23 @@ exports[`HomePage Snapshot do componente enquanto aguarda a resposta da API. 1`]
   align-items: center;
 }
 
-.c0.spinner-enter {
-  opacity: 0;
-}
-
-.c0.spinner-exit {
-  opacity: 1;
-}
-
-.c0.spinner-enter-active {
-  opacity: 1;
-}
-
-.c0.spinner-exit-active {
-  opacity: 0;
-}
-
-.c0.spinner-enter-active,
-.c0 .spinner-exit-active {
-  -webkit-transition: opacity 1000ms;
-  transition: opacity 1000ms;
-}
-
 <div
-    class=" c0"
+    class="c0"
   >
     <div
       class="c1"
+      data-testid="spinner-1"
     >
       <span
-        data-testid="home-spinner"
-        style="width: 15px; height: 15px; border-radius: 100%; display: inline-block; position: relative; animation-fill-mode: both; animation: react-spinners-RotateLoader-rotate 2s 0s infinite cubic-bezier(0.7, -0.13, 0.22, 0.86); background-color: rgb(54, 215, 183);"
+        style="background-color: rgb(75, 131, 166); width: 20px; height: 20px; border-radius: 100%; display: inline-block; position: relative; animation-fill-mode: both; animation: react-spinners-RotateLoader-rotate 2s 0s infinite cubic-bezier(0.7, -0.13, 0.22, 0.86);"
       >
         <span
-          style="width: 15px; height: 15px; border-radius: 100%; opacity: 0.8; position: absolute; top: 0px; left: -28px; background-color: rgb(54, 215, 183);"
+          style="background-color: rgb(75, 131, 166); width: 20px; height: 20px; border-radius: 100%; opacity: 0.8; position: absolute; top: 0px; left: -28px;"
         />
         <span
-          style="width: 15px; height: 15px; border-radius: 100%; opacity: 0.8; position: absolute; top: 0px; left: 28px; background-color: rgb(54, 215, 183);"
+          style="background-color: rgb(75, 131, 166); width: 20px; height: 20px; border-radius: 100%; opacity: 0.8; position: absolute; top: 0px; left: 28px;"
         />
       </span>
-      <div
-        class="c2"
-        data-testid="spinner-error-text"
-      >
-        <p>
-          Houston, we have a problem...
-        </p>
-        <small>
-          Recarregue a página e tente novamente.
-        </small>
-      </div>
     </div>
   </div>
 </DocumentFragment>

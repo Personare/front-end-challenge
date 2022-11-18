@@ -6,9 +6,7 @@ import GlobalStyle from '../components/globalStyle';
 import Spinner from '../components/spinner';
 import CardManager from '../components/cards/cardManager';
 
-const Container = styled.div``;
-
-const SpinnerContainer = styled(Container)`
+const SpinnerContainer = styled.div`
     position: fixed;
     top: 50%;
     left: 50%;
@@ -18,32 +16,11 @@ const SpinnerContainer = styled(Container)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    &.spinner-enter {
-        opacity: 0;
-    }
-
-    &.spinner-exit {
-        opacity: 1;
-    }
-
-    &.spinner-enter-active {
-        opacity: 1;
-    }
-
-    &.spinner-exit-active {
-        opacity: 0;
-    }
-
-    &.spinner-enter-active,
-    .spinner-exit-active {
-        transition: opacity 1000ms;
-    }
 `;
 
 function HomePage() {
     const [isLoading, setLoading] = useState(true);
-    const [loadingProblem, setLoadingProblem] = useState(false);
+    const [loadingError, setLoadingError] = useState(false);
     const [cardsData, setCardsData] = useState(null);
 
     useEffect(() => {
@@ -53,7 +30,7 @@ function HomePage() {
             await new Promise((resolve) => setTimeout(resolve, 2000));
 
             if (res.status !== 200) {
-                setLoadingProblem(true);
+                setLoadingError(true);
                 return;
             }
 
@@ -73,12 +50,10 @@ function HomePage() {
 
             {isLoading ? (
                 <SpinnerContainer>
-                    <Spinner loadingProblem={loadingProblem} />
+                    <Spinner loadingError={loadingError} />
                 </SpinnerContainer>
             ) : (
-                <Container>
-                    <CardManager cardsData={cardsData}></CardManager>
-                </Container>
+                <CardManager cardsData={cardsData}></CardManager>
             )}
         </GlobalStyle>
     );

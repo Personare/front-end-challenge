@@ -1,42 +1,45 @@
 import React from 'react';
-import { render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import 'jest-styled-components';
 
 import Spinner from '../../components/spinner';
 
 describe('Spinner Component', () => {
-    it('Caso a prop loadingProblem seja falsa, deve exibir apenas o Spinner na cor coorespondente.', () => {
-        render(<Spinner loadingProblem={false} />);
+    it('Caso a prop loadingError seja falsa, deve exibir apenas o Spinner na cor coorespondente.', () => {
+        render(<Spinner loadingError={false} />);
 
-        const spinner = screen.getByTestId('home-spinner');
+        const spinner = screen.getByTestId('spinner-1');
         expect(spinner).toBeInTheDocument();
-        expect(spinner).toHaveStyle('background-color: #36d7b7');
+        expect(spinner).toBeVisible();
+        expect(spinner).toHaveStyleRule('background-color: #4B83A6');
 
         expect(
-            screen.getByText('Houston, we have a problem...')
-        ).not.toBeVisible();
+            screen.queryByText('Houston, we have a problem...')
+        ).not.toBeInTheDocument();
         expect(
-            screen.getByText('Recarregue a página e tente novamente.')
-        ).not.toBeVisible();
+            screen.queryByText('Recarregue a página e tente novamente.')
+        ).not.toBeInTheDocument();
     });
 
-    it('Caso a prop loadingProblem seja verdadeira, deve exibir o Spinner e seus textos na cor coorespondente.', async () => {
-        render(<Spinner loadingProblem={true} />);
+    it('Caso a prop loadingError seja verdadeira, deve exibir o Spinner e seus textos na cor coorespondente.', async () => {
+        render(<Spinner loadingError={true} />);
 
-        const spinner = screen.getByTestId('home-spinner');
-        expect(spinner).toBeVisible();
+        // Ativando animação.
+        const spinnerPhase2 = screen.getByTestId('spinner-2');
+        fireEvent.animationEnd(spinnerPhase2);
 
-        await waitFor(
-            () => {
-                expect(spinner).toHaveStyle('background-color: #F52132');
-                expect(
-                    screen.getByText('Houston, we have a problem...')
-                ).toBeVisible();
-                expect(
-                    screen.getByText('Recarregue a página e tente novamente.')
-                ).toBeVisible();
-            },
-            { timeout: 500 }
-        );
+        const spinnerPhase3 = screen.getByTestId('spinner-3');
+        expect(spinnerPhase3).toHaveStyleRule('background-color: #4B83A6');
+
+        await waitFor(() => {
+            expect(
+                screen.getByText('Houston, we have a problem...')
+            ).toBeVisible();
+            expect(
+                screen.getByText('Recarregue a página e tente novamente.')
+            ).toBeVisible();
+        }),
+            { timeout: 2000 };
     });
 });

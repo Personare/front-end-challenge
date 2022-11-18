@@ -6,6 +6,7 @@ import {
     screen,
     fireEvent,
     waitForElementToBeRemoved,
+    waitFor,
 } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
@@ -60,6 +61,16 @@ describe('HomePage', () => {
         );
 
         const { asFragment } = render(<HomePage />);
+
+        // Ativando animação.
+        await waitFor(
+            () => {
+                const spinnerPhase2 = screen.getByTestId('spinner-2');
+                fireEvent.animationEnd(spinnerPhase2);
+            },
+            { timeout: 3000 }
+        );
+
         expect(asFragment()).toMatchSnapshot();
     });
 
@@ -71,10 +82,9 @@ describe('HomePage', () => {
         );
 
         const { asFragment } = render(<HomePage />);
-        await waitForElementToBeRemoved(
-            () => screen.getByTestId('home-spinner'),
-            { timeout: 3000 }
-        );
+        await waitForElementToBeRemoved(() => screen.getByTestId('spinner-1'), {
+            timeout: 3000,
+        });
 
         expect(asFragment()).toMatchSnapshot();
     });
@@ -87,10 +97,9 @@ describe('HomePage', () => {
         );
 
         const { asFragment } = render(<HomePage />);
-        await waitForElementToBeRemoved(
-            () => screen.getByTestId('home-spinner'),
-            { timeout: 3000 }
-        );
+        await waitForElementToBeRemoved(() => screen.getByTestId('spinner-1'), {
+            timeout: 3000,
+        });
 
         const btnStartGame = screen.getByRole('button', {
             name: 'Iniciar o Jogo',
@@ -123,10 +132,9 @@ describe('HomePage', () => {
         );
 
         const { asFragment } = render(<HomePage />);
-        await waitForElementToBeRemoved(
-            () => screen.getByTestId('home-spinner'),
-            { timeout: 3000 }
-        );
+        await waitForElementToBeRemoved(() => screen.getByTestId('spinner-1'), {
+            timeout: 3000,
+        });
 
         const btnStartGame = screen.getByRole('button', {
             name: 'Iniciar o Jogo',
