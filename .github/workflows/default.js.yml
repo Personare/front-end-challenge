@@ -29,6 +29,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
 
+    - name: Create .env File
+      run: |
+        touch .env
+        echo NEXT_PUBLIC_API=/api/cards >> .env
+        cat .env
+
     - run: npm i
     - run: npm run check
     - run: npm run build
