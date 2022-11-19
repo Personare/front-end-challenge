@@ -174,14 +174,16 @@ describe('Card Component', () => {
 
     it('Card na fase 5 deve ter as caracteristicas referentes.', async () => {
         render(
-            <Card
-                randomName="O PAPA"
-                randomFrontImage={linkRandomCardImage}
-                orderedFrontImage={linkOrderedFrontImage}
-                backImage={linkBackImage}
-                gameStarted={true}
-                index="4"
-            />
+            <main>
+                <Card
+                    randomName="O PAPA"
+                    randomFrontImage={linkRandomCardImage}
+                    orderedFrontImage={linkOrderedFrontImage}
+                    backImage={linkBackImage}
+                    gameStarted={true}
+                    index="4"
+                />
+            </main>
         );
 
         const cardPhase2 = screen.getByTestId('2-4');

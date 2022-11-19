@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ClientPortal Quando o ClientPortal transporta seus filhos, a div pai deve receber suas props. 1`] = `
+<DocumentFragment>
+  <main>
+    <div>
+      <span>
+        Salve!
+      </span>
+    </div>
+    <div
+      test-id="teste"
+    >
+      <span>
+        Tudo bom?
+      </span>
+    </div>
+  </main>
+</DocumentFragment>
+`;
+
+exports[`ClientPortal Quando o ClientPortal é montado, mas não encontra o elemento main, não renderiza nada. 1`] = `
+<DocumentFragment>
+  <div />
+</DocumentFragment>
+`;
+
+exports[`ClientPortal Quando o ClientPortal é montado, transporta seus filhos dentro de uma div como filho direto do elemento main. 1`] = `
+<DocumentFragment>
+  <main>
+    <div>
+      <span>
+        Salve!
+      </span>
+    </div>
+    <div>
+      <span>
+        Tudo bom?
+      </span>
+    </div>
+  </main>
+</DocumentFragment>
+`;

@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import Image from 'next/image';
 
 import { GlobalStyleContext } from '../globalStyle';
+import ClientPortal from '../clientPortal';
 import Button from '../button';
 
 const flip = keyframes`
@@ -101,7 +102,7 @@ export default function CardExpanded(props) {
     };
 
     return (
-        <div data-testid={'card-expanded'}>
+        <ClientPortal data-testid={'card-expanded'}>
             <Modal
                 ref={refModal}
                 onAnimationStart={() => toggleIsModalOpenGlobalState()}
@@ -130,6 +131,6 @@ export default function CardExpanded(props) {
                 </InfoContainer>
             </Modal>
             <ModalOverlay ref={refModalOverlay} />
-        </div>
+        </ClientPortal>
     );
 }

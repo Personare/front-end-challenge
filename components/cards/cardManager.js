@@ -7,8 +7,9 @@ import { shuffleArrayElements } from '../utils';
 
 const ControlsContainer = styled.div`
     margin: 5em 0.5em;
-    display: flex;
     color: #0d0d0d;
+
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;

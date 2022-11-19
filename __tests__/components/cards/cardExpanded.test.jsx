@@ -12,7 +12,11 @@ const cardImage =
 
 describe('CardExpanded Component', () => {
     it('O componente deve iniciar visível, junto do modal e seu overlay.', () => {
-        render(<CardExpanded cardName={cardName} cardImage={cardImage} />);
+        render(
+            <main>
+                <CardExpanded cardName={cardName} cardImage={cardImage} />
+            </main>
+        );
 
         const cardExpanded = screen.getByTestId('card-expanded');
         expect(cardExpanded).toBeInTheDocument();
@@ -37,7 +41,9 @@ describe('CardExpanded Component', () => {
         // Context adicionado para evitar que toggleIsModalOpenGlobalState seja undefined.
         render(
             <GlobalStyle>
-                <CardExpanded cardName={cardName} cardImage={cardImage} />
+                <main>
+                    <CardExpanded cardName={cardName} cardImage={cardImage} />
+                </main>
             </GlobalStyle>
         );
 

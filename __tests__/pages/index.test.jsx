@@ -62,7 +62,7 @@ describe('HomePage', () => {
 
         const { asFragment } = render(<HomePage />);
 
-        // Ativando animação.
+        // Aguarda a animação do spinner acabar.
         await waitFor(
             () => {
                 const spinnerPhase2 = screen.getByTestId('spinner-2');
@@ -81,9 +81,20 @@ describe('HomePage', () => {
             })
         );
 
-        const { asFragment } = render(<HomePage />);
+        const { asFragment } = render(
+            <main>
+                <HomePage />
+            </main>
+        );
+
+        // Aguarda o spinner sair da tela após receber os dados da API.
         await waitForElementToBeRemoved(() => screen.getByTestId('spinner-1'), {
             timeout: 3000,
+        });
+
+        // Esperar as cartas terminarem sua animação.
+        await waitFor(() => {
+            expect(screen.getByTestId('1-0')).toBeInTheDocument();
         });
 
         expect(asFragment()).toMatchSnapshot();
@@ -96,7 +107,12 @@ describe('HomePage', () => {
             })
         );
 
-        const { asFragment } = render(<HomePage />);
+        const { asFragment } = render(
+            <main>
+                <HomePage />
+            </main>
+        );
+
         await waitForElementToBeRemoved(() => screen.getByTestId('spinner-1'), {
             timeout: 3000,
         });
@@ -131,7 +147,11 @@ describe('HomePage', () => {
             })
         );
 
-        const { asFragment } = render(<HomePage />);
+        const { asFragment } = render(
+            <main>
+                <HomePage />
+            </main>
+        );
         await waitForElementToBeRemoved(() => screen.getByTestId('spinner-1'), {
             timeout: 3000,
         });
