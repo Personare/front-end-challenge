@@ -1,0 +1,37 @@
+
+.card_content{
+    display: flex;
+    flex-direction: row;
+    position:relative;
+    width: 100px;
+    height: 100px;
+    transform-style: preserve-3d;
+  transition: transform 600ms ease-in-out;
+}
+
+.card_image{
+  
+    width: 350px;
+    height: 350px;
+    align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.card_image--front {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    column-gap: 10px ;
+    text-align: center;
+    padding-top: 0px;
+    min-width: 100%;
+    border-radius: 50px;
+    background-color: gray;
+ 
+   
+
+}
+
+
+

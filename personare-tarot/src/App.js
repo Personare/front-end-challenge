@@ -1,16 +1,26 @@
-import { Cards } from "./components/Cartas/cards";
+import React, {useState, useEffect} from "react";
+import { Cards } from "./components/HomePage/cards";
 
-function App() {
+import { cards } from "./components/HomePage/cartas";
+import './App.css'
+
+export function App() {
+
+     //embaralhar cartas???
+     function shuffle  () { cards[Math.floor(Math.random() * 78)] 
+     shuffle() }
+     
+     console.log(cards)
   return (
     <div className="App">
       <header className="App-header">
-      <h2>Personare Tarot</h2>
+        <h1>Personare Tarot</h1>
+        <button onClick={()=>shuffle()}>Iniciar Jogo!</button>
       </header>
-      <div id="carta">
-          <Cards/>
-        </div>
+      <Cards />
+
     </div>
-  );
-}
+  )
+};
 
 export default App;
