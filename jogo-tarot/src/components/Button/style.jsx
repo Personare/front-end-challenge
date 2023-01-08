@@ -5,6 +5,7 @@ export const Button = styled.button`
     background-color: red;
     background-image: url(${bgTarotSimbol});
     background-position: center;
+    cursor: pointer;
     background-size: cover;
     border: none;
     padding: 15px 25px;

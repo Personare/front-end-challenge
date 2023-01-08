@@ -7,8 +7,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     background-color: #030303;
-    box-sizing: border-box;
-  }`;
+    justify-items: center;
+    
+  }
+  
+  `;
 
 const App = () => {
     return (

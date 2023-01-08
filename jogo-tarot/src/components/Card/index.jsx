@@ -20,7 +20,7 @@ const Card = () => {
                                     alt={card.name}
                                 />
                                 <CardDescription>
-                                    Lorem ipsum dolor sit amet, consectetur
+                                    Lorem ipsum dolor sit amet consectetur
                                     adipisicing elit.
                                 </CardDescription>
                             </CardFace>
