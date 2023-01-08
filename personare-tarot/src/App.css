@@ -1,12 +1,17 @@
- .App-header {
+
+
+body{
+    padding: 0;
+    margin: 0
+}
+
+.App-header {
     display: flex;
     flex-direction: column;
     width: 100%;
     background-color: hotpink;
-    padding: 10px;
     align-items: center;
-    margin: 0 auto;
-    
+   
     
    
 }
@@ -18,9 +23,7 @@
     padding: 0px;
     align-items: center;
     margin: 0;
-    
-   
-    
+     
 
 }
 

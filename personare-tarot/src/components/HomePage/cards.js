@@ -4,64 +4,46 @@ import { useEffect } from "react";
 import './styles.css';
 
 
-export const Cards = ({ flipped = false, id }) => {
+export const Cards = () => {
 
-    const [cartas, setCartas] = useState()
+    const [cartas, setCartas] = useState([])
+    const [randomCard, setRandomCard] = useState(false)
+    const [imageCard, setImageCard] = useState("")
 
     useEffect(() => {
         axios
             .get("https://raw.githubusercontent.com/Personare/front-end-challenge/master/tarot.json")
             .then((response) => {
                 setCartas(response.data)
-            }).catch((error) => {console.log(error)})
+            }).catch((error) => { console.log(error) })
     }, [])
+
+    const shuffle = () => {
+        const shuffleCards = Math.floor(Math.random() * 78)
+        setImageCard(cartas.cards[shuffleCards].image)
+        setRandomCard(!false)
+
+    }
+    const mapCartas = cartas.cards && cartas.cards.map((card) => {
+        return (
+
+            < div onClick={shuffle} key={card.name} className="card">
+                <img src={cartas.imageBackCard} alt="errorImage" />
+            </div>
+        )
+    }) 
    
-    useEffect(() =>{
-        axios
-            .get()
-            .then((response) => {
-                setCartas(response.data)
-            }).catch((error) => {console.log(error)})
-    }, [])
-    const urlBackImage = cartas && cartas.imageBackCard;
-
-    const urlImage = cartas && cartas.imagesUrl;
-
-    const cardContentClassNames = ['card_content']
-    flipped && cardContentClassNames.push('card_content--flipped')
-    
-
-    const [cardName, setCardName] = useState("")
-
     return (
         <>
-            <div>
-                {cartas && cartas.cards.map((card) => {
-                    if (card.image === cardName) {
-                        return (
-                            < div onClick={()=>setCardName('')} key={card.name} className="card">
-                                <div className={cardContentClassNames.join('')} ></div>
-                                <div className="card_image card_image--front card_image">
-
-                                    <img  src={urlImage + cardName} alt="errorImage" />
-
-                                </div>
-
-                            </div>
-                        )
-                    } else {
-                        return (
-                            < div onClick={()=>setCardName(card.image)} key={card.name} >
-                           
-                                 <div className={cardContentClassNames.join('')} ></div>
-                                <div className="card_image card_image--front card_image">
-                                    <img  src={urlBackImage} alt="errorImage"/>
-                                </div>
-
-                            </div>
-                        )}
-
-                })}
+            <button className="button-start" onClick={()=>window.location.reload(false)}>Iniciar Jogo!</button>
+            <div className="card_content">
+            <div className="card_image">
+                {randomCard ? (
+                    <img src={cartas.imagesUrl + imageCard} alt="errorImage" />
+                ) : (<div>
+                    {mapCartas}
+                </div>)}
+            </div>
             </div>
         </>
 

@@ -1,5 +1,6 @@
 
 .card_content{
+  margin: 5px;
     display: flex;
     flex-direction: row;
     position:relative;
@@ -9,28 +10,31 @@
   transition: transform 600ms ease-in-out;
 }
 
-.card_image{
-  
-    width: 350px;
-    height: 350px;
-    align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
 
-.card_image--front {
+.card_image {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3,1fr);
-    column-gap: 10px ;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5,1fr);
     text-align: center;
     padding-top: 0px;
     min-width: 100%;
     border-radius: 50px;
-    background-color: gray;
- 
-   
+}
 
+.button-start{
+  margin: 10px;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:	#FFB6C1;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
 
