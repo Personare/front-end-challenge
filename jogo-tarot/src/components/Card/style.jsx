@@ -61,5 +61,5 @@ export const CardDescription = styled.div`
     margin-top: 20px;
     margin-bottom: 20px;
     color: white;
-    background-image: url(${bgTarotSimbol});
+    /* background-image: url(${bgTarotSimbol}); */
 `;
