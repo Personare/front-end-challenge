@@ -7,7 +7,7 @@ export const Scene = styled.article`
     perspective: 600px;
 
     .is-flipped {
-        transform: rotateY(180deg);
+        transform: rotateY(185deg);
     }
 
     .card__face--front {
