@@ -14,11 +14,9 @@ const Header = () => {
                     : "Para saber o que o futuro te reserva, basta passar o mouse na carta desejada."}
             </h1>
             {flip ? (
-                <Button onClick={handleFlipCard}>
-                    {flip ? "Iniciar." : ""}
-                </Button>
+                <Button onClick={handleFlipCard}>Início</Button>
             ) : (
-                ""
+                <Button onClick={handleFlipCard}>Voltar ao início</Button>
             )}
         </Container>
     );

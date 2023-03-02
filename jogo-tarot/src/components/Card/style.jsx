@@ -2,10 +2,8 @@ import styled from "styled-components";
 import bgTarotSimbol from "../../_assets/bg-tarot-simbols.jpg";
 
 export const Scene = styled.article`
-    width: 200px;
-    height: 440px;
-    perspective: 600px;
-
+    width: 12rem;
+    height: 30rem;
     .is-flipped {
         transform: rotateY(185deg);
     }
@@ -17,8 +15,7 @@ export const Scene = styled.article`
         text-align: center;
 
         img {
-            width: 162px;
-            display: block;
+            width: 10rem;
             margin: auto;
         }
     }
