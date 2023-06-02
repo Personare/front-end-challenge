@@ -1,12 +1,11 @@
 import React from "react";
-import GetCard from "./utils/GET-Card"
+import Home from "./pages/TarotHome";
 
 function App() {
   return (
-    <div className="App">
-      olá mundo
-      <GetCard/>
-    </div>
+    <div>
+         <Home/>
+    </div> 
   );
 }
 
