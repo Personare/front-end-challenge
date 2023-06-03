@@ -1,14 +1,11 @@
-import React from "react"
-import GetCard from "../components/GET-Card"
+import React from "react";
 
+import TarotGame from "../components/TarotGame";
 
-function Home() {
-    return (
-        <div>
-            <GetCard/>
-        </div>
-    )
-}
+const App = () => {
+  return (
+    <TarotGame></TarotGame>
+  );
+};
 
-
-export default Home
+export default App;
