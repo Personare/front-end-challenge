@@ -1,11 +1,31 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"
+import ImageCard from "../components/ImageCard";
+import { BackgroundHome, ButtonHome, HomeStyle, LogoName } from "../styles/HomeStyle";
 
-import TarotGame from "../components/TarotGame";
 
-const App = () => {
+const Home = () => {
+  const navigate = useNavigate()
+
+  const game = () =>{
+    navigate('/game')
+  }
+
+
   return (
-    <TarotGame></TarotGame>
+    <div>
+      <BackgroundHome>
+        <ImageCard/>
+      </BackgroundHome>
+
+    <HomeStyle>
+      <LogoName>Tarot Game</LogoName>
+      <ButtonHome onClick={game}>Start Game</ButtonHome>
+    </HomeStyle>
+      
+      
+    </div>
   );
 };
 
-export default App;
+export default Home;

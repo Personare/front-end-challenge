@@ -1,11 +1,11 @@
-import React from "react";
-import Home from "./pages/TarotHome";
+import React from 'react';
+import Rotas from './utils/Rotas';
+
+
 
 function App() {
   return (
-    <div>
-         <Home/>
-    </div> 
+    <Rotas/>
   );
 }
 
